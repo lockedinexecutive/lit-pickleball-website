@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locked In Training | Pickleball Coaching & Social Play Saigon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(29, 78, 216, 0.8), rgba(30, 64, 175, 0.9)), url('https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=2070&auto=format&fit=crop') center/cover;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        details > summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary .plus-icon {
+            transform: rotate(45deg);
+        }
+        .plus-icon {
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://z-cdn-media.chatglm.cn/files/7375f2c2-b4dd-482f-8377-a1f8eaf02126.png?auth_key=1885487918-06cc63a132304c55bdced9685b048c06-0-0619fd3e930203fbe6b2c418c4152e16" alt="LIT Logo" class="h-12 w-12 object-contain rounded-lg bg-blue-700 p-1">
+                <div class="leading-none">
+                    <div class="font-black text-xl tracking-tight text-blue-700">LOCKED IN TRAINING</div>
+                    <div class="text-xs text-gray-500 font-semibold">PICKLEBALL • SAIGON</div>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-600">
+                <a href="#programs" class="hover:text-blue-700">Programs</a>
+                <a href="#schedule" class="hover:text-blue-700">Schedule</a>
+                <a href="#coach" class="hover:text-blue-700">Coach</a>
+                <a href="#community" class="hover:text-blue-700">Community</a>
+                <a href="#faq" class="hover:text-blue-700">FAQ</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <select class="hidden md:block text-sm border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 py-1.5">
+                    <option>EN</option>
+                    <option>VN</option>
+                    <option>KR (Soon)</option>
+                </select>
+                <a href="#booking" class="bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-800 transition">Book First Session</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white">
+        <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 text-center">
+            <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">Get better. <br> Find your people.</h1>
+            <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-8">Saigon's premier expat-friendly pickleball coaching and social play hub. Whether you're picking up a paddle for the first time or refining your third-shot drop, LIT is where you belong.</p>
+            
+            <!-- Trust Chips -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold border border-white/30">🇬🇧 English-speaking</span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold border border-white/30">✅ RPO-certified</span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold border border-white/30">👥 4:1 max group ratio</span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold border border-white/30">📍 District 7</span>
+            </div>
+            <a href="#choose-goal" class="inline-block bg-white text-blue-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition shadow-lg">Choose Your Goal →</a>
+        </div>
+    </section>
+
+    <!-- Choose Your Goal -->
+    <section id="choose-goal" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-black mb-3">What’s your game?</h2>
+            <p class="text-gray-600">Select your goal to find the perfect program.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Learn -->
+            <a href="/pickleball-for-expats-saigon" class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center block">
+                <div class="text-5xl mb-4">🌱</div>
+                <h3 class="text-2xl font-bold mb-2">Learn</h3>
+                <p class="text-gray-500 mb-4">Never played? Start here. Master the rules, basic shots, and court positioning.</p>
+                <span class="text-blue-700 font-bold text-sm">View Beginner Programs →</span>
+            </a>
+            <!-- Improve -->
+            <a href="/private-pickleball-lessons-ho-chi-minh-city" class="card-hover bg-white border-2 border-blue-700 rounded-2xl p-8 text-center block relative">
+                <span class="absolute top-0 right-0 bg-blue-700 text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-2xl font-bold">POPULAR</span>
+                <div class="text-5xl mb-4">🎯</div>
+                <h3 class="text-2xl font-bold mb-2">Improve</h3>
+                <p class="text-gray-500 mb-4">Break bad habits, develop strategy, and level up your competitive play.</p>
+                <span class="text-blue-700 font-bold text-sm">View Coaching & Private Lessons →</span>
+            </a>
+            <!-- Play Social -->
+            <a href="/social-pickleball-saigon" class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center block">
+                <div class="text-5xl mb-4">🎉</div>
+                <h3 class="text-2xl font-bold mb-2">Play Social</h3>
+                <p class="text-gray-500 mb-4">Just want to rally and meet people? Join our open play sessions.</p>
+                <span class="text-blue-700 font-bold text-sm">View Social Play Schedule →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- How LIT Works -->
+    <section class="bg-blue-700 text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12">How LIT Works</h2>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-2 border-white/20">1</div>
+                    <h4 class="font-bold text-xl mb-2">Assessment</h4>
+                    <p class="text-blue-100 text-sm">Quick evaluation of your current skill level and goals.</p>
+                </div>
+                <div>
+                    <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-2 border-white/20">2</div>
+                    <h4 class="font-bold text-xl mb-2">Training Plan</h4>
+                    <p class="text-blue-100 text-sm">Customized drills and schedule tailored to your needs.</p>
+                </div>
+                <div>
+                    <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-2 border-white/20">3</div>
+                    <h4 class="font-bold text-xl mb-2">Coaching</h4>
+                    <p class="text-blue-100 text-sm">RPO-certified coaching with max 4 players per court.</p>
+                </div>
+                <div>
+                    <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 border-2 border-white/20">4</div>
+                    <h4 class="font-bold text-xl mb-2">Social Play</h4>
+                    <p class="text-blue-100 text-sm">Put your skills to the test in our community socials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs & Pricing -->
+    <section id="programs" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-black mb-3">Programs & Pricing</h2>
+            <p class="text-gray-600">Transparent pricing. No hidden fees. Racket rental available.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-blue-700">
+                <h3 class="text-xl font-bold mb-2">Group Coaching (4:1)</h3>
+                <p class="text-gray-500 text-sm mb-4">Best for rapid improvement with peers.</p>
+                <div class="mb-6">
+                    <span class="text-4xl font-black">350k</span>
+                    <span class="text-gray-500"> VND / session</span>
+                </div>
+                <ul class="space-y-2 text-gray-600 text-sm mb-6">
+                    <li>✅ 90 minutes session</li>
+                    <li>✅ Max 4 players per coach</li>
+                    <li>✅ Tactical drills & point play</li>
+                </ul>
+                <a href="#booking" class="block text-center bg-blue-700 text-white py-3 rounded-lg font-bold hover:bg-blue-800">Book Group</a>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-gray-800">
+                <h3 class="text-xl font-bold mb-2">Private 1-on-1</h3>
+                <p class="text-gray-500 text-sm mb-4">Focused training for specific weaknesses.</p>
+                <div class="mb-6">
+                    <span class="text-4xl font-black">900k</span>
+                    <span class="text-gray-500"> VND / session</span>
+                </div>
+                <ul class="space-y-2 text-gray-600 text-sm mb-6">
+                    <li>✅ 60 minutes session</li>
+                    <li>✅ Dedicated coach attention</li>
+                    <li>✅ Customized drill curriculum</li>
+                </ul>
+                <a href="#booking" class="block text-center bg-gray-800 text-white py-3 rounded-lg font-bold hover:bg-gray-900">Book Private</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Schedule -->
+    <section id="schedule" class="bg-gray-100 py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-3">Weekly Schedule</h2>
+                <p class="text-gray-600">Reserve your spot before they're gone.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="grid grid-cols-4 bg-gray-800 text-white text-sm font-bold p-4">
+                    <div>Day & Time</div>
+                    <div>Session Type</div>
+                    <div>Level</div>
+                    <div class="text-right">Availability</div>
+                </div>
+                <!-- Row 1 -->
+                <div class="grid grid-cols-4 p-4 border-b items-center text-sm md:text-base">
+                    <div class="font-semibold">Mon - 7:00 PM</div>
+                    <div>Social Round Robin</div>
+                    <div>Intermediate</div>
+                    <div class="text-right"><span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-bold">1 slot left</span></div>
+                </div>
+                <!-- Row 2 -->
+                <div class="grid grid-cols-4 p-4 border-b items-center text-sm md:text-base">
+                    <div class="font-semibold">Wed - 9:00 AM</div>
+                    <div>Beginner Group</div>
+                    <div>Beginner</div>
+                    <div class="text-right"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">3 slots left</span></div>
+                </div>
+                <!-- Row 3 -->
+                <div class="grid grid-cols-4 p-4 items-center text-sm md:text-base">
+                    <div class="font-semibold">Fri - 6:30 PM</div>
+                    <div>Drills & Skills</div>
+                    <div>All Levels</div>
+                    <div class="text-right"><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-bold">2 slots left</span></div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="/weekly-schedule" class="text-blue-700 font-bold hover:underline">View Full Schedule →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Coach -->
+    <section id="coach" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="bg-gray-200 aspect-video rounded-2xl flex items-center justify-center text-gray-400">
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2072&auto=format&fit=crop" alt="Coach" class="w-full h-full object-cover rounded-2xl">
+            </div>
+            <div>
+                <span class="text-blue-700 font-bold uppercase tracking-wide text-sm">Meet the Coach</span>
+                <h2 class="text-3xl md:text-4xl font-black mt-2 mb-4">Coach [Name]</h2>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold">RPO Certified</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold">PPR Certified</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold">5+ Years Coaching</span>
+                </div>
+                <p class="text-gray-600 mb-6">"My philosophy is simple: fundamentals first, fun always. We focus on repetition, positioning, and smart play. Whether you want to win tournaments or just beat your friends, we'll get you Locked In."</p>
+                <a href="#" class="inline-flex items-center text-blue-700 font-bold hover:underline">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" /></svg>
+                    Watch Coach Video
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Proof -->
+    <section id="community" class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-3">Find Your People</h2>
+                <p class="text-gray-600">Real players. Real communities. Expats and Locals united by Pickleball.</p>
+            </div>
+            
+            <!-- Real Photos Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=2070&auto=format&fit=crop" class="w-full h-48 object-cover rounded-lg" alt="Pickleball community">
+                <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=2070&auto=format&fit=crop" class="w-full h-48 object-cover rounded-lg" alt="Pickleball social">
+                <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?q=80&w=2070&auto=format&fit=crop" class="w-full h-48 object-cover rounded-lg" alt="Pickleball action">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2070&auto=format&fit=crop" class="w-full h-48 object-cover rounded-lg" alt="Group training">
+            </div>
+
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-700 mr-3">S</div>
+                        <div>
+                            <div class="font-bold">Sarah M.</div>
+                            <div class="text-xs text-gray-500">🇬🇧 Expat Teacher / D2</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">"I was nervous as a total beginner, but the coach made it so easy. Found an amazing group of friends here!"</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-700 mr-3">J</div>
+                        <div>
+                            <div class="font-bold">Jihoon L.</div>
+                            <div class="text-xs text-gray-500">🇰🇷 Traveller / 1 month in VN</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">"Booked via WhatsApp before my flight. No Zalo needed. Perfect English coaching. Highly recommend to travellers!"</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-700 mr-3">M</div>
+                        <div>
+                            <div class="font-bold">Minh T.</div>
+                            <div class="text-xs text-gray-500">🇻🇳 Local Entrepreneur / D7</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm">"Cơ sở vật chất tuyệt vời, nhóm đông đảo. LIT giúp mình nâng cấp trình độ rất nhanh. (Great facilities, fast improvement!)"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-black mb-6">Location & Logistics</h2>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start">
+                        <span class="text-blue-700 font-bold mt-1 mr-3">📍</span>
+                        <div><strong>Address:</strong> [Street Name], District 7, Ho Chi Minh City.<br><em>Look for the "Locked In Training" sign near the corner.</em></div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-700 font-bold mt-1 mr-3">🛵</span>
+                        <div><strong>Grab Landmark:</strong> Search "Locked In Pickleball D7" on Grab. Easy drop-off right at the gate.</div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-700 font-bold mt-1 mr-3">🅿️</span>
+                        <div><strong>Parking:</strong> Free motorbike parking inside. Car parking available on the adjacent street.</div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-700 font-bold mt-1 mr-3">☁️</span>
+                        <div><strong>Weather-proof:</strong> Fully covered indoor courts. Play rain or shine!</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-gray-200 aspect-video rounded-2xl overflow-hidden">
+                <!-- Google Map Placeholder -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.342439439!2d106.7217!3d10.732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQzJzUxLjIiTiAxMDbCsDQzJzE4LjEiRQ!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="bg-gray-100 py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-3">Frequently Asked Questions</h2>
+            </div>
+            <div class="space-y-4">
+                <details class="bg-white rounded-lg shadow-sm p-6 group">
+                    <summary class="flex justify-between items-center font-bold text-lg">
+                        Can travellers or tourists join sessions?
+                        <span class="plus-icon text-blue-700 text-2xl">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600">Absolutely! We cater specifically to expats and travellers. You don't need Zalo to contact us—just use WhatsApp. We'll get you on the court quickly.</p>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-6 group">
+                    <summary class="flex justify-between items-center font-bold text-lg">
+                        Can I borrow a racket?
+                        <span class="plus-icon text-blue-700 text-2xl">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600">Yes, high-quality demo rackets are available for free during your first session. Rental is also available for a small fee for subsequent sessions.</p>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-6 group">
+                    <summary class="flex justify-between items-center font-bold text-lg">
+                        What are the payment methods?
+                        <span class="plus-icon text-blue-700 text-2xl">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600">We accept Cash (VND/USD), Bank Transfer, Credit Card, and Apple Pay. A small deposit is required to secure your booking.</p>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-6 group">
+                    <summary class="flex justify-between items-center font-bold text-lg">
+                        What is the cancellation policy?
+                        <span class="plus-icon text-blue-700 text-2xl">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600">We require 12 hours notice for cancellations. Late cancellations or no-shows will forfeit the deposit. Rain? No problem, we are fully covered.</p>
+                </details>
+                <details class="bg-white rounded-lg shadow-sm p-6 group">
+                    <summary class="flex justify-between items-center font-bold text-lg">
+                        I have no experience. What level should I join?
+                        <span class="plus-icon text-blue-700 text-2xl">+</span>
+                    </summary>
+                    <p class="mt-4 text-gray-600">Start with our "Learn" program or book a 1-on-1 assessment. We separate groups strictly by level (2.0 to 4.0+) to ensure everyone gets the most out of their time.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <img src="https://z-cdn-media.chatglm.cn/files/7375f2c2-b4dd-482f-8377-a1f8eaf02126.png?auth_key=1885487918-06cc63a132304c55bdced9685b048c06-0-0619fd3e930203fbe6b2c418c4152e16" alt="LIT Logo" class="h-10 w-10 object-contain rounded-lg bg-white p-1">
+                <div class="font-black text-xl tracking-tight">LOCKED IN TRAINING®</div>
+            </div>
+            <p class="text-gray-400 text-sm mb-6">Get better. Find your people.</p>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="#" class="hover:text-blue-400">WhatsApp Us</a>
+                <a href="#" class="hover:text-blue-400">Instagram</a>
+                <a href="#" class="hover:text-blue-400">Facebook</a>
+            </div>
+            <div class="mt-8 text-gray-500 text-xs">
+                © 2024 Locked In Training. All Rights Reserved. <br>
+                <a href="/pickleball-coaching-district-7" class="hover:text-gray-400">Coaching D7</a> | <a href="/private-pickleball-lessons-ho-chi-minh-city" class="hover:text-gray-400">Private Lessons HCMC</a> | <a href="/social-pickleball-saigon" class="hover:text-gray-400">Social Saigon</a> | <a href="/pickleball-for-expats-saigon" class="hover:text-gray-400">Expat Saigon</a> | <a href="/junior-pickleball-district-7" class="hover:text-gray-400">Junior D7</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA for Mobile -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg p-4 flex gap-3 z-50 md:hidden">
+        <a href="https://wa.me/849xxxxxxxx" class="flex-1 bg-green-500 text-white text-center py-3 rounded-lg font-bold flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" /></svg>
+            WhatsApp
+        </a>
+        <a href="#booking" class="flex-1 bg-blue-700 text-white text-center py-3 rounded-lg font-bold">
+            Book First Session
+        </a>
+    </div>
+
+</body>
+</html>
