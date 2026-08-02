@@ -1,858 +1,880 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIT Pickleball | Get Better. Find Your People.</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'maze-bg': '#050510',
-                        'lit-blue': '#1746c2',
-                        'lit-blue-light': '#4f7ff2',
-                        'pac-yellow': '#FFCC00',
-                        'neon-pink': '#FF2D95',
-                        'neon-cyan': '#00FFFF',
-                        'neon-green': '#39FF14',
-                        'arcade-red': '#FF3333',
-                        'soft-lilac': '#E6E6FA',
-                        'warm-white': '#F9FAFB',
-                        'coral': '#FF7F50'
-                    },
-                    fontFamily: {
-                        'arcade': ['"Press Start 2P"', 'cursive'],
-                        'body': ['Outfit', 'sans-serif']
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIT Pickleball · Phu My Hung</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pa-black': '#0A0A0A',
+            'pa-dark': '#111111',
+            'pa-card': '#1A1A1A',
+            'pa-gray': '#2A2A2A',
+            'pa-border': '#2D2D2D',
+            'pa-text': '#999999',
+            'pa-purple': '#8B5CF6',
+            'pa-purple-light': '#A78BFA',
+            'pa-purple-dark': '#6D28D9',
+            'pa-pink': '#EC4899',
+            'pa-pink-light': '#F472B6',
+            'pa-blue': '#3B82F6',
+            'pa-blue-light': '#60A5FA',
+            'pa-red': '#EF4444',
+            'pa-white': '#F5F5F5',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+            marker: ['Permanent Marker', 'cursive'],
+          }
         }
-    </script>
-    <style>
-        body { font-family: 'Outfit', sans-serif; background-color: #050510; cursor: default; }
-        
-        .btn-arcade { border: 4px solid #000; box-shadow: 6px 6px 0px #000; transition: all 0.1s ease; image-rendering: pixelated; }
-        .btn-arcade:hover { transform: translate(2px, 2px); box-shadow: 4px 4px 0px #000; }
-        .btn-arcade:active { transform: translate(6px, 6px); box-shadow: 0px 0px 0px #000; }
+      }
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #8B5CF6; border-radius: 3px; }
 
-        details > summary { list-style: none; cursor: pointer; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] summary .faq-icon { transform: rotate(45deg); }
-        .faq-icon { transition: transform 0.2s ease; }
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #8B5CF6, #EC4899, #3B82F6); z-index: 9999; transition: width 0.1s; }
 
-        select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.25em; appearance: none; cursor: pointer; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        #ball-wrapper { transition: transform 0.1s linear; will-change: transform; }
-        #pac-inner { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .gradient-text { background: linear-gradient(135deg, #8B5CF6, #EC4899, #3B82F6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-text-purple { background: linear-gradient(135deg, #8B5CF6, #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-text-pink { background: linear-gradient(135deg, #EC4899, #F472B6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-text-blue { background: linear-gradient(135deg, #3B82F6, #60A5FA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
-        .holo-border { background: linear-gradient(45deg, #FF2D95, #00FFFF, #4f7ff2, #FF2D95); background-size: 400% 400%; animation: holoShift 4s linear infinite; }
-        @keyframes holoShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .holo-glow { box-shadow: 0 0 40px rgba(255, 45, 149, 0.4), 0 0 80px rgba(0, 255, 255, 0.2); }
+    .btn-primary { background: linear-gradient(135deg, #8B5CF6, #7C3AED); transition: all 0.3s ease; }
+    .btn-primary:hover { background: linear-gradient(135deg, #A78BFA, #8B5CF6); box-shadow: 0 0 30px rgba(139,92,246,0.4); }
+    .btn-outline { border: 1px solid rgba(139,92,246,0.5); color: #A78BFA; transition: all 0.3s ease; }
+    .btn-outline:hover { background: rgba(139,92,246,0.15); border-color: #8B5CF6; }
+    .btn-pink { background: linear-gradient(135deg, #EC4899, #DB2777); transition: all 0.3s ease; }
+    .btn-pink:hover { background: linear-gradient(135deg, #F472B6, #EC4899); box-shadow: 0 0 30px rgba(236,72,153,0.3); }
+    .btn-pink-outline { border: 1px solid rgba(236,72,153,0.5); color: #F472B6; transition: all 0.3s ease; }
+    .btn-pink-outline:hover { background: rgba(236,72,153,0.15); border-color: #EC4899; }
 
-        #waitlist-popup { position: fixed; inset: 0; background: rgba(5, 5, 16, 0.85); backdrop-filter: blur(8px); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 1rem; }
-        #waitlist-popup.active { display: flex; }
-        .popup-content { background: #FFCC00; border: 4px solid #000; box-shadow: 10px 10px 0 #1746c2; max-width: 400px; width: 100%; animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
-        @keyframes scaleIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .glow-purple { box-shadow: 0 0 30px rgba(139,92,246,0.3), 0 0 60px rgba(139,92,246,0.1); }
 
-        .marquee-text { animation: marquee 10s linear infinite; }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    </style>
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(to right, #8B5CF6, #EC4899); transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+
+    .parallax-bg { background-size: cover; background-position: center; background-attachment: fixed; }
+    @media (max-width: 768px) { .parallax-bg { background-attachment: scroll; } }
+
+    .overlay-left { background: linear-gradient(to right, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 100%); }
+    .overlay-right { background: linear-gradient(to left, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 100%); }
+    .overlay-dark { background: linear-gradient(to bottom, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.9) 100%); }
+    .overlay-purple { background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(139,92,246,0.08) 40%, rgba(10,10,10,0.95) 100%); }
+
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); border-color: rgba(139,92,246,0.4); }
+
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+    .faq-answer.open { max-height: 400px; padding-top: 12px; padding-bottom: 4px; }
+    .faq-icon { transition: transform 0.3s ease; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    .popup-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .popup-overlay.show { opacity: 1; pointer-events: auto; }
+
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .float-anim { animation: float 4s ease-in-out infinite; }
+
+    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(139,92,246,0.3); } 50% { box-shadow: 0 0 30px rgba(139,92,246,0.5); } }
+    .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+    @keyframes word-cycle { 0%, 22% { opacity: 1; transform: translateY(0) scale(1); } 25%, 100% { opacity: 0; transform: translateY(-30px) scale(0.9); } }
+    .word-1 { animation: word-cycle 8s infinite; }
+    .word-2 { animation: word-cycle 8s infinite 2s; }
+    .word-3 { animation: word-cycle 8s infinite 4s; }
+    .word-4 { animation: word-cycle 8s infinite 6s; }
+
+    .toast { animation: slideUp 0.4s ease, fadeOut 0.4s ease 2.6s forwards; }
+    @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes fadeOut { to { opacity: 0; transform: translateY(20px); } }
+
+    .splatter-bg { background-image: radial-gradient(circle at 20% 80%, rgba(139,92,246,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(236,72,153,0.04) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(59,130,246,0.03) 0%, transparent 50%); }
+
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+  </style>
 </head>
-<body class="text-white overflow-x-hidden">
+<body class="bg-pa-black text-white font-sans">
 
-    <!-- Waitlist Popup -->
-    <div id="waitlist-popup">
-        <div class="popup-content p-8 text-center text-black">
-            <button onclick="closePopup()" class="absolute top-4 right-4 text-2xl font-bold">&times;</button>
-            <h3 class="font-arcade text-lg md:text-xl uppercase mb-4 leading-tight">YOUR NEXT PICKLEBALL CREW IS HERE.</h3>
-            <p class="font-body text-sm mb-6">Hosted community play every Tuesday and Friday in Phu My Hung. Join the waitlist and we’ll message you when a suitable spot opens.</p>
-            <form id="waitlist-form" class="space-y-4 text-left">
-                <input required type="text" placeholder="First name" class="w-full bg-white border-4 border-black/20 px-4 py-3 text-black font-body focus:outline-none focus:border-black">
-                <input required type="tel" placeholder="WhatsApp number" class="w-full bg-white border-4 border-black/20 px-4 py-3 text-black font-body focus:outline-none focus:border-black">
-                <button type="submit" class="w-full btn-arcade bg-neon-pink text-white py-3 font-arcade text-xs uppercase tracking-wider">Join the Waitlist</button>
-            </form>
+  <div id="scroll-progress"></div>
+  <div id="toast-container" class="fixed bottom-6 right-6 z-[100] flex flex-col gap-3"></div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 bg-pa-purple rounded-full flex items-center justify-center group-hover:scale-110 transition-transform pulse-glow">
+          <span class="text-white font-bold text-sm">LIT</span>
         </div>
+        <span class="font-marker text-xl tracking-wide text-white">LIT Pickleball</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#training" class="nav-link text-sm font-medium tracking-wide text-pa-text hover:text-white transition-colors">Training</a>
+        <a href="#tracks" class="nav-link text-sm font-medium tracking-wide text-pa-text hover:text-white transition-colors">Your Track</a>
+        <a href="#coaches" class="nav-link text-sm font-medium tracking-wide text-pa-text hover:text-white transition-colors">Coaches</a>
+        <a href="#community" class="nav-link text-sm font-medium tracking-wide text-pa-text hover:text-white transition-colors">Community</a>
+        <a href="#events" class="nav-link text-sm font-medium tracking-wide text-pa-text hover:text-white transition-colors">Events</a>
+        <a href="#membership" class="nav-link text-sm font-medium tracking-wide text-pa-text hover:text-white transition-colors">Membership</a>
+        <a href="#faq" class="nav-link text-sm font-medium tracking-wide text-pa-text hover:text-white transition-colors">FAQ</a>
+        <a href="#find-track" class="btn-primary text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide">Find My Track</a>
+      </div>
+      <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5">
+        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+        <span class="w-4 h-0.5 bg-white transition-all duration-300 ml-auto" id="bar3"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-pa-black z-40 flex flex-col items-center justify-center gap-6 opacity-0 pointer-events-none transition-opacity duration-300">
+    <a href="#training" class="mobile-link font-display text-2xl tracking-wider uppercase text-pa-text hover:text-pa-purple transition-colors">Training</a>
+    <a href="#tracks" class="mobile-link font-display text-2xl tracking-wider uppercase text-pa-text hover:text-pa-purple transition-colors">Your Track</a>
+    <a href="#coaches" class="mobile-link font-display text-2xl tracking-wider uppercase text-pa-text hover:text-pa-purple transition-colors">Coaches</a>
+    <a href="#community" class="mobile-link font-display text-2xl tracking-wider uppercase text-pa-text hover:text-pa-purple transition-colors">Community</a>
+    <a href="#events" class="mobile-link font-display text-2xl tracking-wider uppercase text-pa-text hover:text-pa-purple transition-colors">Events</a>
+    <a href="#membership" class="mobile-link font-display text-2xl tracking-wider uppercase text-pa-text hover:text-pa-purple transition-colors">Membership</a>
+    <a href="#faq" class="mobile-link font-display text-2xl tracking-wider uppercase text-pa-text hover:text-pa-purple transition-colors">FAQ</a>
+    <a href="#find-track" class="btn-primary text-white px-8 py-3 rounded-full font-bold tracking-wide mt-4">Find My Track</a>
+  </div>
+
+  <!-- ==================== 1. HERO ==================== -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1920&q=80" alt="Pickleball court" class="w-full h-full object-cover" style="filter: brightness(0.4) saturate(1.2);">
+      <div class="absolute inset-0 overlay-purple"></div>
+      <div class="absolute inset-0 bg-pa-purple/10 mix-blend-overlay"></div>
     </div>
 
-    <!-- Scrolling Pickleball Ball -->
-    <div id="ball-wrapper" class="hidden md:block fixed top-0 left-0 z-40 pointer-events-none">
-        <div id="pac-inner" class="w-6 h-6 rounded-full border-2 border-black relative overflow-hidden" style="background: #39FF14; box-shadow: 0 0 10px rgba(57, 255, 20, 0.8);">
-            <div class="absolute inset-0" style="background-image: radial-gradient(circle, #000 1.5px, transparent 1.5px); background-size: 6px 6px; background-position: 3px 3px;"></div>
-        </div>
+    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto mt-10">
+      <div class="inline-flex items-center gap-2 bg-pa-purple/15 backdrop-blur-sm border border-pa-purple/20 px-4 py-2 rounded-full mb-6">
+        <span class="w-2 h-2 bg-pa-purple rounded-full animate-pulse"></span>
+        <span class="text-xs font-bold tracking-[0.2em] uppercase text-pa-purple-light">LIT Pickleball · Phu My Hung</span>
+      </div>
+
+      <h1 class="font-marker text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-8">
+        <span class="gradient-text">Get Better.</span><br>
+        <span class="gradient-text">Find Your People.</span>
+      </h1>
+
+      <p class="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-4">
+        English-speaking pickleball training and a clear pathway into community—wherever you're starting from.
+      </p>
+      <p class="text-white/50 text-sm max-w-xl mx-auto mb-10">
+        10-session coaching tracks for new and improving players. Hosted community play for community-ready members.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#find-track" class="btn-primary text-white px-8 py-4 rounded-full font-bold tracking-wide glow-purple">Find My Training Track</a>
+        <a href="#community" class="btn-outline px-8 py-4 rounded-full font-medium tracking-wide">Explore the Community</a>
+      </div>
     </div>
 
-    <header class="sticky top-0 z-50 bg-maze-bg/95 backdrop-blur border-b-4 border-lit-blue pt-2">
-        <nav class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-2">
-                <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=100&auto=format&fit=crop" alt="LIT Logo" class="h-8 w-8 md:h-10 md:w-10 object-contain rounded bg-white p-1">
-                <span class="font-arcade text-xs md:text-sm tracking-tight hidden sm:block text-lit-blue-light">LIT</span>
-            </a>
-            <div class="hidden lg:flex items-center space-x-6 font-body text-[11px] uppercase tracking-wider text-white/80 font-bold">
-                <a href="#training" class="hover:text-neon-pink transition">Training</a>
-                <a href="#tracks" class="hover:text-neon-pink transition">Your Track</a>
-                <a href="#coaches" class="hover:text-neon-pink transition">Coaches</a>
-                <a href="#manifesto" class="hover:text-neon-pink transition">Community</a>
-                <a href="#events" class="hover:text-neon-pink transition">Events</a>
-                <a href="#membership" class="hover:text-neon-pink transition">Membership</a>
-                <a href="#faq" class="hover:text-neon-pink transition">FAQ</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#apply" class="hidden md:block btn-arcade bg-pac-yellow text-black px-5 py-2 font-arcade text-[10px] uppercase tracking-wider">Find My Track</a>
-                <button id="menu-btn" class="lg:hidden text-white focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden lg:hidden bg-maze-bg border-t-4 border-lit-blue px-6 py-4 space-y-3">
-            <a href="#training" class="block text-white font-body uppercase tracking-wider text-sm py-2">Training</a>
-            <a href="#tracks" class="block text-white font-body uppercase tracking-wider text-sm py-2">Your Track</a>
-            <a href="#coaches" class="block text-white font-body uppercase tracking-wider text-sm py-2">Coaches</a>
-            <a href="#manifesto" class="block text-white font-body uppercase tracking-wider text-sm py-2">Community</a>
-            <a href="#events" class="block text-white font-body uppercase tracking-wider text-sm py-2">Events</a>
-            <a href="#membership" class="block text-white font-body uppercase tracking-wider text-sm py-2">Membership</a>
-            <a href="#faq" class="block text-white font-body uppercase tracking-wider text-sm py-2">FAQ</a>
-            <a href="#apply" class="block text-center btn-arcade bg-pac-yellow text-black px-5 py-3 font-arcade text-xs uppercase tracking-wider mt-2">Find My Track</a>
-        </div>
-    </header>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-[10px] tracking-widest uppercase text-pa-text">Scroll</span>
+      <i data-lucide="chevron-down" class="w-4 h-4 text-pa-purple"></i>
+    </div>
+  </section>
 
-    <!-- 1. HERO -->
-    <section id="hero" class="relative min-h-[90vh] flex items-center overflow-hidden bg-maze-bg">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=2070&auto=format&fit=crop" alt="Pickleball Action" class="w-full h-full object-cover opacity-30">
-            <div class="absolute inset-0 bg-gradient-to-br from-maze-bg via-lit-blue/40 to-maze-bg"></div>
-        </div>
-        
-        <div class="absolute bottom-10 left-10 hidden md:flex gap-4 z-10 opacity-80">
-            <svg width="32" height="32" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-                <rect width="16" height="16" fill="transparent" /><rect x="12" y="9" width="2" height="2" fill="#1746c2" /><rect x="12" y="11" width="1" height="3" fill="#000" /><rect x="4" y="2" width="8" height="1" fill="#1a1a1a" /><rect x="3" y="3" width="10" height="2" fill="#1a1a1a" /><rect x="3" y="5" width="2" height="3" fill="#1a1a1a" /><rect x="11" y="5" width="2" height="3" fill="#1a1a1a" /><rect x="5" y="5" width="6" height="4" fill="#F4C2A1" /><rect x="5" y="9" width="6" height="2" fill="#F4C2A1" /><rect x="6" y="6" width="1" height="2" fill="#000" /><rect x="9" y="6" width="1" height="2" fill="#000" /><rect x="5" y="10" width="6" height="1" fill="#1a1a1a" /><rect x="6" y="11" width="4" height="1" fill="#1a1a1a" /><rect x="6" y="12" width="4" height="1" fill="#E6B198" /><rect x="3" y="13" width="10" height="3" fill="#1746c2" />
-            </svg>
-            <svg width="32" height="32" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-                <rect width="16" height="16" fill="transparent" /><rect x="5" y="3" width="6" height="1" fill="#F4C2A1" /><rect x="6" y="2" width="2" height="1" fill="#FFE0D0" /><rect x="4" y="4" width="8" height="6" fill="#F4C2A1" /><rect x="6" y="6" width="1" height="2" fill="#000" /><rect x="9" y="6" width="1" height="2" fill="#000" /><rect x="5" y="5" width="2" height="1" fill="#E6B198" /><rect x="9" y="5" width="2" height="1" fill="#E6B198" /><rect x="4" y="10" width="8" height="1" fill="#C0C0C0" /><rect x="5" y="11" width="6" height="1" fill="#C0C0C0" /><rect x="6" y="12" width="4" height="1" fill="#E6B198" /><rect x="3" y="13" width="10" height="3" fill="#FF2D95" />
-            </svg>
+  <!-- ==================== 2. CHOOSE YOUR STARTING POINT ==================== -->
+  <section id="start" class="py-20 md:py-28 bg-pa-black splatter-bg">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple mb-4">Start Where You Are</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase">What Brings You to the Court?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 fade-up">
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover cursor-pointer group" onclick="scrollToSection('tracks')">
+          <div class="w-14 h-14 bg-pa-purple/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-pa-purple/20 transition-colors">
+            <i data-lucide="sprout" class="w-7 h-7 text-pa-purple"></i>
+          </div>
+          <h3 class="font-display text-2xl font-bold tracking-tight uppercase mb-3">I'm New</h3>
+          <p class="text-pa-text text-sm leading-relaxed mb-6">I want to learn the right way and feel confident playing my first real games.</p>
+          <span class="inline-flex items-center gap-2 text-pa-purple-light font-semibold text-sm group-hover:gap-3 transition-all">Start from Zero <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-20 grid grid-cols-12 gap-4 w-full">
-            <div class="col-span-12 md:col-span-9">
-                <p class="font-arcade text-neon-cyan tracking-[0.2em] text-[8px] md:text-[10px] mb-4 md:mb-6 uppercase">LIT PICKLEBALL · PHU MY HUNG</p>
-                <h1 class="font-arcade text-white text-xl sm:text-3xl md:text-6xl uppercase leading-[1.4] mb-6 md:mb-8">GET BETTER.<br>FIND YOUR PEOPLE.</h1>
-                <p class="font-body text-white/80 text-base md:text-xl mb-2 max-w-2xl font-light">English-speaking pickleball training and a clear pathway into community—wherever you’re starting from.</p>
-                <p class="font-body text-white/80 text-base md:text-xl mb-8 md:mb-10 max-w-2xl font-light">10-session coaching tracks for new and improving players. Hosted community play for community-ready members.</p>
-                <div class="flex flex-wrap gap-4 md:gap-6">
-                    <a href="#apply" class="btn-arcade bg-lit-blue text-white px-6 md:px-8 py-3 md:py-4 font-arcade text-[10px] md:text-xs uppercase tracking-wider">Find My Training Track</a>
-                    <a href="#manifesto" class="btn-arcade bg-neon-pink text-white px-6 md:px-8 py-3 md:py-4 font-arcade text-[10px] md:text-xs uppercase tracking-wider">Explore the Community</a>
-                </div>
-            </div>
-            <div class="col-span-12 text-center mt-10">
-                <a href="#start" class="font-arcade text-[8px] md:text-[10px] text-pac-yellow animate-bounce hover:text-white transition inline-block">▼ SCROLL TO PLAY ▼</a>
-            </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover cursor-pointer group" onclick="scrollToSection('tracks')">
+          <div class="w-14 h-14 bg-pa-pink/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-pa-pink/20 transition-colors">
+            <i data-lucide="zap" class="w-7 h-7 text-pa-pink"></i>
+          </div>
+          <h3 class="font-display text-2xl font-bold tracking-tight uppercase mb-3">I Already Play</h3>
+          <p class="text-pa-text text-sm leading-relaxed mb-6">I know the basics but want more consistency, better decisions and a clear improvement plan.</p>
+          <span class="inline-flex items-center gap-2 text-pa-pink-light font-semibold text-sm group-hover:gap-3 transition-all">Build My Game <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
         </div>
-    </section>
 
-    <!-- 2. CHOOSE YOUR STARTING POINT -->
-    <section id="start" class="relative bg-pac-yellow py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10 text-black">
-            <div class="text-center mb-12 md:mb-16">
-                <p class="font-arcade text-[10px] md:text-xs text-coral uppercase tracking-widest mb-4">START WHERE YOU ARE</p>
-                <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-black">WHAT BRINGS YOU TO THE COURT?</h2>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 md:gap-12">
-                <a href="#tracks" class="bg-white p-6 md:p-8 flex flex-col text-black border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-[4px_4px_0_#000] transition-all">
-                    <h3 class="font-arcade text-sm md:text-base uppercase text-lit-blue mb-4">I'M NEW</h3>
-                    <p class="font-body text-sm md:text-base flex-grow mb-6">I want to learn the right way and feel confident playing my first real games.</p>
-                    <span class="font-arcade text-[10px] text-coral uppercase">Start From Zero →</span>
-                </a>
-                <a href="#tracks" class="bg-white p-6 md:p-8 flex flex-col text-black border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-[4px_4px_0_#000] transition-all">
-                    <h3 class="font-arcade text-sm md:text-base uppercase text-neon-pink mb-4">I ALREADY PLAY</h3>
-                    <p class="font-body text-sm md:text-base flex-grow mb-6">I know the basics but want more consistency, better decisions and a clear improvement plan.</p>
-                    <span class="font-arcade text-[10px] text-coral uppercase">Build My Game →</span>
-                </a>
-                <a href="#apply" class="bg-white p-6 md:p-8 flex flex-col text-black border-4 border-black shadow-[8px_8px_0_#000] hover:shadow-[4px_4px_0_#000] transition-all">
-                    <h3 class="font-arcade text-sm md:text-base uppercase text-lit-blue mb-4">I WANT A COMMUNITY</h3>
-                    <p class="font-body text-sm md:text-base flex-grow mb-6">I’m comfortable playing and want a regular, hosted English-speaking group.</p>
-                    <span class="font-arcade text-[10px] text-coral uppercase">Apply To Join →</span>
-                </a>
-            </div>
-            <p class="text-center font-body text-black/70 text-sm mt-12 italic">You do not need to know your rating before joining. We will help identify the right starting point.</p>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover cursor-pointer group" onclick="scrollToSection('membership')">
+          <div class="w-14 h-14 bg-pa-blue/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-pa-blue/20 transition-colors">
+            <i data-lucide="users" class="w-7 h-7 text-pa-blue"></i>
+          </div>
+          <h3 class="font-display text-2xl font-bold tracking-tight uppercase mb-3">I Want a Community</h3>
+          <p class="text-pa-text text-sm leading-relaxed mb-6">I'm comfortable playing and want a regular, hosted English-speaking group.</p>
+          <span class="inline-flex items-center gap-2 text-pa-blue-light font-semibold text-sm group-hover:gap-3 transition-all">Apply to Join <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
         </div>
-    </section>
+      </div>
 
-    <!-- 3. LIT TRAINING TRACK -->
-    <section id="training" class="relative bg-warm-white py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <span class="absolute top-8 right-8 font-arcade text-[100px] md:text-[150px] font-bold text-lit-blue/5 leading-none select-none pointer-events-none">LVL 01</span>
-        <div class="max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-black">
-            <div class="text-center mb-12 md:mb-16">
-                <p class="font-arcade text-[10px] md:text-xs text-coral uppercase tracking-widest mb-4">LEVEL 01 · TRAIN</p>
-                <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-lit-blue mb-4">LIT TRAINING TRACK</h2>
-                <p class="font-arcade text-[10px] md:text-sm text-black/60 uppercase">10 SESSIONS. ONE CLEAR DEVELOPMENT PLAN.</p>
-            </div>
-            <p class="font-body text-black/80 text-base md:text-lg max-w-3xl mx-auto text-center mb-12">Whether you are holding a paddle for the first time or already playing regularly, your LIT journey begins with understanding your current game, your goals and what you need to improve next.</p>
+      <p class="text-center text-pa-text text-sm mt-8 fade-up">You do not need to know your rating before joining. We will help identify the right starting point.</p>
+    </div>
+  </section>
 
-            <div class="bg-white p-6 md:p-8 border-4 border-black shadow-[8px_8px_0_#1746c2] mb-12">
-                <h3 class="font-arcade text-sm md:text-base uppercase text-lit-blue mb-6 text-center">EVERY TRAINING TRACK INCLUDES:</h3>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 font-body text-sm md:text-base text-black/80 mb-8">
-                    <li class="flex gap-2">› 10 coaching sessions</li>
-                    <li class="flex gap-2">› 60 minutes per session</li>
-                    <li class="flex gap-2">› Covered court included</li>
-                    <li class="flex gap-2">› Coaching conducted in English</li>
-                    <li class="flex gap-2">› RPO Level 1 certified coaches</li>
-                    <li class="flex gap-2">› Maximum ratio of 4 players per coach</li>
-                    <li class="flex gap-2">› Paddle rental available at the venue</li>
-                    <li class="flex gap-2">› Initial assessment</li>
-                    <li class="flex gap-2">› Personal development focus</li>
-                    <li class="flex gap-2">› Match-play application</li>
-                    <li class="flex gap-2">› Final reassessment & recommendation</li>
-                    <li class="flex gap-2 text-coral font-bold">* Paddle is not included</li>
-                </ul>
-                <div class="text-center bg-soft-lilac py-4 border-2 border-black/10">
-                    <p class="font-arcade text-sm md:text-base text-lit-blue uppercase">CONTACT US FOR THE CURRENT 10-SESSION PACK RATE</p>
-                </div>
-            </div>
+  <!-- ==================== 3. LIT TRAINING TRACK ==================== -->
+  <section id="training" class="py-20 md:py-28 bg-pa-dark splatter-bg">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple mb-4">Level 01 · Train</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase mb-3">LIT Training Track</h2>
+        <p class="font-display text-lg text-pa-pink tracking-wide uppercase">10 Sessions. One Clear Development Plan.</p>
+        <p class="text-pa-text text-base md:text-lg leading-relaxed max-w-2xl mx-auto mt-6">
+          Whether you are holding a paddle for the first time or already playing regularly, your LIT journey begins with understanding your current game, your goals and what you need to improve next.
+        </p>
+      </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 border-4 border-black shadow-[6px_6px_0_#1746c2]">
-                    <h3 class="font-arcade text-sm uppercase text-lit-blue mb-4">LIMITED-SPOT GROUP TRAINING</h3>
-                    <ul class="font-body text-xs md:text-sm text-black/80 space-y-2 mb-6">
-                        <li>› Max 4 players per coach</li>
-                        <li>› Two coaches available</li>
-                        <li>› Max 8 players per session</li>
-                        <li>› Monday & Thursday, 4:00–5:00 PM</li>
-                        <li>› Grouped by ability and goals</li>
-                    </ul>
-                    <a href="#apply" class="btn-arcade bg-lit-blue text-white text-center py-3 w-full font-arcade text-[10px] uppercase">Apply for Group</a>
-                </div>
-                <div class="bg-white p-6 border-4 border-black shadow-[6px_6px_0_#FF2D95]">
-                    <h3 class="font-arcade text-sm uppercase text-neon-pink mb-4">PRIVATE 1:1 COACHING</h3>
-                    <ul class="font-body text-xs md:text-sm text-black/80 space-y-2 mb-6">
-                        <li>› One player with one coach</li>
-                        <li>› Personalised 10-session plan</li>
-                        <li>› 60 minutes per session</li>
-                        <li>› Covered court included</li>
-                        <li>› Schedule by enquiry</li>
-                    </ul>
-                    <a href="#apply" class="btn-arcade bg-neon-pink text-white text-center py-3 w-full font-arcade text-[10px] uppercase">Enquire 1:1</a>
-                </div>
-            </div>
+      <div class="grid md:grid-cols-2 gap-8 mb-12 fade-up">
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8">
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-5 text-pa-purple-light">Every Training Track Includes</h3>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">10 coaching sessions</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">60 minutes per session</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Covered court included</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Coaching conducted in English</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">RPO Level 1 certified coaches</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Maximum ratio of 4 players per coach</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Paddle rental available at the venue</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Initial assessment</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Personal development focus</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Match-play application</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Final reassessment and next-step recommendation</span></li>
+          </ul>
+          <p class="text-pa-text/50 text-xs mt-4">Paddle is not included.</p>
         </div>
-    </section>
 
-    <!-- 4. START AND IMPROVE TRACKS -->
-    <section id="tracks" class="relative bg-lit-blue py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10 text-white">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-maze-bg p-6 md:p-8 border-4 border-pac-yellow">
-                    <p class="font-arcade text-[10px] text-pac-yellow uppercase mb-4">FOR NEW AND EARLY-STAGE PLAYERS</p>
-                    <h3 class="font-arcade text-lg md:text-xl uppercase mb-6 text-white">START WITH CONFIDENCE.</h3>
-                    <p class="font-body text-sm text-white/80 mb-6">Learn the fundamentals in a structured environment where questions are welcome, mistakes are expected and no previous experience is required.</p>
-                    <ul class="font-body text-xs text-white/60 space-y-2 mb-8">
-                        <li>› Rules and scoring</li>
-                        <li>› Grip and ready position</li>
-                        <li>› Serve and return</li>
-                        <li>› Ball contact and control</li>
-                        <li>› Movement & Rally consistency</li>
-                        <li>› Doubles positioning</li>
-                        <li>› Playing a complete point</li>
-                        <li>› Community-play etiquette</li>
-                    </ul>
-                    <a href="#apply" class="btn-arcade bg-pac-yellow text-black text-center py-3 w-full font-arcade text-[10px] uppercase">Choose Start</a>
-                </div>
-                <div class="bg-maze-bg p-6 md:p-8 border-4 border-neon-pink">
-                    <p class="font-arcade text-[10px] text-neon-pink uppercase mb-4">FOR PLAYERS WHO ALREADY KNOW THE BASICS</p>
-                    <h3 class="font-arcade text-lg md:text-xl uppercase mb-6 text-white">ALREADY PLAY? START AT YOUR LEVEL.</h3>
-                    <p class="font-body text-sm text-white/80 mb-6">Your first session identifies what is already working, what is holding your game back and where the next ten sessions should focus.</p>
-                    <ul class="font-body text-xs text-white/60 space-y-2 mb-8">
-                        <li>› Technical consistency</li>
-                        <li>› Serve and return quality</li>
-                        <li>› Shot control & Transition movement</li>
-                        <li>› Court positioning</li>
-                        <li>› Shot selection & Decision-making</li>
-                        <li>› Doubles communication</li>
-                        <li>› Match-play patterns</li>
-                        <li>› Individual weaknesses</li>
-                    </ul>
-                    <a href="#apply" class="btn-arcade bg-neon-pink text-white text-center py-3 w-full font-arcade text-[10px] uppercase">Choose Improve</a>
-                </div>
+        <div class="space-y-6">
+          <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="users" class="w-5 h-5 text-pa-purple"></i>
+              <h3 class="font-display text-lg font-bold tracking-wide uppercase">Limited-Spot Group Training</h3>
             </div>
+            <ul class="space-y-2 mb-5">
+              <li class="text-sm text-pa-text">Maximum 4 players per coach</li>
+              <li class="text-sm text-pa-text">Monday and Thursday</li>
+              <li class="text-sm text-pa-text font-semibold text-white">4:00 – 5:00 PM</li>
+              <li class="text-sm text-pa-text">Players grouped by ability and development needs</li>
+              <li class="text-sm text-pa-text">All participants enrol in a 10-session pack</li>
+            </ul>
+            <a href="#training-form" class="btn-primary inline-block text-white px-6 py-2.5 rounded-full text-sm font-bold tracking-wide">Apply for Group Training</a>
+          </div>
+
+          <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="target" class="w-5 h-5 text-pa-pink"></i>
+              <h3 class="font-display text-lg font-bold tracking-wide uppercase">Private 1:1 Coaching</h3>
+            </div>
+            <ul class="space-y-2 mb-5">
+              <li class="text-sm text-pa-text">1-on-1 training with our experienced coach</li>
+              <li class="text-sm text-pa-text">Personalised 10-session development plan</li>
+              <li class="text-sm text-pa-text">60 minutes per session · Covered court included</li>
+              <li class="text-sm text-pa-text">Schedule by enquiry</li>
+              <li class="text-sm text-pa-text">For players with specific technical or tactical goals</li>
+            </ul>
+            <a href="#training-form" class="btn-pink-outline inline-block px-6 py-2.5 rounded-full text-sm font-bold tracking-wide">Enquire About Private Training</a>
+          </div>
+
+          <div class="bg-pa-purple/5 border border-pa-purple/20 rounded-2xl p-6 text-center">
+            <p class="font-display text-sm font-bold tracking-wide uppercase text-pa-purple mb-2">10-Session Pack Rate</p>
+            <p class="text-pa-text text-sm">Contact us for the current 10-session pack rate</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 5. HOW THE 10-SESSION JOURNEY WORKS -->
-    <section id="journey" class="relative bg-neon-cyan py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <span class="absolute top-8 left-8 font-arcade text-[100px] md:text-[150px] font-bold text-black/5 leading-none select-none pointer-events-none">PROGRESS</span>
-        <div class="max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-black">
-            <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-black mb-12 md:mb-16 text-center">TEN SESSIONS. VISIBLE PROGRESS.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="bg-white p-4 border-4 border-black">
-                    <p class="font-arcade text-[10px] text-lit-blue mb-2">STAGE 01 — ASSESS</p>
-                    <p class="font-arcade text-[10px] text-black/50 mb-4">SESSIONS 1–2</p>
-                    <ul class="font-body text-xs space-y-2">
-                        <li>› Understand current ability</li>
-                        <li>› Identify goals</li>
-                        <li>› Confirm track</li>
-                        <li>› Establish priorities</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-4 border-4 border-black">
-                    <p class="font-arcade text-[10px] text-neon-pink mb-2">STAGE 02 — BUILD</p>
-                    <p class="font-arcade text-[10px] text-black/50 mb-4">SESSIONS 3–5</p>
-                    <ul class="font-body text-xs space-y-2">
-                        <li>› Develop control</li>
-                        <li>› Correct habits</li>
-                        <li>› Practise movement</li>
-                        <li>› Shot patterns</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-4 border-4 border-black">
-                    <p class="font-arcade text-[10px] text-coral mb-2">STAGE 03 — APPLY</p>
-                    <p class="font-arcade text-[10px] text-black/50 mb-4">SESSIONS 6–8</p>
-                    <ul class="font-body text-xs space-y-2">
-                        <li>› Use skills in live points</li>
-                        <li>› Improve positioning</li>
-                        <li>› Improve decisions</li>
-                        <li>› Play with partners</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-4 border-4 border-black">
-                    <p class="font-arcade text-[10px] text-lit-blue mb-2">STAGE 04 — PLAY FORWARD</p>
-                    <p class="font-arcade text-[10px] text-black/50 mb-4">SESSIONS 9–10</p>
-                    <ul class="font-body text-xs space-y-2">
-                        <li>› Match-play application</li>
-                        <li>› Reassessment</li>
-                        <li>› Identify next goal</li>
-                        <li>› Receive recommendation</li>
-                    </ul>
-                </div>
-            </div>
+  <!-- ==================== 4. START AND IMPROVE TRACKS ==================== -->
+  <section id="tracks" class="relative min-h-[80vh] md:min-h-[70vh] flex items-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1613918431703-aa50889e3be2?auto=format&fit=crop&w=1920&q=80');">
+    <div class="absolute inset-0 overlay-left"></div>
+    <div class="absolute inset-0 bg-pa-purple/5 mix-blend-overlay"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full py-20 fade-up">
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Start Track -->
+        <div>
+          <p class="font-display text-sm tracking-[0.2em] uppercase text-pa-purple-light mb-3">For New and Early-Stage Players</p>
+          <h3 class="font-display text-3xl md:text-4xl font-bold tracking-tight uppercase mb-4 gradient-text-purple">Start with Confidence.</h3>
+          <p class="text-white/80 text-base leading-relaxed mb-6">
+            Learn the fundamentals in a structured environment where questions are welcome, mistakes are expected and no previous experience is required.
+          </p>
+          <ul class="space-y-1.5 mb-8">
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-purple rounded-full flex-shrink-0"></span>Rules and scoring</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-purple rounded-full flex-shrink-0"></span>Grip and ready position</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-purple rounded-full flex-shrink-0"></span>Serve and return</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-purple rounded-full flex-shrink-0"></span>Ball contact and control</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-purple rounded-full flex-shrink-0"></span>Movement & rally consistency</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-purple rounded-full flex-shrink-0"></span>Doubles positioning & community-play etiquette</li>
+          </ul>
+          <a href="#training-form" class="btn-primary inline-block text-white px-8 py-3 rounded-full font-bold tracking-wide">Choose Start</a>
         </div>
-    </section>
 
-    <!-- 6. MEET THE LIT COACHES -->
-    <section id="coaches" class="relative bg-soft-lilac py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10 text-black">
-            <div class="text-center mb-12 md:mb-16">
-                <p class="font-arcade text-[10px] md:text-xs text-coral uppercase tracking-widest mb-4">TWO COACHES. ONE LIT STANDARD.</p>
-                <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-lit-blue mb-4">MEET THE LIT COACHING TEAM</h2>
-                <p class="font-body text-black/80 text-base md:text-lg max-w-3xl mx-auto">Our coaches share the same commitment to clear communication, strong fundamentals and a welcoming training environment. Each coach brings different playing experience, observations and coaching personality—but neither is positioned above the other.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                <div class="bg-white p-6 border-4 border-black shadow-[8px_8px_0_#1746c2]">
-                    <div class="aspect-square bg-black overflow-hidden relative border-2 border-black mb-4">
-                        <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="LIT Coach">
-                    </div>
-                    <h3 class="font-arcade text-sm uppercase text-lit-blue mb-2">Coach Ward</h3>
-                    <p class="font-body text-xs text-black/60 mb-4">RPO Level 1 Certified</p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="font-arcade text-[8px] border-2 border-lit-blue text-lit-blue px-2 py-1 uppercase">English</span>
-                        <span class="font-arcade text-[8px] border-2 border-black text-black px-2 py-1 uppercase">Fundamentals</span>
-                    </div>
-                </div>
-                <div class="bg-white p-6 border-4 border-black shadow-[8px_8px_0_#FF2D95]">
-                    <div class="aspect-square bg-black overflow-hidden relative border-2 border-black mb-4">
-                        <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="LIT Coach">
-                    </div>
-                    <h3 class="font-arcade text-sm uppercase text-neon-pink mb-2">Coach Boyes</h3>
-                    <p class="font-body text-xs text-black/60 mb-4">RPO Level 1 Certified</p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="font-arcade text-[8px] border-2 border-neon-pink text-neon-pink px-2 py-1 uppercase">English</span>
-                        <span class="font-arcade text-[8px] border-2 border-black text-black px-2 py-1 uppercase">Match Play</span>
-                    </div>
-                </div>
-            </div>
-            <p class="text-center font-body text-black/60 text-xs mt-8 italic">* Coaches photographed attending RacketPro certification training.</p>
+        <!-- Improve Track -->
+        <div>
+          <p class="font-display text-sm tracking-[0.2em] uppercase text-pa-pink-light mb-3">For Players Who Already Know the Basics</p>
+          <h3 class="font-display text-3xl md:text-4xl font-bold tracking-tight uppercase mb-4 gradient-text-pink">Already Play? Start at Your Level.</h3>
+          <p class="text-white/80 text-base leading-relaxed mb-6">
+            Your first session identifies what is already working, what is holding your game back and where the next ten sessions should focus.
+          </p>
+          <ul class="space-y-1.5 mb-6">
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-pink rounded-full flex-shrink-0"></span>Technical consistency</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-pink rounded-full flex-shrink-0"></span>Serve and return quality</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-pink rounded-full flex-shrink-0"></span>Shot control & selection</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-pink rounded-full flex-shrink-0"></span>Transition movement & court positioning</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-pink rounded-full flex-shrink-0"></span>Doubles communication & decision-making</li>
+            <li class="flex items-center gap-2 text-sm text-white/70"><span class="w-1.5 h-1.5 bg-pa-pink rounded-full flex-shrink-0"></span>Match-play patterns & individual weaknesses</li>
+          </ul>
+          <p class="text-white/40 text-xs mb-8">The exact development focus may differ between participants.</p>
+          <a href="#training-form" class="btn-pink inline-block text-white px-8 py-3 rounded-full font-bold tracking-wide">Choose Improve</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 7. COMMUNITY MANIFESTO -->
-    <section id="manifesto" class="relative bg-coral py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-4xl mx-auto px-4 md:px-6 text-center relative z-10 text-white">
-            <p class="font-arcade text-[10px] md:text-xs text-pac-yellow uppercase tracking-widest mb-4">LEVEL 02 · CONNECT</p>
-            <h2 class="font-arcade text-2xl md:text-4xl font-bold uppercase text-white drop-shadow-[4px_4px_0_#000] leading-tight mb-6">YOU’RE NOT JUST LEARNING A GAME.<br>YOU’RE FINDING PEOPLE TO PLAY IT WITH.</h2>
-            <p class="font-body text-white text-lg md:text-xl max-w-2xl mx-auto font-light mb-12">LIT is designed for people who want more than random games and unfamiliar faces.</p>
-            
-            <div class="overflow-hidden whitespace-nowrap relative">
-                <div class="inline-block marquee-text">
-                    <span class="font-arcade text-4xl md:text-6xl text-white mx-4">PLAY</span>
-                    <span class="font-arcade text-4xl md:text-6xl text-pac-yellow mx-4">CONNECT</span>
-                    <span class="font-arcade text-4xl md:text-6xl text-white mx-4">IMPROVE</span>
-                    <span class="font-arcade text-4xl md:text-6xl text-pac-yellow mx-4">BELONG</span>
-                    <span class="font-arcade text-4xl md:text-6xl text-white mx-4">PLAY</span>
-                    <span class="font-arcade text-4xl md:text-6xl text-pac-yellow mx-4">CONNECT</span>
-                    <span class="font-arcade text-4xl md:text-6xl text-white mx-4">IMPROVE</span>
-                    <span class="font-arcade text-4xl md:text-6xl text-pac-yellow mx-4">BELONG</span>
-                </div>
-            </div>
+  <!-- ==================== 5. HOW THE 10-SESSION JOURNEY WORKS ==================== -->
+  <section class="py-20 md:py-28 bg-pa-black splatter-bg">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase">Ten Sessions. Visible Progress.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6 fade-up">
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 card-hover">
+          <div class="w-12 h-12 bg-pa-purple/10 rounded-xl flex items-center justify-center mb-4"><span class="font-display text-2xl font-bold text-pa-purple">01</span></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Assess</h3>
+          <p class="text-pa-purple-light text-xs font-semibold mb-3">Sessions 1–2</p>
+          <ul class="space-y-1.5"><li class="text-xs text-pa-text">Understand current ability</li><li class="text-xs text-pa-text">Identify goals</li><li class="text-xs text-pa-text">Confirm the appropriate track</li><li class="text-xs text-pa-text">Establish first development priorities</li></ul>
         </div>
-    </section>
-
-    <!-- 8. WHO YOU’LL MEET -->
-    <section id="who" class="relative bg-pac-yellow py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-black">
-            <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-black mb-12 text-center">WHO YOU’LL MEET AT LIT</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-                <div class="bg-white border-4 border-black p-4 text-center"><p class="font-body text-sm font-bold">International & Bilingual School Students</p></div>
-                <div class="bg-white border-4 border-black p-4 text-center"><p class="font-body text-sm font-bold">University Students</p></div>
-                <div class="bg-white border-4 border-black p-4 text-center"><p class="font-body text-sm font-bold">Local Residents</p></div>
-                <div class="bg-white border-4 border-black p-4 text-center"><p class="font-body text-sm font-bold">Expat Residents</p></div>
-                <div class="bg-white border-4 border-black p-4 text-center"><p class="font-body text-sm font-bold">Adults in Phu My Hung</p></div>
-                <div class="bg-white border-4 border-black p-4 text-center"><p class="font-body text-sm font-bold">New & Improving Players</p></div>
-            </div>
-            <p class="font-arcade text-sm md:text-base text-coral uppercase text-center">DIFFERENT BACKGROUNDS. ONE SHARED COURT.</p>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 card-hover">
+          <div class="w-12 h-12 bg-pa-blue/10 rounded-xl flex items-center justify-center mb-4"><span class="font-display text-2xl font-bold text-pa-blue">02</span></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Build</h3>
+          <p class="text-pa-blue-light text-xs font-semibold mb-3">Sessions 3–5</p>
+          <ul class="space-y-1.5"><li class="text-xs text-pa-text">Develop control and consistency</li><li class="text-xs text-pa-text">Correct inefficient habits</li><li class="text-xs text-pa-text">Practise repeatable movement and shot patterns</li></ul>
         </div>
-    </section>
-
-    <!-- 9. COMMUNITY MOMENTS -->
-    <section id="moments" class="relative bg-maze-bg py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 text-white">
-            <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-white mb-4 text-center">THIS IS WHAT LIT FEELS LIKE.</h2>
-            <p class="font-body text-white/60 text-base mb-12 text-center">Good games. Good energy. Good people.</p>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="bg-lit-blue border-4 border-white p-6 flex items-center justify-center text-center aspect-video"><span class="font-arcade text-sm text-white">TRAINING IN PROGRESS</span></div>
-                <div class="bg-neon-pink border-4 border-white p-6 flex items-center justify-center text-center aspect-video"><span class="font-arcade text-sm text-white">TUESDAY RALLIES</span></div>
-                <div class="bg-pac-yellow border-4 border-white p-6 flex items-center justify-center text-center aspect-video"><span class="font-arcade text-sm text-black">FRIDAY GAMES</span></div>
-                <div class="bg-neon-cyan border-4 border-white p-6 flex items-center justify-center text-center aspect-video"><span class="font-arcade text-sm text-black">POST-GAME CONVERSATIONS</span></div>
-                <div class="bg-coral border-4 border-white p-6 flex items-center justify-center text-center aspect-video"><span class="font-arcade text-sm text-white">COMMUNITY IN PROGRESS</span></div>
-                <div class="bg-neon-green border-4 border-white p-6 flex items-center justify-center text-center aspect-video"><span class="font-arcade text-sm text-black">GOOD ENERGY</span></div>
-            </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 card-hover">
+          <div class="w-12 h-12 bg-pa-pink/10 rounded-xl flex items-center justify-center mb-4"><span class="font-display text-2xl font-bold text-pa-pink">03</span></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Apply</h3>
+          <p class="text-pa-pink-light text-xs font-semibold mb-3">Sessions 6–8</p>
+          <ul class="space-y-1.5"><li class="text-xs text-pa-text">Use new skills in live points</li><li class="text-xs text-pa-text">Improve positioning and decisions</li><li class="text-xs text-pa-text">Learn to play with different partners</li></ul>
         </div>
-    </section>
-
-    <!-- 10. UPCOMING EVENTS -->
-    <section id="events" class="relative bg-lit-blue py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-white">
-            <div class="text-center mb-12 md:mb-16">
-                <p class="font-arcade text-[10px] md:text-xs text-pac-yellow uppercase tracking-widest mb-4">LEVEL 03 · WHAT’S NEXT</p>
-                <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-white">NEXT UP AT LIT</h2>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-maze-bg p-6 border-4 border-pac-yellow">
-                    <h3 class="font-arcade text-sm text-pac-yellow mb-4">LIT OPENING WEEK</h3>
-                    <p class="font-body text-sm text-white/80 mb-2">14 August</p>
-                    <p class="font-body text-sm text-white/60">Phu My Hung</p>
-                </div>
-                <div class="bg-maze-bg p-6 border-4 border-neon-pink">
-                    <h3 class="font-arcade text-sm text-neon-pink mb-4">FRIDAY COMMUNITY + BEER</h3>
-                    <p class="font-body text-sm text-white/80 mb-2">Every Friday</p>
-                    <p class="font-body text-sm text-white/60">4:00–5:00 PM (18+ only for beer)</p>
-                </div>
-                <div class="bg-maze-bg p-6 border-4 border-neon-cyan">
-                    <h3 class="font-arcade text-sm text-neon-cyan mb-4">FIRST LIT CLUB CHALLENGE</h3>
-                    <p class="font-body text-sm text-white/80 mb-2">Date dropping soon</p>
-                    <p class="font-body text-sm text-white/60">Stay tuned</p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="#apply" class="btn-arcade bg-pac-yellow text-black px-6 py-3 font-arcade text-[10px] uppercase tracking-wider inline-block">Get Event Updates</a>
-            </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 card-hover">
+          <div class="w-12 h-12 bg-pa-purple/10 rounded-xl flex items-center justify-center mb-4"><span class="font-display text-2xl font-bold gradient-text">04</span></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Play Forward</h3>
+          <p class="text-pa-purple-light text-xs font-semibold mb-3">Sessions 9–10</p>
+          <ul class="space-y-1.5"><li class="text-xs text-pa-text">Match-play application</li><li class="text-xs text-pa-text">Reassessment</li><li class="text-xs text-pa-text">Identify the next development goal</li><li class="text-xs text-pa-text">Coach recommendation for next step</li></ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 11. SEASON 00 PODIUM -->
-    <section id="podium" class="relative bg-maze-bg py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <span class="absolute top-8 right-8 font-arcade text-[100px] md:text-[150px] font-bold text-white/5 leading-none select-none pointer-events-none">S00</span>
-        <div class="max-w-4xl mx-auto px-4 md:px-6 relative z-10 text-white">
-            <div class="text-center mb-16">
-                <p class="font-arcade text-[10px] md:text-xs text-neon-cyan uppercase tracking-widest mb-4">SEASON 00 · LEADERBOARD</p>
-                <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-white mb-4">THE FIRST PODIUM IS WAITING.</h2>
-                <p class="font-body text-white/60 max-w-xl mx-auto">LIT is just getting started. Our first community challenge will decide whose names go on this board.</p>
-            </div>
+  <!-- ==================== 6. MEET THE LIT COACHES ==================== -->
+  <section id="coaches" class="py-20 md:py-28 bg-pa-dark">
+    <div class="max-w-5xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple mb-4">One LIT Standard.</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">Meet the LIT Coaching Team</h2>
+        <p class="text-pa-text text-base leading-relaxed max-w-2xl mx-auto">
+          Our coaches share the same commitment to clear communication, strong fundamentals and a welcoming training environment. Each coach brings different playing experience, observations and coaching personality—but neither is positioned above the other.
+        </p>
+      </div>
 
-            <div class="flex justify-center items-end gap-4 md:gap-8 max-w-2xl mx-auto mb-12">
-                <div class="flex flex-col items-center w-1/3">
-                    <div class="w-12 h-12 md:w-24 md:h-24 bg-maze-bg border-4 border-neon-cyan flex items-center justify-center mb-2 text-neon-cyan font-arcade text-base md:text-lg shadow-[4px_4px_0_#000]">2</div>
-                    <div class="w-full h-16 md:h-32 bg-neon-cyan/20 border-4 border-neon-cyan flex flex-col items-center justify-center shadow-[4px_4px_0_#000] p-2">
-                        <span class="font-arcade text-[8px] md:text-sm text-neon-cyan mb-2">2ND PLACE</span>
-                        <span class="font-body text-xs md:text-base text-white">OPEN</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center w-1/3">
-                    <div class="w-16 h-16 md:w-28 md:h-28 bg-maze-bg border-4 border-pac-yellow flex items-center justify-center mb-2 text-pac-yellow font-arcade text-lg md:text-xl shadow-[4px_4px_0_#000]">1</div>
-                    <div class="w-full h-24 md:h-48 bg-pac-yellow/20 border-4 border-pac-yellow flex flex-col items-center justify-center shadow-[4px_4px_0_#000] relative p-2">
-                        <svg class="absolute -top-4 md:-top-6 w-8 h-8 md:w-12 md:h-12" viewBox="0 0 100 100">
-                            <path d="M10,80 L20,30 L40,60 L50,20 L60,60 L80,30 L90,80 Z" fill="#FFCC00" stroke="#000" stroke-width="4"/>
-                        </svg>
-                        <span class="font-arcade text-[10px] md:text-base text-pac-yellow mt-2 md:mt-4 mb-2">CHAMPION</span>
-                        <span class="font-body text-sm md:text-lg text-white font-bold text-center">WHO TAKES IT?</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center w-1/3">
-                    <div class="w-12 h-12 md:w-24 md:h-24 bg-maze-bg border-4 border-neon-pink flex items-center justify-center mb-2 text-neon-pink font-arcade text-base md:text-lg shadow-[4px_4px_0_#000]">3</div>
-                    <div class="w-full h-12 md:h-24 bg-neon-pink/20 border-4 border-neon-pink flex flex-col items-center justify-center shadow-[4px_4px_0_#000] p-2">
-                        <span class="font-arcade text-[8px] md:text-sm text-neon-pink mb-2">3RD PLACE</span>
-                        <span class="font-body text-xs md:text-base text-white">OPEN</span>
-                    </div>
-                </div>
-            </div>
-            <p class="font-arcade text-sm md:text-base text-pac-yellow uppercase text-center mb-8">NO LEGENDS YET. THAT’S WHERE YOU COME IN.</p>
-            <div class="text-center">
-                <a href="#apply" class="btn-arcade bg-neon-pink text-white px-6 py-3 font-arcade text-[10px] uppercase tracking-wider inline-block">Join Season 00</a>
-            </div>
+      <div class="grid md:grid-cols-2 gap-8 fade-up">
+        <div class="bg-pa-card border border-pa-border rounded-2xl overflow-hidden card-hover">
+          <div class="h-64 bg-gradient-to-br from-pa-purple/20 to-pa-blue/10 flex items-center justify-center">
+            <div class="w-28 h-28 bg-pa-purple/10 rounded-full flex items-center justify-center"><i data-lucide="user" class="w-12 h-12 text-pa-purple/40"></i></div>
+          </div>
+          <div class="p-6 text-center">
+            <div class="inline-block bg-pa-purple/10 px-3 py-1 rounded-full mb-3"><p class="text-[10px] font-bold tracking-widest uppercase text-pa-purple-light">RPO Level 1 Certified · Trained by RacketPro</p></div>
+            <h3 class="font-display text-xl font-bold tracking-wide uppercase mb-1">Coach 1</h3>
+            <p class="text-pa-text text-xs">Coach profile coming soon</p>
+          </div>
         </div>
-    </section>
-
-    <!-- 12. WEEKLY RHYTHM -->
-    <section id="rhythm" class="relative bg-warm-white py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-4xl mx-auto px-4 md:px-6 relative z-10 text-black">
-            <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-lit-blue mb-8 md:mb-12 text-center">YOUR WEEK AT LIT</h2>
-            <div class="space-y-4 md:space-y-6 border-l-4 border-black pl-4 md:pl-8">
-                <div class="relative group">
-                    <div class="absolute -left-[26px] md:-left-[42px] top-0 w-5 h-5 md:w-6 md:h-6 bg-lit-blue rounded-full border-2 border-black"></div>
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between bg-white p-4 border-2 border-black/30">
-                        <div class="font-arcade text-xs md:text-base font-bold text-lit-blue uppercase">MONDAY</div>
-                        <div class="font-body text-black text-sm md:text-lg">4:00–5:00 PM</div>
-                        <div class="font-body text-black/60 text-[10px] md:text-xs uppercase tracking-wider mt-1 md:mt-0 md:text-right">Train Together (10-session Track)</div>
-                    </div>
-                </div>
-                <div class="relative group">
-                    <div class="absolute -left-[26px] md:-left-[42px] top-0 w-5 h-5 md:w-6 md:h-6 bg-neon-pink rounded-full border-2 border-black"></div>
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between bg-white p-4 border-2 border-black/30">
-                        <div class="font-arcade text-xs md:text-base font-bold text-neon-pink uppercase">TUESDAY</div>
-                        <div class="font-body text-black text-sm md:text-lg">4:00–5:00 PM</div>
-                        <div class="font-body text-black/60 text-[10px] md:text-xs uppercase tracking-wider mt-1 md:mt-0 md:text-right">Play Together (Community Play)</div>
-                    </div>
-                </div>
-                <div class="relative group">
-                    <div class="absolute -left-[26px] md:-left-[42px] top-0 w-5 h-5 md:w-6 md:h-6 bg-lit-blue rounded-full border-2 border-black"></div>
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between bg-white p-4 border-2 border-black/30">
-                        <div class="font-arcade text-xs md:text-base font-bold text-lit-blue uppercase">THURSDAY</div>
-                        <div class="font-body text-black text-sm md:text-lg">4:00–5:00 PM</div>
-                        <div class="font-body text-black/60 text-[10px] md:text-xs uppercase tracking-wider mt-1 md:mt-0 md:text-right">Train Together (10-session Track)</div>
-                    </div>
-                </div>
-                <div class="relative group">
-                    <div class="absolute -left-[26px] md:-left-[42px] top-0 w-5 h-5 md:w-6 md:h-6 bg-neon-pink rounded-full border-2 border-black"></div>
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between bg-white p-4 border-2 border-black/30">
-                        <div class="font-arcade text-xs md:text-base font-bold text-neon-pink uppercase">FRIDAY</div>
-                        <div class="font-body text-black text-sm md:text-lg">4:00–5:00 PM</div>
-                        <div class="font-body text-black/60 text-[10px] md:text-xs uppercase tracking-wider mt-1 md:mt-0 md:text-right">Play. Stay. Connect. (Beer 18+)</div>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 md:mt-12 text-center border-t-4 border-dashed border-black/30 pt-4 md:pt-8">
-                <p class="font-arcade text-black uppercase tracking-widest text-[8px] md:text-[10px]">Private 1:1: Schedule by enquiry</p>
-            </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl overflow-hidden card-hover">
+          <div class="h-64 bg-gradient-to-br from-pa-pink/20 to-pa-purple/10 flex items-center justify-center">
+            <div class="w-28 h-28 bg-pa-pink/10 rounded-full flex items-center justify-center"><i data-lucide="user" class="w-12 h-12 text-pa-pink/40"></i></div>
+          </div>
+          <div class="p-6 text-center">
+            <div class="inline-block bg-pa-pink/10 px-3 py-1 rounded-full mb-3"><p class="text-[10px] font-bold tracking-widest uppercase text-pa-pink-light">RPO Level 1 Certified · Trained by RacketPro</p></div>
+            <h3 class="font-display text-xl font-bold tracking-wide uppercase mb-1">Coach 2</h3>
+            <p class="text-pa-text text-xs">Coach profile coming soon</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 13. COMMUNITY MEMBERSHIP -->
-    <section id="membership" class="relative bg-coral py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10 text-white">
-            <div class="text-center mb-12 md:mb-16">
-                <p class="font-arcade text-[10px] md:text-xs text-pac-yellow uppercase tracking-widest mb-4">LEVEL 04 · BELONG</p>
-                <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-white mb-4">READY TO MAKE IT OFFICIAL?</h2>
-                <p class="font-body text-white/80 text-base md:text-lg max-w-2xl mx-auto">Your weekly place to play, connect and belong.</p>
-            </div>
+  <!-- ==================== 7. COMMUNITY MANIFESTO ==================== -->
+  <section id="community" class="relative min-h-[80vh] md:min-h-[70vh] flex items-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=1920&q=80');">
+    <div class="absolute inset-0 overlay-dark"></div>
+    <div class="absolute inset-0 bg-pa-pink/5 mix-blend-overlay"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-10 text-center py-20 fade-up">
+      <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple-light mb-4">Level 02 · Connect</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">You're Not Just Learning a Game.</h2>
+      <p class="font-display text-xl md:text-2xl text-pa-pink-light tracking-wide mb-8">You're Finding People to Play It With.</p>
+      <p class="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-12">
+        LIT is designed for people who want more than random games and unfamiliar faces. Train with intention. Play consistently. Meet people from different backgrounds. Become part of a regular community.
+      </p>
 
-            <div id="tilt-card-wrapper" class="relative max-w-2xl mx-auto" style="perspective: 1500px;">
-                <div class="absolute inset-0 holo-glow blur-3xl opacity-40 transform -skew-y-3"></div>
-                <div id="tilt-card" class="relative holo-border p-1 transform skew-x-1 shadow-[15px_15px_0_rgba(0,0,0,0.5)]">
-                    <div class="bg-maze-bg p-8 md:p-12 text-left transform -skew-x-1 border-4 border-black relative overflow-hidden">
-                        <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(0, 255, 255, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 255, 0.2) 1px, transparent 1px); background-size: 30px 30px;"></div>
-                        <div class="floating-badge absolute -top-6 -right-6 w-16 h-16 md:w-20 md:h-20 bg-pac-yellow rounded-full border-4 border-black flex items-center justify-center shadow-[0_0_20px_rgba(255,204,0,0.8)]">
-                            <div class="w-full h-full rounded-full relative overflow-hidden flex items-center justify-center">
-                                <span class="font-arcade text-[8px] md:text-[10px] text-black uppercase tracking-wider z-10">12 MO</span>
-                                <div class="absolute inset-0" style="background-image: radial-gradient(circle, #000 2px, transparent 2px); background-size: 8px 8px;"></div>
-                            </div>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="mb-10 md:mb-12">
-                                <p class="font-arcade text-neon-cyan text-xs md:text-sm uppercase tracking-widest mb-3">LIT Membership Card</p>
-                                <p class="font-arcade text-3xl md:text-5xl font-bold text-white drop-shadow-[0_0_10px_rgba(0,255,255,0.8)]">5,000,000<span class="text-lg md:text-2xl text-white/60"> VND</span></p>
-                            </div>
-                            <ul class="space-y-4 font-body text-white/90 text-sm md:text-base mb-10 md:mb-12">
-                                <li class="flex items-center gap-3"><span class="text-neon-pink font-arcade text-lg">»</span> Two hosted community sessions every week</li>
-                                <li class="flex items-center gap-3"><span class="text-neon-pink font-arcade text-lg">»</span> Tuesday & Friday, 4:00–5:00 PM (60 mins)</li>
-                                <li class="flex items-center gap-3"><span class="text-neon-pink font-arcade text-lg">»</span> Friday post-game beer for members aged 18+</li>
-                                <li class="flex items-center gap-3"><span class="text-neon-pink font-arcade text-lg">»</span> One LIT training shirt included</li>
-                                <li class="flex items-center gap-3"><span class="text-neon-pink font-arcade text-lg">»</span> Covered courts</li>
-                                <li class="flex items-center gap-3"><span class="text-neon-pink font-arcade text-lg">»</span> Hosted, organised & curated community play</li>
-                            </ul>
-                            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 mb-6">
-                                <a href="#apply" class="flex-1 btn-arcade bg-neon-pink text-white text-center py-4 font-arcade text-[10px] md:text-xs uppercase tracking-wider transform hover:scale-105 transition">Apply to Join</a>
-                                <a href="#apply" class="flex-1 btn-arcade bg-transparent border-4 border-white text-white text-center py-4 font-arcade text-[10px] md:text-xs uppercase tracking-wider hover:bg-white hover:text-black transition">Join Waitlist</a>
-                            </div>
-                            <p class="font-body text-white/60 text-xs italic">Already comfortable playing? You may apply directly without completing a Training Track. A level and community-fit check may be required.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="relative h-20 md:h-24 flex items-center justify-center">
+        <div class="absolute font-display text-5xl md:text-7xl font-bold text-white word-1">PLAY</div>
+        <div class="absolute font-display text-5xl md:text-7xl font-bold text-pa-pink word-2">CONNECT</div>
+        <div class="absolute font-display text-5xl md:text-7xl font-bold text-pa-blue word-3">IMPROVE</div>
+        <div class="absolute font-display text-5xl md:text-7xl font-bold gradient-text word-4">BELONG</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMMUNITY PAIN POINTS ==================== -->
+  <section class="py-20 md:py-28 bg-pa-black">
+    <div class="max-w-5xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight uppercase">No Partner? No Rating? No Awkward Arrival.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 fade-up">
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 bg-pa-purple/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="handshake" class="w-6 h-6 text-pa-purple"></i></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-2">Hosted Introductions</h3>
+          <p class="text-pa-text text-sm leading-relaxed">A host helps new members understand the session and meet other players.</p>
         </div>
-    </section>
-
-    <!-- 14. LOCATION -->
-    <section id="location" class="relative bg-warm-white py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center text-black">
-            <div>
-                <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-lit-blue mb-4 md:mb-6">LOCATION</h2>
-                <div class="space-y-2 md:space-y-4 text-black/80 font-body text-sm md:text-base">
-                    <p class="text-lg md:text-xl font-arcade text-black uppercase">PHU MY HUNG</p>
-                    <p><span class="font-bold text-lit-blue">Training venue:</span> D-Joy</p>
-                    <p>61 Nguyễn Lương Bằng, Phu My Hung, District 7, Ho Chi Minh City</p>
-                    <div class="flex flex-wrap gap-2 md:gap-3 mt-4 md:mt-6">
-                        <span class="font-arcade text-[8px] md:text-[10px] border-2 border-black text-black px-2 py-1 md:px-3 md:py-2 uppercase bg-white">Covered courts</span>
-                        <span class="font-arcade text-[8px] md:text-[10px] border-2 border-black text-black px-2 py-1 md:px-3 md:py-2 uppercase bg-white">Paddle rental</span>
-                    </div>
-                    <div class="flex flex-wrap gap-4 md:gap-6 mt-6 md:mt-8">
-                        <a href="https://maps.google.com/?q=61+Nguyen+Luong+Bang+District+7+Ho+Chi+Minh+City" target="_blank" class="btn-arcade bg-lit-blue text-white px-4 py-2 md:px-6 md:py-3 font-arcade text-[8px] md:text-[10px] uppercase tracking-wider inline-flex items-center gap-2">Google Maps</a>
-                        <a href="https://maps.google.com/?q=61+Nguyen+Luong+Bang+District+7+Ho+Chi+Minh+City" target="_blank" class="btn-arcade bg-transparent border-4 border-black text-black px-4 py-2 md:px-6 md:py-3 font-arcade text-[8px] md:text-[10px] uppercase tracking-wider hover:bg-black hover:text-white transition">Get Directions</a>
-                    </div>
-                </div>
-            </div>
-            <div class="aspect-video bg-black overflow-hidden border-4 border-black mt-8 md:mt-0" style="box-shadow: 8px 8px 0px #1746c2;">
-                <iframe src="https://maps.google.com/maps?q=61%20Nguyen%20Luong%20Bang%20District%207%20Ho%20Chi%20Minh%20City&output=embed" width="100%" height="100%" style="border:0; filter: grayscale(100%) contrast(1.2);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 bg-pa-pink/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="scale" class="w-6 h-6 text-pa-pink"></i></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-2">Suitable Games</h3>
+          <p class="text-pa-text text-sm leading-relaxed">Players are organised with consideration for ability and playing experience.</p>
         </div>
-    </section>
-
-    <!-- 15. FAQ -->
-    <section id="faq" class="relative bg-maze-bg py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-3xl mx-auto px-4 md:px-6 relative z-10">
-            <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-white mb-8 md:mb-12 text-center">FAQ</h2>
-            <div class="space-y-3 md:space-y-4">
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">Do I need any pickleball experience?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">No. Complete beginners should select the Start Track.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">What if I already know how to play?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">Select the Improve Track. Your first session will help identify the appropriate development focus so you do not repeat material you already understand.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">Do I need to know my rating?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">No. LIT will help identify a suitable starting point.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">Can I purchase only one coaching session?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">No. LIT coaching is delivered as a complete 10-session pack to support consistency and visible progress.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">Will I have the same coach for all ten sessions?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">LIT aims to maintain coaching continuity whenever possible. Both coaches work from the same core framework and hold equal coaching status.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">Is one coach for beginners and the other for advanced?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">No. Start and Improve describe player tracks, not coach hierarchy. Both LIT coaches can work with players at either entry point.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">Is a paddle included?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">No. Players may bring their own paddle or rent one at the venue.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">What happens after ten sessions?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">The coach provides a reassessment and recommends the appropriate next step: continued training, another development focus, community application or waitlist.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">Can experienced players apply directly for Membership?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">Yes. Community-ready players may apply directly and may be invited to a short level and community-fit assessment.</p>
-                </details>
-                <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">Is membership automatically included with coaching?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">No. Coaching and Community Membership are separate products.</p>
-                </details>
-                 <details class="group bg-black/50 border-2 border-lit-blue/30 p-4 md:p-5">
-                    <summary class="flex justify-between items-center font-arcade text-[10px] md:text-sm uppercase text-white">
-                        <span class="flex-1 pr-2">How do I pay?</span><span class="faq-icon text-pac-yellow text-xl md:text-2xl">+</span>
-                    </summary>
-                    <p class="mt-3 md:mt-4 text-white/60 font-body text-xs md:text-base">Payment is made by bank transfer after enrolment has been confirmed.</p>
-                </details>
-            </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 bg-pa-blue/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="calendar" class="w-6 h-6 text-pa-blue"></i></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-2">Regular Schedule</h3>
+          <p class="text-pa-text text-sm leading-relaxed">Community members know when and where they will play every week.</p>
         </div>
-    </section>
-
-    <!-- 16. APPLICATION FORMS -->
-    <section id="apply" class="relative bg-lit-blue py-24 md:py-32 overflow-hidden border-t-4 border-black">
-        <div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10 text-white">
-            <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-white mb-8 md:mb-12 text-center">APPLICATION FORMS</h2>
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-                <form id="training-form" class="bg-white p-5 md:p-8 space-y-3 md:space-y-4 text-black border-4 border-black shadow-[8px_8px_0_#000]">
-                    <h3 class="font-arcade text-sm md:text-base font-bold uppercase text-lit-blue mb-4 md:mb-6">FIND MY TRAINING TRACK</h3>
-                    <input required type="text" placeholder="Full name" class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                    <select required class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                        <option value="" disabled selected>Junior or Adult</option>
-                        <option>Junior</option><option>Adult</option>
-                    </select>
-                    <input type="text" placeholder="School or occupation (optional)" class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                    <select required class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                        <option value="" disabled selected>Experience level</option>
-                        <option>Never played</option><option>Know the basics</option><option>Play regularly</option>
-                    </select>
-                    <input required type="text" placeholder="Previous racket-sport experience" class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                    <input required type="text" placeholder="Main training goal" class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                    <select required class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                        <option value="" disabled selected>Monday & Thursday 4-5PM availability?</option>
-                        <option>Yes, I can attend both days</option><option>I can only attend one day regularly</option>
-                    </select>
-                    <select required class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                        <option value="" disabled selected>Group or Private 1:1?</option>
-                        <option>Group</option><option>Private 1:1</option>
-                    </select>
-                    <input required type="tel" placeholder="WhatsApp number" class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue">
-                    <textarea placeholder="Optional message" rows="3" class="w-full bg-gray-100 border-4 border-black/10 px-3 py-2 md:px-4 md:py-3 text-black font-body text-sm md:text-base focus:outline-none focus:border-lit-blue"></textarea>
-                    <button type="submit" class="w-full btn-arcade bg-lit-blue text-white py-3 md:py-4 font-arcade text-[10px] uppercase tracking-wider flex items-center justify-center gap-2">Apply for Training</button>
-                </form>
-                
-                <form id="community-form" class="bg-maze-bg p-5 md:p-8 space-y-3 md:space-y-4 border-4 border-white shadow-[8px_8px_0_#000]">
-                    <h3 class="font-arcade text-sm md:text-base font-bold uppercase text-neon-pink mb-4 md:mb-6">APPLY TO THE LIT COMMUNITY</h3>
-                    <input required type="text" placeholder="Full name" class="w-full bg-black/50 border-4 border-white/10 px-3 py-2 md:px-4 md:py-3 text-white font-body text-sm md:text-base placeholder-white/40 focus:outline-none focus:border-neon-pink">
-                    <select required class="w-full bg-black/50 border-4 border-white/10 px-3 py-2 md:px-4 md:py-3 text-white font-body text-sm md:text-base focus:outline-none focus:border-neon-pink">
-                        <option value="" disabled selected>Junior or Adult</option>
-                        <option>Junior</option><option>Adult</option>
-                    </select>
-                    <input required type="text" placeholder="Current playing experience" class="w-full bg-black/50 border-4 border-white/10 px-3 py-2 md:px-4 md:py-3 text-white font-body text-sm md:text-base placeholder-white/40 focus:outline-none focus:border-neon-pink">
-                    <input type="text" placeholder="Approximate level (optional)" class="w-full bg-black/50 border-4 border-white/10 px-3 py-2 md:px-4 md:py-3 text-white font-body text-sm md:text-base placeholder-white/40 focus:outline-none focus:border-neon-pink">
-                    <input required type="text" placeholder="How often do you currently play?" class="w-full bg-black/50 border-4 border-white/10 px-3 py-2 md:px-4 md:py-3 text-white font-body text-sm md:text-base placeholder-white/40 focus:outline-none focus:border-neon-pink">
-                    <textarea required placeholder="Why do you want to join?" rows="3" class="w-full bg-black/50 border-4 border-white/10 px-3 py-2 md:px-4 md:py-3 text-white font-body text-sm md:text-base placeholder-white/40 focus:outline-none focus:border-neon-pink"></textarea>
-                    <select required class="w-full bg-black/50 border-4 border-white/10 px-3 py-2 md:px-4 md:py-3 text-white font-body text-sm md:text-base focus:outline-none focus:border-neon-pink">
-                        <option value="" disabled selected>Tuesday & Friday 4-5PM availability?</option>
-                        <option>Yes, I can attend both days</option><option>I can only attend one day regularly</option>
-                    </select>
-                    <input required type="tel" placeholder="WhatsApp number" class="w-full bg-black/50 border-4 border-white/10 px-3 py-2 md:px-4 md:py-3 text-white font-body text-sm md:text-base placeholder-white/40 focus:outline-none focus:border-neon-pink">
-                    <button type="submit" class="w-full btn-arcade bg-neon-pink text-white py-3 md:py-4 font-arcade text-[10px] uppercase tracking-wider flex items-center justify-center gap-2">Apply to Join</button>
-                </form>
-            </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 bg-pa-purple/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="smile" class="w-6 h-6 text-pa-purple"></i></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-2">Familiar Faces</h3>
+          <p class="text-pa-text text-sm leading-relaxed">Consistent attendance makes it easier to build genuine connections.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 17. FINAL CTA -->
-    <section class="relative bg-maze-bg py-24 md:py-32 overflow-hidden border-t-4 border-neon-green">
-        <span class="absolute top-8 left-8 font-arcade text-[100px] md:text-[150px] font-bold text-neon-green/5 leading-none select-none pointer-events-none">GO</span>
-        <div class="max-w-4xl mx-auto px-4 md:px-6 relative z-10 text-center">
-            <h2 class="font-arcade text-xl md:text-4xl font-bold uppercase text-neon-green mb-6">READY TO PLAY?</h2>
-            <p class="font-body text-white/80 text-base md:text-lg mb-8">Find your track. Build your game. Meet your crew.</p>
-            <a href="#apply" class="btn-arcade bg-neon-green text-black px-8 py-4 font-arcade text-xs uppercase tracking-wider">Find My Track</a>
+  <!-- ==================== 8. WHO YOU'LL MEET ==================== -->
+  <section class="py-20 md:py-28 bg-pa-dark">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase">Who You'll Meet at LIT</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 fade-up">
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 text-center card-hover">
+          <div class="w-14 h-14 bg-pa-purple/10 rounded-full flex items-center justify-center mx-auto mb-3"><i data-lucide="graduation-cap" class="w-6 h-6 text-pa-purple"></i></div>
+          <p class="text-white/80 text-sm font-medium">International & bilingual-school students</p>
         </div>
-    </section>
-
-    <footer class="bg-maze-bg border-t-4 border-black py-8 md:py-12">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center gap-2 mb-4 md:mb-0">
-                <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=100&auto=format&fit=crop" alt="LIT Logo" class="h-6 w-6 md:h-8 md:w-8 object-contain rounded bg-white p-0.5">
-                <span class="font-arcade font-bold text-xs md:text-sm tracking-widest uppercase text-lit-blue-light">LIT</span>
-            </div>
-            <p class="text-white/40 text-[8px] md:text-xs font-arcade uppercase tracking-widest text-center md:text-right">© <span id="year"></span> LIT Pickleball · Phu My Hung · D7 · HCMC</p>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 text-center card-hover">
+          <div class="w-14 h-14 bg-pa-pink/10 rounded-full flex items-center justify-center mx-auto mb-3"><i data-lucide="book-open" class="w-6 h-6 text-pa-pink"></i></div>
+          <p class="text-white/80 text-sm font-medium">University students</p>
         </div>
-    </footer>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 text-center card-hover">
+          <div class="w-14 h-14 bg-pa-blue/10 rounded-full flex items-center justify-center mx-auto mb-3"><i data-lucide="home" class="w-6 h-6 text-pa-blue"></i></div>
+          <p class="text-white/80 text-sm font-medium">Local & expat residents</p>
+        </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 text-center card-hover">
+          <div class="w-14 h-14 bg-pa-purple/10 rounded-full flex items-center justify-center mx-auto mb-3"><i data-lucide="trending-up" class="w-6 h-6 text-pa-purple"></i></div>
+          <p class="text-white/80 text-sm font-medium">New & improving pickleball players</p>
+        </div>
+      </div>
+      <p class="text-center font-display text-sm tracking-[0.2em] uppercase text-pa-text fade-up">Different backgrounds. One shared court.</p>
+    </div>
+  </section>
 
-    <script>
-        // CONFIGURATION: WHATSAPP NUMBER
-        const LIT_WHATSAPP = "849123456789"; 
-        document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- ==================== 9. COMMUNITY MOMENTS ==================== -->
+  <section class="py-20 md:py-28 bg-pa-black">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase mb-2">This Is What LIT Feels Like.</h2>
+        <p class="text-pa-text text-base">Good games. Good energy. Good people.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 fade-up">
+        <div class="bg-pa-card border border-pa-purple/20 rounded-2xl p-8 flex items-center justify-center min-h-[180px]"><p class="font-display text-sm tracking-widest uppercase text-pa-purple-light">Training in Progress</p></div>
+        <div class="bg-pa-card border border-pa-pink/20 rounded-2xl p-8 flex items-center justify-center min-h-[180px]"><p class="font-display text-sm tracking-widest uppercase text-pa-pink-light">Tuesday Rallies</p></div>
+        <div class="bg-pa-card border border-pa-blue/20 rounded-2xl p-8 flex items-center justify-center min-h-[180px]"><p class="font-display text-sm tracking-widest uppercase text-pa-blue-light">Friday Games</p></div>
+        <div class="bg-pa-card border border-pa-purple/20 rounded-2xl p-8 flex items-center justify-center min-h-[180px]"><p class="font-display text-sm tracking-widest uppercase text-pa-purple-light">Post-Game Conversations</p></div>
+        <div class="bg-pa-card border border-pa-pink/20 rounded-2xl p-8 flex items-center justify-center min-h-[180px] col-span-2 md:col-span-1"><p class="font-display text-sm tracking-widest uppercase text-pa-pink-light">Community in Progress</p></div>
+      </div>
+    </div>
+  </section>
 
-        // Mobile Menu
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+  <!-- ==================== 10. UPCOMING EVENTS ==================== -->
+  <section id="events" class="py-20 md:py-28 bg-pa-dark">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple mb-4">Level 03 · What's Next</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase">Next Up at LIT</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 fade-up">
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 bg-pa-purple/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="rocket" class="w-6 h-6 text-pa-purple"></i></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-2">LIT Opening Week</h3>
+          <p class="text-pa-text text-sm">14 August · Phu My Hung</p>
+        </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 bg-pa-pink/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="beer" class="w-6 h-6 text-pa-pink"></i></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-2">Friday Community + Beer</h3>
+          <p class="text-pa-text text-sm mb-1">Every Friday · 4:00–5:00 PM</p>
+          <p class="text-pa-text/50 text-xs">Members aged 18+ only for beer</p>
+        </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-8 card-hover">
+          <div class="w-12 h-12 bg-pa-blue/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="trophy" class="w-6 h-6 text-pa-blue"></i></div>
+          <h3 class="font-display text-lg font-bold tracking-wide uppercase mb-2">First LIT Club Challenge</h3>
+          <p class="text-pa-text text-sm">Date dropping soon</p>
+        </div>
+      </div>
+      <div class="text-center mt-10 fade-up"><a href="#community-form" class="btn-primary inline-block text-white px-8 py-3 rounded-full font-bold tracking-wide">Get Event Updates</a></div>
+    </div>
+  </section>
 
-        // WhatsApp Form Submission
-        function sendToWhatsApp(formId, type) {
-            const form = document.getElementById(formId);
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                let message = `*New ${type} - LIT Pickleball*%0A%0A`;
-                const inputs = form.querySelectorAll('input, select, textarea');
-                inputs.forEach(input => {
-                    if (input.value && input.type !== 'submit') {
-                        let label = input.placeholder || input.name || input.previousElementSibling?.textContent || 'Field';
-                        if (input.tagName === 'SELECT') label = input.options[0].text;
-                        message += `*${label}:* ${input.value}%0A`;
-                    }
-                });
-                window.open(`https://wa.me/${LIT_WHATSAPP}?text=${message}`, '_blank');
-            });
-        }
-        sendToWhatsApp('training-form', 'Training Track Application');
-        sendToWhatsApp('community-form', 'Community Application');
+  <!-- ==================== 11. SEASON 00 PODIUM ==================== -->
+  <section class="py-20 md:py-28 bg-pa-black">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up">
+        <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple mb-4">Season 00 · Leaderboard</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">The First Podium Is Waiting.</h2>
+        <p class="text-pa-text text-base mb-2">LIT is just getting started. Our first community challenge will decide whose names go on this board.</p>
+        <p class="font-display text-sm tracking-widest uppercase text-pa-pink-light">No legends yet. That's where you come in.</p>
+      </div>
+      <div class="flex items-end justify-center gap-3 md:gap-6 mb-10 fade-up">
+        <div class="text-center"><div class="bg-pa-card border border-pa-purple/20 rounded-t-xl w-28 md:w-36 h-32 md:h-40 flex flex-col items-center justify-center"><span class="font-display text-3xl font-bold text-pa-purple-light mb-2">2nd</span><p class="text-pa-text text-xs tracking-widest uppercase">Open</p></div></div>
+        <div class="text-center"><div class="bg-pa-card border-2 border-pa-purple/40 rounded-t-xl w-28 md:w-36 h-44 md:h-52 flex flex-col items-center justify-center"><span class="font-display text-4xl font-bold gradient-text mb-2">1st</span><p class="text-pa-purple-light text-xs tracking-widest uppercase">Who Takes It?</p></div></div>
+        <div class="text-center"><div class="bg-pa-card border border-pa-pink/20 rounded-t-xl w-28 md:w-36 h-24 md:h-32 flex flex-col items-center justify-center"><span class="font-display text-3xl font-bold text-pa-pink-light mb-2">3rd</span><p class="text-pa-text text-xs tracking-widest uppercase">Open</p></div></div>
+      </div>
+      <div class="text-center fade-up"><a href="#community-form" class="btn-primary inline-block text-white px-8 py-3 rounded-full font-bold tracking-wide">Join Season 00</a></div>
+    </div>
+  </section>
 
-        // Pickleball Ball Scroll
-        const ballWrapper = document.getElementById('ball-wrapper');
-        const pacInner = document.getElementById('pac-inner');
-        
-        function updateScrollUI() {
-            const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-            const y = scrollProgress * window.innerHeight;
-            ballWrapper.style.transform = `translate(24px, ${y}px)`; 
-        }
-        window.addEventListener('scroll', updateScrollUI, { passive: true });
-        updateScrollUI(); 
+  <!-- ==================== 12. WEEKLY RHYTHM ==================== -->
+  <section class="py-20 md:py-28 bg-pa-dark">
+    <div class="max-w-4xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up"><h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase">Your Week at LIT</h2></div>
+      <div class="space-y-4 fade-up">
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 flex items-center gap-6 border-l-4 border-l-pa-purple">
+          <div class="w-16 flex-shrink-0"><p class="font-display text-lg font-bold text-pa-purple-light">Mon</p></div>
+          <div><h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Train Together</h3><p class="text-pa-text text-sm">10-session Training Track · 4:00–5:00 PM</p></div>
+        </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 flex items-center gap-6 border-l-4 border-l-pa-pink">
+          <div class="w-16 flex-shrink-0"><p class="font-display text-lg font-bold text-pa-pink-light">Tue</p></div>
+          <div><h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Play Together</h3><p class="text-pa-text text-sm">Hosted Community Play · 4:00–5:00 PM</p></div>
+        </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 flex items-center gap-6 border-l-4 border-l-pa-purple">
+          <div class="w-16 flex-shrink-0"><p class="font-display text-lg font-bold text-pa-purple-light">Thu</p></div>
+          <div><h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Train Together</h3><p class="text-pa-text text-sm">10-session Training Track · 4:00–5:00 PM</p></div>
+        </div>
+        <div class="bg-pa-card border border-pa-border rounded-2xl p-6 flex items-center gap-6 border-l-4 border-l-pa-pink">
+          <div class="w-16 flex-shrink-0"><p class="font-display text-lg font-bold text-pa-pink-light">Fri</p></div>
+          <div><h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Play. Stay. Connect.</h3><p class="text-pa-text text-sm">Hosted Community Play · 4:00–5:00 PM</p><p class="text-pa-text/50 text-xs mt-1">Post-game beer for members aged 18+</p></div>
+        </div>
+        <div class="bg-pa-card/50 border border-pa-border rounded-2xl p-6 flex items-center gap-6 border-l-4 border-l-pa-blue">
+          <div class="w-16 flex-shrink-0"><p class="font-display text-lg font-bold text-pa-blue-light">1:1</p></div>
+          <div><h3 class="font-display text-lg font-bold tracking-wide uppercase mb-1">Private Coaching</h3><p class="text-pa-text text-sm">Schedule by enquiry</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // 3D Tilt Card Effect for Membership
-        const tiltCardWrapper = document.getElementById('tilt-card-wrapper');
-        const tiltCard = document.getElementById('tilt-card');
-        if(tiltCardWrapper && tiltCard) {
-            tiltCardWrapper.addEventListener('mousemove', (e) => {
-                const rect = tiltCardWrapper.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 15;
-                const rotateY = (centerX - x) / 15;
-                tiltCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-            });
-            tiltCardWrapper.addEventListener('mouseleave', () => {
-                tiltCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-            });
-        }
+  <!-- ==================== 13. COMMUNITY MEMBERSHIP ==================== -->
+  <section id="membership" class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1551773188-d63e5d01f6cd?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="absolute inset-0 bg-pa-black/90"></div>
+    <div class="absolute inset-0 bg-pa-purple/5 mix-blend-overlay"></div>
 
-        // Waitlist Pop-up Logic
-        const popup = document.getElementById('waitlist-popup');
-        let popupShown = false;
-        const lastShown = localStorage.getItem('lit_popup_shown');
-        const now = Date.now();
+    <div class="max-w-4xl mx-auto px-6 md:px-10 relative z-10">
+      <div class="text-center fade-up">
+        <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple-light mb-4">Level 04 · Belong</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">Ready to Make It Official?</h2>
+        <p class="text-white/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-10">Your weekly place to play, connect and belong.</p>
+      </div>
 
-        if (!lastShown || (now - lastShown > 604800000)) { // 7 days = 604800000 ms
-            const triggerPopup = () => {
-                if (popupShown) return;
-                const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-                // Trigger if scrolled 40% down OR 30 seconds have passed
-                if (scrollProgress > 0.40 || (Date.now() - now > 30000)) {
-                    popup.classList.add('active');
-                    popupShown = true;
-                    localStorage.setItem('lit_popup_shown', Date.now());
-                    window.removeEventListener('scroll', triggerPopup);
-                }
-            };
-            setTimeout(triggerPopup, 30000);
-            window.addEventListener('scroll', triggerPopup, { passive: true });
-        }
+      <div class="bg-pa-card border border-pa-purple/30 rounded-2xl p-8 md:p-10 max-w-2xl mx-auto fade-up">
+        <div class="text-center mb-8">
+          <p class="font-display text-4xl md:text-5xl font-bold gradient-text mb-1">5,000,000 VND</p>
+          <p class="font-display text-sm tracking-[0.2em] uppercase text-pa-pink-light">12-Month Membership</p>
+        </div>
+        <ul class="space-y-2.5 mb-8">
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Two hosted community sessions every week</span></li>
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Tuesday and Friday · 4:00–5:00 PM</span></li>
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">60 minutes per session</span></li>
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Friday post-game beer for members aged 18+</span></li>
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">One LIT training shirt</span></li>
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">Covered courts · Hosted and organised play</span></li>
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-pa-purple mt-0.5 flex-shrink-0"></i><span class="text-sm text-pa-text">A curated, welcoming English-speaking community</span></li>
+        </ul>
+        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+          <a href="#community-form" class="flex-1 btn-primary text-white px-6 py-3 rounded-full font-bold tracking-wide text-center">Apply to Join</a>
+          <a href="#community-form" class="flex-1 btn-pink-outline px-6 py-3 rounded-full font-bold tracking-wide text-center">Join the Waitlist</a>
+        </div>
+        <p class="text-pa-text text-xs text-center">Already comfortable playing? You may apply directly without completing a Training Track. A level and community-fit check may be required.</p>
+      </div>
+    </div>
+  </section>
 
-        function closePopup() {
-            popup.classList.remove('active');
-        }
+  <!-- ==================== 14. LOCATION ==================== -->
+  <section class="py-20 md:py-28 bg-pa-dark">
+    <div class="max-w-5xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-10 fade-up">
+        <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple mb-4">Phu My Hung</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase">Find Us</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 fade-up">
+        <div class="rounded-2xl overflow-hidden border border-pa-border"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.1!2d106.7!3d10.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQzJzQ4LjAiTiAxMDZCsDQyJzAwLjAiRQ!5e0!3m2!1sen!2s!4v1" width="100%" height="300" style="border:0; filter: grayscale(80%) invert(92%) contrast(83%);" allowfullscreen="" loading="lazy"></iframe></div>
+        <div class="flex flex-col justify-center">
+          <h3 class="font-display text-2xl font-bold tracking-wide uppercase mb-4">D-Joy</h3>
+          <p class="text-pa-text text-base mb-1">61 Nguyễn Lương Bằng</p>
+          <p class="text-pa-text text-base mb-5">Phu My Hung, District 7, Ho Chi Minh City</p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center gap-2 text-sm text-pa-text"><i data-lucide="check" class="w-4 h-4 text-pa-purple flex-shrink-0"></i>Covered courts</li>
+            <li class="flex items-center gap-2 text-sm text-pa-text"><i data-lucide="check" class="w-4 h-4 text-pa-purple flex-shrink-0"></i>Paddle rental available</li>
+          </ul>
+          <a href="https://maps.google.com/?q=61+Nguyen+Luong+Bang+Phu+My+Hung" target="_blank" class="btn-primary inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold tracking-wide w-fit">Get Directions <i data-lucide="external-link" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        document.getElementById('waitlist-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = e.target.querySelector('input[type="text"]').value;
-            const phone = e.target.querySelector('input[type="tel"]').value;
-            const msg = `*LIT Waitlist Enquiry*%0A%0AI want to join the LIT Pickleball Community!%0A*Name:* ${name}%0A*WhatsApp:* ${phone}`;
-            window.open(`https://wa.me/${LIT_WHATSAPP}?text=${msg}`, '_blank');
-            closePopup();
-        });
+  <!-- ==================== 15. FAQ ==================== -->
+  <section id="faq" class="py-20 md:py-28 bg-pa-black">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 fade-up"><h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight uppercase">Got Questions?</h2></div>
+      <div class="space-y-3 fade-up" id="faq-list">
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Do I need any pickleball experience?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">No. Complete beginners should select the Start Track.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">What if I already know how to play?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">Select the Improve Track. Your first session will help identify the appropriate development focus so you do not repeat material you already understand.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Do I need to know my rating?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">No. LIT will help identify a suitable starting point.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Can I purchase only one coaching session?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">No. LIT coaching is delivered as a complete 10-session pack to support consistency and visible progress.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Will I have the same coach for all ten sessions?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">LIT aims to maintain coaching continuity whenever possible. Both coaches work from the same core framework and hold equal coaching status.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Is one coach for beginners and the other for advanced players?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">No. Start and Improve describe player tracks, not coach hierarchy. Both LIT coaches can work with players at either entry point.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Do I need to bring a partner?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">No. LIT organises the training groups.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Is a paddle included?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">No. Players may bring their own paddle or rent one at the venue.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Is the court included?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">Yes. The covered court is included.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">What happens after ten sessions?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">The coach provides a reassessment and recommends the appropriate next step: continued training, another development focus, community application or waitlist.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Can experienced players apply directly for Community Membership?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">Yes. Community-ready players may apply directly and may be invited to a short level and community-fit assessment.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">Is membership automatically included with coaching?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">No. Coaching and Community Membership are separate products.</p></div></div>
+        <div class="faq-item bg-pa-card border border-pa-border rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-5 text-left"><span class="font-medium text-sm pr-4">How do I pay?</span><span class="faq-icon text-pa-purple flex-shrink-0"><i data-lucide="plus" class="w-5 h-5"></i></span></button><div class="faq-answer px-5"><p class="text-pa-text text-sm leading-relaxed pb-4">Payment is made by bank transfer after enrolment has been confirmed.</p></div></div>
+      </div>
+    </div>
+  </section>
 
-    </script>
+  <!-- ==================== 16. APPLICATION FORMS ==================== -->
+  <section id="find-track" class="py-20 md:py-28 bg-pa-dark">
+    <div class="max-w-5xl mx-auto px-6 md:px-10">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+        <div id="training-form" class="fade-up">
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight uppercase mb-6">Find My Training Track</h2>
+          <form id="training-application" class="space-y-4">
+            <div><label class="text-pa-text text-xs mb-1 block">Full name *</label><input type="text" name="name" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors" placeholder="Your full name"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Junior or Adult *</label><select name="age" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-pa-purple transition-colors"><option value="">Select</option><option value="junior">Junior</option><option value="adult">Adult</option></select></div>
+            <div><label class="text-pa-text text-xs mb-1 block">School or occupation <span class="text-pa-text/30">(optional)</span></label><input type="text" name="school" class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors" placeholder="School or occupation"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Playing experience *</label><select name="experience" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-pa-purple transition-colors"><option value="">Select</option><option value="never">Never played</option><option value="basics">Know the basics</option><option value="regularly">Play regularly</option></select></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Previous racket-sport experience</label><input type="text" name="racket" class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors" placeholder="e.g. tennis, badminton"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Main training goal *</label><input type="text" name="goal" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors" placeholder="What do you want to improve?"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Monday and Thursday availability *</label><input type="text" name="availability" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors" placeholder="e.g. Available both days, 4-5pm"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Group or Private 1:1 *</label><select name="format" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-pa-purple transition-colors"><option value="">Select</option><option value="group">Group (max 4 per coach)</option><option value="private">Private 1:1</option></select></div>
+            <div><label class="text-pa-text text-xs mb-1 block">WhatsApp number *</label><input type="tel" name="whatsapp" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors" placeholder="+84..."></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Message <span class="text-pa-text/30">(optional)</span></label><textarea name="message" rows="3" class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors resize-none" placeholder="Anything else?"></textarea></div>
+            <button type="submit" class="w-full btn-primary text-white py-3 rounded-full font-bold tracking-wide">Apply for Training</button>
+          </form>
+        </div>
+        <div id="community-form" class="fade-up">
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight uppercase mb-6">Apply to the LIT Community</h2>
+          <form id="community-application" class="space-y-4">
+            <div><label class="text-pa-text text-xs mb-1 block">Full name *</label><input type="text" name="name" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-pink transition-colors" placeholder="Your full name"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Junior or Adult *</label><select name="age" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-pa-pink transition-colors"><option value="">Select</option><option value="junior">Junior</option><option value="adult">Adult</option></select></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Current playing experience *</label><input type="text" name="experience" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-pink transition-colors" placeholder="How long have you been playing?"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Approximate level <span class="text-pa-text/30">(optional)</span></label><input type="text" name="level" class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-pink transition-colors" placeholder="e.g. 3.0, 3.5, or self-described"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">How often do you currently play? *</label><input type="text" name="frequency" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-pink transition-colors" placeholder="e.g. 2-3 times per week"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Why do you want to join? *</label><textarea name="why" required rows="3" class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-pink transition-colors resize-none" placeholder="What are you looking for?"></textarea></div>
+            <div><label class="text-pa-text text-xs mb-1 block">Tuesday and Friday availability *</label><input type="text" name="availability" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-pink transition-colors" placeholder="e.g. Available both days, 4-5pm"></div>
+            <div><label class="text-pa-text text-xs mb-1 block">WhatsApp number *</label><input type="tel" name="whatsapp" required class="w-full bg-pa-card border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-pink transition-colors" placeholder="+84..."></div>
+            <button type="submit" class="w-full btn-pink text-white py-3 rounded-full font-bold tracking-wide">Apply to Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 17. FINAL CTA ==================== -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="absolute inset-0 bg-pa-black/85"></div>
+    <div class="absolute inset-0 bg-pa-purple/5 mix-blend-overlay"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 md:px-10 text-center fade-up">
+      <p class="font-display text-sm tracking-[0.3em] uppercase text-pa-purple-light mb-6">From First Serve to First Crew</p>
+      <h2 class="font-marker text-4xl md:text-6xl leading-[0.9] mb-6"><span class="gradient-text">Get Better.</span><br><span class="gradient-text">Find Your People.</span></h2>
+      <p class="text-white/60 text-base mb-10">English-speaking pickleball training and community in Phu My Hung.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#find-track" class="btn-primary text-white px-8 py-4 rounded-full font-bold tracking-wide glow-purple">Find My Track</a>
+        <a href="#community" class="btn-outline px-8 py-4 rounded-full font-medium tracking-wide">Explore the Community</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-pa-black border-t border-pa-border py-12">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 bg-pa-purple rounded-full flex items-center justify-center pulse-glow"><span class="text-white font-bold text-xs">LIT</span></div>
+          <span class="font-marker text-lg text-white">LIT Pickleball</span>
+          <span class="text-pa-text text-xs">· Phu My Hung</span>
+        </div>
+        <div class="flex gap-6">
+          <a href="#training" class="text-pa-text text-xs hover:text-pa-purple-light transition-colors">Training</a>
+          <a href="#community" class="text-pa-text text-xs hover:text-pa-purple-light transition-colors">Community</a>
+          <a href="#membership" class="text-pa-text text-xs hover:text-pa-purple-light transition-colors">Membership</a>
+          <a href="#faq" class="text-pa-text text-xs hover:text-pa-purple-light transition-colors">FAQ</a>
+        </div>
+        <p class="text-pa-text/50 text-xs">© <span id="footer-year"></span> LIT Pickleball. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WAITLIST POPUP ==================== -->
+  <div id="waitlist-popup" class="popup-overlay fixed inset-0 z-[90] flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-pa-black/80 backdrop-blur-sm" onclick="closePopup()"></div>
+    <div class="relative bg-pa-card border border-pa-purple/30 rounded-2xl p-8 max-w-md w-full">
+      <button onclick="closePopup()" class="absolute top-4 right-4 text-pa-text hover:text-white transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <h3 class="font-display text-2xl font-bold tracking-tight uppercase mb-2">Your Next Pickleball Crew Is Here.</h3>
+      <p class="text-pa-text text-sm mb-6">Hosted community play every Tuesday and Friday in Phu My Hung. Join the waitlist and we'll message you when a suitable spot opens.</p>
+      <form id="waitlist-form" class="space-y-3">
+        <input type="text" name="firstName" required class="w-full bg-pa-black border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors" placeholder="First name">
+        <input type="tel" name="whatsapp" required class="w-full bg-pa-black border border-pa-border rounded-lg px-4 py-3 text-sm text-white placeholder-pa-text/50 focus:outline-none focus:border-pa-purple transition-colors" placeholder="WhatsApp number">
+        <button type="submit" class="w-full btn-primary text-white py-3 rounded-full font-bold tracking-wide">Join the Waitlist</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    const WHATSAPP_NUMBER = '84XXXXXXXXX'; // ← Replace with real number
+
+    lucide.createIcons();
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const s = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      document.getElementById('scroll-progress').style.width = s + '%';
+    });
+
+    // Navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('bg-pa-black/95', window.pageYOffset > 80);
+      navbar.classList.toggle('backdrop-blur-md', window.pageYOffset > 80);
+      navbar.classList.toggle('border-b', window.pageYOffset > 80);
+      navbar.classList.toggle('border-pa-border', window.pageYOffset > 80);
+    });
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    mobileMenuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.classList.remove('opacity-0','pointer-events-none');
+        mobileMenu.classList.add('opacity-100','pointer-events-auto');
+        document.getElementById('bar1').style.transform = 'rotate(45deg) translate(4px,4px)';
+        document.getElementById('bar2').style.opacity = '0';
+        document.getElementById('bar3').style.transform = 'rotate(-45deg) translate(4px,-4px)';
+        document.getElementById('bar3').style.width = '1.5rem';
+        document.body.style.overflow = 'hidden';
+      } else closeMobile();
+    });
+    function closeMobile() {
+      menuOpen = false;
+      mobileMenu.classList.add('opacity-0','pointer-events-none');
+      mobileMenu.classList.remove('opacity-100','pointer-events-auto');
+      document.getElementById('bar1').style.transform = '';
+      document.getElementById('bar2').style.opacity = '1';
+      document.getElementById('bar3').style.transform = '';
+      document.getElementById('bar3').style.width = '1rem';
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMobile));
+
+    // FAQ
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item'), answer = item.querySelector('.faq-answer'), isOpen = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(f => { f.classList.remove('active'); f.querySelector('.faq-answer').classList.remove('open'); });
+        if (!isOpen) { item.classList.add('active'); answer.classList.add('open'); }
+      });
+    });
+
+    // Scroll animations
+    const obs = new IntersectionObserver(e => e.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    function scrollToSection(id) { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
+
+    // WhatsApp forms
+    function sendToWhatsApp(msg) { window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank'); }
+
+    document.getElementById('training-application').addEventListener('submit', e => {
+      e.preventDefault(); const fd = new FormData(e.target);
+      sendToWhatsApp(`LIT TRAINING APPLICATION\n\nName: ${fd.get('name')}\nAge: ${fd.get('age')}\nSchool/Occupation: ${fd.get('school')||'N/A'}\nExperience: ${fd.get('experience')}\nRacket sport: ${fd.get('racket')||'N/A'}\nGoal: ${fd.get('goal')}\nAvailability: ${fd.get('availability')}\nFormat: ${fd.get('format')}\nWhatsApp: ${fd.get('whatsapp')}\nMessage: ${fd.get('message')||'N/A'}`);
+      showToast('Training application sent! 🏓');
+    });
+
+    document.getElementById('community-application').addEventListener('submit', e => {
+      e.preventDefault(); const fd = new FormData(e.target);
+      sendToWhatsApp(`LIT COMMUNITY APPLICATION\n\nName: ${fd.get('name')}\nAge: ${fd.get('age')}\nExperience: ${fd.get('experience')}\nLevel: ${fd.get('level')||'N/A'}\nFrequency: ${fd.get('frequency')}\nWhy: ${fd.get('why')}\nAvailability: ${fd.get('availability')}\nWhatsApp: ${fd.get('whatsapp')}`);
+      showToast('Community application sent! 🎉');
+    });
+
+    // Popup
+    let popupShown = false;
+    function showPopup() {
+      if (popupShown) return;
+      const last = localStorage.getItem('lit-popup-shown');
+      if (last && Date.now() - parseInt(last) < 7*24*60*60*1000) return;
+      popupShown = true;
+      document.getElementById('waitlist-popup').classList.add('show');
+      localStorage.setItem('lit-popup-shown', Date.now().toString());
+    }
+    function closePopup() { document.getElementById('waitlist-popup').classList.remove('show'); }
+    setTimeout(() => showPopup(), 30000);
+    const commObs = new IntersectionObserver(e => e.forEach(en => { if (en.isIntersecting) { showPopup(); commObs.disconnect(); } }), { threshold: 0.3 });
+    commObs.observe(document.getElementById('community'));
+
+    document.getElementById('waitlist-form').addEventListener('submit', e => {
+      e.preventDefault(); const fd = new FormData(e.target);
+      sendToWhatsApp(`LIT WAITLIST\n\nName: ${fd.get('firstName')}\nWhatsApp: ${fd.get('whatsapp')}`);
+      closePopup(); showToast("You're on the waitlist! 🎉");
+    });
+
+    function showToast(msg) {
+      const c = document.getElementById('toast-container'), t = document.createElement('div');
+      t.className = 'toast bg-pa-card border border-pa-purple/30 rounded-xl px-5 py-3.5 shadow-2xl flex items-center gap-3 max-w-sm';
+      t.innerHTML = `<div class="w-8 h-8 bg-pa-purple/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></div><p class="text-sm text-white/90">${msg}</p>`;
+      c.appendChild(t); setTimeout(() => t.remove(), 3000);
+    }
+  </script>
 </body>
 </html>
