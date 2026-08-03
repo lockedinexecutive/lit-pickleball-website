@@ -7,25 +7,26 @@
 <meta name="description" content="LIT Pickleball — get locked in. Foreign-coach-led pickleball coaching packs and a curated, English-speaking community in Phu My Hung, District 7, Ho Chi Minh City.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Wet+Paint&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Áp dụng Tilt Warp cho Graffiti premium -->
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-0:#060606;
-    --bg-1:#1a1720;
-    --bg-2:#211d29;
-    --violet-deep:#241a52;
-    --violet:#4b3ad1;
-    --accent:#6c5cf5;
-    --accent-2:#8b7bff;
-    --teal:#3fd8d4;
-    --green:#7ed957;
-    --yellow:#ffd93f;
+    --bg-0:#000000;
+    --bg-1:#0a0a0a;
+    --bg-2:#141414;
+    --violet-deep:#6a4a98;
+    --violet:#975dfc;
+    --accent:#975dfc;
+    --accent-2:#a76ff8;
+    --teal:#53c1b6;
+    --green:#40ba67;
+    --pink:#ff66b2;
+    --magenta:#db4860;
     --white:#ffffff;
-    /* Màu chữ trắng hoàn toàn theo yêu cầu */
-    --muted:#ffffff; 
-    --muted-2:#ffffff;
-    --line:rgba(255,255,255,0.10);
-    --ball:#c8ff4d;
+    --muted:#7b838b;       /* Màu xám trung tính cho text phụ */
+    --muted-2:#4a4e57;     /* Màu xám đậm cho text ít quan trọng hơn */
+    --line:rgba(255,255,255,0.08);
+    --ball:#53c1b6;
     --radius:18px;
     --maxw:1320px;
   }
@@ -35,7 +36,7 @@
   body{
     background:var(--bg-0);
     color:var(--white);
-    font-family:'Inter', sans-serif;
+    font-family:'Cera Pro', 'Inter', sans-serif; /* Cera Pro fallback by Inter */
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
@@ -47,30 +48,41 @@
 
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
 
+  /* Tilt Warp cho tiêu đề chính - Graffiti premium, dynamic warp */
   h1,h2,h3,.display{
-    font-family:'Anton', sans-serif;
+    font-family:'Tilt Warp', cursive;
     text-transform:uppercase;
     letter-spacing:0.5px;
-    line-height:1.02;
+    line-height:1.1;
     font-weight:400;
   }
+  
+  /* Oswald cho tiêu đề phụ, nav, nút bấm */
+  h4, h5 {
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:600;
+  }
+
   .graffiti-head{
-    font-family:'Rubik Wet Paint', cursive;
-    text-transform:none;
-    line-height:1.05;
-    background:linear-gradient(180deg, #ff5fa8 0%, #8b7bff 55%, #3fd8d4 100%);
+    font-family:'Tilt Warp', cursive;
+    text-transform:uppercase;
+    line-height:1.1;
+    background:linear-gradient(180deg, var(--pink) 0%, var(--violet) 55%, var(--teal) 100%);
     -webkit-background-clip:text;
     background-clip:text;
     -webkit-text-fill-color:transparent;
-    filter:drop-shadow(3px 4px 0 rgba(0,0,0,0.35));
+    filter:drop-shadow(4px 4px 0 rgba(0,0,0,0.35));
   }
 
   .eyebrow{
-    font-size:12px;
+    font-family:'Oswald', sans-serif;
+    font-size:13px;
     letter-spacing:3px;
     text-transform:uppercase;
     color:var(--accent-2);
-    font-weight:700;
+    font-weight:600;
     display:inline-block;
     margin-bottom:14px;
   }
@@ -87,7 +99,7 @@
   /* ===== NAV ===== */
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(7,6,15,0.72);
+    background:rgba(0,0,0,0.8);
     backdrop-filter:blur(14px);
     border-bottom:1px solid var(--line);
   }
@@ -96,12 +108,12 @@
     padding:18px 32px;
     max-width:var(--maxw); margin:0 auto;
   }
-  .logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:18px; letter-spacing:1px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:'Oswald', sans-serif; font-weight:700; font-size:20px; letter-spacing:1px;}
   .graffiti{
-    font-family:'Rubik Wet Paint', cursive;
+    font-family:'Tilt Warp', cursive;
     font-weight:400;
     letter-spacing:1px;
-    background:linear-gradient(180deg, #ff5fa8 0%, #6c5cf5 60%, #4bd8d0 100%);
+    background:linear-gradient(180deg, var(--pink) 0%, var(--violet) 60%, var(--teal) 100%);
     -webkit-background-clip:text;
     background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -109,15 +121,16 @@
   }
   .logo-mark{
     width:38px; height:38px; border-radius:11px;
-    background:linear-gradient(135deg, var(--accent), var(--violet-deep));
+    background:linear-gradient(135deg, var(--violet), var(--violet-deep));
     display:flex; align-items:center; justify-content:center;
   }
   .logo-mark svg{width:20px; height:20px;}
-  .logo span{color:var(--muted-2); font-weight:600; letter-spacing:2px; font-size:13px; margin-left:2px;}
+  .logo span{color:var(--muted); font-weight:500; letter-spacing:2px; font-size:14px; margin-left:2px;}
 
   .nav-links{display:flex; gap:34px; align-items:center;}
   .nav-links a{
-    font-size:13px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
+    font-family:'Oswald', sans-serif;
+    font-size:14px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase;
     color:var(--muted); transition:color .2s;
   }
   .nav-links a:hover{color:var(--white);}
@@ -126,28 +139,29 @@
     display:inline-flex; align-items:center; gap:8px;
     padding:13px 26px;
     border-radius:999px;
-    font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+    font-family:'Oswald', sans-serif;
+    font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
     transition:all .2s ease;
     white-space:nowrap;
   }
   .btn-primary{
-    background:linear-gradient(135deg, var(--accent-2), var(--violet));
-    color:var(--white);
-    box-shadow:0 8px 24px rgba(108,92,245,0.35);
+    background:linear-gradient(135deg, var(--teal), #3ba99e);
+    color:#ffffff;
+    box-shadow:0 8px 24px rgba(83,193,182,0.35);
   }
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(108,92,245,0.5);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(83,193,182,0.5);}
   .btn-outline{
     border:1.5px solid rgba(255,255,255,0.35);
     color:var(--white);
   }
   .btn-outline:hover{border-color:var(--white); background:rgba(255,255,255,0.06);}
-  .btn-teal{
-    background:linear-gradient(135deg, var(--teal), #2ba8a4);
-    color:#06201f;
-    box-shadow:0 8px 24px rgba(63,216,212,0.3);
+  .btn-violet{
+    background:linear-gradient(135deg, var(--violet), var(--violet-deep));
+    color:var(--white);
+    box-shadow:0 8px 24px rgba(151,93,252,0.35);
   }
-  .btn-teal:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(63,216,212,0.45);}
-  .btn-sm{padding:10px 20px; font-size:11px;}
+  .btn-violet:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(151,93,252,0.5);}
+  .btn-sm{padding:10px 20px; font-size:12px;}
 
   .nav-cta{display:flex; gap:10px; align-items:center;}
   .mobile-toggle{display:none; font-size:26px;}
@@ -159,12 +173,12 @@
     display:flex; align-items:center; justify-content:center;
     padding:160px 32px 100px;
     overflow:hidden;
-    background:#060606;
+    background:var(--bg-0);
   }
   .hero-court{
     position:absolute; inset:0;
     background-image:
-      linear-gradient(rgba(6,6,6,0.55), rgba(6,6,6,0.85)),
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.9)),
       url('https://z-cdn-media.chatglm.cn/files/46b7b0e5-6805-4ac3-8168-46b7b3f029b0.png?auth_key=1885726169-2b463b2c79ab44b7b1ac1313eef9e3f8-0-e8b316d072e2005564239667d03111ac');
     background-size:cover;
     background-position:center;
@@ -186,8 +200,8 @@
   .hero-badge{
     display:inline-flex; align-items:center; gap:8px;
     padding:9px 20px; border-radius:999px;
-    border:1px solid rgba(139,123,255,0.4);
-    background:rgba(108,92,245,0.08);
+    border:1px solid rgba(151,93,252,0.4);
+    background:rgba(151,93,252,0.1);
     margin-bottom:28px;
   }
   .hero h1{font-size:clamp(56px, 10vw, 128px); margin-bottom:24px;}
@@ -223,7 +237,7 @@
     flex:none; width:26px; height:26px; transition:transform .2s ease;
   }
   .strip-item:hover .strip-icon-sm{transform:scale(1.15);}
-  .strip-item p{font-size:13.5px; font-weight:600; color:var(--muted); letter-spacing:0.2px; white-space:nowrap;}
+  .strip-item p{font-family:'Cera Pro', 'Inter', sans-serif; font-size:14px; font-weight:600; color:var(--muted); letter-spacing:0.2px; white-space:nowrap;}
 
   /* ===== SECTION generic ===== */
   section{padding:120px 32px; position:relative;}
@@ -245,11 +259,12 @@
   }
   .photo-block .tag{
     display:inline-flex; align-items:center; gap:8px;
-    background:rgba(7,6,15,0.65);
+    background:rgba(0,0,0,0.7);
     border:1px solid rgba(255,255,255,0.15);
     padding:9px 16px; border-radius:999px;
-    font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-    color:var(--muted);
+    font-family:'Oswald', sans-serif;
+    font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+    color:var(--white);
   }
 
   h3.head-lg{font-size:clamp(34px, 5vw, 54px); margin-bottom:22px;}
@@ -260,7 +275,7 @@
   .check-list li{display:flex; gap:14px; align-items:flex-start; font-size:15.5px; color:var(--muted); line-height:1.55;}
   .check-icon{
     flex:none; width:24px; height:24px; border-radius:50%;
-    background:rgba(108,92,245,0.18); border:1px solid rgba(139,123,255,0.45);
+    background:rgba(83,193,182,0.18); border:1px solid rgba(83,193,182,0.45);
     display:flex; align-items:center; justify-content:center; margin-top:2px;
   }
   .check-icon svg{width:12px; height:12px;}
@@ -271,8 +286,8 @@
 
   .note-box{
     max-width:var(--maxw); margin:40px auto 0;
-    border:1px solid rgba(139,123,255,0.35);
-    background:rgba(108,92,245,0.06);
+    border:1px solid rgba(151,93,252,0.35);
+    background:rgba(151,93,252,0.06);
     border-radius:14px; padding:20px 24px;
     font-size:14.5px; color:var(--muted); line-height:1.6;
   }
@@ -281,7 +296,7 @@
   /* ===== Pricing ===== */
   .pricing-ombre{
     position:relative;
-    background:linear-gradient(180deg, #050409 0%, #0d0a1f 35%, #241a52 100%);
+    background:linear-gradient(180deg, #000000 0%, #0a0a0a 35%, #1a1224 100%);
     border-top:1px solid var(--line);
     overflow:hidden;
   }
@@ -289,8 +304,8 @@
   
   .price-eyebrow{
     display:inline-block; padding:7px 18px; border-radius:999px;
-    border:1px solid rgba(255,95,168,0.4); background:rgba(255,95,168,0.08);
-    color:#ff5fa8; font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
+    border:1px solid rgba(255,102,178,0.4); background:rgba(255,102,178,0.08);
+    color:var(--pink); font-family:'Oswald', sans-serif; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
     margin-bottom:18px;
   }
   .price-head{text-align:center; max-width:640px; margin:0 auto 50px; position:relative; z-index:2;}
@@ -303,25 +318,25 @@
     position:relative; z-index:2;
   }
   .price-card{
-    border:1px solid rgba(255,95,168,0.35); border-top:3px solid transparent;
-    border-image:linear-gradient(90deg, #ff5fa8, #8b7bff) 1;
+    border:1px solid rgba(255,102,178,0.35); border-top:3px solid transparent;
+    border-image:linear-gradient(90deg, var(--pink), var(--violet)) 1;
     border-radius:20px; padding:36px 40px 40px; background:var(--bg-1);
     display:flex; flex-direction:column;
   }
   .price-badge{
     display:inline-block; padding:5px 14px; border-radius:999px;
-    background:rgba(255,95,168,0.15); color:#ff5fa8;
-    font-size:10.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+    background:rgba(255,102,178,0.15); color:var(--pink);
+    font-family:'Oswald', sans-serif; font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
     margin-bottom:16px; align-self:flex-start;
   }
-  .price-card h4{font-size:26px; font-weight:800; margin-bottom:4px;}
-  .price-sub{font-size:12px; color:var(--muted-2); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:22px; display:block;}
+  .price-card h4{font-size:26px; font-weight:600; margin-bottom:4px;}
+  .price-sub{font-family:'Oswald', sans-serif; font-size:13px; color:var(--muted-2); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:22px; display:block;}
   .price-divider{border-top:1px solid var(--line); margin-bottom:22px;}
   .price-row{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px;}
-  .price-new{font-family:'Anton'; font-size:44px; color:var(--white); letter-spacing:0.5px;}
+  .price-new{font-family:'Oswald', sans-serif; font-size:44px; color:var(--white); letter-spacing:0.5px; font-weight:700;}
   .price-unit{font-size:14px; color:var(--muted);}
   .price-off{
-    background:var(--yellow); color:#3a2e00; font-size:11px; font-weight:800;
+    background:var(--pink); color:#330011; font-family:'Oswald', sans-serif; font-size:11px; font-weight:700;
     letter-spacing:1px; padding:4px 10px; border-radius:999px;
   }
   .price-meta{font-size:13.5px; color:var(--muted-2); margin-bottom:20px;}
@@ -331,19 +346,19 @@
   .price-list svg{flex:none; width:17px; height:17px; margin-top:2px;}
 
   .private-card{
-    border:1px solid rgba(139,123,255,0.35); border-top:3px solid transparent;
-    border-image:linear-gradient(90deg, #8b7bff, #3fd8d4) 1;
-    border-radius:20px; background:rgba(255,255,255,0.02);
+    border:1px solid rgba(151,93,252,0.35); border-top:3px solid transparent;
+    border-image:linear-gradient(90deg, var(--violet), var(--teal)) 1;
+    border-radius:20px; background:var(--bg-1);
     padding:36px 40px 40px; display:flex; flex-direction:column;
   }
   .private-badge{
     display:inline-block; padding:6px 16px; border-radius:999px;
-    border:1px solid rgba(139,123,255,0.4); background:rgba(139,123,255,0.1);
-    color:#8b7bff; font-size:10.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase;
+    border:1px solid rgba(151,93,252,0.4); background:rgba(151,93,252,0.1);
+    color:var(--violet); font-family:'Oswald', sans-serif; font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
     margin-bottom:16px; align-self:flex-start;
   }
-  .private-card h4{font-size:26px; font-weight:800; margin-bottom:4px;}
-  .private-sub{font-size:12px; color:var(--muted-2); letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:16px;}
+  .private-card h4{font-size:26px; font-weight:600; margin-bottom:4px;}
+  .private-sub{font-family:'Oswald', sans-serif; font-size:13px; color:var(--muted-2); letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:16px;}
   .private-card .desc{color:var(--muted); font-size:14.5px; margin-bottom:24px; line-height:1.6;}
   .private-card .stat-grid{margin-bottom:26px;}
   .private-card .btn{margin-top:auto; align-self:flex-start;}
@@ -354,13 +369,13 @@
     padding:20px 16px; text-align:center;
   }
   .stat-tile svg{width:22px; height:22px; margin:0 auto 10px;}
-  .stat-tile h5{font-size:13.5px; font-weight:800; margin-bottom:3px;}
-  .stat-tile span{font-size:11.5px; color:var(--muted-2);}
+  .stat-tile h5{font-size:14px; font-weight:600; margin-bottom:3px;}
+  .stat-tile span{font-family:'Cera Pro', 'Inter', sans-serif; font-size:12px; color:var(--muted-2);}
 
   .ratio-note{
     text-align:center; max-width:640px; margin:36px auto 0; padding-top:32px;
     border-top:1px solid rgba(255,255,255,0.12);
-    font-size:12.5px; font-weight:700; letter-spacing:1px; color:var(--muted-2); line-height:1.8;
+    font-family:'Oswald', sans-serif; font-size:13px; font-weight:500; letter-spacing:1px; color:var(--muted-2); line-height:1.8;
     text-transform:uppercase; position:relative; z-index:2;
   }
 
@@ -378,16 +393,16 @@
   }
   .team-photo{
     aspect-ratio:5/4; background-size:cover; background-position:center;
-    background-color:#2a1e63;
+    background-color:#1a1a1a;
   }
   .team-info{padding:28px 30px 32px;}
-  .team-info h4{font-size:23px; font-weight:800; margin-bottom:4px;}
-  .team-role{color:var(--accent-2); font-size:12.5px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; display:block; margin-bottom:14px;}
+  .team-info h4{font-size:24px; font-weight:600; margin-bottom:4px;}
+  .team-role{font-family:'Oswald', sans-serif; color:var(--accent-2); font-size:13px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; display:block; margin-bottom:14px;}
   .team-info p{color:var(--muted); font-size:14.5px; line-height:1.6;}
   .team-link{text-align:center;}
   .team-link a{
-    font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-    color:var(--accent-2); border-bottom:1px solid var(--accent-2); padding-bottom:4px;
+    font-family:'Oswald', sans-serif; font-size:14px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+    color:var(--teal); border-bottom:1px solid var(--teal); padding-bottom:4px;
   }
 
   /* ===== COMMUNITY ===== */
@@ -405,46 +420,46 @@
   }
   .cell-photo::before {
     content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(7,6,15,0.92) 100%);
+    background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.92) 100%);
   }
   .cell-photo h4{font-size:26px; position:relative; z-index:2;}
   .cell-photo span.tag{
-    position:relative; z-index:2; font-size:13px; color:var(--muted); font-weight:500; display:block; margin-top:8px;
+    position:relative; z-index:2; font-family:'Cera Pro', 'Inter', sans-serif; font-size:14px; color:var(--muted); font-weight:500; display:block; margin-top:8px;
   }
 
   .quote-block{max-width:720px; margin:64px auto 0; text-align:center;}
   .quote-block svg{opacity:0.3; margin:0 auto 18px;}
-  .quote-block p{font-size:clamp(19px,2.6vw,25px); font-style:italic; color:var(--white); line-height:1.5; margin-bottom:16px;}
-  .quote-block cite{color:var(--muted-2); font-size:14px; font-style:normal; font-weight:600;}
+  .quote-block p{font-family:'Cera Pro', 'Inter', sans-serif; font-size:clamp(19px,2.6vw,25px); font-style:italic; color:var(--white); line-height:1.5; margin-bottom:16px;}
+  .quote-block cite{font-family:'Oswald', sans-serif; color:var(--muted-2); font-size:14px; font-style:normal; font-weight:500; letter-spacing:1px;}
 
   /* ===== MEMBERSHIP ===== */
   .membership{
-    background:linear-gradient(180deg, #050409 0%, #0d0a1f 35%, #241a52 100%);
+    background:linear-gradient(180deg, #000000 0%, #0a0a0a 35%, #1a1224 100%);
     border-top:1px solid var(--line);
   }
   .membership-card{
     max-width:820px; margin:0 auto; border:1px solid rgba(255,255,255,0.14);
-    border-radius:24px; padding:64px 60px; background:rgba(255,255,255,0.02); text-align:center;
+    border-radius:24px; padding:64px 60px; background:var(--bg-1); text-align:center;
   }
   .membership-card .check-list{text-align:left; max-width:480px; margin:0 auto 34px;}
   .status-box{
     display:flex; gap:16px; text-align:left; align-items:flex-start;
-    background:rgba(255,217,63,0.08); border:1px solid rgba(255,217,63,0.35);
+    background:rgba(255,102,178,0.08); border:1px solid rgba(255,102,178,0.35);
     border-radius:16px; padding:22px 24px; margin-bottom:34px;
   }
   .status-box .lock{
     flex:none; width:38px; height:38px; border-radius:50%;
-    background:var(--yellow); display:flex; align-items:center; justify-content:center;
+    background:var(--pink); display:flex; align-items:center; justify-content:center;
   }
   .status-box .lock svg{width:16px; height:16px;}
-  .status-box p{font-size:14px; color:var(--muted); line-height:1.6;}
+  .status-box p{font-family:'Cera Pro', 'Inter', sans-serif; font-size:14px; color:var(--muted); line-height:1.6;}
   .status-box strong{color:var(--white);}
 
   .field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;}
   .field-row input, .full-input{
     width:100%; padding:16px 20px; border-radius:12px;
     background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15);
-    color:var(--white); font-family:inherit; font-size:14.5px;
+    color:var(--white); font-family:'Cera Pro', 'Inter', sans-serif; font-size:15px;
   }
   .field-row input::placeholder, .full-input::placeholder{color:var(--muted-2);}
   .full-btn{width:100%; justify-content:center; padding:17px;}
@@ -453,14 +468,14 @@
   .corporate{
     position:relative; padding:100px 32px; text-align:center;
     background:
-      linear-gradient(180deg, rgba(5,4,9,0.55), rgba(36,26,82,0.85)),
+      linear-gradient(180deg, rgba(0,0,0,0.6), rgba(106,74,152,0.85)),
       repeating-linear-gradient(90deg, transparent 0 90px, rgba(255,255,255,0.03) 90px 91px),
-      linear-gradient(160deg, #1c1550 0%, #0a0918 100%);
+      linear-gradient(160deg, #1a1224 0%, #000000 100%);
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
   }
   .corporate .eyebrow{color:var(--accent-2);}
   .corporate h2{font-size:clamp(32px,5vw,56px); margin-bottom:16px;}
-  .corporate p{color:var(--muted); font-size:16.5px; margin-bottom:32px;}
+  .corporate p{font-family:'Cera Pro', 'Inter', sans-serif; color:var(--muted); font-size:16.5px; margin-bottom:32px;}
 
   /* ===== WHY LIT ===== */
   .why{background:var(--bg-0);}
@@ -471,7 +486,7 @@
   .why-list{display:grid; grid-template-columns:1fr 1fr; gap:22px 40px;}
   .why-item{display:flex; gap:14px; align-items:flex-start;}
   .ball-icon{flex:none; width:24px; height:24px; margin-top:2px;}
-  .why-item p{font-size:15px; color:var(--muted); line-height:1.55;}
+  .why-item p{font-family:'Cera Pro', 'Inter', sans-serif; font-size:15px; color:var(--muted); line-height:1.55;}
 
   /* ===== NEWSLETTER ===== */
   .newsletter{
@@ -479,42 +494,42 @@
     text-align:center; padding:90px 32px;
   }
   .newsletter h2{font-size:clamp(28px,4.5vw,44px); margin-bottom:14px;}
-  .newsletter p{color:rgba(255,255,255,0.85); margin-bottom:34px; font-size:16px;}
+  .newsletter p{font-family:'Cera Pro', 'Inter', sans-serif; color:rgba(255,255,255,0.85); margin-bottom:34px; font-size:16px;}
   .newsletter-form{display:flex; gap:12px; max-width:480px; margin:0 auto 14px; flex-wrap:wrap;}
   .newsletter-form input{
     flex:1; min-width:220px; padding:16px 22px; border-radius:999px; border:none;
-    font-family:inherit; font-size:14.5px; background:rgba(255,255,255,0.95); color:#1a1730;
+    font-family:'Cera Pro', 'Inter', sans-serif; font-size:15px; background:rgba(255,255,255,0.95); color:#1a1a1a;
   }
   .newsletter-form button{
     padding:16px 32px; border-radius:999px; background:var(--bg-0); color:var(--white);
-    font-weight:700; font-size:12.5px; letter-spacing:2px; text-transform:uppercase;
+    font-family:'Oswald', sans-serif; font-weight:600; font-size:13px; letter-spacing:2px; text-transform:uppercase;
   }
-  .newsletter .fine{font-size:12.5px; color:rgba(255,255,255,0.7);}
+  .newsletter .fine{font-family:'Cera Pro', 'Inter', sans-serif; font-size:13px; color:rgba(255,255,255,0.7);}
 
   /* ===== FAQ ===== */
-  .faq{background:#f6f5fa; color:#161326;}
+  .faq{background:#ffffff; color:#3a4149;}
   .faq .eyebrow{color:var(--violet);}
-  .faq .section-head h2{color:#161326;}
+  .faq .section-head h2{color:#3a4149;}
   .faq-list{max-width:820px; margin:0 auto;}
   .faq-item{border-bottom:1px solid #e1dff0; padding:26px 0;}
   .faq-q{
     display:flex; justify-content:space-between; align-items:center; gap: 16px;
-    cursor:pointer; font-size:18px; font-weight:700;
+    cursor:pointer; font-family:'Oswald', sans-serif; font-size:18px; font-weight:600; color:#3a4149; text-transform:uppercase; letter-spacing:0.5px;
   }
   .faq-q .plus{
     flex:none; width:26px; height:26px; border-radius:50%;
-    border:1.5px solid #4b3ad1; display:flex; align-items:center; justify-content:center;
-    transition:transform .25s; color:#4b3ad1; font-size:15px;
+    border:1.5px solid var(--teal); display:flex; align-items:center; justify-content:center;
+    transition:transform .25s; color:var(--teal); font-size:15px;
   }
   .faq-item.open .plus{transform:rotate(45deg);}
   .faq-a{
     max-height:0; overflow:hidden; transition:max-height .3s ease;
-    color:#5a5678; font-size:15.5px; line-height:1.6;
+    color:#7b838b; font-family:'Cera Pro', 'Inter', sans-serif; font-size:15.5px; line-height:1.6;
   }
   .faq-a p{padding-top:14px;}
   .faq-item.open .faq-a{max-height:200px;}
-  .faq-more{text-align:center; margin-top:44px; font-size:15px; color:#5a5678;}
-  .faq-more a{color:var(--violet); font-weight:700; border-bottom:1px solid var(--violet);}
+  .faq-more{text-align:center; margin-top:44px; font-family:'Cera Pro', 'Inter', sans-serif; font-size:15px; color:#7b838b;}
+  .faq-more a{color:var(--teal); font-weight:700; border-bottom:1px solid var(--teal);}
 
   /* ===== MAP + FOOTER ===== */
   .findus{background:var(--bg-1); border-top:1px solid var(--line);}
@@ -528,35 +543,35 @@
   }
   .map-frame iframe{width:100%; height:100%; border:0;}
   .findus-info h2{font-size:clamp(30px,4.5vw,46px); margin-bottom:22px;}
-  .contact-row{display:flex; gap:14px; align-items:center; margin-bottom:16px; color:var(--muted); font-size:15px;}
-  .contact-row svg{flex:none; width:20px; height:20px; color:var(--accent-2);}
+  .contact-row{display:flex; gap:14px; align-items:center; margin-bottom:16px; color:var(--muted); font-family:'Cera Pro', 'Inter', sans-serif; font-size:15px;}
+  .contact-row svg{flex:none; width:20px; height:20px; color:var(--teal);}
 
   footer{background:var(--bg-1); padding:70px 32px 30px; border-top:1px solid var(--line);}
   .footer-grid{
     display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:60px;
     max-width:var(--maxw); margin:0 auto 50px;
   }
-  .footer-brand p{color:var(--muted); font-size:14.5px; margin:18px 0 24px; max-width:340px; line-height:1.6;}
+  .footer-brand p{font-family:'Cera Pro', 'Inter', sans-serif; color:var(--muted); font-size:14.5px; margin:18px 0 24px; max-width:340px; line-height:1.6;}
   .social-row{display:flex; gap:12px;}
   .social-row a{
     width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center; font-weight: 700; font-size: 13px;
+    display:flex; align-items:center; justify-content:center; font-family:'Oswald', sans-serif; font-weight: 600; font-size: 14px;
   }
-  .footer-col h5{font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:var(--muted-2); margin-bottom:20px;}
+  .footer-col h5{font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--muted-2); margin-bottom:20px;}
   .footer-col ul{display:flex; flex-direction:column; gap:12px;}
-  .footer-col a, .footer-col li{color:var(--muted); font-size:14.5px;}
+  .footer-col a, .footer-col li{font-family:'Cera Pro', 'Inter', sans-serif; color:var(--muted); font-size:14.5px;}
   .footer-col a:hover{color:var(--white);}
   .footer-bottom{
     max-width:var(--maxw); margin:0 auto; padding-top:30px; border-top:1px solid var(--line);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-    font-size:13px; color:var(--muted-2);
+    font-family:'Cera Pro', 'Inter', sans-serif; font-size:13px; color:var(--muted-2);
   }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width:960px){
     .nav-links{
       display:none; position:absolute; top:100%; left:0; right:0;
-      background:rgba(7,6,15,0.95); flex-direction:column; padding:20px; gap:20px;
+      background:rgba(0,0,0,0.95); flex-direction:column; padding:20px; gap:20px;
       border-bottom:1px solid var(--line);
     }
     .nav-links.active{display:flex;}
@@ -612,17 +627,17 @@
 <section class="hero" id="top">
   <div class="hero-court"></div>
   <svg class="rally-line" viewBox="0 0 1400 200" fill="none" preserveAspectRatio="none">
-    <path d="M0 160 C 200 40, 320 40, 480 120 S 760 200, 940 60 S 1220 20, 1400 120" stroke="#c8ff4d" stroke-width="3" stroke-dasharray="3 13" stroke-linecap="round" opacity="0.85"/>
+    <path d="M0 160 C 200 40, 320 40, 480 120 S 760 200, 940 60 S 1220 20, 1400 120" stroke="#ff66b2" stroke-width="3" stroke-dasharray="3 13" stroke-linecap="round" opacity="0.85"/>
     <g transform="translate(480,120)">
-      <circle r="15" fill="#c8ff4d" stroke="#7a9e1e" stroke-width="1.5"/>
-      <circle cx="-5" cy="-6" r="1.6" fill="#5b7a12"/><circle cx="5" cy="-4" r="1.6" fill="#5b7a12"/>
-      <circle cx="-2" cy="4" r="1.6" fill="#5b7a12"/><circle cx="7" cy="5" r="1.6" fill="#5b7a12"/>
-      <circle cx="-8" cy="3" r="1.6" fill="#5b7a12"/>
+      <circle r="15" fill="#53c1b6" stroke="#2d6b66" stroke-width="1.5"/>
+      <circle cx="-5" cy="-6" r="1.6" fill="#2d6b66"/><circle cx="5" cy="-4" r="1.6" fill="#2d6b66"/>
+      <circle cx="-2" cy="4" r="1.6" fill="#2d6b66"/><circle cx="7" cy="5" r="1.6" fill="#2d6b66"/>
+      <circle cx="-8" cy="3" r="1.6" fill="#2d6b66"/>
     </g>
     <g transform="translate(1140,45)">
-      <circle r="12" fill="#c8ff4d" stroke="#7a9e1e" stroke-width="1.3"/>
-      <circle cx="-4" cy="-5" r="1.3" fill="#5b7a12"/><circle cx="4" cy="-3" r="1.3" fill="#5b7a12"/>
-      <circle cx="-1" cy="3" r="1.3" fill="#5b7a12"/><circle cx="6" cy="4" r="1.3" fill="#5b7a12"/>
+      <circle r="12" fill="#53c1b6" stroke="#2d6b66" stroke-width="1.3"/>
+      <circle cx="-4" cy="-5" r="1.3" fill="#2d6b66"/><circle cx="4" cy="-3" r="1.3" fill="#2d6b66"/>
+      <circle cx="-1" cy="3" r="1.3" fill="#2d6b66"/><circle cx="6" cy="4" r="1.3" fill="#2d6b66"/>
     </g>
   </svg>
   <div class="hero-inner">
@@ -644,27 +659,27 @@
   <h2 class="graffiti-head" style="text-align:center; font-size:clamp(30px,4.5vw,44px); margin-bottom:48px;">More Than Just a Court</h2>
   <div class="strip-grid">
     <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4.5" fill="#3fd8d4"/><path d="M12 12l7 7" stroke="#3fd8d4" stroke-width="2.5" stroke-linecap="round"/><circle cx="19" cy="19" r="2" fill="#ff5fa8"/></svg>
+      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4.5" fill="#53c1b6"/><path d="M12 12l7 7" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"/><circle cx="19" cy="19" r="2" fill="#ff66b2"/></svg>
       <p>Certified Foreign Coach</p>
     </div>
     <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M2 10L12 3l10 7v2H2v-2z" fill="#ff5fa8"/><rect x="4" y="12" width="16" height="8" rx="1" fill="#3fd8d4"/></svg>
+      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M2 10L12 3l10 7v2H2v-2z" fill="#ff66b2"/><rect x="4" y="12" width="16" height="8" rx="1" fill="#53c1b6"/></svg>
       <p>Covered, Air-Cooled Courts</p>
     </div>
     <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3.2" fill="#ffd93f"/><circle cx="16" cy="9" r="3.2" fill="#ffd93f" opacity="0.6"/><path d="M2 20c0-4 3-6.5 6-6.5s6 2.5 6 6.5M11 20c0-3.5 2.5-6 6-6s5 2 5 6" fill="#ffd93f" opacity="0.85"/></svg>
+      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3.2" fill="#975dfc"/><circle cx="16" cy="9" r="3.2" fill="#975dfc" opacity="0.6"/><path d="M2 20c0-4 3-6.5 6-6.5s6 2.5 6 6.5M11 20c0-3.5 2.5-6 6-6s5 2 5 6" fill="#975dfc" opacity="0.85"/></svg>
       <p>Group Training</p>
     </div>
     <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0v4" stroke="#8b7bff" stroke-width="2.4" stroke-linecap="round" fill="none"/><rect x="2" y="13" width="5" height="7" rx="2.5" fill="#8b7bff"/><rect x="17" y="13" width="5" height="7" rx="2.5" fill="#8b7bff"/></svg>
+      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0v4" stroke="#a76ff8" stroke-width="2.4" stroke-linecap="round" fill="none"/><rect x="2" y="13" width="5" height="7" rx="2.5" fill="#a76ff8"/><rect x="17" y="13" width="5" height="7" rx="2.5" fill="#a76ff8"/></svg>
       <p>On-Court Assistant</p>
     </div>
     <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="5.5" fill="#3fd8d4" opacity="0.9"/><circle cx="15" cy="9" r="5.5" fill="#ff5fa8" opacity="0.9"/><circle cx="12" cy="15" r="5.5" fill="#ffd93f" opacity="0.9"/></svg>
+      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="5.5" fill="#53c1b6" opacity="0.9"/><circle cx="15" cy="9" r="5.5" fill="#ff66b2" opacity="0.9"/><circle cx="12" cy="15" r="5.5" fill="#975dfc" opacity="0.9"/></svg>
       <p>Curated Community</p>
     </div>
     <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 5h16a2 2 0 012 2v8a2 2 0 01-2 2h-9l-5 4v-4H4a2 2 0 01-2-2V7a2 2 0 012-2z" fill="#ff5fa8"/><circle cx="8" cy="11" r="1.3" fill="#0e0e12"/><circle cx="12" cy="11" r="1.3" fill="#0e0e12"/><circle cx="16" cy="11" r="1.3" fill="#0e0e12"/></svg>
+      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 5h16a2 2 0 012 2v8a2 2 0 01-2 2h-9l-5 4v-4H4a2 2 0 01-2-2V7a2 2 0 012-2z" fill="#ff66b2"/><circle cx="8" cy="11" r="1.3" fill="#0e0e12"/><circle cx="12" cy="11" r="1.3" fill="#0e0e12"/><circle cx="16" cy="11" r="1.3" fill="#0e0e12"/></svg>
       <p>English-Speaking</p>
     </div>
   </div>
@@ -674,7 +689,7 @@
 <section class="coaching" id="coaching">
   <div class="coaching-grid">
     <!-- Ảnh đang đánh bóng ngoài trời -->
-    <div class="photo-block" style="background-image:linear-gradient(180deg, rgba(0,0,0,0.05) 55%, rgba(6,6,6,0.85) 100%), url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
+    <div class="photo-block" style="background-image:linear-gradient(180deg, rgba(0,0,0,0.05) 55%, rgba(0,0,0,0.85) 100%), url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
       <span class="tag">Coach in Session</span>
     </div>
     <div>
@@ -682,10 +697,10 @@
       <h3 class="head-lg graffiti-head">Locked In.<br>Every Point.</h3>
       <p class="body-copy">Learn to play <strong>correctly</strong>, from session one. Real progression, not casual lessons.</p>
       <ul class="check-list">
-        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Trained by a foreign, RacketPro APAC Level 1 certified coach</li>
-        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Visible progress by session 10</li>
-        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>For beginners and players refining specific skills</li>
-        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Grouped by skill level, not age</li>
+        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Trained by a foreign, RacketPro APAC Level 1 certified coach</li>
+        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Visible progress by session 10</li>
+        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>For beginners and players refining specific skills</li>
+        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Grouped by skill level, not age</li>
       </ul>
       <a href="#" class="btn btn-primary">Book Your 10-Session Pack</a>
     </div>
@@ -699,16 +714,16 @@
 <!-- ================= PRICING ================= -->
 <section class="pricing-ombre">
   <svg class="pricing-rally" viewBox="0 0 1400 200" fill="none" preserveAspectRatio="none">
-    <path d="M0 160 C 200 40, 320 40, 480 120 S 760 200, 940 60 S 1220 20, 1400 120" stroke="#c8ff4d" stroke-width="3" stroke-dasharray="3 13" stroke-linecap="round" opacity="0.85"/>
+    <path d="M0 160 C 200 40, 320 40, 480 120 S 760 200, 940 60 S 1220 20, 1400 120" stroke="#ff66b2" stroke-width="3" stroke-dasharray="3 13" stroke-linecap="round" opacity="0.85"/>
     <g transform="translate(480,120)">
-      <circle r="15" fill="#c8ff4d" stroke="#7a9e1e" stroke-width="1.5"/>
-      <circle cx="-5" cy="-6" r="1.6" fill="#5b7a12"/><circle cx="5" cy="-4" r="1.6" fill="#5b7a12"/>
-      <circle cx="-2" cy="4" r="1.6" fill="#5b7a12"/><circle cx="7" cy="5" r="1.6" fill="#5b7a12"/><circle cx="-8" cy="3" r="1.6" fill="#5b7a12"/>
+      <circle r="15" fill="#53c1b6" stroke="#2d6b66" stroke-width="1.5"/>
+      <circle cx="-5" cy="-6" r="1.6" fill="#2d6b66"/><circle cx="5" cy="-4" r="1.6" fill="#2d6b66"/>
+      <circle cx="-2" cy="4" r="1.6" fill="#2d6b66"/><circle cx="7" cy="5" r="1.6" fill="#2d6b66"/><circle cx="-8" cy="3" r="1.6" fill="#2d6b66"/>
     </g>
     <g transform="translate(1140,45)">
-      <circle r="12" fill="#c8ff4d" stroke="#7a9e1e" stroke-width="1.3"/>
-      <circle cx="-4" cy="-5" r="1.3" fill="#5b7a12"/><circle cx="4" cy="-3" r="1.3" fill="#5b7a12"/>
-      <circle cx="-1" cy="3" r="1.3" fill="#5b7a12"/><circle cx="6" cy="4" r="1.3" fill="#5b7a12"/>
+      <circle r="12" fill="#53c1b6" stroke="#2d6b66" stroke-width="1.3"/>
+      <circle cx="-4" cy="-5" r="1.3" fill="#2d6b66"/><circle cx="4" cy="-3" r="1.3" fill="#2d6b66"/>
+      <circle cx="-1" cy="3" r="1.3" fill="#2d6b66"/><circle cx="6" cy="4" r="1.3" fill="#2d6b66"/>
     </g>
   </svg>
 
@@ -732,10 +747,10 @@
       <p class="price-meta">10-session pack · sold as a full package only</p>
       <p class="price-desc">Grouped by skill level, not age — the right pace, every time.</p>
       <ul class="price-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#3fd8d4" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>10 coaching sessions included</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#3fd8d4" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Court fee included</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#3fd8d4" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Free LIT T-shirt</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#3fd8d4" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Up to 4 students per coach</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>10 coaching sessions included</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Court fee included</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Free LIT T-shirt</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Up to 4 students per coach</li>
       </ul>
       <a href="#contact" class="btn btn-primary">Book Group Pack</a>
     </div>
@@ -746,12 +761,12 @@
       <span class="private-sub">Personalized Pickleball Coaching · Phu My Hung</span>
       <p class="desc">Built around your goals — sharpen technique, your own pace.</p>
       <div class="stat-grid">
-        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.8" fill="#8b7bff"/></svg><h5>Custom Plan</h5><span>Tailored to you</span></div>
-        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#3fd8d4" stroke-width="1.8"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg><h5>Session Recording</h5><span>Filmed for easy review</span></div>
-        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#7ed957" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><h5>1:1 Focus</h5><span>100% attention</span></div>
-        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd93f" stroke-width="1.8"><path d="M12 2l2.5 5 5.5.7-4 3.9 1 5.4L12 14l-5 3 1-5.4-4-3.9 5.5-.7z"/></svg><h5>Certified Coach</h5><span>RacketPro APAC L1</span></div>
+        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#975dfc" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.8" fill="#975dfc"/></svg><h5>Custom Plan</h5><span>Tailored to you</span></div>
+        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="1.8"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg><h5>Session Recording</h5><span>Filmed for easy review</span></div>
+        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#40ba67" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><h5>1:1 Focus</h5><span>100% attention</span></div>
+        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#ff66b2" stroke-width="1.8"><path d="M12 2l2.5 5 5.5.7-4 3.9 1 5.4L12 14l-5 3 1-5.4-4-3.9 5.5-.7z"/></svg><h5>Certified Coach</h5><span>RacketPro APAC L1</span></div>
       </div>
-      <a href="#contact" class="btn btn-primary">Contact for Pricing &amp; Schedule →</a>
+      <a href="#contact" class="btn btn-violet">Contact for Pricing &amp; Schedule →</a>
     </div>
   </div>
 
@@ -761,13 +776,13 @@
 <!-- ================= PROGRAM BANNERS ================= -->
 <section class="section-tight" style="padding-top:0; padding-bottom:60px;">
   <div style="max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-    <div style="border:1px solid rgba(126,217,87,0.35); background:rgba(126,217,87,0.06); border-radius:16px; padding:26px 28px;">
-      <span style="color:var(--green); font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;">Boys Club</span>
-      <h4 style="font-size:20px; font-weight:800; margin-top:8px;">Launching Friday, August 14</h4>
+    <div style="border:1px solid rgba(64,186,103,0.35); background:rgba(64,186,103,0.06); border-radius:16px; padding:26px 28px;">
+      <span style="color:var(--green); font-family:'Oswald', sans-serif; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">Boys Club</span>
+      <h4 style="font-size:20px; font-weight:600; margin-top:8px;">Launching Friday, August 14</h4>
     </div>
-    <div style="border:1px solid rgba(255,95,168,0.35); background:rgba(255,95,168,0.06); border-radius:16px; padding:26px 28px;">
-      <span style="color:#ff5fa8; font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;">Women's Program</span>
-      <h4 style="font-size:20px; font-weight:800; margin-top:8px;">10% off for the first 10 sign-ups — by Aug 31</h4>
+    <div style="border:1px solid rgba(255,102,178,0.35); background:rgba(255,102,178,0.06); border-radius:16px; padding:26px 28px;">
+      <span style="color:var(--pink); font-family:'Oswald', sans-serif; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">Women's Program</span>
+      <h4 style="font-size:20px; font-weight:600; margin-top:8px;">10% off for the first 10 sign-ups — by Aug 31</h4>
     </div>
   </div>
 </section>
@@ -784,16 +799,16 @@
       <div class="team-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/57b1040e-f9c9-486d-aa45-c28995cfb8d9.JPG?auth_key=1885726169-86e6fd8c3bd24d838be8e13e333d808c-0-33c3b0ee1c980eaf14939cac401d6901'); background-position:center 20%;"></div>
       <div class="team-info">
         <h4>Coach Boysey</h4>
-        <span class="team-role" style="color:#3fd8d4;">RacketPro APAC Level 1 Certified Coach</span>
+        <span class="team-role" style="color:var(--teal);">RacketPro APAC Level 1 Certified Coach</span>
         <p>Energy and patience for beginners and players sharpening a specific shot.</p>
       </div>
     </div>
     <!-- Coach Wardy (Chưa có ảnh) -->
     <div class="team-card">
-      <div class="team-photo" style="background-color:#1a1720; display:flex; align-items:center; justify-content:center; color:#8b7bff; font-weight:700; letter-spacing:2px; font-size:13px;">Photo Coming Soon</div>
+      <div class="team-photo" style="background-color:#1a1a1a; display:flex; align-items:center; justify-content:center; color:var(--violet); font-family:'Oswald', sans-serif; font-weight:500; letter-spacing:2px; font-size:14px;">Photo Coming Soon</div>
       <div class="team-info">
         <h4>Coach Wardy</h4>
-        <span class="team-role" style="color:#7ed957;">RacketPro APAC Level 1 Certified Coach</span>
+        <span class="team-role" style="color:var(--green);">RacketPro APAC Level 1 Certified Coach</span>
         <p>Steady, clear feedback — real progress players come back for.</p>
       </div>
     </div>
@@ -802,7 +817,7 @@
       <div class="team-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/1c3cdde2-de1b-4f03-a939-46d0e6f94900.png?auth_key=1885726169-628c86f4b89744ea952bf518eb0d2daf-0-4da0282a06c211dac28c7b3adef9d8d2'); background-position:center top;"></div>
       <div class="team-info">
         <h4>Coach Zinger</h4>
-        <span class="team-role" style="color:#8b7bff;">RacketPro APAC Level 1 Certified Coach</span>
+        <span class="team-role" style="color:var(--accent-2);">RacketPro APAC Level 1 Certified Coach</span>
         <p>Fell in love with the game fast — brings that energy to every lesson.</p>
       </div>
     </div>
@@ -844,7 +859,7 @@
   </div>
 
   <div class="quote-block">
-    <svg width="34" height="26" viewBox="0 0 34 26" fill="#ffd93f"><path d="M0 26V15.6C0 6.5 5.7 1 14.8 0l1 4.3C9.5 5.6 6.6 8.7 6.2 13H14v13H0zm18.7 0V15.6C18.7 6.5 24.4 1 33.5 0l1 4.3c-6.3 1.3-9.2 4.4-9.6 8.7h7.8v13H18.7z"/></svg>
+    <svg width="34" height="26" viewBox="0 0 34 26" fill="#ff66b2"><path d="M0 26V15.6C0 6.5 5.7 1 14.8 0l1 4.3C9.5 5.6 6.6 8.7 6.2 13H14v13H0zm18.7 0V15.6C18.7 6.5 24.4 1 33.5 0l1 4.3c-6.3 1.3-9.2 4.4-9.6 8.7h7.8v13H18.7z"/></svg>
     <p>"What I love most isn't the court — it's knowing I'll always have people to play with, on time, at my level."</p>
     <cite>— LIT Member</cite>
   </div>
@@ -857,12 +872,12 @@
     <h3 class="head-lg graffiti-head">Locked In.<br>With Your People.</h3>
     <p class="body-copy" style="margin:0 auto 30px;">No chasing bookings, no organizing games. The court and the community are already there — you just show up.</p>
     <ul class="check-list">
-      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Fixed courts, no last-minute cancellations</li>
-      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Curated, English-speaking community</li>
-      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>2 hosted sessions/week, for 12 months</li>
+      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Fixed courts, no last-minute cancellations</li>
+      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Curated, English-speaking community</li>
+      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>2 hosted sessions/week, for 12 months</li>
     </ul>
     <div class="status-box">
-      <span class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="#3a2e00" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span>
+      <span class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="#330011" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span>
       <p><strong>Limited Availability.</strong> Membership is currently near full capacity for this cycle. We're still accepting Waitlist applications — LIT will personally reach out when a spot opens.</p>
     </div>
     <div class="field-row">
@@ -875,10 +890,10 @@
 
 <!-- ================= CORPORATE ================= -->
 <section class="corporate" id="corporate">
-  <span class="eyebrow dot" style="color:#ffd93f;">Coming Soon</span>
+  <span class="eyebrow dot" style="color:var(--pink);">Coming Soon</span>
   <h2 class="graffiti-head" style="font-size:clamp(32px,5vw,56px); margin-bottom:16px;">Locked In. As a Team.</h2>
   <p>Coming soon — team-building pickleball sessions for local businesses.</p>
-  <a href="#newsletter" class="btn btn-outline" style="border-color:rgba(255,217,63,0.5);">Register Interest</a>
+  <a href="#newsletter" class="btn btn-outline" style="border-color:rgba(255,102,178,0.5);">Register Interest</a>
 </section>
 
 <!-- ================= WHY LIT ================= -->
@@ -891,14 +906,14 @@
       <span class="eyebrow" style="margin-top:6px;">Locked In Training</span>
     </div>
     <div class="why-list">
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#3fd8d4" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#3fd8d4"/><circle cx="16" cy="12" r="0.8" fill="#3fd8d4"/><circle cx="12" cy="16" r="0.8" fill="#3fd8d4"/><circle cx="8" cy="12" r="0.8" fill="#3fd8d4"/><circle cx="12" cy="12" r="0.8" fill="#3fd8d4"/></svg><p>Foreign coach, RacketPro APAC Level 1 certified</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#7ed957" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#7ed957"/><circle cx="16" cy="12" r="0.8" fill="#7ed957"/><circle cx="12" cy="16" r="0.8" fill="#7ed957"/><circle cx="8" cy="12" r="0.8" fill="#7ed957"/><circle cx="12" cy="12" r="0.8" fill="#7ed957"/></svg><p>Covered, clean courts with seating and fans</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#8b7bff"/><circle cx="16" cy="12" r="0.8" fill="#8b7bff"/><circle cx="12" cy="16" r="0.8" fill="#8b7bff"/><circle cx="8" cy="12" r="0.8" fill="#8b7bff"/><circle cx="12" cy="12" r="0.8" fill="#8b7bff"/></svg><p>On-site assistant at every session</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#ffd93f" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#ffd93f"/><circle cx="16" cy="12" r="0.8" fill="#ffd93f"/><circle cx="12" cy="16" r="0.8" fill="#ffd93f"/><circle cx="8" cy="12" r="0.8" fill="#ffd93f"/><circle cx="12" cy="12" r="0.8" fill="#ffd93f"/></svg><p>English-speaking, curated community</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#3fd8d4" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#3fd8d4"/><circle cx="16" cy="12" r="0.8" fill="#3fd8d4"/><circle cx="12" cy="16" r="0.8" fill="#3fd8d4"/><circle cx="8" cy="12" r="0.8" fill="#3fd8d4"/><circle cx="12" cy="12" r="0.8" fill="#3fd8d4"/></svg><p>Fixed courts — no cancellation risk</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#7ed957" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#7ed957"/><circle cx="16" cy="12" r="0.8" fill="#7ed957"/><circle cx="12" cy="16" r="0.8" fill="#7ed957"/><circle cx="8" cy="12" r="0.8" fill="#7ed957"/><circle cx="12" cy="12" r="0.8" fill="#7ed957"/></svg><p>Located in Phu My Hung, District 7</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#8b7bff" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#8b7bff"/><circle cx="16" cy="12" r="0.8" fill="#8b7bff"/><circle cx="12" cy="16" r="0.8" fill="#8b7bff"/><circle cx="8" cy="12" r="0.8" fill="#8b7bff"/><circle cx="12" cy="12" r="0.8" fill="#8b7bff"/></svg><p>No hidden fees, no surprises</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#ffd93f" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#ffd93f"/><circle cx="16" cy="12" r="0.8" fill="#ffd93f"/><circle cx="12" cy="16" r="0.8" fill="#ffd93f"/><circle cx="8" cy="12" r="0.8" fill="#ffd93f"/><circle cx="12" cy="12" r="0.8" fill="#ffd93f"/></svg><p>Built by people who genuinely love the game</p></div>
+      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#53c1b6"/><circle cx="16" cy="12" r="0.8" fill="#53c1b6"/><circle cx="12" cy="16" r="0.8" fill="#53c1b6"/><circle cx="8" cy="12" r="0.8" fill="#53c1b6"/><circle cx="12" cy="12" r="0.8" fill="#53c1b6"/></svg><p>Foreign coach, RacketPro APAC Level 1 certified</p></div>
+      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#40ba67" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#40ba67"/><circle cx="16" cy="12" r="0.8" fill="#40ba67"/><circle cx="12" cy="16" r="0.8" fill="#40ba67"/><circle cx="8" cy="12" r="0.8" fill="#40ba67"/><circle cx="12" cy="12" r="0.8" fill="#40ba67"/></svg><p>Covered, clean courts with seating and fans</p></div>
+      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#975dfc" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#975dfc"/><circle cx="16" cy="12" r="0.8" fill="#975dfc"/><circle cx="12" cy="16" r="0.8" fill="#975dfc"/><circle cx="8" cy="12" r="0.8" fill="#975dfc"/><circle cx="12" cy="12" r="0.8" fill="#975dfc"/></svg><p>On-site assistant at every session</p></div>
+      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#ff66b2" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#ff66b2"/><circle cx="16" cy="12" r="0.8" fill="#ff66b2"/><circle cx="12" cy="16" r="0.8" fill="#ff66b2"/><circle cx="8" cy="12" r="0.8" fill="#ff66b2"/><circle cx="12" cy="12" r="0.8" fill="#ff66b2"/></svg><p>English-speaking, curated community</p></div>
+      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#53c1b6"/><circle cx="16" cy="12" r="0.8" fill="#53c1b6"/><circle cx="12" cy="16" r="0.8" fill="#53c1b6"/><circle cx="8" cy="12" r="0.8" fill="#53c1b6"/><circle cx="12" cy="12" r="0.8" fill="#53c1b6"/></svg><p>Fixed courts — no cancellation risk</p></div>
+      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#40ba67" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#40ba67"/><circle cx="16" cy="12" r="0.8" fill="#40ba67"/><circle cx="12" cy="16" r="0.8" fill="#40ba67"/><circle cx="8" cy="12" r="0.8" fill="#40ba67"/><circle cx="12" cy="12" r="0.8" fill="#40ba67"/></svg><p>Located in Phu My Hung, District 7</p></div>
+      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#975dfc" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#975dfc"/><circle cx="16" cy="12" r="0.8" fill="#975dfc"/><circle cx="12" cy="16" r="0.8" fill="#975dfc"/><circle cx="8" cy="12" r="0.8" fill="#975dfc"/><circle cx="12" cy="12" r="0.8" fill="#975dfc"/></svg><p>No hidden fees, no surprises</p></div>
+      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#ff66b2" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#ff66b2"/><circle cx="16" cy="12" r="0.8" fill="#ff66b2"/><circle cx="12" cy="16" r="0.8" fill="#ff66b2"/><circle cx="8" cy="12" r="0.8" fill="#ff66b2"/><circle cx="12" cy="12" r="0.8" fill="#ff66b2"/></svg><p>Built by people who genuinely love the game</p></div>
     </div>
   </div>
 </section>
