@@ -7,8 +7,7 @@
 <meta name="description" content="LIT Pickleball — get locked in. Foreign-coach-led pickleball coaching packs and a curated, English-speaking community in Phu My Hung, District 7, Ho Chi Minh City.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Áp dụng Tilt Warp cho Graffiti premium -->
-<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg-0:#000000;
@@ -23,8 +22,8 @@
     --pink:#ff66b2;
     --magenta:#db4860;
     --white:#ffffff;
-    --muted:#7b838b;       /* Màu xám trung tính cho text phụ */
-    --muted-2:#4a4e57;     /* Màu xám đậm cho text ít quan trọng hơn */
+    --muted:#7b838b;
+    --muted-2:#4a4e57;
     --line:rgba(255,255,255,0.08);
     --ball:#53c1b6;
     --radius:18px;
@@ -36,7 +35,7 @@
   body{
     background:var(--bg-0);
     color:var(--white);
-    font-family:'Cera Pro', 'Inter', sans-serif; /* Cera Pro fallback by Inter */
+    font-family:'Cera Pro', 'Inter', sans-serif;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
@@ -48,7 +47,6 @@
 
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
 
-  /* Tilt Warp cho tiêu đề chính - Graffiti premium, dynamic warp */
   h1,h2,h3,.display{
     font-family:'Tilt Warp', cursive;
     text-transform:uppercase;
@@ -57,7 +55,6 @@
     font-weight:400;
   }
   
-  /* Oswald cho tiêu đề phụ, nav, nút bấm */
   h4, h5 {
     font-family:'Oswald', sans-serif;
     text-transform:uppercase;
@@ -69,7 +66,7 @@
     font-family:'Tilt Warp', cursive;
     text-transform:uppercase;
     line-height:1.1;
-    background:linear-gradient(180deg, var(--pink) 0%, var(--violet) 55%, var(--teal) 100%);
+    background:linear-gradient(180deg, var(--violet) 0%, var(--teal) 100%);
     -webkit-background-clip:text;
     background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -113,7 +110,7 @@
     font-family:'Tilt Warp', cursive;
     font-weight:400;
     letter-spacing:1px;
-    background:linear-gradient(180deg, var(--pink) 0%, var(--violet) 60%, var(--teal) 100%);
+    background:linear-gradient(180deg, var(--violet) 0%, var(--teal) 100%);
     -webkit-background-clip:text;
     background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -184,18 +181,20 @@
     background-position:center;
     opacity:0.95;
   }
-  .hero-court::before{
-    content:""; position:absolute; inset:8% 12%;
-    border:2px solid rgba(255,255,255,0.07); border-radius:4px;
+  
+  .bounce-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+    text-align: center;
   }
-  .hero-court::after{
-    content:""; position:absolute; top:8%; bottom:8%; left:50%;
-    width:2px; background:rgba(255,255,255,0.07);
-  }
-  .rally-line{
-    position:absolute; top:14%; left:0; width:100%; z-index:1; opacity:0.9;
-    pointer-events:none;
-  }
+  .hero-bounce { top: 12%; opacity: 0.9; }
+  .bounce-img { max-width: 100%; height: auto; }
+  .bounce-desktop { display: inline-block; width: 100%; max-width: 1863px; }
+  .bounce-mobile { display: none; width: 100%; max-width: 800px; }
+
   .hero-inner{position:relative; z-index:2; text-align:center; max-width:900px;}
   .hero-badge{
     display:inline-flex; align-items:center; gap:8px;
@@ -217,27 +216,62 @@
   @keyframes bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)}}
   .scroll-cue svg{animation:bob 2s ease-in-out infinite;}
 
-  /* ===== ICON STRIP ===== */
-  .strip{
-    background:var(--bg-1);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:44px 32px;
+  /* ===== AMENITIES (MORE THAN JUST COURTS) ===== */
+  .amenities-section {
+    background: #000000;
+    padding: 0 32px;
+    margin-top: -80px; 
+    position: relative;
+    z-index: 10;
   }
-  .strip h2{
-    text-align:center; font-size:clamp(22px,3vw,30px);
-    margin-bottom:28px; color:var(--white); letter-spacing:1px;
+  .amenities-card {
+    background: #0f0f0f;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
   }
-  .strip-grid{
-    display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
-    gap:14px 40px; max-width:1100px; margin:0 auto;
+  .amenities-card h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 16px;
   }
-  .strip-item{display:flex; align-items:center; gap:12px;}
-  .strip-icon-sm{
-    flex:none; width:26px; height:26px; transition:transform .2s ease;
+  .amenities-desc {
+    color: #ffffff;
+    font-family: 'Cera Pro', 'Inter', sans-serif;
+    font-weight: 300; 
+    font-size: 16px;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .strip-item:hover .strip-icon-sm{transform:scale(1.15);}
-  .strip-item p{font-family:'Cera Pro', 'Inter', sans-serif; font-size:14px; font-weight:600; color:var(--muted); letter-spacing:0.2px; white-space:nowrap;}
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .amenities-grid .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .amenities-grid .strip-item p {
+    color: #ffffff;
+    font-family: 'Cera Pro', 'Inter', sans-serif;
+    font-weight: 300; 
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .amenities-grid .strip-icon-sm {
+    flex: none;
+    width: 28px;
+    height: 28px;
+  }
 
   /* ===== SECTION generic ===== */
   section{padding:120px 32px; position:relative;}
@@ -280,10 +314,6 @@
   }
   .check-icon svg{width:12px; height:12px;}
 
-  .format-card, .team-card, .proof-item{transition:transform .25s ease, box-shadow .25s ease;}
-  .format-card:hover, .team-card:hover{transform:translateY(-5px); box-shadow:0 14px 34px rgba(0,0,0,0.4);}
-  .proof-item:hover{transform:translateY(-3px);}
-
   .note-box{
     max-width:var(--maxw); margin:40px auto 0;
     border:1px solid rgba(151,93,252,0.35);
@@ -296,11 +326,23 @@
   /* ===== Pricing ===== */
   .pricing-ombre{
     position:relative;
-    background:linear-gradient(180deg, #000000 0%, #0a0a0a 35%, #1a1224 100%);
+    background: linear-gradient(180deg, #000000 0%, #6a4a98 100%);
     border-top:1px solid var(--line);
     overflow:hidden;
+    padding: 80px 32px 120px;
+    text-align: center;
   }
-  .pricing-rally{position:absolute; top:6%; left:0; width:100%; opacity:0.85; pointer-events:none;}
+
+  /* Chỉnh sửa flow ảnh Bounce và khoảng cách 68px */
+  .pricing-ombre .bounce-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    opacity: 0.85;
+    margin-bottom: 68px; /* Exact 68px gap */
+    z-index: 1;
+    pointer-events: none;
+  }
   
   .price-eyebrow{
     display:inline-block; padding:7px 18px; border-radius:999px;
@@ -309,74 +351,159 @@
     margin-bottom:18px;
   }
   .price-head{text-align:center; max-width:640px; margin:0 auto 50px; position:relative; z-index:2;}
-  .price-head h3{font-size:clamp(28px,4.2vw,44px); margin-bottom:16px;}
-  .price-head p{color:var(--muted); font-size:15.5px;}
+  
+  .price-head h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: clamp(28px,4.2vw,44px);
+    margin-bottom: 16px;
+  }
+  .price-head p {
+    font-family: 'Cera Pro', 'Inter', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 15.5px;
+  }
 
   .price-grid-2col{
     display:grid; grid-template-columns:1fr 1fr; gap:28px;
     max-width:var(--maxw); margin:0 auto; align-items:stretch;
     position:relative; z-index:2;
   }
-  .price-card{
-    border:1px solid rgba(255,102,178,0.35); border-top:3px solid transparent;
-    border-image:linear-gradient(90deg, var(--pink), var(--violet)) 1;
-    border-radius:20px; padding:36px 40px 40px; background:var(--bg-1);
-    display:flex; flex-direction:column;
+  
+  .price-card, .private-card {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 30px;
+    padding: 36px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
   }
-  .price-badge{
-    display:inline-block; padding:5px 14px; border-radius:999px;
-    background:rgba(255,102,178,0.15); color:var(--pink);
-    font-family:'Oswald', sans-serif; font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
-    margin-bottom:16px; align-self:flex-start;
+  
+  .price-badge, .private-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    align-self: flex-start;
   }
-  .price-card h4{font-size:26px; font-weight:600; margin-bottom:4px;}
-  .price-sub{font-family:'Oswald', sans-serif; font-size:13px; color:var(--muted-2); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:22px; display:block;}
-  .price-divider{border-top:1px solid var(--line); margin-bottom:22px;}
-  .price-row{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px;}
-  .price-new{font-family:'Oswald', sans-serif; font-size:44px; color:var(--white); letter-spacing:0.5px; font-weight:700;}
-  .price-unit{font-size:14px; color:var(--muted);}
-  .price-off{
-    background:var(--pink); color:#330011; font-family:'Oswald', sans-serif; font-size:11px; font-weight:700;
-    letter-spacing:1px; padding:4px 10px; border-radius:999px;
+  
+  .price-card h4, .private-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 26px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
   }
-  .price-meta{font-size:13.5px; color:var(--muted-2); margin-bottom:20px;}
-  .price-desc{color:var(--muted); font-size:14.5px; margin-bottom:26px; line-height:1.6;}
-  .price-list{display:flex; flex-direction:column; gap:13px; margin-bottom: 24px;}
-  .price-list li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--muted);}
-  .price-list svg{flex:none; width:17px; height:17px; margin-top:2px;}
+  
+  .price-sub, .private-sub {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    display: block;
+  }
+  
+  .price-divider { border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 22px; }
+  
+  .price-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+  .price-new { font-family: 'Oswald', sans-serif; font-size: 48px; color: var(--teal); letter-spacing: 0.5px; font-weight: 700; }
+  .price-unit { font-size: 14px; color: rgba(255,255,255,0.8); }
+  
+  .price-off {
+    background: var(--pink);
+    color: #1a0010;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(255,102,178,0.5);
+    display: inline-block;
+    animation: pulse-urgent 1.5s infinite;
+    text-transform: uppercase;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transform: rotate(-2deg);
+  }
+  @keyframes pulse-urgent {
+    0% { transform: scale(1) rotate(-2deg); box-shadow: 0 0 0 0 rgba(255,102,178, 0.6); }
+    70% { transform: scale(1.05) rotate(-2deg); box-shadow: 0 0 0 12px rgba(255,102,178, 0); }
+    100% { transform: scale(1) rotate(-2deg); box-shadow: 0 0 0 0 rgba(255,102,178, 0); }
+  }
 
-  .private-card{
-    border:1px solid rgba(151,93,252,0.35); border-top:3px solid transparent;
-    border-image:linear-gradient(90deg, var(--violet), var(--teal)) 1;
-    border-radius:20px; background:var(--bg-1);
-    padding:36px 40px 40px; display:flex; flex-direction:column;
+  .promo-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
   }
-  .private-badge{
-    display:inline-block; padding:6px 16px; border-radius:999px;
-    border:1px solid rgba(151,93,252,0.4); background:rgba(151,93,252,0.1);
-    color:var(--violet); font-family:'Oswald', sans-serif; font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
-    margin-bottom:16px; align-self:flex-start;
-  }
-  .private-card h4{font-size:26px; font-weight:600; margin-bottom:4px;}
-  .private-sub{font-family:'Oswald', sans-serif; font-size:13px; color:var(--muted-2); letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:16px;}
-  .private-card .desc{color:var(--muted); font-size:14.5px; margin-bottom:24px; line-height:1.6;}
-  .private-card .stat-grid{margin-bottom:26px;}
-  .private-card .btn{margin-top:auto; align-self:flex-start;}
 
-  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
-  .stat-tile{
-    background:var(--bg-2); border:1px solid var(--line); border-radius:14px;
-    padding:20px 16px; text-align:center;
+  .promo-deadline {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    color: var(--pink);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 8px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
-  .stat-tile svg{width:22px; height:22px; margin:0 auto 10px;}
-  .stat-tile h5{font-size:14px; font-weight:600; margin-bottom:3px;}
-  .stat-tile span{font-family:'Cera Pro', 'Inter', sans-serif; font-size:12px; color:var(--muted-2);}
+  
+  .price-meta { font-size: 13.5px; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+  .price-desc { color: rgba(255,255,255,0.8); font-size: 14.5px; margin-bottom: 26px; line-height: 1.6; }
+  .price-list { display: flex; flex-direction: column; gap: 13px; margin-bottom: 24px; }
+  .price-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; color: rgba(255,255,255,0.8); }
+  .price-list svg { flex: none; width: 17px; height: 17px; margin-top: 2px; }
 
-  .ratio-note{
-    text-align:center; max-width:640px; margin:36px auto 0; padding-top:32px;
-    border-top:1px solid rgba(255,255,255,0.12);
-    font-family:'Oswald', sans-serif; font-size:13px; font-weight:500; letter-spacing:1px; color:var(--muted-2); line-height:1.8;
-    text-transform:uppercase; position:relative; z-index:2;
+  .private-card .desc { color: rgba(255,255,255,0.8); font-size: 14.5px; margin-bottom: 24px; line-height: 1.6; }
+  .private-card .stat-grid { margin-bottom: 26px; }
+  .private-card .btn { margin-top: auto; align-self: flex-start; }
+
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .stat-tile {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .stat-tile svg { width: 22px; height: 22px; margin: 0 auto 10px; }
+  .stat-tile h5 { font-size: 14px; font-weight: 600; margin-bottom: 3px; color: #fff; }
+  .stat-tile span { font-family: 'Cera Pro', 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.6); }
+
+  .ratio-note {
+    text-align: center;
+    max-width: 640px;
+    margin: 36px auto 0;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
   }
 
   /* ===== TEAM ===== */
@@ -580,7 +707,7 @@
     .team-grid{grid-template-columns:1fr;}
     .private-block{grid-template-columns:1fr; padding:30px 26px;}
     .price-grid-2col{grid-template-columns:1fr;}
-    .price-card{padding:30px 24px 34px;}
+    .price-card, .private-card {padding:30px 24px 34px;}
     .stat-grid{grid-template-columns:1fr 1fr;}
     .grid-3{grid-template-columns:1fr;}
     .grid-3 .cell{border-right:none; border-bottom:1px solid var(--line);}
@@ -589,6 +716,13 @@
     section{padding:80px 20px;}
     .membership-card{padding:44px 26px;}
     .field-row{grid-template-columns:1fr;}
+    .bounce-desktop { display: none; }
+    .bounce-mobile { display: inline-block; }
+    .amenities-grid { grid-template-columns: 1fr; gap: 24px; }
+    .amenities-card { padding: 40px 24px; }
+    .amenities-section { margin-top: -60px; }
+    .pricing-ombre { padding: 60px 20px 80px; }
+    .pricing-ombre .bounce-container { margin-bottom: 40px; }
   }
 </style>
 </head>
@@ -626,20 +760,12 @@
 <!-- ================= HERO ================= -->
 <section class="hero" id="top">
   <div class="hero-court"></div>
-  <svg class="rally-line" viewBox="0 0 1400 200" fill="none" preserveAspectRatio="none">
-    <path d="M0 160 C 200 40, 320 40, 480 120 S 760 200, 940 60 S 1220 20, 1400 120" stroke="#ff66b2" stroke-width="3" stroke-dasharray="3 13" stroke-linecap="round" opacity="0.85"/>
-    <g transform="translate(480,120)">
-      <circle r="15" fill="#53c1b6" stroke="#2d6b66" stroke-width="1.5"/>
-      <circle cx="-5" cy="-6" r="1.6" fill="#2d6b66"/><circle cx="5" cy="-4" r="1.6" fill="#2d6b66"/>
-      <circle cx="-2" cy="4" r="1.6" fill="#2d6b66"/><circle cx="7" cy="5" r="1.6" fill="#2d6b66"/>
-      <circle cx="-8" cy="3" r="1.6" fill="#2d6b66"/>
-    </g>
-    <g transform="translate(1140,45)">
-      <circle r="12" fill="#53c1b6" stroke="#2d6b66" stroke-width="1.3"/>
-      <circle cx="-4" cy="-5" r="1.3" fill="#2d6b66"/><circle cx="4" cy="-3" r="1.3" fill="#2d6b66"/>
-      <circle cx="-1" cy="3" r="1.3" fill="#2d6b66"/><circle cx="6" cy="4" r="1.3" fill="#2d6b66"/>
-    </g>
-  </svg>
+  
+  <div class="bounce-container hero-bounce">
+    <img src="https://z-cdn-media.chatglm.cn/files/9f4867c5-d44b-46de-9510-d841ae497080.png?auth_key=1885729389-1b543448a1d1479586ea819c939364f8-0-5880df89d32366e9d28a15db9b21f8a6" alt="Pickleball Bounce Desktop" class="bounce-img bounce-desktop">
+    <img src="https://z-cdn-media.chatglm.cn/files/67452300-125f-4e8e-b0a3-3b1ff4e4af9b.png?auth_key=1885729389-7dbfe4984a38459da80cb7dddb704033-0-3031e833e5ca3d2c79763923b9e7df8d" alt="Pickleball Bounce Mobile" class="bounce-img bounce-mobile">
+  </div>
+
   <div class="hero-inner">
     <span class="hero-badge eyebrow dot" style="margin:0;">Pickleball Coaching &amp; Community in Phu My Hung</span>
     <h1 class="graffiti-head" style="font-size:clamp(56px, 11vw, 148px);">Get Locked In.</h1>
@@ -654,33 +780,36 @@
   </div>
 </section>
 
-<!-- ================= ICON STRIP ================= -->
-<section class="strip section-tight">
-  <h2 class="graffiti-head" style="text-align:center; font-size:clamp(30px,4.5vw,44px); margin-bottom:48px;">More Than Just a Court</h2>
-  <div class="strip-grid">
-    <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4.5" fill="#53c1b6"/><path d="M12 12l7 7" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"/><circle cx="19" cy="19" r="2" fill="#ff66b2"/></svg>
-      <p>Certified Foreign Coach</p>
-    </div>
-    <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M2 10L12 3l10 7v2H2v-2z" fill="#ff66b2"/><rect x="4" y="12" width="16" height="8" rx="1" fill="#53c1b6"/></svg>
-      <p>Covered, Air-Cooled Courts</p>
-    </div>
-    <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3.2" fill="#975dfc"/><circle cx="16" cy="9" r="3.2" fill="#975dfc" opacity="0.6"/><path d="M2 20c0-4 3-6.5 6-6.5s6 2.5 6 6.5M11 20c0-3.5 2.5-6 6-6s5 2 5 6" fill="#975dfc" opacity="0.85"/></svg>
-      <p>Group Training</p>
-    </div>
-    <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0v4" stroke="#a76ff8" stroke-width="2.4" stroke-linecap="round" fill="none"/><rect x="2" y="13" width="5" height="7" rx="2.5" fill="#a76ff8"/><rect x="17" y="13" width="5" height="7" rx="2.5" fill="#a76ff8"/></svg>
-      <p>On-Court Assistant</p>
-    </div>
-    <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="5.5" fill="#53c1b6" opacity="0.9"/><circle cx="15" cy="9" r="5.5" fill="#ff66b2" opacity="0.9"/><circle cx="12" cy="15" r="5.5" fill="#975dfc" opacity="0.9"/></svg>
-      <p>Curated Community</p>
-    </div>
-    <div class="strip-item">
-      <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 5h16a2 2 0 012 2v8a2 2 0 01-2 2h-9l-5 4v-4H4a2 2 0 01-2-2V7a2 2 0 012-2z" fill="#ff66b2"/><circle cx="8" cy="11" r="1.3" fill="#0e0e12"/><circle cx="12" cy="11" r="1.3" fill="#0e0e12"/><circle cx="16" cy="11" r="1.3" fill="#0e0e12"/></svg>
-      <p>English-Speaking</p>
+<!-- ================= AMENITIES (MORE THAN JUST COURTS) ================= -->
+<section class="amenities-section">
+  <div class="amenities-card">
+    <h2 class="graffiti-head">More Than Just Courts</h2>
+    <p class="amenities-desc">Everything you need to elevate your game, all in one place.</p>
+    <div class="amenities-grid">
+      <div class="strip-item">
+        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4.5" fill="#53c1b6"/><path d="M12 12l7 7" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"/><circle cx="19" cy="19" r="2" fill="#ff66b2"/></svg>
+        <p>Certified Foreign Coach</p>
+      </div>
+      <div class="strip-item">
+        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M2 10L12 3l10 7v2H2v-2z" fill="#ff66b2"/><rect x="4" y="12" width="16" height="8" rx="1" fill="#53c1b6"/></svg>
+        <p>Covered, Air-Cooled Courts</p>
+      </div>
+      <div class="strip-item">
+        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3.2" fill="#975dfc"/><circle cx="16" cy="9" r="3.2" fill="#975dfc" opacity="0.6"/><path d="M2 20c0-4 3-6.5 6-6.5s6 2.5 6 6.5M11 20c0-3.5 2.5-6 6-6s5 2 5 6" fill="#975dfc" opacity="0.85"/></svg>
+        <p>Group Training</p>
+      </div>
+      <div class="strip-item">
+        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0v4" stroke="#a76ff8" stroke-width="2.4" stroke-linecap="round" fill="none"/><rect x="2" y="13" width="5" height="7" rx="2.5" fill="#a76ff8"/><rect x="17" y="13" width="5" height="7" rx="2.5" fill="#a76ff8"/></svg>
+        <p>On-Court Assistant</p>
+      </div>
+      <div class="strip-item">
+        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="5.5" fill="#53c1b6" opacity="0.9"/><circle cx="15" cy="9" r="5.5" fill="#ff66b2" opacity="0.9"/><circle cx="12" cy="15" r="5.5" fill="#975dfc" opacity="0.9"/></svg>
+        <p>Curated Community</p>
+      </div>
+      <div class="strip-item">
+        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 5h16a2 2 0 012 2v8a2 2 0 01-2 2h-9l-5 4v-4H4a2 2 0 01-2-2V7a2 2 0 012-2z" fill="#ff66b2"/><circle cx="8" cy="11" r="1.3" fill="#0e0e12"/><circle cx="12" cy="11" r="1.3" fill="#0e0e12"/><circle cx="16" cy="11" r="1.3" fill="#0e0e12"/></svg>
+        <p>English-Speaking</p>
+      </div>
     </div>
   </div>
 </section>
@@ -688,7 +817,6 @@
 <!-- ================= COACHING ================= -->
 <section class="coaching" id="coaching">
   <div class="coaching-grid">
-    <!-- Ảnh đang đánh bóng ngoài trời -->
     <div class="photo-block" style="background-image:linear-gradient(180deg, rgba(0,0,0,0.05) 55%, rgba(0,0,0,0.85) 100%), url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
       <span class="tag">Coach in Session</span>
     </div>
@@ -713,23 +841,14 @@
 
 <!-- ================= PRICING ================= -->
 <section class="pricing-ombre">
-  <svg class="pricing-rally" viewBox="0 0 1400 200" fill="none" preserveAspectRatio="none">
-    <path d="M0 160 C 200 40, 320 40, 480 120 S 760 200, 940 60 S 1220 20, 1400 120" stroke="#ff66b2" stroke-width="3" stroke-dasharray="3 13" stroke-linecap="round" opacity="0.85"/>
-    <g transform="translate(480,120)">
-      <circle r="15" fill="#53c1b6" stroke="#2d6b66" stroke-width="1.5"/>
-      <circle cx="-5" cy="-6" r="1.6" fill="#2d6b66"/><circle cx="5" cy="-4" r="1.6" fill="#2d6b66"/>
-      <circle cx="-2" cy="4" r="1.6" fill="#2d6b66"/><circle cx="7" cy="5" r="1.6" fill="#2d6b66"/><circle cx="-8" cy="3" r="1.6" fill="#2d6b66"/>
-    </g>
-    <g transform="translate(1140,45)">
-      <circle r="12" fill="#53c1b6" stroke="#2d6b66" stroke-width="1.3"/>
-      <circle cx="-4" cy="-5" r="1.3" fill="#2d6b66"/><circle cx="4" cy="-3" r="1.3" fill="#2d6b66"/>
-      <circle cx="-1" cy="3" r="1.3" fill="#2d6b66"/><circle cx="6" cy="4" r="1.3" fill="#2d6b66"/>
-    </g>
-  </svg>
+  <div class="bounce-container">
+    <img src="https://z-cdn-media.chatglm.cn/files/9f4867c5-d44b-46de-9510-d841ae497080.png?auth_key=1885729389-1b543448a1d1479586ea819c939364f8-0-5880df89d32366e9d28a15db9b21f8a6" alt="Pickleball Bounce Desktop" class="bounce-img bounce-desktop">
+    <img src="https://z-cdn-media.chatglm.cn/files/67452300-125f-4e8e-b0a3-3b1ff4e4af9b.png?auth_key=1885729389-7dbfe4984a38459da80cb7dddb704033-0-3031e833e5ca3d2c79763923b9e7df8d" alt="Pickleball Bounce Mobile" class="bounce-img bounce-mobile">
+  </div>
 
   <div class="price-head">
     <span class="price-eyebrow">Coaching Packages</span>
-    <h3 class="graffiti-head" style="font-size:clamp(28px,4.2vw,44px);">Simple. Transparent.<br>No Surprises.</h3>
+    <h3>Simple. Transparent.<br>No Surprises.</h3>
     <p>Every package includes coach-led sessions, court fee, and a free LIT T-shirt. One price. Nothing hidden.</p>
   </div>
 
@@ -737,20 +856,22 @@
     <div class="price-card">
       <span class="price-badge">Group Training</span>
       <h4>Group Training Pack</h4>
-      <span class="price-sub">All Skill Levels · Up to 4 per Coach</span>
+      <span class="price-sub">All Skill Levels</span>
       <div class="price-divider"></div>
       <div class="price-row">
         <span class="price-new">400,000</span>
         <span class="price-unit">VND / session</span>
         <span class="price-off">10% OFF</span>
       </div>
-      <p class="price-meta">10-session pack · sold as a full package only</p>
-      <p class="price-desc">Grouped by skill level, not age — the right pace, every time.</p>
+      <p class="price-meta">10-session pack</p>
+      <p class="promo-deadline">⏳ HURRY! ENDS 31.08.2026</p>
+      
+      <p class="price-desc" style="margin-top: 20px;">Grouped by skill level, not age — the right pace, every time.</p>
       <ul class="price-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>10 coaching sessions included</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Court fee included</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Free LIT T-shirt</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Up to 4 students per coach</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Max ratio 4:1</li>
       </ul>
       <a href="#contact" class="btn btn-primary">Book Group Pack</a>
     </div>
@@ -759,6 +880,12 @@
       <span class="private-badge">Private Coaching</span>
       <h4>1:1 Coaching with Our Certified Coach</h4>
       <span class="private-sub">Personalized Pickleball Coaching · Phu My Hung</span>
+      
+      <div class="promo-box">
+        <span class="price-off">10% OFF</span>
+        <span class="promo-deadline" style="margin-top:0;">⏳ HURRY! ENDS 31.08.2026</span>
+      </div>
+
       <p class="desc">Built around your goals — sharpen technique, your own pace.</p>
       <div class="stat-grid">
         <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#975dfc" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.8" fill="#975dfc"/></svg><h5>Custom Plan</h5><span>Tailored to you</span></div>
@@ -773,20 +900,6 @@
   <p class="ratio-note">Coaching ratio is intentionally small — up to 4 students per coach.<br>Every player is seen. Every session has a reason.</p>
 </section>
 
-<!-- ================= PROGRAM BANNERS ================= -->
-<section class="section-tight" style="padding-top:0; padding-bottom:60px;">
-  <div style="max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-    <div style="border:1px solid rgba(64,186,103,0.35); background:rgba(64,186,103,0.06); border-radius:16px; padding:26px 28px;">
-      <span style="color:var(--green); font-family:'Oswald', sans-serif; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">Boys Club</span>
-      <h4 style="font-size:20px; font-weight:600; margin-top:8px;">Launching Friday, August 14</h4>
-    </div>
-    <div style="border:1px solid rgba(255,102,178,0.35); background:rgba(255,102,178,0.06); border-radius:16px; padding:26px 28px;">
-      <span style="color:var(--pink); font-family:'Oswald', sans-serif; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">Women's Program</span>
-      <h4 style="font-size:20px; font-weight:600; margin-top:8px;">10% off for the first 10 sign-ups — by Aug 31</h4>
-    </div>
-  </div>
-</section>
-
 <!-- ================= TEAM ================= -->
 <section class="team" id="team">
   <div class="section-head">
@@ -794,7 +907,6 @@
     <h2>The Coaches Who Get You Locked In</h2>
   </div>
   <div class="team-grid">
-    <!-- Coach Boysey (Áo trắng) -->
     <div class="team-card">
       <div class="team-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/57b1040e-f9c9-486d-aa45-c28995cfb8d9.JPG?auth_key=1885726169-86e6fd8c3bd24d838be8e13e333d808c-0-33c3b0ee1c980eaf14939cac401d6901'); background-position:center 20%;"></div>
       <div class="team-info">
@@ -803,7 +915,6 @@
         <p>Energy and patience for beginners and players sharpening a specific shot.</p>
       </div>
     </div>
-    <!-- Coach Wardy (Chưa có ảnh) -->
     <div class="team-card">
       <div class="team-photo" style="background-color:#1a1a1a; display:flex; align-items:center; justify-content:center; color:var(--violet); font-family:'Oswald', sans-serif; font-weight:500; letter-spacing:2px; font-size:14px;">Photo Coming Soon</div>
       <div class="team-info">
@@ -812,7 +923,6 @@
         <p>Steady, clear feedback — real progress players come back for.</p>
       </div>
     </div>
-    <!-- Coach Zinger (Áo đen khoanh tay) -->
     <div class="team-card">
       <div class="team-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/1c3cdde2-de1b-4f03-a939-46d0e6f94900.png?auth_key=1885726169-628c86f4b89744ea952bf518eb0d2daf-0-4da0282a06c211dac28c7b3adef9d8d2'); background-position:center top;"></div>
       <div class="team-info">
@@ -1011,7 +1121,7 @@
       <ul>
         <li>Phu My Hung, District 7</li>
         <li>Ho Chi Minh City</li>
-        <li>hello@litpickleball.com</li>
+        <li>lockedin.saigon@gmail.com</li>
         <li>+84 28 7300 0000</li>
       </ul>
     </div>
@@ -1023,14 +1133,12 @@
 </footer>
 
 <script>
-  // Mobile Menu Toggle
   const toggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
   toggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
 
-  // FAQ Accordion (Collapse others when opening a new one)
   document.querySelectorAll('.faq-item').forEach(item=>{
     item.querySelector('.faq-q').addEventListener('click', ()=>{
       const isOpen = item.classList.contains('open');
