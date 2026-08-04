@@ -84,7 +84,14 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:15px 3
 .amenities-grid .strip-item p{color:#fff;font-family:'Cera Pro','Inter',sans-serif;font-weight:300;font-size:18px;white-space:nowrap}
 .amenities-grid .strip-icon-sm{flex:none;width:28px;height:28px}
 section{padding:120px 32px;position:relative}
-.coaching{background:var(--bg-0)}
+
+/* === Thay đổi Nền Section Coaching === */
+.coaching{
+  background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.92)),url('https://z-cdn-media.chatglm.cn/files/ddc69892-90a2-4a04-bf15-06f9d3dc12f4.jpeg?auth_key=1885830449-690c746802304ff9b92d86684e3d4e91-0-0774b20f0a04434cef8432dfb5a79025');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
 .coaching-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center;max-width:var(--maxw);margin:0 auto}
 .photo-block{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background-size:cover;background-position:center;border:1px solid var(--line);display:flex;align-items:flex-end;padding:24px}
 .photo-block .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.15);padding:9px 16px;border-radius:999px;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--white)}
@@ -169,12 +176,18 @@ h3.head-lg{font-size:clamp(34px,5vw,54px);margin-bottom:22px}
 .corporate .eyebrow{color:var(--accent-2)}
 .corporate h2{font-size:clamp(32px,5vw,56px);margin-bottom:16px}
 .corporate p{font-family:'Cera Pro','Inter',sans-serif;color:var(--muted);font-size:16.5px;margin-bottom:32px}
-.why{background:var(--bg-0)}
-.why-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;max-width:var(--maxw);margin:0 auto;align-items:start}
-.why-list{display:grid;grid-template-columns:1fr 1fr;gap:22px 40px}
-.why-item{display:flex;gap:14px;align-items:flex-start}
-.ball-icon{flex:none;width:24px;height:24px;margin-top:2px}
-.why-item p{font-family:'Cera Pro','Inter',sans-serif;font-size:15px;color:var(--muted);line-height:1.55}
+
+/* === Why LIT === */
+.why{position:relative;background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.9)),url('https://z-cdn-media.chatglm.cn/files/8f217211-f45c-4c93-8aa8-bfc0c2918ce5.png?auth_key=1885829093-2ffe5ff19403430aa25757936dce5bdf-0-cd4ab34edc00d0c42673983eb167d415');background-size:cover;background-position:center;background-attachment:fixed;padding:120px 32px}
+.why-container{max-width:800px;margin:0 auto;text-align:center}
+.why-container h3{color:#fff;margin-bottom:20px}
+.why-container .body-copy{color:rgba(255,255,255,0.85);margin:0 auto 40px;max-width:500px}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:25px 40px;text-align:left;margin-bottom:50px}
+.why-item{display:flex;gap:15px;align-items:flex-start}
+.why-item .ball-icon{flex:none;width:26px;height:26px;margin-top:2px;border-radius:50%}
+.why-item p{font-family:'Cera Pro','Inter',sans-serif;font-size:15px;color:#fff;line-height:1.5}
+.why-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
 .newsletter{background:linear-gradient(120deg,var(--teal) 0,var(--violet) 55%,var(--violet-deep) 100%);text-align:center;padding:90px 32px}
 .newsletter h2{font-size:clamp(28px,4.5vw,44px);margin-bottom:14px}
 .newsletter p{font-family:'Cera Pro','Inter',sans-serif;color:rgba(255,255,255,.85);margin-bottom:34px;font-size:16px}
@@ -212,7 +225,36 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
 .footer-col a,.footer-col li{font-family:'Cera Pro','Inter',sans-serif;color:var(--muted);font-size:14.5px}
 .footer-col a:hover{color:var(--white)}
 .footer-bottom{max-width:var(--maxw);margin:0 auto;padding-top:30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:'Cera Pro','Inter',sans-serif;font-size:13px;color:var(--muted-2)}
-@media(max-width:960px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#000;flex-direction:column;padding:20px 0;gap:10px;border-bottom:1px solid var(--line);align-items:center}.nav-links a{font-size:18px}.nav-cta .btn-nav-cta{display:none}.mobile-toggle{display:block}.coaching-grid,.why-grid,.findus-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}.price-grid-2col{grid-template-columns:1fr}.price-card,.private-card{padding:30px 24px 34px}.stat-grid{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr}.grid-3 .cell{border-right:none;border-bottom:1px solid var(--line)}.why-list{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;gap:36px}section{padding:80px 20px}.membership-card{padding:44px 26px}.field-row{grid-template-columns:1fr}.bounce-desktop{display:none}.bounce-mobile{display:inline-block}.amenities-grid{grid-template-columns:1fr;gap:24px}.amenities-card{padding:40px 24px}.amenities-section{margin-top:-60px}.pricing-ombre{padding:60px 20px 80px}.pricing-ombre .bounce-container{margin-bottom:40px}.float-btn{width:48px;height:48px}.float-btn svg{width:24px;height:24px}.floating-contact{bottom:20px;right:20px}}
+@media(max-width:960px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#000;flex-direction:column;padding:20px 0;gap:10px;border-bottom:1px solid var(--line);align-items:center}
+  .nav-links a{font-size:18px}
+  .nav-cta .btn-nav-cta{display:none}
+  .mobile-toggle{display:block}
+  .coaching-grid,.why-grid,.findus-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr}
+  .price-grid-2col{grid-template-columns:1fr}
+  .price-card,.private-card{padding:30px 24px 34px}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:1fr}
+  .grid-3 .cell{border-right:none;border-bottom:1px solid var(--line)}
+  .why-list{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:36px}
+  section{padding:80px 20px}
+  .why{padding:80px 24px; background-attachment:scroll;}
+  .coaching{background-attachment:scroll;}
+  .membership-card{padding:44px 26px}
+  .field-row{grid-template-columns:1fr}
+  .bounce-desktop{display:none}
+  .bounce-mobile{display:inline-block}
+  .amenities-grid{grid-template-columns:1fr;gap:24px}
+  .amenities-card{padding:40px 24px}
+  .amenities-section{margin-top:-60px}
+  .pricing-ombre{padding:60px 20px 80px}
+  .pricing-ombre .bounce-container{margin-bottom:40px}
+  .float-btn{width:48px;height:48px}
+  .float-btn svg{width:24px;height:24px}
+  .floating-contact{bottom:20px;right:20px}
+}
 </style>
 </head>
 <body>
@@ -220,7 +262,7 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
 <!-- ================= FLOATING CONTACT ================= -->
 <div class="floating-contact">
   <a href="https://zalo.me/0938454724" target="_blank" class="float-btn zalo-float" title="Chat Zalo (EN)">
-    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.745 6.614 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.973 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg>
   </a>
   <a href="https://wa.me/84938454724" target="_blank" class="float-btn wa-float" title="Chat WhatsApp (EN)">
     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -253,7 +295,7 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
       <div class="cta-dropdown">
         <button class="btn-nav-cta cta-trigger" onclick="toggleCta(event)">Book Coaching <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.745 6.614 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.973 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg> Zalo</a>
+          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
           <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
         </div>
       </div>
@@ -277,7 +319,7 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
       <div class="cta-dropdown">
         <button class="btn btn-primary cta-trigger" onclick="toggleCta(event)">Book Coaching <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.745 6.614 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.973 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg> Zalo</a>
+          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
           <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
         </div>
       </div>
@@ -323,7 +365,7 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
   </div>
 </section>
 
-<!-- ================= COACHING ================= -->
+<!-- ================= COACHING (Đã đổi nền) ================= -->
 <section class="coaching" id="coaching">
   <div class="coaching-grid">
     <div class="photo-block" style="background-image:linear-gradient(180deg, rgba(0,0,0,0.05) 55%, rgba(0,0,0,0.85) 100%), url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
@@ -342,7 +384,7 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
       <div class="cta-dropdown">
         <button class="btn btn-primary cta-trigger" onclick="toggleCta(event)">Book Your 10-Session Pack <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.745 6.614 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.973 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg> Zalo</a>
+          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
           <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
         </div>
       </div>
@@ -387,7 +429,7 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
       <div class="cta-dropdown">
         <button class="btn btn-primary cta-trigger" onclick="toggleCta(event)">Book Group Pack <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.745 6.614 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.973 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg> Zalo</a>
+          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
           <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
         </div>
       </div>
@@ -411,8 +453,8 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
       <div class="cta-dropdown">
         <button class="btn btn-violet cta-trigger" onclick="toggleCta(event)">Contact for Pricing &amp; Schedule <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.745 6.614 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.973 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg> Zalo</a>
-          <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
+          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
+          <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
         </div>
       </div>
     </div>
@@ -516,7 +558,7 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
     <div class="cta-dropdown full-width">
       <button class="btn btn-primary cta-trigger full-btn" onclick="toggleCta(event)">Join the Waitlist <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
       <div class="cta-menu">
-        <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.745 6.614 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.973 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg> Zalo</a>
+        <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
         <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
       </div>
     </div>
@@ -531,30 +573,54 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
   <div class="cta-dropdown">
     <button class="btn btn-outline cta-trigger" onclick="toggleCta(event)" style="border-color:rgba(255,102,178,0.5);">Register Interest <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
     <div class="cta-menu">
-      <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.745 6.614 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.973 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg> Zalo</a>
-      <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
+      <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
+      <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
     </div>
   </div>
 </section>
 
 <!-- ================= WHY LIT ================= -->
-<section class="why">
-  <div class="why-grid">
-    <div>
-      <span class="eyebrow">Why LIT</span>
-      <h3 class="head-lg">Why LIT?</h3>
-      <p class="body-copy">Built for one thing: making it easy to show up, get better, and keep coming back.</p>
-      <span class="eyebrow" style="margin-top:6px;">Locked In Training</span>
-    </div>
+<section class="why" id="why">
+  <div class="why-container">
+    <h3 class="head-lg">Why LIT?</h3>
+    <p class="body-copy">Built for one thing: making it easy to show up, get better, and keep coming back.</p>
     <div class="why-list">
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#53c1b6"/><circle cx="16" cy="12" r="0.8" fill="#53c1b6"/><circle cx="12" cy="16" r="0.8" fill="#53c1b6"/><circle cx="8" cy="12" r="0.8" fill="#53c1b6"/><circle cx="12" cy="12" r="0.8" fill="#53c1b6"/></svg><p>Foreign coach, RacketPro APAC Level 1 certified</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#40ba67" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#40ba67"/><circle cx="16" cy="12" r="0.8" fill="#40ba67"/><circle cx="12" cy="16" r="0.8" fill="#40ba67"/><circle cx="8" cy="12" r="0.8" fill="#40ba67"/><circle cx="12" cy="12" r="0.8" fill="#40ba67"/></svg><p>Covered, clean courts with seating and fans</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#975dfc" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#975dfc"/><circle cx="16" cy="12" r="0.8" fill="#975dfc"/><circle cx="12" cy="16" r="0.8" fill="#975dfc"/><circle cx="8" cy="12" r="0.8" fill="#975dfc"/><circle cx="12" cy="12" r="0.8" fill="#975dfc"/></svg><p>On-site assistant at every session</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#ff66b2" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#ff66b2"/><circle cx="16" cy="12" r="0.8" fill="#ff66b2"/><circle cx="12" cy="16" r="0.8" fill="#ff66b2"/><circle cx="8" cy="12" r="0.8" fill="#ff66b2"/><circle cx="12" cy="12" r="0.8" fill="#ff66b2"/></svg><p>English-speaking, curated community</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#53c1b6"/><circle cx="16" cy="12" r="0.8" fill="#53c1b6"/><circle cx="12" cy="16" r="0.8" fill="#53c1b6"/><circle cx="8" cy="12" r="0.8" fill="#53c1b6"/><circle cx="12" cy="12" r="0.8" fill="#53c1b6"/></svg><p>Fixed courts — no cancellation risk</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#40ba67" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#40ba67"/><circle cx="16" cy="12" r="0.8" fill="#40ba67"/><circle cx="12" cy="16" r="0.8" fill="#40ba67"/><circle cx="8" cy="12" r="0.8" fill="#40ba67"/><circle cx="12" cy="12" r="0.8" fill="#40ba67"/></svg><p>Located in Phu My Hung, District 7</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#975dfc" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#975dfc"/><circle cx="16" cy="12" r="0.8" fill="#975dfc"/><circle cx="12" cy="16" r="0.8" fill="#975dfc"/><circle cx="8" cy="12" r="0.8" fill="#975dfc"/><circle cx="12" cy="12" r="0.8" fill="#975dfc"/></svg><p>No hidden fees, no surprises</p></div>
-      <div class="why-item"><svg class="ball-icon" viewBox="0 0 24 24" fill="none" stroke="#ff66b2" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="8" r="0.8" fill="#ff66b2"/><circle cx="16" cy="12" r="0.8" fill="#ff66b2"/><circle cx="12" cy="16" r="0.8" fill="#ff66b2"/><circle cx="8" cy="12" r="0.8" fill="#ff66b2"/><circle cx="12" cy="12" r="0.8" fill="#ff66b2"/></svg><p>Built by people who genuinely love the game</p></div>
+      <div class="why-item">
+        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
+        <p>Foreign coach, RacketPro APAC Level 1 certified</p>
+      </div>
+      <div class="why-item">
+        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
+        <p>Covered, clean courts with seating and fans</p>
+      </div>
+      <div class="why-item">
+        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
+        <p>On-site assistant at every session</p>
+      </div>
+      <div class="why-item">
+        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
+        <p>English-speaking, curated community</p>
+      </div>
+      <div class="why-item">
+        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
+        <p>Fixed courts — no cancellation risk</p>
+      </div>
+      <div class="why-item">
+        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
+        <p>Located in Phu My Hung, District 7</p>
+      </div>
+      <div class="why-item">
+        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
+        <p>No hidden fees, no surprises</p>
+      </div>
+      <div class="why-item">
+        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
+        <p>Built by people who genuinely love the game</p>
+      </div>
+    </div>
+    <div class="why-ctas">
+      <a href="#membership" class="btn btn-primary">Explore Membership</a>
+      <a href="#coaching" class="btn btn-outline">Explore Coaching</a>
     </div>
   </div>
 </section>
@@ -667,14 +733,12 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
 </footer>
 
 <script>
-  // Mobile Menu Toggle
   const toggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
   toggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
 
-  // FAQ Accordion
   document.querySelectorAll('.faq-item').forEach(item=>{
     item.querySelector('.faq-q').addEventListener('click', ()=>{
       const isOpen = item.classList.contains('open');
@@ -683,7 +747,6 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
     });
   });
 
-  // CTA Dropdown Toggle
   function toggleCta(event) {
     event.stopPropagation();
     const currentDropdown = event.currentTarget.closest('.cta-dropdown');
@@ -693,7 +756,6 @@ footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--
     currentDropdown.classList.toggle('active');
   }
 
-  // Close dropdowns when clicking outside
   window.addEventListener('click', (e) => {
     if (!e.target.closest('.cta-dropdown')) {
       document.querySelectorAll('.cta-dropdown').forEach(dd => dd.classList.remove('active'));
