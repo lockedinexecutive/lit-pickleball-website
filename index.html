@@ -1,769 +1,742 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIT Pickleball — Coaching & Community in Phu My Hung</title>
-<meta name="description" content="LIT Pickleball — get locked in. Foreign-coach-led pickleball coaching packs and a curated, English-speaking community in Phu My Hung, District 7, Ho Chi Minh City.">
-<link rel="icon" type="image/png" href="./assets/images/lit-pickleball-logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg-0:#000;--bg-1:#0a0a0a;--bg-2:#141414;--violet-deep:#6a4a98;--violet:#975dfc;--accent:#975dfc;--accent-2:#a76ff8;--teal:#53c1b6;--green:#40ba67;--pink:#ff66b2;--magenta:#db4860;--white:#fff;--muted:#7b838b;--muted-2:#4a4e57;--line:rgba(255,255,255,.08);--ball:#53c1b6;--radius:18px;--maxw:1320px}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg-0);color:var(--white);font-family:'Cera Pro','Inter',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-ul{list-style:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
-h1,h2,h3,.display{font-family:'Tilt Warp',cursive;text-transform:uppercase;letter-spacing:.5px;line-height:1.1;font-weight:400}
-h4,h5{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-weight:600}
-.graffiti-head{font-family:'Tilt Warp',cursive;text-transform:uppercase;line-height:1.1;background:linear-gradient(180deg,var(--violet) 0,var(--teal) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(4px 4px 0 rgba(0,0,0,.35))}
-.eyebrow{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent-2);font-weight:600;display:inline-block;margin-bottom:14px}
-.eyebrow.dot::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;margin-right:8px;vertical-align:middle}
-header{position:fixed;top:0;left:0;right:0;z-index:100;background:#000;border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;padding:15px 32px;max-width:var(--maxw);margin:0 auto}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIT Pickleball — Coaching & Community in Phu My Hung</title>
+  
+  <!-- Primary Meta Tags (SEO) -->
+  <meta name="title" content="LIT Pickleball — Coaching & Community in Phu My Hung" />
+  <meta name="description" content="LIT Pickleball — get locked in. Foreign-coach-led pickleball coaching packs and a curated, English-speaking community in Phu My Hung, District 7, Ho Chi Minh City." />
+  <meta name="keywords" content="Pickleball Ho Chi Minh, Pickleball District 7, Pickleball Phu My Hung, Pickleball Coaching, LIT Pickleball" />
+  <meta name="author" content="LIT Pickleball" />
+  <link rel="canonical" href="https://litpickleballhcmc.com/" />
+  <link rel="icon" type="image/png" href="./assets/images/lit-pickleball-logo.png" />
 
-/* CSS cho Logo */
-.logo{display:flex;align-items:center;gap:10px;font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;letter-spacing:1px}
-.header-logo-img{height:40px;width:auto;object-fit:contain;}
-.footer-logo-img{height:60px;width:auto;object-fit:contain;margin-bottom:10px;}
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://litpickleballhcmc.com/" />
+  <meta property="og:title" content="LIT Pickleball — Coaching & Community in Phu My Hung" />
+  <meta property="og:description" content="Get seriously good at pickleball, alongside people who get you. Court booked, coach ready — just show up." />
+  <meta property="og:image" content="https://litpickleballhcmc.com/og-image.jpg" />
 
-.graffiti{font-family:'Tilt Warp',cursive;font-weight:400;letter-spacing:1px;background:linear-gradient(180deg,var(--violet) 0,var(--teal) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:2px 2px 0 rgba(0,0,0,.25)}
-.logo-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--violet),var(--violet-deep));display:flex;align-items:center;justify-content:center}
-.logo-mark svg{width:20px;height:20px}
-.logo span{color:var(--muted);font-weight:500;letter-spacing:2px;font-size:14px;margin-left:2px}
-.nav-links{display:flex;gap:15px;align-items:center}
-.nav-links a{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--white);padding:10px 20px;transition:color .2s}
-.nav-links a:hover{color:var(--teal)}
-.nav-cta{display:flex;gap:15px;align-items:center;position:relative}
-.mobile-toggle{display:none;font-size:26px;color:var(--white);background:none;border:none;cursor:pointer}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:all .2s ease;white-space:nowrap;cursor:pointer}
-.btn-primary{background:linear-gradient(135deg,var(--teal),#3ba99e);color:#fff;box-shadow:0 8px 24px rgba(83,193,182,.35)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(83,193,182,.5)}
-.btn-outline{border:1.5px solid rgba(255,255,255,.35);color:var(--white)}
-.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.06)}
-.btn-violet{background:linear-gradient(135deg,var(--violet),var(--violet-deep));color:var(--white);box-shadow:0 8px 24px rgba(151,93,252,.35)}
-.btn-violet:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(151,93,252,.5)}
-.btn-nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:17px 40px;border:1px solid var(--white);border-radius:0;color:var(--white);background:transparent;font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all .2s ease;white-space:nowrap;cursor:pointer}
-.btn-nav-cta:hover{background:var(--white);color:var(--bg-0)}
-.cta-dropdown{position:relative;display:inline-block;width:auto}
-.cta-dropdown.full-width{width:100%;display:block}
-.cta-trigger{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px}
-.cta-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-10px);background:#141414;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:8px;min-width:180px;display:flex;flex-direction:column;gap:4px;opacity:0;pointer-events:none;transition:all .25s ease;z-index:50;box-shadow:0 15px 40px rgba(0,0,0,.6)}
-.cta-dropdown.active .cta-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.cta-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:#fff;transition:background .2s;text-transform:uppercase;letter-spacing:.5px}
-.cta-item:hover{background:rgba(255,255,255,.1)}
-.cta-item svg{width:20px;height:20px}
-.nav-cta .cta-menu{right:0;left:auto;transform:translateY(-10px)}
-.nav-cta .cta-dropdown.active .cta-menu{transform:translateY(0)}
-.floating-contact{position:fixed;bottom:30px;right:30px;display:flex;flex-direction:column;gap:15px;z-index:999}
-.float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 20px rgba(0,0,0,.4);transition:all .3s ease}
-.float-btn:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,.5)}
-.float-btn svg{width:28px;height:28px;fill:#fff}
-.zalo-float{background:#0068ff}
-.wa-float{background:#25D366}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 32px 100px;overflow:hidden;background:var(--bg-0)}
-.hero-court{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.9)),url('https://z-cdn-media.chatglm.cn/files/46b7b0e5-6805-4ac3-8168-46b7b3f029b0.png?auth_key=1885726169-2b463b2c79ab44b7b1ac1313eef9e3f8-0-e8b316d072e2005564239667d03111ac');background-size:cover;background-position:center;opacity:.95}
-.bounce-container{position:absolute;left:0;width:100%;z-index:1;pointer-events:none;text-align:center}
-.hero-bounce{top:12%;opacity:.9}
-.bounce-img{max-width:100%;height:auto}
-.bounce-desktop{display:inline-block;width:100%;max-width:1863px}
-.bounce-mobile{display:none;width:100%;max-width:800px}
-.hero-inner{position:relative;z-index:2;text-align:center;max-width:900px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:999px;border:1px solid rgba(151,93,252,.4);background:rgba(151,93,252,.1);margin-bottom:28px}
-.hero h1{font-size:clamp(56px,10vw,128px);margin-bottom:24px}
-.hero p.sub{font-size:clamp(17px,2.4vw,22px);color:var(--muted);margin-bottom:40px;font-weight:500}
-.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;opacity:.5}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-.scroll-cue svg{animation:bob 2s ease-in-out infinite}
-.amenities-section{background:#000;padding:0 32px;margin-top:-80px;position:relative;z-index:10}
-.amenities-card{background:#0f0f0f;border-radius:20px;max-width:1000px;margin:0 auto;padding:60px 50px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.8)}
-.amenities-card h2{font-size:clamp(28px,4vw,40px);margin-bottom:16px}
-.amenities-desc{color:#fff;font-family:'Cera Pro','Inter',sans-serif;font-weight:300;font-size:16px;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
-.amenities-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 40px;max-width:700px;margin:0 auto;text-align:left}
-.amenities-grid .strip-item{display:flex;align-items:center;gap:16px}
-.amenities-grid .strip-item p{color:#fff;font-family:'Cera Pro','Inter',sans-serif;font-weight:300;font-size:18px;white-space:nowrap}
-.amenities-grid .strip-icon-sm{flex:none;width:28px;height:28px}
-section{padding:120px 32px;position:relative}
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://litpickleballhcmc.com/" />
+  <meta property="twitter:title" content="LIT Pickleball — Coaching & Community in Phu My Hung" />
+  <meta property="twitter:description" content="Get seriously good at pickleball, alongside people who get you. Court booked, coach ready — just show up." />
+  <meta property="twitter:image" content="https://litpickleballhcmc.com/og-image.jpg" />
 
-/* Nền Section Coaching */
-.coaching{
-  background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.92)),url('https://z-cdn-media.chatglm.cn/files/ddc69892-90a2-4a04-bf15-06f9d3dc12f4.jpeg?auth_key=1885830449-690c746802304ff9b92d86684e3d4e91-0-0774b20f0a04434cef8432dfb5a79025');
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-}
-.coaching-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center;max-width:var(--maxw);margin:0 auto}
-.photo-block{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background-size:cover;background-position:center;border:1px solid var(--line);display:flex;align-items:flex-end;padding:24px}
-.photo-block .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.15);padding:9px 16px;border-radius:999px;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--white)}
-h3.head-lg{font-size:clamp(34px,5vw,54px);margin-bottom:22px}
-.body-copy{color:var(--muted);font-size:17px;margin-bottom:28px;max-width:520px}
-.body-copy strong{color:var(--white)}
-.check-list{display:flex;flex-direction:column;gap:18px;margin-bottom:34px}
-.check-list li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px;color:var(--muted);line-height:1.55}
-.check-icon{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(83,193,182,.18);border:1px solid rgba(83,193,182,.45);display:flex;align-items:center;justify-content:center;margin-top:2px}
-.check-icon svg{width:12px;height:12px}
-.note-box{max-width:var(--maxw);margin:40px auto 0;border:1px solid rgba(151,93,252,.35);background:rgba(151,93,252,.06);border-radius:14px;padding:20px 24px;font-size:14.5px;color:var(--muted);line-height:1.6}
-.note-box strong{color:var(--accent-2)}
-.pricing-ombre{position:relative;background:linear-gradient(180deg,#000 0,#6a4a98 100%);border-top:1px solid var(--line);overflow:hidden;padding:80px 32px 120px;text-align:center}
-.pricing-ombre .bounce-container{position:relative;top:auto;left:auto;opacity:.85;margin-bottom:68px;z-index:1;pointer-events:none}
-.price-eyebrow{display:inline-block;padding:7px 18px;border-radius:999px;border:1px solid rgba(255,102,178,.4);background:rgba(255,102,178,.08);color:var(--pink);font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
-.price-head{text-align:center;max-width:640px;margin:0 auto 50px;position:relative;z-index:2}
-.price-head h3{font-family:'Oswald',sans-serif;font-weight:700;color:#fff;text-transform:uppercase;font-size:clamp(28px,4.2vw,44px);margin-bottom:16px}
-.price-head p{font-family:'Cera Pro','Inter',sans-serif;font-weight:400;color:#fff;font-size:15.5px}
-.price-grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:var(--maxw);margin:0 auto;align-items:stretch;position:relative;z-index:2}
-.price-card,.private-card{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);border-radius:30px;padding:36px 40px 40px;display:flex;flex-direction:column;text-align:left}
-.price-badge,.private-badge{display:inline-block;padding:5px 14px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;align-self:flex-start}
-.price-card h4,.private-card h4{font-family:'Oswald',sans-serif;font-weight:500;color:#fff;font-size:26px;margin-bottom:4px;text-transform:uppercase}
-.price-sub,.private-sub{font-family:'Oswald',sans-serif;font-size:13px;color:rgba(255,255,255,.7);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;display:block}
-.price-divider{border-top:1px solid rgba(255,255,255,.1);margin-bottom:22px}
-.price-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:6px}
-.price-new{font-family:'Oswald',sans-serif;font-size:48px;color:var(--teal);letter-spacing:.5px;font-weight:700}
-.price-unit{font-size:14px;color:rgba(255,255,255,.8)}
-.price-off{background:var(--pink);color:#1a0010;font-family:'Oswald',sans-serif;font-size:24px;font-weight:800;letter-spacing:1px;padding:10px 20px;border-radius:8px;box-shadow:0 6px 18px rgba(255,102,178,.5);display:inline-block;animation:pulse-urgent 1.5s infinite;text-transform:uppercase;border:2px solid rgba(255,255,255,.2);transform:rotate(-2deg)}
-@keyframes pulse-urgent{0%{transform:scale(1) rotate(-2deg);box-shadow:0 0 0 0 rgba(255,102,178,.6)}70%{transform:scale(1.05) rotate(-2deg);box-shadow:0 0 0 12px rgba(255,102,178,0)}100%{transform:scale(1) rotate(-2deg);box-shadow:0 0 0 0 rgba(255,102,178,0)}}
-.promo-box{display:flex;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap}
-.promo-deadline{display:block;font-family:'Oswald',sans-serif;font-size:14px;color:var(--pink);font-weight:700;letter-spacing:1.5px;margin-top:8px;text-transform:uppercase;display:flex;align-items:center;gap:6px}
-.price-meta{font-size:13.5px;color:rgba(255,255,255,.6);margin-bottom:20px}
-.price-desc{color:rgba(255,255,255,.8);font-size:14.5px;margin-bottom:26px;line-height:1.6}
-.price-list{display:flex;flex-direction:column;gap:13px;margin-bottom:24px}
-.price-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:rgba(255,255,255,.8)}
-.price-list svg{flex:none;width:17px;height:17px;margin-top:2px}
-.private-card .desc{color:rgba(255,255,255,.8);font-size:14.5px;margin-bottom:24px;line-height:1.6}
-.private-card .stat-grid{margin-bottom:26px}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.stat-tile{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 16px;text-align:center}
-.stat-tile svg{width:22px;height:22px;margin:0 auto 10px}
-.stat-tile h5{font-size:14px;font-weight:600;margin-bottom:3px;color:#fff}
-.stat-tile span{font-family:'Cera Pro','Inter',sans-serif;font-size:12px;color:rgba(255,255,255,.6)}
-.ratio-note{text-align:center;max-width:640px;margin:36px auto 0;padding-top:32px;border-top:1px solid rgba(255,255,255,.12);font-family:'Oswald',sans-serif;font-size:13px;font-weight:500;letter-spacing:1px;color:rgba(255,255,255,.7);line-height:1.8;text-transform:uppercase;position:relative;z-index:2}
-.team{background:var(--bg-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.section-head{text-align:center;max-width:700px;margin:0 auto 60px}
-.section-head h2{font-size:clamp(32px,5vw,58px)}
-.team-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;max-width:var(--maxw);margin:0 auto 40px}
-.team-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--bg-2)}
-.team-photo{aspect-ratio:5/4;background-size:cover;background-position:center;background-color:#1a1a1a}
-.team-info{padding:28px 30px 32px}
-.team-info h4{font-size:24px;font-weight:600;margin-bottom:4px}
-.team-role{font-family:'Oswald',sans-serif;color:var(--accent-2);font-size:13px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:14px}
-.team-info p{color:var(--muted);font-size:14.5px;line-height:1.6}
-.team-link{text-align:center}
-.team-link a{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal);border-bottom:1px solid var(--teal);padding-bottom:4px}
-.community{background:var(--bg-0)}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:var(--maxw);margin:56px auto 0;border:1px solid var(--line)}
-.grid-3 .cell{border-right:1px solid var(--line);padding:0}
-.grid-3 .cell:last-child{border-right:none}
-.cell-photo{aspect-ratio:4/5;position:relative;overflow:hidden;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:26px}
-.cell-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.92) 100%)}
-.cell-photo h4{font-size:26px;position:relative;z-index:2}
-.cell-photo span.tag{position:relative;z-index:2;font-family:'Cera Pro','Inter',sans-serif;font-size:14px;color:var(--muted);font-weight:500;display:block;margin-top:8px}
-.quote-block{max-width:720px;margin:64px auto 0;text-align:center}
-.quote-block svg{opacity:.3;margin:0 auto 18px}
-.quote-block p{font-family:'Cera Pro','Inter',sans-serif;font-size:clamp(19px,2.6vw,25px);font-style:italic;color:var(--white);line-height:1.5;margin-bottom:16px}
-.quote-block cite{font-family:'Oswald',sans-serif;color:var(--muted-2);font-size:14px;font-style:normal;font-weight:500;letter-spacing:1px}
-.membership{background:linear-gradient(180deg,#000 0,#0a0a0a 35%,#1a1224 100%);border-top:1px solid var(--line)}
-.membership-card{max-width:820px;margin:0 auto;border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:64px 60px;background:var(--bg-1);text-align:center}
-.membership-card .check-list{text-align:left;max-width:480px;margin:0 auto 34px}
-.status-box{display:flex;gap:16px;text-align:left;align-items:flex-start;background:rgba(255,102,178,.08);border:1px solid rgba(255,102,178,.35);border-radius:16px;padding:22px 24px;margin-bottom:34px}
-.status-box .lock{flex:none;width:38px;height:38px;border-radius:50%;background:var(--pink);display:flex;align-items:center;justify-content:center}
-.status-box .lock svg{width:16px;height:16px}
-.status-box p{font-family:'Cera Pro','Inter',sans-serif;font-size:14px;color:var(--muted);line-height:1.6}
-.status-box strong{color:var(--white)}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.field-row input{width:100%;padding:16px 20px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);color:var(--white);font-family:'Cera Pro','Inter',sans-serif;font-size:15px}
-.field-row input::placeholder{color:var(--muted-2)}
-.full-btn{width:100%;justify-content:center;padding:17px}
-.corporate{position:relative;padding:100px 32px;text-align:center;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(106,74,152,.85)),repeating-linear-gradient(90deg,transparent 0 90px,rgba(255,255,255,.03) 90px 91px),linear-gradient(160deg,#1a1224 0,#000 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.corporate .eyebrow{color:var(--accent-2)}
-.corporate h2{font-size:clamp(32px,5vw,56px);margin-bottom:16px}
-.corporate p{font-family:'Cera Pro','Inter',sans-serif;color:var(--muted);font-size:16.5px;margin-bottom:32px}
-
-/* Why LIT */
-.why{position:relative;background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.9)),url('https://z-cdn-media.chatglm.cn/files/8f217211-f45c-4c93-8aa8-bfc0c2918ce5.png?auth_key=1885829093-2ffe5ff19403430aa25757936dce5bdf-0-cd4ab34edc00d0c42673983eb167d415');background-size:cover;background-position:center;background-attachment:fixed;padding:120px 32px}
-.why-container{max-width:800px;margin:0 auto;text-align:center}
-.why-container h3{color:#fff;margin-bottom:20px}
-.why-container .body-copy{color:rgba(255,255,255,0.85);margin:0 auto 40px;max-width:500px}
-.why-list{display:grid;grid-template-columns:1fr 1fr;gap:25px 40px;text-align:left;margin-bottom:50px}
-.why-item{display:flex;gap:15px;align-items:flex-start}
-.why-item .ball-icon{flex:none;width:26px;height:26px;margin-top:2px;border-radius:50%}
-.why-item p{font-family:'Cera Pro','Inter',sans-serif;font-size:15px;color:#fff;line-height:1.5}
-.why-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-
-.newsletter{background:linear-gradient(120deg,var(--teal) 0,var(--violet) 55%,var(--violet-deep) 100%);text-align:center;padding:90px 32px}
-.newsletter h2{font-size:clamp(28px,4.5vw,44px);margin-bottom:14px}
-.newsletter p{font-family:'Cera Pro','Inter',sans-serif;color:rgba(255,255,255,.85);margin-bottom:34px;font-size:16px}
-.newsletter-form{display:flex;gap:12px;max-width:480px;margin:0 auto 14px;flex-wrap:wrap}
-.newsletter-form input{flex:1;min-width:220px;padding:16px 22px;border-radius:999px;border:none;font-family:'Cera Pro','Inter',sans-serif;font-size:15px;background:rgba(255,255,255,.95);color:#1a1a1a}
-.newsletter-form button{padding:16px 32px;border-radius:999px;background:var(--bg-0);color:var(--white);font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
-.newsletter .fine{font-family:'Cera Pro','Inter',sans-serif;font-size:13px;color:rgba(255,255,255,.7)}
-.faq{background:#fff;color:#3a4149}
-.faq .eyebrow{color:var(--violet)}
-.faq .section-head h2{color:#3a4149}
-.faq-list{max-width:820px;margin:0 auto}
-.faq-item{border-bottom:1px solid #e1dff0;padding:26px 0}
-.faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:#3a4149;text-transform:uppercase;letter-spacing:.5px}
-.faq-q .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center;transition:transform .25s;color:var(--teal);font-size:15px}
-.faq-item.open .plus{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:#7b838b;font-family:'Cera Pro','Inter',sans-serif;font-size:15.5px;line-height:1.6}
-.faq-a p{padding-top:14px}
-.faq-item.open .faq-a{max-height:200px}
-.faq-more{text-align:center;margin-top:44px;font-family:'Cera Pro','Inter',sans-serif;font-size:15px;color:#7b838b}
-.faq-more a{color:var(--teal);font-weight:700;border-bottom:1px solid var(--teal)}
-.findus{background:var(--bg-1);border-top:1px solid var(--line)}
-.findus-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:var(--maxw);margin:0 auto}
-.map-frame{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;filter:grayscale(.3) invert(.92) contrast(.9)}
-.map-frame iframe{width:100%;height:100%;border:0}
-.findus-info h2{font-size:clamp(30px,4.5vw,46px);margin-bottom:22px}
-.contact-row{display:flex;gap:14px;align-items:center;margin-bottom:16px;color:var(--muted);font-family:'Cera Pro','Inter',sans-serif;font-size:15px}
-.contact-row svg{flex:none;width:20px;height:20px;color:var(--teal)}
-footer{background:var(--bg-1);padding:70px 32px 30px;border-top:1px solid var(--line)}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px;max-width:var(--maxw);margin:0 auto 50px}
-.footer-brand p{font-family:'Cera Pro','Inter',sans-serif;color:var(--muted);font-size:14.5px;margin:18px 0 24px;max-width:340px;line-height:1.6}
-.social-row{display:flex;gap:12px}
-.social-row a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:600;font-size:14px}
-.footer-col h5{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted-2);margin-bottom:20px}
-.footer-col ul{display:flex;flex-direction:column;gap:12px}
-.footer-col a,.footer-col li{font-family:'Cera Pro','Inter',sans-serif;color:var(--muted);font-size:14.5px}
-.footer-col a:hover{color:var(--white)}
-.footer-bottom{max-width:var(--maxw);margin:0 auto;padding-top:30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:'Cera Pro','Inter',sans-serif;font-size:13px;color:var(--muted-2)}
-@media(max-width:960px){
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#000;flex-direction:column;padding:20px 0;gap:10px;border-bottom:1px solid var(--line);align-items:center}
-  .nav-links a{font-size:18px}
-  .nav-cta .btn-nav-cta{display:none}
-  .mobile-toggle{display:block}
-  .coaching-grid,.why-grid,.findus-grid{grid-template-columns:1fr}
-  .team-grid{grid-template-columns:1fr}
-  .price-grid-2col{grid-template-columns:1fr}
-  .price-card,.private-card{padding:30px 24px 34px}
-  .stat-grid{grid-template-columns:1fr 1fr}
-  .grid-3{grid-template-columns:1fr}
-  .grid-3 .cell{border-right:none;border-bottom:1px solid var(--line)}
-  .why-list{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr;gap:36px}
-  section{padding:80px 20px}
-  .why{padding:80px 24px; background-attachment:scroll;}
-  .coaching{background-attachment:scroll;}
-  .membership-card{padding:44px 26px}
-  .field-row{grid-template-columns:1fr}
-  .bounce-desktop{display:none}
-  .bounce-mobile{display:inline-block}
-  .amenities-grid{grid-template-columns:1fr;gap:24px}
-  .amenities-card{padding:40px 24px}
-  .amenities-section{margin-top:-60px}
-  .pricing-ombre{padding:60px 20px 80px}
-  .pricing-ombre .bounce-container{margin-bottom:40px}
-  .float-btn{width:48px;height:48px}
-  .float-btn svg{width:24px;height:24px}
-  .floating-contact{bottom:20px;right:20px}
-  .header-logo-img{height:34px;}
-}
-</style>
-</head>
-<body>
-
-<!-- ================= FLOATING CONTACT ================= -->
-<div class="floating-contact">
-  <a href="https://zalo.me/0938454724" target="_blank" class="float-btn zalo-float" title="Chat Zalo (EN)">
-    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg>
-  </a>
-  <a href="https://wa.me/84938454724" target="_blank" class="float-btn wa-float" title="Chat WhatsApp (EN)">
-    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.010c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  </a>
-</div>
-
-<!-- ================= NAV ================= -->
-<header>
-  <nav>
-    <a href="#top" class="logo" aria-label="LIT Pickleball — Home">
-      <img
-        src="./assets/images/lit-pickleball-logo.png"
-        alt="LIT Pickleball"
-        class="header-logo-img"
-      >
-    </a>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#coaching">Coaching</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#community">Community</a></li>
-      <li><a href="#membership">Membership</a></li>
-      <li><a href="#corporate">Corporate</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <div class="nav-cta">
-      <div class="cta-dropdown">
-        <button class="btn-nav-cta cta-trigger" onclick="toggleCta(event)">Book Coaching <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
-        <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
-          <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.010c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
-        </div>
-      </div>
-      <button class="mobile-toggle" id="mobileToggle">☰</button>
-    </div>
-  </nav>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero" id="top">
-  <div class="hero-court"></div>
-  <div class="bounce-container hero-bounce">
-    <img src="https://z-cdn-media.chatglm.cn/files/9f4867c5-d44b-46de-9510-d841ae497080.png?auth_key=1885729389-1b543448a1d1479586ea819c939364f8-0-5880df89d32366e9d28a15db9b21f8a6" alt="Pickleball Bounce Desktop" class="bounce-img bounce-desktop">
-    <img src="https://z-cdn-media.chatglm.cn/files/67452300-125f-4e8e-b0a3-3b1ff4e4af9b.png?auth_key=1885729389-7dbfe4984a38459da80cb7dddb704033-0-3031e833e5ca3d2c79763923b9e7df8d" alt="Pickleball Bounce Mobile" class="bounce-img bounce-mobile">
-  </div>
-  <div class="hero-inner">
-    <span class="hero-badge eyebrow dot" style="margin:0;">Pickleball Coaching &amp; Community in Phu My Hung</span>
-    <h1 class="graffiti-head" style="font-size:clamp(56px, 11vw, 148px);">Get Locked In.</h1>
-    <p class="sub">Get Better. Find Your People.</p>
-    <div class="hero-ctas">
-      <div class="cta-dropdown">
-        <button class="btn btn-primary cta-trigger" onclick="toggleCta(event)">Book Coaching <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
-        <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
-          <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.010c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
-        </div>
-      </div>
-      <a href="#membership" class="btn btn-outline">Learn About Membership</a>
-    </div>
-  </div>
-  <div class="scroll-cue">
-    <svg width="22" height="34" viewBox="0 0 22 34" fill="none"><rect x="1" y="1" width="20" height="32" rx="10" stroke="white" stroke-opacity="0.5" stroke-width="1.5"/><circle cx="11" cy="10" r="2.5" fill="white" fill-opacity="0.6"/></svg>
-  </div>
-</section>
-
-<!-- ================= AMENITIES ================= -->
-<section class="amenities-section">
-  <div class="amenities-card">
-    <h2 class="graffiti-head">More Than Just Courts</h2>
-    <p class="amenities-desc">Everything you need to elevate your game, all in one place.</p>
-    <div class="amenities-grid">
-      <div class="strip-item">
-        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4.5" fill="#53c1b6"/><path d="M12 12l7 7" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"/><circle cx="19" cy="19" r="2" fill="#ff66b2"/></svg>
-        <p>Certified Foreign Coach</p>
-      </div>
-      <div class="strip-item">
-        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M2 10L12 3l10 7v2H2v-2z" fill="#ff66b2"/><rect x="4" y="12" width="16" height="8" rx="1" fill="#53c1b6"/></svg>
-        <p>Covered, Air-Cooled Courts</p>
-      </div>
-      <div class="strip-item">
-        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3.2" fill="#975dfc"/><circle cx="16" cy="9" r="3.2" fill="#975dfc" opacity="0.6"/><path d="M2 20c0-4 3-6.5 6-6.5s6 2.5 6 6.5M11 20c0-3.5 2.5-6 6-6s5 2 5 6" fill="#975dfc" opacity="0.85"/></svg>
-        <p>Group Training</p>
-      </div>
-      <div class="strip-item">
-        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0v4" stroke="#a76ff8" stroke-width="2.4" stroke-linecap="round" fill="none"/><rect x="2" y="13" width="5" height="7" rx="2.5" fill="#a76ff8"/><rect x="17" y="13" width="5" height="7" rx="2.5" fill="#a76ff8"/></svg>
-        <p>On-Court Assistant</p>
-      </div>
-      <div class="strip-item">
-        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="5.5" fill="#53c1b6" opacity="0.9"/><circle cx="15" cy="9" r="5.5" fill="#ff66b2" opacity="0.9"/><circle cx="12" cy="15" r="5.5" fill="#975dfc" opacity="0.9"/></svg>
-        <p>Curated Community</p>
-      </div>
-      <div class="strip-item">
-        <svg class="strip-icon-sm" viewBox="0 0 24 24" fill="none"><path d="M4 5h16a2 2 0 012 2v8a2 2 0 01-2 2h-9l-5 4v-4H4a2 2 0 01-2-2V7a2 2 0 012-2z" fill="#ff66b2"/><circle cx="8" cy="11" r="1.3" fill="#0e0e12"/><circle cx="12" cy="11" r="1.3" fill="#0e0e12"/><circle cx="16" cy="11" r="1.3" fill="#0e0e12"/></svg>
-        <p>English-Speaking</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= COACHING ================= -->
-<section class="coaching" id="coaching">
-  <div class="coaching-grid">
-    <div class="photo-block" style="background-image:linear-gradient(180deg, rgba(0,0,0,0.05) 55%, rgba(0,0,0,0.85) 100%), url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
-      <span class="tag">Coach in Session</span>
-    </div>
-    <div>
-      <span class="eyebrow">Coaching</span>
-      <h3 class="head-lg graffiti-head">Locked In.<br>Every Point.</h3>
-      <p class="body-copy">Learn to play <strong>correctly</strong>, from session one. Real progression, not casual lessons.</p>
-      <ul class="check-list">
-        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Trained by a foreign, RacketPro APAC Level 1 certified coach</li>
-        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Visible progress by session 10</li>
-        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>For beginners and players refining specific skills</li>
-        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Grouped by skill level, not age</li>
-      </ul>
-      <div class="cta-dropdown">
-        <button class="btn btn-primary cta-trigger" onclick="toggleCta(event)">Book Your 10-Session Pack <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
-        <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
-          <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.010c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="note-box">
-    <strong>Note</strong> — Completing coaching does not guarantee Membership acceptance. The two are independent.
-  </div>
-</section>
-
-<!-- ================= PRICING ================= -->
-<section class="pricing-ombre">
-  <div class="bounce-container">
-    <img src="https://z-cdn-media.chatglm.cn/files/9f4867c5-d44b-46de-9510-d841ae497080.png?auth_key=1885729389-1b543448a1d1479586ea819c939364f8-0-5880df89d32366e9d28a15db9b21f8a6" alt="Pickleball Bounce Desktop" class="bounce-img bounce-desktop">
-    <img src="https://z-cdn-media.chatglm.cn/files/67452300-125f-4e8e-b0a3-3b1ff4e4af9b.png?auth_key=1885729389-7dbfe4984a38459da80cb7dddb704033-0-3031e833e5ca3d2c79763923b9e7df8d" alt="Pickleball Bounce Mobile" class="bounce-img bounce-mobile">
-  </div>
-  <div class="price-head">
-    <span class="price-eyebrow">Coaching Packages</span>
-    <h3>Simple. Transparent.<br>No Surprises.</h3>
-    <p>Every package includes coach-led sessions, court fee, and a free LIT T-shirt. One price. Nothing hidden.</p>
-  </div>
-  <div class="price-grid-2col">
-    <div class="price-card">
-      <span class="price-badge">Group Training</span>
-      <h4>Group Training Pack</h4>
-      <span class="price-sub">All Skill Levels</span>
-      <div class="price-divider"></div>
-      <div class="price-row">
-        <span class="price-new">400,000</span>
-        <span class="price-unit">VND / session</span>
-        <span class="price-off">10% OFF</span>
-      </div>
-      <p class="price-meta">10-session pack</p>
-      <p class="promo-deadline">⏳ HURRY! ENDS 31.08.2026</p>
-      <p class="price-desc" style="margin-top: 20px;">Grouped by skill level, not age — the right pace, every time.</p>
-      <ul class="price-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>10 coaching sessions included</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Court fee included</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Free LIT T-shirt</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Max ratio 4:1</li>
-      </ul>
-      <div class="cta-dropdown">
-        <button class="btn btn-primary cta-trigger" onclick="toggleCta(event)">Book Group Pack <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
-        <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
-          <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.010c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="private-card">
-      <span class="private-badge">Private Coaching</span>
-      <h4>1:1 Coaching with Our Certified Coach</h4>
-      <span class="private-sub">Personalized Pickleball Coaching · Phu My Hung</span>
-      <div class="promo-box">
-        <span class="price-off">10% OFF</span>
-        <span class="promo-deadline" style="margin-top:0;">⏳ HURRY! ENDS 31.08.2026</span>
-      </div>
-      <p class="desc">Built around your goals — sharpen technique, your own pace.</p>
-      <div class="stat-grid">
-        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#975dfc" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.8" fill="#975dfc"/></svg><h5>Custom Plan</h5><span>Tailored to you</span></div>
-        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="1.8"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg><h5>Session Recording</h5><span>Filmed for easy review</span></div>
-        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#40ba67" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><h5>1:1 Focus</h5><span>100% attention</span></div>
-        <div class="stat-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#ff66b2" stroke-width="1.8"><path d="M12 2l2.5 5 5.5.7-4 3.9 1 5.4L12 14l-5 3 1-5.4-4-3.9 5.5-.7z"/></svg><h5>Certified Coach</h5><span>RacketPro APAC L1</span></div>
-      </div>
-      <div class="cta-dropdown">
-        <button class="btn btn-violet cta-trigger" onclick="toggleCta(event)">Contact for Pricing &amp; Schedule <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
-        <div class="cta-menu">
-          <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
-          <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.010c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p class="ratio-note">Coaching ratio is intentionally small — up to 4 students per coach.<br>Every player is seen. Every session has a reason.</p>
-</section>
-
-<!-- ================= TEAM ================= -->
-<section class="team" id="team">
-  <div class="section-head">
-    <span class="eyebrow">The Team</span>
-    <h2>The Coaches Who Get You Locked In</h2>
-  </div>
-  <div class="team-grid">
-    <div class="team-card">
-      <div class="team-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/57b1040e-f9c9-486d-aa45-c28995cfb8d9.JPG?auth_key=1885726169-86e6fd8c3bd24d838be8e13e333d808c-0-33c3b0ee1c980eaf14939cac401d6901'); background-position:center 20%;"></div>
-      <div class="team-info">
-        <h4>Coach Boysey</h4>
-        <span class="team-role" style="color:var(--teal);">RacketPro APAC Level 1 Certified Coach</span>
-        <p>Energy and patience for beginners and players sharpening a specific shot.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo" style="background-color:#1a1a1a; display:flex; align-items:center; justify-content:center; color:var(--violet); font-family:'Oswald', sans-serif; font-weight:500; letter-spacing:2px; font-size:14px;">Photo Coming Soon</div>
-      <div class="team-info">
-        <h4>Coach Wardy</h4>
-        <span class="team-role" style="color:var(--green);">RacketPro APAC Level 1 Certified Coach</span>
-        <p>Steady, clear feedback — real progress players come back for.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/1c3cdde2-de1b-4f03-a939-46d0e6f94900.png?auth_key=1885726169-628c86f4b89744ea952bf518eb0d2daf-0-4da0282a06c211dac28c7b3adef9d8d2'); background-position:center top;"></div>
-      <div class="team-info">
-        <h4>Coach Zinger</h4>
-        <span class="team-role" style="color:var(--accent-2);">RacketPro APAC Level 1 Certified Coach</span>
-        <p>Fell in love with the game fast — brings that energy to every lesson.</p>
-      </div>
-    </div>
-  </div>
-  <div class="team-link"><a href="#team">Meet the Full Team →</a></div>
-</section>
-
-<!-- ================= COMMUNITY ================= -->
-<section class="community" id="community">
-  <div class="section-head">
-    <span class="eyebrow">Community</span>
-    <h2>A Community That's Already Playing Together</h2>
-  </div>
-  <div class="grid-3">
-    <div class="cell">
-      <div class="cell-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/ec1addd0-421c-4832-8384-d8dba5cd5371.JPG?auth_key=1885726169-63f653974ea844949021369d48d97aa2-0-eaac307177d3ee6edca8c3248d03c0fc');">
-        <div>
-          <h4>Get In The Game</h4>
-          <span class="tag">No more guessing your way through technique — learn it right, from day one.</span>
-        </div>
-      </div>
-    </div>
-    <div class="cell">
-      <div class="cell-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/3965434b-1758-4adb-97a6-3391ff68db90.JPG?auth_key=1885726169-37ca26b86b8040c3b4af46839c5cc09a-0-bd3e48055e6975aace18d351d2444fc3');">
-        <div>
-          <h4>Find Your Crew</h4>
-          <span class="tag">No more chasing courts or organizing games — the community is already here.</span>
-        </div>
-      </div>
-    </div>
-    <div class="cell">
-      <div class="cell-photo" style="background-image:url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
-        <div>
-          <h4>Lock The Rhythm</h4>
-          <span class="tag">Fixed weekly sessions for 12 months — a rhythm you'll actually keep.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="quote-block">
-    <svg width="34" height="26" viewBox="0 0 34 26" fill="#ff66b2"><path d="M0 26V15.6C0 6.5 5.7 1 14.8 0l1 4.3C9.5 5.6 6.6 8.7 6.2 13H14v13H0zm18.7 0V15.6C18.7 6.5 24.4 1 33.5 0l1 4.3c-6.3 1.3-9.2 4.4-9.6 8.7h7.8v13H18.7z"/></svg>
-    <p>"What I love most isn't the court — it's knowing I'll always have people to play with, on time, at my level."</p>
-    <cite>— LIT Member</cite>
-  </div>
-</section>
-
-<!-- ================= MEMBERSHIP ================= -->
-<section class="membership" id="membership">
-  <div class="membership-card">
-    <span class="eyebrow">Membership</span>
-    <h3 class="head-lg graffiti-head">Locked In.<br>With Your People.</h3>
-    <p class="body-copy" style="margin:0 auto 30px;">No chasing bookings, no organizing games. The court and the community are already there — you just show up.</p>
-    <ul class="check-list">
-      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Fixed courts, no last-minute cancellations</li>
-      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>Curated, English-speaking community</li>
-      <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#53c1b6" stroke-width="2.5" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg></span>2 hosted sessions/week, from 14/08/2026 - 11/06/2027</li>
-    </ul>
-    <div class="status-box">
-      <span class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="#330011" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span>
-      <p><strong>Limited Availability.</strong> Membership is currently near full capacity for this cycle. We're still accepting Waitlist applications — LIT will personally reach out when a spot opens.</p>
-    </div>
-    <div class="field-row">
-      <input type="text" placeholder="Your name">
-      <input type="email" placeholder="Email address">
-    </div>
-    <div class="cta-dropdown full-width">
-      <button class="btn btn-primary cta-trigger full-btn" onclick="toggleCta(event)">Join the Waitlist <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
-      <div class="cta-menu">
-        <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
-        <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.010c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CORPORATE ================= -->
-<section class="corporate" id="corporate">
-  <span class="eyebrow dot" style="color:var(--pink);">Coming Soon</span>
-  <h2 class="graffiti-head" style="font-size:clamp(32px,5vw,56px); margin-bottom:16px;">Locked In. As a Team.</h2>
-  <p>Coming soon — team-building pickleball sessions for local businesses.</p>
-  <div class="cta-dropdown">
-    <button class="btn btn-outline cta-trigger" onclick="toggleCta(event)" style="border-color:rgba(255,102,178,0.5);">Register Interest <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
-    <div class="cta-menu">
-      <a href="https://zalo.me/0938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm5.413 14.116c-.226.633-1.297 1.225-1.815 1.225-.488 0-1.117.026-1.765-.234-.375-.122-.844-.287-1.378-.518-2.336-.998-3.86-3.323-3.977-3.466-.117-.143-.945-1.247-.945-2.376 0-1.129.598-1.683.811-1.91.213-.227.459-.287.615-.287.156 0 .312 0 .445.013.14.013.331-.052.518.39.226.544.747 1.884.811 2.027.065.143.108.305.013.488-.095.183-.143.305-.286.47-.143.156-.298.349-.428.47-.143.143-.293.301-.13.585.165.287.726 1.243 1.562 2.014 1.072.993 1.977 1.301 2.26 1.446.286.143.459.122.628-.07.169-.195.715-.828.904-1.112.183-.287.36-.234.628-.143.265.095 1.673.786 1.96.93.286.143.477.215.548.331.073.117.073.672-.153 1.305z"/></svg> Zalo</a>
-      <a href="https://wa.me/84938454724" target="_blank" class="cta-item"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-0.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.010c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WHY LIT ================= -->
-<section class="why" id="why">
-  <div class="why-container">
-    <h3 class="head-lg">Why LIT?</h3>
-    <p class="body-copy">Built for one thing: making it easy to show up, get better, and keep coming back.</p>
-    <div class="why-list">
-      <div class="why-item">
-        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
-        <p>Foreign coach, RacketPro APAC Level 1 certified</p>
-      </div>
-      <div class="why-item">
-        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
-        <p>Covered, clean courts with seating and fans</p>
-      </div>
-      <div class="why-item">
-        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
-        <p>On-site assistant at every session</p>
-      </div>
-      <div class="why-item">
-        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
-        <p>English-speaking, curated community</p>
-      </div>
-      <div class="why-item">
-        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
-        <p>Fixed courts — no cancellation risk</p>
-      </div>
-      <div class="why-item">
-        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
-        <p>Located in Phu My Hung, District 7</p>
-      </div>
-      <div class="why-item">
-        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
-        <p>No hidden fees, no surprises</p>
-      </div>
-      <div class="why-item">
-        <img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Pickleball Icon" class="ball-icon">
-        <p>Built by people who genuinely love the game</p>
-      </div>
-    </div>
-    <div class="why-ctas">
-      <a href="#membership" class="btn btn-primary">Explore Membership</a>
-      <a href="#coaching" class="btn btn-outline">Explore Coaching</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= NEWSLETTER ================= -->
-<section class="newsletter" id="newsletter">
-  <h2>Don't Miss Your Serve</h2>
-  <p>Get updates on coaching slots, community sessions, and waitlist openings.</p>
-  <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; alert('Thanks — you\'re on the list.');">
-    <input type="email" placeholder="Enter your email" required>
-    <button type="submit">Subscribe</button>
-  </form>
-  <p class="fine">We respect your privacy. Unsubscribe at any time.</p>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="faq" id="faq">
-  <div class="section-head">
-    <span class="eyebrow">FAQ</span>
-    <h2>Questions, Answered</h2>
-  </div>
-  <div class="faq-list">
-    <div class="faq-item">
-      <div class="faq-q"><span>Do I need experience to join coaching?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p>Not at all — built for beginners and existing players alike.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>If I complete a coaching pack, am I guaranteed a Membership spot?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p>No. Coaching and Membership are independent — one doesn't guarantee the other.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>I already play — can I apply for Membership without coaching?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p>Yes — experienced players can apply directly, no coaching pack required.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>Can I buy a single coaching session?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p>No — only sold as a 10-session pack, group or private.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>How does Membership selection work?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p>Curated through a waitlist — LIT reaches out when a spot opens.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>Where is LIT Pickleball located?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p>Phu My Hung, District 7, Ho Chi Minh City.</p></div>
-    </div>
-  </div>
-  <p class="faq-more">Still have questions? <a href="#contact">Get in touch</a>.</p>
-</section>
-
-<!-- ================= FIND US ================= -->
-<section class="findus" id="contact">
-  <div class="findus-grid">
-    <div class="map-frame">
-      <iframe src="https://www.google.com/maps?q=Phu+My+Hung,+District+7,+Ho+Chi+Minh+City&output=embed" loading="lazy"></iframe>
-    </div>
-    <div class="findus-info">
-      <span class="eyebrow">Find Us</span>
-      <h2>On Court in Phu My Hung</h2>
-      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> LIT Pickleball, Phu My Hung, District 7, HCMC</div>
-      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mon, Tue, Thu, Fri: 16:00 - 17:00</div>
-      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6l9 7 9-7M3 6v12h18V6H3z"/></svg> <a href="mailto:lockedin.saigon@gmail.com" style="color: inherit;">lockedin.saigon@gmail.com</a></div>
-      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> EN Speaker: <a href="tel:0938454724" style="color: inherit;">0938 454 724</a> (Zalo/WhatsApp)</div>
-      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> VN Speaker: <a href="tel:0909756044" style="color: inherit;">0909 756 044</a> (Zalo/Hotline)</div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <!-- Logo Chính thức ở Footer -->
-      <a href="#top" class="logo">
-        <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball Logo" class="footer-logo-img">
-      </a>
-      <p>Coaching and community in Phu My Hung. Get better. Find your people.</p>
-      <div class="social-row">
-        <a href="#">f</a><a href="#">ig</a><a href="#">yt</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h5>Quick Links</h5>
-      <ul>
-        <li><a href="#coaching">Coaching</a></li>
-        <li><a href="#membership">Membership</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#corporate">Corporate Events</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Contact</h5>
-      <ul>
-        <li>Phu My Hung, District 7, HCMC</li>
-        <li>Mon, Tue, Thu, Fri: 16:00 - 17:00</li>
-        <li>lockedin.saigon@gmail.com</li>
-        <li>EN: 0938 454 724</li>
-        <li>VN: 0909 756 044</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 LIT Pickleball. All Rights Reserved.</span>
-    <span>Part of LIT (Locked In Training).</span>
-  </div>
-</footer>
-
-<script>
-  const toggle = document.getElementById('mobileToggle');
-  const navLinks = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  document.querySelectorAll('.faq-item').forEach(item=>{
-    item.querySelector('.faq-q').addEventListener('click', ()=>{
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-      if(!isOpen) item.classList.add('open');
-    });
-  });
-
-  function toggleCta(event) {
-    event.stopPropagation();
-    const currentDropdown = event.currentTarget.closest('.cta-dropdown');
-    document.querySelectorAll('.cta-dropdown').forEach(dd => {
-      if (dd !== currentDropdown) dd.classList.remove('active');
-    });
-    currentDropdown.classList.toggle('active');
-  }
-
-  window.addEventListener('click', (e) => {
-    if (!e.target.closest('.cta-dropdown')) {
-      document.querySelectorAll('.cta-dropdown').forEach(dd => dd.classList.remove('active'));
+  <!-- Fonts: Preload and display=block to prevent FOUT (Flash of Unstyled Text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800&display=block" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800&display=block"></noscript>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lit-black': 'rgba(0, 0, 0, 0.75)',
+            'lit-dark': 'rgba(10, 10, 10, 0.65)',
+            'lit-card': 'rgba(20, 20, 20, 0.7)',
+            'violet-deep': '#6a4a98',
+            'violet-lit': '#975dfc',
+            'accent-lit': '#a76ff8',
+            'teal-lit': '#53c1b6',
+            'green-lit': '#40ba67',
+            'pink-lit': '#ff66b2',
+            'muted-lit': '#7b838b',
+            'muted-dark': '#4a4e57',
+          },
+          fontFamily: {
+            'display': ['Tilt Warp', 'cursive'],
+            'ui': ['Oswald', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          }
+        }
+      }
     }
-  });
-</script>
+  </script>
 
+  <!-- Structured Data: SportsActivityLocation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "LIT Pickleball HCMC",
+    "description": "Pickleball coaching and community in Phu My Hung, District 7, HCMC. Foreign RacketPro APAC-certified coaches, covered court, small groups (max 4:1).",
+    "url": "https://litpickleballhcmc.com",
+    "telephone": "+84938454724",
+    "priceRange": "₫₫",
+    "image": "https://litpickleballhcmc.com/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Phu My Hung",
+      "addressLocality": "District 7",
+      "addressRegion": "Ho Chi Minh City",
+      "addressCountry": "VN"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"],
+      "opens": "16:00",
+      "closes": "17:00"
+    }],
+    "makesOffer": {
+      "@type": "Offer",
+      "name": "Pickleball Coaching Session",
+      "price": "400000",
+      "priceCurrency": "VND"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need experience to join coaching?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Not at all — built for beginners and existing players alike." }
+      },
+      {
+        "@type": "Question",
+        "name": "If I complete a coaching pack, am I guaranteed a Membership spot?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Coaching and Membership are independent — one doesn't guarantee the other." }
+      },
+      {
+        "@type": "Question",
+        "name": "I already play — can I apply for Membership without coaching?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — experienced players can apply directly, no coaching pack required." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I buy a single coaching session?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No — only sold as a 10-session pack, group or private." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Membership selection work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Curated through a waitlist — LIT reaches out when a spot opens." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is LIT Pickleball located?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Phu My Hung, District 7, Ho Chi Minh City." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #000; }
+    h1, h2, h3, .display { font-family: 'Tilt Warp', cursive; text-transform: uppercase; line-height: 1.1; }
+    h4, h5, .ui { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+    
+    .graffiti-head {
+      background: linear-gradient(180deg, #975dfc 0%, #53c1b6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.5));
+    }
+
+    /* Option 1: Cinematic Blurred Background */
+    .bg-cinematic::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('https://z-cdn-media.chatglm.cn/files/46b7b0e5-6805-4ac3-8168-46b7b3f029b0.png?auth_key=1885726169-2b463b2c79ab44b7b1ac1313eef9e3f8-0-e8b316d072e2005564239667d03111ac');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      filter: blur(8px) brightness(0.3); /* Mờ và tối đi để không làm chẹt chữ */
+      transform: scale(1.1); /* Tránh viền trắng do blur */
+      z-index: -2;
+    }
+
+    /* Khung kính (Glassmorphism Frame) */
+    .glass-frame {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Accordion Transition */
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-item.open .faq-plus { transform: rotate(45deg); }
+    .faq-plus { transition: transform 0.25s ease; }
+
+    @keyframes pulse-urgent {
+      0% { transform: scale(1) rotate(-2deg); box-shadow: 0 0 0 0 rgba(255,102,178,.6); }
+      70% { transform: scale(1.05) rotate(-2deg); box-shadow: 0 0 0 12px rgba(255,102,178,0); }
+      100% { transform: scale(1) rotate(-2deg); box-shadow: 0 0 0 0 rgba(255,102,178,0); }
+    }
+    .pulse-anim { animation: pulse-urgent 1.5s infinite; }
+
+    /* Progressive Enhancement: Reveal if no JS */
+    .no-js .reveal { opacity: 1; transform: none; }
+  </style>
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+
+<body class="bg-cinematic text-white antialiased overflow-x-hidden">
+
+  <!-- ================= NAV ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center" aria-label="LIT Pickleball — Home">
+        <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball Logo" class="h-12 md:h-14 w-auto object-contain">
+      </a>
+
+      <ul id="navLinks" class="hidden md:flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
+        <li><a href="#coaching" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Coaching</a></li>
+        <li><a href="#team" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Team</a></li>
+        <li><a href="#community" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Community</a></li>
+        <li><a href="#membership" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Membership</a></li>
+        <li><a href="#corporate" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Corporate</a></li>
+        <li><a href="#faq" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">FAQ</a></li>
+      </ul>
+
+      <div class="flex items-center gap-4">
+        <div class="relative hidden md:block">
+          <button id="navCtaBtn" class="font-ui font-bold text-base tracking-wider uppercase px-8 py-3 border border-white hover:bg-white hover:text-lit-black transition backdrop-blur-sm" aria-haspopup="true" aria-expanded="false">
+            Book Coaching
+          </button>
+          <div id="navCtaMenu" class="absolute right-0 mt-2 w-56 bg-lit-card border border-white/10 rounded-xl shadow-lg py-2 opacity-0 invisible transition-all duration-200 z-50">
+            <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 transition font-ui text-sm font-bold uppercase tracking-wider"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg> Zalo</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 transition font-ui text-sm font-bold uppercase tracking-wider"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg> WhatsApp</a>
+          </div>
+        </div>
+        <button id="mobileToggle" class="md:hidden text-3xl text-white" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section id="top" class="relative min-h-screen flex items-center justify-center text-center pt-20 pb-12 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-6">
+      <h1 class="graffiti-head text-5xl md:text-7xl lg:text-8xl mb-6 reveal">Your Best Game.<br>Your Kind of People.</h1>
+      <p class="text-lg md:text-xl text-gray-200 font-light mb-10 max-w-2xl mx-auto reveal" data-delay="100">Get seriously good at pickleball, alongside people who get you. Court booked, coach ready — just show up.</p>
+      <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="200">
+        <a href="#coaching" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</a>
+        <a href="#membership" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full backdrop-blur-sm">Learn About Membership</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROBLEM ================= -->
+  <section class="py-20 md:py-28 text-center">
+    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12 reveal">
+      <h2 class="text-3xl md:text-5xl mb-6">Playing Shouldn't Be This Much Work.</h2>
+      <p class="text-gray-300 text-lg md:text-xl">Chasing courts. Guessing at technique. Showing up to play with whoever's around — and never quite improving. You don't want another casual hit-around. You want to actually get good, with people worth spending the hour with.</p>
+    </div>
+  </section>
+
+  <!-- ================= GUIDE ================= -->
+  <section class="py-20 md:py-28 text-center">
+    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12 reveal">
+      <h2 class="text-3xl md:text-5xl mb-6">We Get It — And We've Got It Handled.</h2>
+      <p class="text-gray-300 text-lg md:text-xl">A foreign, RacketPro APAC Level 1 certified coach. An on-court assistant every session. Courts already booked. All in English. You skip the hassle and just play.</p>
+    </div>
+  </section>
+
+  <!-- ================= PLAN (How It Works) ================= -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="reveal glass-frame p-8">
+        <div class="text-teal-lit font-ui text-4xl font-bold mb-4">01</div>
+        <p class="text-lg text-gray-200">Book your 10-session pack — grouped by skill, not age.</p>
+      </div>
+      <div class="reveal glass-frame p-8" data-delay="100">
+        <div class="text-teal-lit font-ui text-4xl font-bold mb-4">02</div>
+        <p class="text-lg text-gray-200">Get better by session 10 — coach-led, 4:1 max.</p>
+      </div>
+      <div class="reveal glass-frame p-8" data-delay="200">
+        <div class="text-teal-lit font-ui text-4xl font-bold mb-4">03</div>
+        <p class="text-lg text-gray-200">Find your rhythm — join the community, two sessions a week.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEW TO PICKLEBALL ================= -->
+  <section class="py-20 md:py-28 text-center">
+    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
+      <h2 class="text-3xl md:text-5xl mb-6 reveal">Never Held a Paddle? Perfect.</h2>
+      <p class="text-gray-300 text-lg md:text-xl mb-8 reveal" data-delay="100">No experience, no gear, no problem — just bring court shoes and we'll handle the rest. Your first sessions are built for total beginners: learn it right from day one, at your own pace, in a group that's just as new as you. By session 10, you won't just know the rules — you'll actually be playing.</p>
+      <a href="#coaching" class="reveal inline-block bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg" data-delay="200">Book Your First Session</a>
+    </div>
+  </section>
+
+  <!-- ================= COACHING ================= -->
+  <section id="coaching" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal rounded-2xl overflow-hidden h-[400px] md:h-[500px] bg-cover bg-center shadow-2xl border border-white/10" style="background-image: url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');"></div>
+      <div class="glass-frame p-10">
+        <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In.<br>Every Point.</h2>
+        <p class="text-gray-300 text-lg mb-8 reveal" data-delay="100">Learn to play correctly, from session one. Real progression, not casual lessons.</p>
+        <ul class="space-y-4 mb-8">
+          <li class="reveal flex items-start gap-4 text-gray-200" data-delay="200"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Trained by a foreign, RacketPro APAC Level 1 certified coach</li>
+          <li class="reveal flex items-start gap-4 text-gray-200" data-delay="300"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Visible progress by session 10</li>
+          <li class="reveal flex items-start gap-4 text-gray-200" data-delay="400"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> For beginners and players refining specific skills</li>
+          <li class="reveal flex items-start gap-4 text-gray-200" data-delay="500"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Grouped by skill level, not age</li>
+        </ul>
+        <p class="text-sm text-gray-500 italic mb-8 reveal" data-delay="600">Completing coaching does not guarantee Membership acceptance. The two are independent.</p>
+        <a href="#packages" class="reveal inline-block bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg" data-delay="700">Book Your 10-Session Pack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COACHING PACKAGES ================= -->
+  <section id="packages" class="py-20 md:py-28 text-center">
+    <div class="max-w-4xl mx-auto px-6 mb-16">
+      <h2 class="text-3xl md:text-5xl mb-6 reveal">Simple. Transparent.<br>No Surprises.</h2>
+      <p class="text-gray-300 text-lg reveal" data-delay="100">Every package includes coach-led sessions, court fee, and a free LIT T-shirt. One price. Nothing hidden.</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 text-left">
+      <!-- Group Pack -->
+      <article class="reveal glass-frame p-10 flex flex-col">
+        <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">Group Training</span>
+        <h3 class="font-ui text-2xl font-medium mb-2">Group Training Pack</h3>
+        <p class="text-gray-500 font-ui text-sm tracking-wider mb-6">All Skill Levels</p>
+        <div class="border-t border-white/10 pt-6 mb-4">
+          <div class="flex items-center gap-4 flex-wrap mb-2">
+            <span class="font-ui text-5xl font-bold text-teal-lit">400,000</span>
+            <span class="text-gray-400">VND / session</span>
+            <span class="bg-pink-lit text-lit-black font-ui text-sm font-extrabold px-3 py-1 rounded-md pulse-anim">10% OFF</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-2">10-session pack</p>
+          <p class="text-pink-lit font-ui text-sm font-bold uppercase tracking-wider mb-4">⏳ Hurry! Ends 31.08.2026</p>
+          <p class="text-gray-300 mb-6">Grouped by skill level, not age — the right pace, every time.</p>
+        </div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> 10 coaching sessions included</li>
+          <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Court fee included</li>
+          <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Free LIT T-shirt</li>
+          <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Max ratio 4:1</li>
+        </ul>
+        <a href="#" class="block text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Group Pack</a>
+      </article>
+
+      <!-- Private Pack -->
+      <article class="reveal glass-frame p-10 flex flex-col" data-delay="100">
+        <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">1:1 Private Coaching</span>
+        <h3 class="font-ui text-2xl font-medium mb-2">1:1 Private Coaching</h3>
+        <p class="text-gray-500 font-ui text-sm tracking-wider mb-6">Personalized pickleball coaching · Phu My Hung</p>
+        <div class="border-t border-white/10 pt-6 mb-4">
+          <div class="flex items-center gap-4 flex-wrap mb-2">
+            <span class="bg-pink-lit text-lit-black font-ui text-sm font-extrabold px-3 py-1 rounded-md pulse-anim">10% OFF</span>
+            <span class="text-pink-lit font-ui text-sm font-bold uppercase tracking-wider">⏳ Hurry! Ends 31.08.2026</span>
+          </div>
+          <p class="text-gray-300 mb-6 mt-4">Built around your goals — sharpen technique, your own pace.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mb-8 flex-grow">
+          <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+            <svg class="w-6 h-6 mx-auto mb-2 text-violet-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg>
+            <h4 class="font-ui text-sm font-semibold mb-1">Custom Plan</h4>
+            <p class="text-xs text-gray-500">Tailored to you</p>
+          </div>
+          <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+            <svg class="w-6 h-6 mx-auto mb-2 text-teal-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg>
+            <h4 class="font-ui text-sm font-semibold mb-1">Session Recording</h4>
+            <p class="text-xs text-gray-500">Filmed for review</p>
+          </div>
+          <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+            <svg class="w-6 h-6 mx-auto mb-2 text-green-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+            <h4 class="font-ui text-sm font-semibold mb-1">1:1 Focus</h4>
+            <p class="text-xs text-gray-500">100% attention</p>
+          </div>
+          <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+            <svg class="w-6 h-6 mx-auto mb-2 text-pink-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l2.5 5 5.5.7-4 3.9 1 5.4L12 14l-5 3 1-5.4-4-3.9 5.5-.7z"/></svg>
+            <h4 class="font-ui text-sm font-semibold mb-1">Certified Coach</h4>
+            <p class="text-xs text-gray-500">RacketPro APAC L1</p>
+          </div>
+        </div>
+        <a href="#" class="block text-center bg-violet-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Contact for Pricing & Schedule</a>
+      </article>
+    </div>
+    <p class="max-w-2xl mx-auto px-6 mt-12 text-center text-gray-500 font-ui text-sm tracking-widest uppercase reveal">Coaching ratio is intentionally small — up to 4 students per coach.<br>Every player is seen. Every session has a reason.</p>
+  </section>
+
+  <!-- ================= TEAM ================= -->
+  <section id="team" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl mb-12 reveal">The Coaches Who Get You Locked In</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="reveal glass-frame overflow-hidden">
+          <div class="h-64 bg-cover bg-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/57b1040e-f9c9-486d-aa45-c28995cfb8d9.JPG?auth_key=1885726169-86e6fd8c3bd24d838be8e13e333d808c-0-33c3b0ee1c980eaf14939cac401d6901');"></div>
+          <div class="p-6 text-left">
+            <h3 class="font-ui text-xl font-medium mb-1">Coach Boysey</h3>
+            <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+            <p class="text-gray-400 text-sm mt-3">Energy and patience for beginners and players sharpening a specific shot.</p>
+          </div>
+        </article>
+        <article class="reveal glass-frame overflow-hidden" data-delay="100">
+          <div class="h-64 bg-lit-black flex items-center justify-center text-gray-700">Photo Coming Soon</div>
+          <div class="p-6 text-left">
+            <h3 class="font-ui text-xl font-medium mb-1">Coach Wardy</h3>
+            <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+            <p class="text-gray-400 text-sm mt-3">Steady, clear feedback — real progress players come back for.</p>
+          </div>
+        </article>
+        <article class="reveal glass-frame overflow-hidden" data-delay="200">
+          <div class="h-64 bg-cover bg-top" style="background-image: url('https://z-cdn-media.chatglm.cn/files/1c3cdde2-de1b-4f03-a939-46d0e6f94900.png?auth_key=1885726169-628c86f4b89744ea952bf518eb0d2daf-0-4da0282a06c211dac28c7b3adef9d8d2');"></div>
+          <div class="p-6 text-left">
+            <h3 class="font-ui text-xl font-medium mb-1">Coach Zinger</h3>
+            <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+            <p class="text-gray-400 text-sm mt-3">Fell in love with the game fast — brings that energy to every lesson.</p>
+          </div>
+        </article>
+      </div>
+      <div class="mt-12 reveal"><a href="#" class="font-ui text-sm font-bold tracking-widest uppercase text-teal-lit border-b border-teal-lit pb-1">Meet the Full Team</a></div>
+    </div>
+  </section>
+
+  <!-- ================= COMMUNITY ================= -->
+  <section id="community" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl mb-12 reveal">A Community That's Already Playing Together</h2>
+      <div class="grid md:grid-cols-3 border border-white/10 rounded-2xl overflow-hidden glass-frame">
+        <article class="reveal h-96 relative bg-cover bg-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/ec1addd0-421c-4832-8384-d8dba5cd5371.JPG?auth_key=1885726169-63f653974ea844949021369d48d97aa2-0-eaac307177d3ee6edca8c3248d03c0fc');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+          <div class="absolute bottom-0 p-6 text-left">
+            <h3 class="font-ui text-2xl mb-2">Get in the Game</h3>
+            <p class="text-gray-300 text-sm">No more guessing your way through technique. Learn it right, from day one.</p>
+          </div>
+        </article>
+        <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="100" style="background-image: url('https://z-cdn-media.chatglm.cn/files/3965434b-1758-4adb-97a6-3391ff68db90.JPG?auth_key=1885726169-37ca26b86b8040c3b4af46839c5cc09a-0-bd3e48055e6975aace18d351d2444fc3');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+          <div class="absolute bottom-0 p-6 text-left">
+            <h3 class="font-ui text-2xl mb-2">Find Your Crew</h3>
+            <p class="text-gray-300 text-sm">No more chasing courts or organizing games. The community is already here.</p>
+          </div>
+        </article>
+        <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="200" style="background-image: url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+          <div class="absolute bottom-0 p-6 text-left">
+            <h3 class="font-ui text-2xl mb-2">Lock the Rhythm</h3>
+            <p class="text-gray-300 text-sm">Fixed weekly sessions for 12 months. A rhythm you'll actually keep.</p>
+          </div>
+        </article>
+      </div>
+      <div class="max-w-2xl mx-auto mt-16 reveal">
+        <svg class="w-8 h-8 mx-auto mb-4 opacity-30" fill="#ff66b2" viewBox="0 0 34 26"><path d="M0 26V15.6C0 6.5 5.7 1 14.8 0l1 4.3C9.5 5.6 6.6 8.7 6.2 13H14v13H0zm18.7 0V15.6C18.7 6.5 24.4 1 33.5 0l1 4.3c-6.3 1.3-9.2 4.4-9.6 8.7h7.8v13H18.7z"/></svg>
+        <p class="text-xl md:text-2xl italic text-gray-100 mb-4">"What I love most isn't the court — it's knowing I'll always have people to play with, on time, at my level."</p>
+        <cite class="font-ui text-sm not-italic text-gray-500 tracking-widest">— LIT Member</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AVOID FAILURE ================= -->
+  <section class="py-20 md:py-28 text-center">
+    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12 reveal">
+      <h2 class="text-3xl md:text-5xl mb-6">Don't Get Stuck on the Sideline.</h2>
+      <p class="text-gray-400 text-lg md:text-xl">Spots fill by cycle, and the community's already playing. Miss this window and it's back to chasing games on your own.</p>
+    </div>
+  </section>
+
+  <!-- ================= MEMBERSHIP ================= -->
+  <section id="membership" class="py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-16 text-center">
+      <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In. With Your People.</h2>
+      <p class="text-gray-300 text-lg mb-10 reveal" data-delay="100">No chasing bookings, no organizing games. The court and the community are already there — you just show up.</p>
+      
+      <ul class="text-left max-w-md mx-auto space-y-4 mb-10">
+        <li class="reveal flex items-start gap-4 text-gray-200" data-delay="200"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Fixed courts, no last-minute cancellations</li>
+        <li class="reveal flex items-start gap-4 text-gray-200" data-delay="300"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Curated, English-speaking community</li>
+        <li class="reveal flex items-start gap-4 text-gray-200" data-delay="400"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> 2 hosted sessions/week, from 14/08/2026 – 11/06/2027</li>
+      </ul>
+
+      <div class="reveal bg-pink-lit/10 border border-pink-lit/30 rounded-xl p-6 text-left mb-10 flex gap-4 items-start" data-delay="500">
+        <span class="bg-pink-lit w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center mt-1"><svg class="w-4 h-4 text-lit-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span>
+        <p class="text-gray-400 text-sm"><strong class="text-white">Limited Availability.</strong> Membership is currently near full capacity for this cycle. We're still accepting Waitlist applications — LIT will personally reach out when a spot opens.</p>
+      </div>
+
+      <a href="#" class="reveal inline-block w-full md:w-auto bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full shadow-lg" data-delay="600">Join the Waitlist</a>
+    </div>
+  </section>
+
+  <!-- ================= CORPORATE ================= -->
+  <section id="corporate" class="py-20 md:py-28 text-center">
+    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
+      <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In. As a Team.</h2>
+      <p class="text-gray-400 text-lg mb-8 reveal" data-delay="100">Coming soon — team-building pickleball sessions for local businesses.</p>
+      <a href="#" class="reveal inline-block border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full" data-delay="200">Register Interest</a>
+    </div>
+  </section>
+
+  <!-- ================= WHY LIT ================= -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl mb-10 reveal">Why LIT?</h2>
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 text-left mb-12 glass-frame p-10">
+        <div class="reveal flex gap-4 items-start text-white"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Foreign coach icon" class="w-6 h-6 rounded-full mt-1"><p>Foreign coach, RacketPro APAC Level 1 certified</p></div>
+        <div class="reveal flex gap-4 items-start text-white" data-delay="100"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Clean courts icon" class="w-6 h-6 rounded-full mt-1"><p>Covered, clean courts with seating and fans</p></div>
+        <div class="reveal flex gap-4 items-start text-white" data-delay="200"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Assistant icon" class="w-6 h-6 rounded-full mt-1"><p>On-site assistant at every session</p></div>
+        <div class="reveal flex gap-4 items-start text-white" data-delay="300"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Community icon" class="w-6 h-6 rounded-full mt-1"><p>English-speaking, curated community</p></div>
+        <div class="reveal flex gap-4 items-start text-white" data-delay="400"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Fixed courts icon" class="w-6 h-6 rounded-full mt-1"><p>Fixed courts — no cancellation risk</p></div>
+        <div class="reveal flex gap-4 items-start text-white" data-delay="500"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Location icon" class="w-6 h-6 rounded-full mt-1"><p>Located in Phu My Hung, District 7</p></div>
+        <div class="reveal flex gap-4 items-start text-white" data-delay="600"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="No hidden fees icon" class="w-6 h-6 rounded-full mt-1"><p>No hidden fees, no surprises</p></div>
+        <div class="reveal flex gap-4 items-start text-white" data-delay="700"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Love game icon" class="w-6 h-6 rounded-full mt-1"><p>Built by people who genuinely love the game</p></div>
+      </div>
+      <div class="flex flex-wrap gap-4 justify-center reveal">
+        <a href="#membership" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Explore Membership</a>
+        <a href="#coaching" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full">Explore Coaching</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-teal-lit via-violet-lit to-violet-deep text-center rounded-3xl p-10 md:p-16">
+        <h2 class="text-3xl md:text-5xl mb-4 reveal">Don't Miss Your Serve</h2>
+        <p class="text-gray-100 text-lg mb-8 reveal" data-delay="100">Get updates on coaching slots, community sessions, and waitlist openings.</p>
+        <form class="flex flex-wrap gap-3 justify-center reveal" data-delay="200">
+          <input type="email" placeholder="Enter your email" required class="w-full md:w-auto flex-grow min-w-[220px] px-6 py-4 rounded-full text-lit-black focus:outline-none">
+          <button type="submit" class="bg-lit-black text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full hover:opacity-80 transition">Subscribe</button>
+        </form>
+        <p class="text-xs text-white/70 mt-4 reveal" data-delay="300">We respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SUCCESS ================= -->
+  <section class="py-20 md:py-28 text-center">
+    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
+      <h2 class="text-3xl md:text-5xl mb-6 reveal">This Is What Locked In Feels Like.</h2>
+      <p class="text-gray-300 text-lg md:text-xl mb-10 reveal" data-delay="100">A game that keeps getting sharper. A fixed rhythm every week. A crew that's always there, on time, at your level.</p>
+      <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="200">
+        <a href="#coaching" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</a>
+        <a href="#membership" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full">Join the Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-5xl mb-12 text-center reveal">FAQ</h2>
+      <div class="glass-frame p-8 md:p-10 space-y-4">
+        <div class="faq-item border-b border-white/10 pb-4 reveal">
+          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+            <span>Do I need experience to join coaching?</span>
+            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-a"><p class="pt-4 text-gray-400">Not at all — built for beginners and existing players alike.</p></div>
+        </div>
+        <div class="faq-item border-b border-white/10 pb-4 reveal">
+          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+            <span>If I complete a coaching pack, am I guaranteed a Membership spot?</span>
+            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-a"><p class="pt-4 text-gray-400">No. Coaching and Membership are independent — one doesn't guarantee the other.</p></div>
+        </div>
+        <div class="faq-item border-b border-white/10 pb-4 reveal">
+          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+            <span>I already play — can I apply for Membership without coaching?</span>
+            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-a"><p class="pt-4 text-gray-400">Yes — experienced players can apply directly, no coaching pack required.</p></div>
+        </div>
+        <div class="faq-item border-b border-white/10 pb-4 reveal">
+          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+            <span>Can I buy a single coaching session?</span>
+            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-a"><p class="pt-4 text-gray-400">No — only sold as a 10-session pack, group or private.</p></div>
+        </div>
+        <div class="faq-item border-b border-white/10 pb-4 reveal">
+          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+            <span>How does Membership selection work?</span>
+            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-a"><p class="pt-4 text-gray-400">Curated through a waitlist — LIT reaches out when a spot opens.</p></div>
+        </div>
+        <div class="faq-item pb-4 reveal">
+          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+            <span>Where is LIT Pickleball located?</span>
+            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-a"><p class="pt-4 text-gray-400">Phu My Hung, District 7, Ho Chi Minh City.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FIND US ================= -->
+  <section id="contact" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal glass-frame p-2 overflow-hidden">
+        <iframe src="https://www.google.com/maps?q=Phu+My+Hung,+District+7,+Ho+Chi+Minh+City&output=embed" width="100%" height="400" style="border:0; filter: grayscale(0.3) invert(0.92) contrast(0.9); border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LIT Pickleball Location"></iframe>
+      </div>
+      <div class="glass-frame p-10">
+        <h2 class="text-3xl md:text-5xl mb-6 reveal">On Court in Phu My Hung</h2>
+        <div class="space-y-4 text-gray-300">
+          <p class="reveal flex gap-3 items-center" data-delay="100"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> LIT Pickleball, Phu My Hung, District 7, HCMC</p>
+          <p class="reveal flex gap-3 items-center" data-delay="200"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mon, Tue, Thu, Fri: 16:00 - 17:00</p>
+          <p class="reveal flex gap-3 items-center" data-delay="300"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6l9 7 9-7M3 6v12h18V6H3z"/></svg> <a href="mailto:lockedin.saigon@gmail.com" style="color: inherit;">lockedin.saigon@gmail.com</a></p>
+          <p class="reveal flex gap-3 items-center" data-delay="400"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> EN Speaker: <a href="tel:0938454724" style="color: inherit;">0938 454 724</a> (Zalo/WhatsApp)</p>
+          <p class="reveal flex gap-3 items-center" data-delay="500"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> VN Speaker: <a href="tel:0909756044" style="color: inherit;">0909 756 044</a> (Zalo/Hotline)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="pt-20 pb-10 border-t border-white/5 glass-frame rounded-t-3xl mt-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
+      <div>
+        <a href="#top" class="block mb-4">
+          <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball Logo" class="h-16 w-auto object-contain">
+        </a>
+        <p class="text-gray-500 text-sm max-w-sm">Coaching and community in Phu My Hung. Get better. Find your people.</p>
+        <div class="flex gap-3 mt-6">
+          <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs">f</a>
+          <a href="https://www.instagram.com/litpickleballhcmc" target="_blank" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs">ig</a>
+          <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs">yt</a>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-xs tracking-widest uppercase text-gray-600 mb-5">Quick Links</h5>
+        <ul class="space-y-3">
+          <li><a href="#coaching" class="text-gray-400 hover:text-white transition text-sm">Coaching</a></li>
+          <li><a href="#membership" class="text-gray-400 hover:text-white transition text-sm">Membership</a></li>
+          <li><a href="#team" class="text-gray-400 hover:text-white transition text-sm">Team</a></li>
+          <li><a href="#corporate" class="text-gray-400 hover:text-white transition text-sm">Corporate Events</a></li>
+          <li><a href="#faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs tracking-widest uppercase text-gray-600 mb-5">Contact</h5>
+        <ul class="space-y-3 text-gray-400 text-sm">
+          <li>Phu My Hung, District 7, HCMC</li>
+          <li>Mon, Tue, Thu, Fri: 16:00 - 17:00</li>
+          <li><a href="mailto:lockedin.saigon@gmail.com" class="hover:text-white transition">lockedin.saigon@gmail.com</a></li>
+          <li>EN: 0938 454 724 (Zalo/WhatsApp)</li>
+          <li>VN: 0909 756 044 (Zalo/Hotline)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-wrap justify-between gap-4 text-xs text-gray-600">
+      <span>© 2026 LIT Pickleball. All Rights Reserved.</span>
+      <span>Part of LIT (Locked In Training).</span>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING CONTACT ================= -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+    <a href="#" class="w-14 h-14 rounded-full bg-[#0068ff] shadow-lg flex items-center justify-center hover:scale-105 transition" title="Chat Zalo (EN)" aria-label="Chat via Zalo">
+      <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+    </a>
+    <a href="#" class="w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center hover:scale-105 transition" title="Chat WhatsApp (EN)" aria-label="Chat via WhatsApp">
+      <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+    </a>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // 1. Progressive Enhancement
+    document.documentElement.classList.remove('no-js');
+
+    // 2. Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+      navLinks.classList.toggle('flex');
+      navLinks.classList.toggle('flex-col');
+      navLinks.classList.toggle('absolute');
+      navLinks.classList.toggle('top-full');
+      navLinks.classList.toggle('left-0');
+      navLinks.classList.toggle('right-0');
+      navLinks.classList.toggle('bg-black/90');
+      navLinks.classList.toggle('py-4');
+    });
+
+    // 3. Nav CTA Dropdown
+    const navCtaBtn = document.getElementById('navCtaBtn');
+    const navCtaMenu = document.getElementById('navCtaMenu');
+    if (navCtaBtn) {
+      navCtaBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navCtaMenu.classList.toggle('opacity-0');
+        navCtaMenu.classList.toggle('invisible');
+      });
+      window.addEventListener('click', () => {
+        navCtaMenu.classList.add('opacity-0', 'invisible');
+      });
+    }
+
+    // 4. FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-q');
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        faqItems.forEach(i => i.classList.remove('open'));
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    // 5. Intersection Observer for Scroll Reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          entry.target.style.transitionDelay = `${delay}ms`;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.classList.add('is-visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+  </script>
 </body>
 </html>
