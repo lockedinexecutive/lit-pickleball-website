@@ -266,7 +266,12 @@
       
       <!-- HERO -->
       <section class="relative min-h-[80vh] flex items-center justify-center text-center pt-12 pb-12 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black"></div>
+        <!-- Background Video -->
+        <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0" muted loop playsinline poster="hero-poster.jpg"></video>
+        
+        <!-- Lớp gradient đen (z-[1] để nằm trên video, dưới chữ) -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black z-[1]"></div>
+        
         <div class="relative z-10 max-w-4xl mx-auto px-6">
           <h1 class="graffiti-head text-5xl md:text-7xl lg:text-8xl mb-6 reveal">Your Best Game.<br>Your Kind of People.</h1>
           <p class="text-lg md:text-xl text-gray-200 font-light mb-10 max-w-2xl mx-auto reveal" data-delay="100">Get seriously good at pickleball — court booked, coach ready, crew waiting. You just show up.</p>
@@ -558,8 +563,12 @@
       <!-- FIND US (Moved to bottom) -->
       <section id="contact" class="py-20 md:py-28">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div class="reveal glass-frame p-2 overflow-hidden">
-            <iframe src="https://www.google.com/maps?q=Phu+My+Hung,+District+7,+Ho+Chi+Minh+City&output=embed" width="100%" height="400" style="border:0; filter: grayscale(0.3) invert(0.92) contrast(0.9); border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LIT Pickleball Location"></iframe>
+          <!-- Đã update tìm kiếm LIT Pickleball và thêm nút Get Directions -->
+          <div class="reveal glass-frame p-2 overflow-hidden relative">
+            <iframe src="https://maps.google.com/maps?q=LIT%20Pickleball%20Phu%20My%20Hung&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0; filter: grayscale(0.3) invert(0.92) contrast(0.9); border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LIT Pickleball Location"></iframe>
+            <a href="https://maps.app.goo.gl/wEjvK4xFDuesTp8BA" target="_blank" rel="noopener noreferrer" class="absolute bottom-6 right-6 bg-teal-lit text-white font-ui font-bold tracking-widest text-xs px-4 py-2 rounded-full shadow-lg hover:opacity-90 transition">
+              Get Directions
+            </a>
           </div>
           <div class="glass-frame p-10">
             <h2 class="text-3xl md:text-5xl mb-6 reveal">On Court in Phu My Hung</h2>
@@ -995,6 +1004,28 @@
       const pageId = routes[path] || 'page-home';
       showPage(pageId);
     }
+
+    // ================= HERO VIDEO BACKGROUND (Mobile & Reduced-Motion Optimized) =================
+    document.addEventListener("DOMContentLoaded", () => {
+      const video = document.getElementById('hero-video');
+      if (!video) return;
+
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Chỉ tải và phát video khi ở Desktop VÀ người dùng không bật chế độ giảm chuyển động
+      if (isDesktop && !prefersReducedMotion) {
+        const source = document.createElement('source');
+        source.src = 'lit-hero.mp4';
+        source.type = 'video/mp4';
+        video.appendChild(source);
+        
+        // Đảm bảo video phát (nếu trình duyệt chặn autoplay có xử lý bắt lỗi)
+        video.play().catch(e => console.log("Autoplay bị chặn trình duyệt:", e));
+      }
+      // Nếu là Mobile hoặc bật Reduced-Motion: không làm gì cả, 
+      // thuộc tính poster="hero-poster.jpg" trong HTML sẽ tự hiển thị ảnh tĩnh làm nền.
+    });
 
     window.addEventListener('hashchange', router);
     window.addEventListener('DOMContentLoaded', router);
