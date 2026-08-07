@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LIT Pickleball — Coaching & Community in Phu My Hung</title>
   
-  <!-- Primary Meta Tags (SEO) -->
+  <!-- Primary Meta Tags (Dynamic SEO) -->
   <meta name="title" content="LIT Pickleball — Coaching & Community in Phu My Hung" />
   <meta name="description" content="LIT Pickleball — get locked in. Foreign-coach-led pickleball coaching packs and a curated, English-speaking community in Phu My Hung, District 7, Ho Chi Minh City." />
   <meta name="keywords" content="Pickleball Ho Chi Minh, Pickleball District 7, Pickleball Phu My Hung, Pickleball Coaching, LIT Pickleball" />
   <meta name="author" content="LIT Pickleball" />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://litpickleballhcmc.com/" />
   <link rel="icon" type="image/png" href="./assets/images/lit-pickleball-logo.png" />
 
@@ -27,7 +28,7 @@
   <meta property="twitter:description" content="Get seriously good at pickleball, alongside people who get you. Court booked, coach ready — just show up." />
   <meta property="twitter:image" content="https://litpickleballhcmc.com/og-image.jpg" />
 
-  <!-- Fonts: Preload and display=block to prevent FOUT (Flash of Unstyled Text) -->
+  <!-- Fonts: Preload and display=block to prevent FOUT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800&display=block" onload="this.onload=null;this.rel='stylesheet'">
@@ -62,7 +63,7 @@
     }
   </script>
 
-  <!-- Structured Data: SportsActivityLocation -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -94,43 +95,17 @@
     }
   }
   </script>
-
-  <!-- Structured Data: FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Do I need experience to join coaching?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Not at all — built for beginners and existing players alike." }
-      },
-      {
-        "@type": "Question",
-        "name": "If I complete a coaching pack, am I guaranteed a Membership spot?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Coaching and Membership are independent — one doesn't guarantee the other." }
-      },
-      {
-        "@type": "Question",
-        "name": "I already play — can I apply for Membership without coaching?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes — experienced players can apply directly, no coaching pack required." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I buy a single coaching session?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No — only sold as a 10-session pack, group or private." }
-      },
-      {
-        "@type": "Question",
-        "name": "How does Membership selection work?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Curated through a waitlist — LIT reaches out when a spot opens." }
-      },
-      {
-        "@type": "Question",
-        "name": "Where is LIT Pickleball located?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Phu My Hung, District 7, Ho Chi Minh City." }
-      }
+      { "@type": "Question", "name": "Do I need experience to join coaching?", "acceptedAnswer": { "@type": "Answer", "text": "Not at all — built for beginners and existing players alike." } },
+      { "@type": "Question", "name": "If I complete a coaching pack, am I guaranteed a Membership spot?", "acceptedAnswer": { "@type": "Answer", "text": "No. Coaching and Membership are independent — one doesn't guarantee the other." } },
+      { "@type": "Question", "name": "I already play — can I apply for Membership without coaching?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — experienced players can apply directly, no coaching pack required." } },
+      { "@type": "Question", "name": "Can I buy a single coaching session?", "acceptedAnswer": { "@type": "Answer", "text": "No — only sold as a 10-session pack, group or private." } },
+      { "@type": "Question", "name": "How does Membership selection work?", "acceptedAnswer": { "@type": "Answer", "text": "Curated through a waitlist — LIT reaches out when a spot opens." } },
+      { "@type": "Question", "name": "Where is LIT Pickleball located?", "acceptedAnswer": { "@type": "Answer", "text": "Phu My Hung, District 7, Ho Chi Minh City." } }
     ]
   }
   </script>
@@ -149,7 +124,6 @@
       filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.5));
     }
 
-    /* Option 1: Cinematic Blurred Background */
     .bg-cinematic::before {
       content: '';
       position: fixed;
@@ -158,12 +132,11 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      filter: blur(8px) brightness(0.3); /* Mờ và tối đi để không làm chẹt chữ */
-      transform: scale(1.1); /* Tránh viền trắng do blur */
+      filter: blur(8px) brightness(0.3);
+      transform: scale(1.1);
       z-index: -2;
     }
 
-    /* Khung kính (Glassmorphism Frame) */
     .glass-frame {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(12px);
@@ -173,7 +146,6 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
-    /* Scroll Reveal Animations */
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -184,7 +156,6 @@
       transform: translateY(0);
     }
 
-    /* Accordion Transition */
     .faq-a {
       max-height: 0;
       overflow: hidden;
@@ -201,444 +172,662 @@
     }
     .pulse-anim { animation: pulse-urgent 1.5s infinite; }
 
-    /* Progressive Enhancement: Reveal if no JS */
     .no-js .reveal { opacity: 1; transform: none; }
+    
+    /* SEO & Accessibility friendly page hiding */
+    .page[hidden] { display: none; }
+    
+    /* Promo Banner hover effect */
+    .promo-banner:hover { opacity: 0.9; }
   </style>
   <noscript>
     <style>
       .reveal { opacity: 1 !important; transform: none !important; }
+      .page { display: block !important; }
     </style>
   </noscript>
 </head>
 
 <body class="bg-cinematic text-white antialiased overflow-x-hidden">
 
-  <!-- ================= NAV ================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
-    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#top" class="flex items-center" aria-label="LIT Pickleball — Home">
-        <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball Logo" class="h-12 md:h-14 w-auto object-contain">
-      </a>
-
-      <ul id="navLinks" class="hidden md:flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
-        <li><a href="#coaching" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Coaching</a></li>
-        <li><a href="#team" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Team</a></li>
-        <li><a href="#community" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Community</a></li>
-        <li><a href="#membership" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Membership</a></li>
-        <li><a href="#corporate" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Corporate</a></li>
-        <li><a href="#faq" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">FAQ</a></li>
-      </ul>
-
-      <div class="flex items-center gap-4">
-        <div class="relative hidden md:block">
-          <button id="navCtaBtn" class="font-ui font-bold text-base tracking-wider uppercase px-8 py-3 border border-white hover:bg-white hover:text-lit-black transition backdrop-blur-sm" aria-haspopup="true" aria-expanded="false">
-            Book Coaching
-          </button>
-          <div id="navCtaMenu" class="absolute right-0 mt-2 w-56 bg-lit-card border border-white/10 rounded-xl shadow-lg py-2 opacity-0 invisible transition-all duration-200 z-50">
-            <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 transition font-ui text-sm font-bold uppercase tracking-wider"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg> Zalo</a>
-            <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 transition font-ui text-sm font-bold uppercase tracking-wider"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg> WhatsApp</a>
-          </div>
-        </div>
-        <button id="mobileToggle" class="md:hidden text-3xl text-white" aria-label="Open menu">&#9776;</button>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ================= HERO ================= -->
-  <section id="top" class="relative min-h-screen flex items-center justify-center text-center pt-20 pb-12 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black"></div>
+  <!-- ================= PROMO BANNER + NAV ================= -->
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <!-- August Promotion Sticky Bar -->
+    <a href="#packages" onclick="routeToPricing(event)" class="promo-banner block bg-pink-lit text-lit-black text-center py-2 font-ui font-bold text-xs md:text-sm tracking-wider transition">
+      AUGUST PROMOTION: 10% OFF ALL TRAINING PACKAGES — ENDS 31.08.2026
+    </a>
     
-    <div class="relative z-10 max-w-4xl mx-auto px-6">
-      <h1 class="graffiti-head text-5xl md:text-7xl lg:text-8xl mb-6 reveal">Your Best Game.<br>Your Kind of People.</h1>
-      <p class="text-lg md:text-xl text-gray-200 font-light mb-10 max-w-2xl mx-auto reveal" data-delay="100">Get seriously good at pickleball, alongside people who get you. Court booked, coach ready — just show up.</p>
-      <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="200">
-        <a href="#coaching" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</a>
-        <a href="#membership" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full backdrop-blur-sm">Learn About Membership</a>
-      </div>
-    </div>
-  </section>
+    <header class="bg-black/40 backdrop-blur-md border-b border-white/10">
+      <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" aria-label="Main Navigation">
+        <a href="#/" class="flex items-center" aria-label="LIT Pickleball — Home">
+          <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball Logo" class="h-12 md:h-14 w-auto object-contain">
+        </a>
 
-  <!-- ================= PROBLEM ================= -->
-  <section class="py-20 md:py-28 text-center">
-    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12 reveal">
-      <h2 class="text-3xl md:text-5xl mb-6">Playing Shouldn't Be This Much Work.</h2>
-      <p class="text-gray-300 text-lg md:text-xl">Chasing courts. Guessing at technique. Showing up to play with whoever's around — and never quite improving. You don't want another casual hit-around. You want to actually get good, with people worth spending the hour with.</p>
-    </div>
-  </section>
-
-  <!-- ================= GUIDE ================= -->
-  <section class="py-20 md:py-28 text-center">
-    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12 reveal">
-      <h2 class="text-3xl md:text-5xl mb-6">We Get It — And We've Got It Handled.</h2>
-      <p class="text-gray-300 text-lg md:text-xl">A foreign, RacketPro APAC Level 1 certified coach. An on-court assistant every session. Courts already booked. All in English. You skip the hassle and just play.</p>
-    </div>
-  </section>
-
-  <!-- ================= PLAN (How It Works) ================= -->
-  <section class="py-20 md:py-28">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-      <div class="reveal glass-frame p-8">
-        <div class="text-teal-lit font-ui text-4xl font-bold mb-4">01</div>
-        <p class="text-lg text-gray-200">Book your 10-session pack — grouped by skill, not age.</p>
-      </div>
-      <div class="reveal glass-frame p-8" data-delay="100">
-        <div class="text-teal-lit font-ui text-4xl font-bold mb-4">02</div>
-        <p class="text-lg text-gray-200">Get better by session 10 — coach-led, 4:1 max.</p>
-      </div>
-      <div class="reveal glass-frame p-8" data-delay="200">
-        <div class="text-teal-lit font-ui text-4xl font-bold mb-4">03</div>
-        <p class="text-lg text-gray-200">Find your rhythm — join the community, two sessions a week.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= NEW TO PICKLEBALL ================= -->
-  <section class="py-20 md:py-28 text-center">
-    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
-      <h2 class="text-3xl md:text-5xl mb-6 reveal">Never Held a Paddle? Perfect.</h2>
-      <p class="text-gray-300 text-lg md:text-xl mb-8 reveal" data-delay="100">No experience, no gear, no problem — just bring court shoes and we'll handle the rest. Your first sessions are built for total beginners: learn it right from day one, at your own pace, in a group that's just as new as you. By session 10, you won't just know the rules — you'll actually be playing.</p>
-      <a href="#coaching" class="reveal inline-block bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg" data-delay="200">Book Your First Session</a>
-    </div>
-  </section>
-
-  <!-- ================= COACHING ================= -->
-  <section id="coaching" class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div class="reveal rounded-2xl overflow-hidden h-[400px] md:h-[500px] bg-cover bg-center shadow-2xl border border-white/10" style="background-image: url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');"></div>
-      <div class="glass-frame p-10">
-        <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In.<br>Every Point.</h2>
-        <p class="text-gray-300 text-lg mb-8 reveal" data-delay="100">Learn to play correctly, from session one. Real progression, not casual lessons.</p>
-        <ul class="space-y-4 mb-8">
-          <li class="reveal flex items-start gap-4 text-gray-200" data-delay="200"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Trained by a foreign, RacketPro APAC Level 1 certified coach</li>
-          <li class="reveal flex items-start gap-4 text-gray-200" data-delay="300"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Visible progress by session 10</li>
-          <li class="reveal flex items-start gap-4 text-gray-200" data-delay="400"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> For beginners and players refining specific skills</li>
-          <li class="reveal flex items-start gap-4 text-gray-200" data-delay="500"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Grouped by skill level, not age</li>
+        <ul id="navLinks" class="hidden md:flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
+          <li><a href="#/coaching" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Coaching</a></li>
+          <li><a href="#/team" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Team</a></li>
+          <li><a href="#/membership" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Community</a></li>
+          <li><a href="#/membership" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Membership</a></li>
+          <li><a href="#/corporate" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Corporate</a></li>
+          <li><a href="#/faq" class="font-ui font-bold text-sm md:text-base tracking-wider hover:text-teal-lit transition px-3 py-2">FAQ</a></li>
         </ul>
-        <p class="text-sm text-gray-500 italic mb-8 reveal" data-delay="600">Completing coaching does not guarantee Membership acceptance. The two are independent.</p>
-        <a href="#packages" class="reveal inline-block bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg" data-delay="700">Book Your 10-Session Pack</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ================= COACHING PACKAGES ================= -->
-  <section id="packages" class="py-20 md:py-28 text-center">
-    <div class="max-w-4xl mx-auto px-6 mb-16">
-      <h2 class="text-3xl md:text-5xl mb-6 reveal">Simple. Transparent.<br>No Surprises.</h2>
-      <p class="text-gray-300 text-lg reveal" data-delay="100">Every package includes coach-led sessions, court fee, and a free LIT T-shirt. One price. Nothing hidden.</p>
-    </div>
-
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 text-left">
-      <!-- Group Pack -->
-      <article class="reveal glass-frame p-10 flex flex-col">
-        <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">Group Training</span>
-        <h3 class="font-ui text-2xl font-medium mb-2">Group Training Pack</h3>
-        <p class="text-gray-500 font-ui text-sm tracking-wider mb-6">All Skill Levels</p>
-        <div class="border-t border-white/10 pt-6 mb-4">
-          <div class="flex items-center gap-4 flex-wrap mb-2">
-            <span class="font-ui text-5xl font-bold text-teal-lit">400,000</span>
-            <span class="text-gray-400">VND / session</span>
-            <span class="bg-pink-lit text-lit-black font-ui text-sm font-extrabold px-3 py-1 rounded-md pulse-anim">10% OFF</span>
+        <div class="flex items-center gap-4">
+          <div class="relative hidden md:block">
+            <button id="navCtaBtn" class="font-ui font-bold text-base tracking-wider uppercase px-8 py-3 border border-white hover:bg-white hover:text-lit-black transition backdrop-blur-sm" aria-haspopup="true" aria-expanded="false">
+              Book Coaching
+            </button>
+            <div id="navCtaMenu" class="absolute right-0 mt-2 w-56 bg-lit-card border border-white/10 rounded-xl shadow-lg py-2 opacity-0 invisible transition-all duration-200 z-50">
+              <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 transition font-ui text-sm font-bold uppercase tracking-wider"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg> Zalo</a>
+              <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 transition font-ui text-sm font-bold uppercase tracking-wider"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg> WhatsApp</a>
+            </div>
           </div>
-          <p class="text-gray-500 text-sm mb-2">10-session pack</p>
-          <p class="text-pink-lit font-ui text-sm font-bold uppercase tracking-wider mb-4">⏳ Hurry! Ends 31.08.2026</p>
-          <p class="text-gray-300 mb-6">Grouped by skill level, not age — the right pace, every time.</p>
+          <button id="mobileToggle" class="md:hidden text-3xl text-white" aria-label="Open menu">&#9776;</button>
         </div>
-        <ul class="space-y-3 mb-8 flex-grow">
-          <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> 10 coaching sessions included</li>
-          <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Court fee included</li>
-          <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Free LIT T-shirt</li>
-          <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Max ratio 4:1</li>
-        </ul>
-        <a href="#" class="block text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Group Pack</a>
-      </article>
-
-      <!-- Private Pack -->
-      <article class="reveal glass-frame p-10 flex flex-col" data-delay="100">
-        <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">1:1 Private Coaching</span>
-        <h3 class="font-ui text-2xl font-medium mb-2">1:1 Private Coaching</h3>
-        <p class="text-gray-500 font-ui text-sm tracking-wider mb-6">Personalized pickleball coaching · Phu My Hung</p>
-        <div class="border-t border-white/10 pt-6 mb-4">
-          <div class="flex items-center gap-4 flex-wrap mb-2">
-            <span class="bg-pink-lit text-lit-black font-ui text-sm font-extrabold px-3 py-1 rounded-md pulse-anim">10% OFF</span>
-            <span class="text-pink-lit font-ui text-sm font-bold uppercase tracking-wider">⏳ Hurry! Ends 31.08.2026</span>
-          </div>
-          <p class="text-gray-300 mb-6 mt-4">Built around your goals — sharpen technique, your own pace.</p>
-        </div>
-        <div class="grid grid-cols-2 gap-4 mb-8 flex-grow">
-          <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
-            <svg class="w-6 h-6 mx-auto mb-2 text-violet-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg>
-            <h4 class="font-ui text-sm font-semibold mb-1">Custom Plan</h4>
-            <p class="text-xs text-gray-500">Tailored to you</p>
-          </div>
-          <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
-            <svg class="w-6 h-6 mx-auto mb-2 text-teal-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg>
-            <h4 class="font-ui text-sm font-semibold mb-1">Session Recording</h4>
-            <p class="text-xs text-gray-500">Filmed for review</p>
-          </div>
-          <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
-            <svg class="w-6 h-6 mx-auto mb-2 text-green-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
-            <h4 class="font-ui text-sm font-semibold mb-1">1:1 Focus</h4>
-            <p class="text-xs text-gray-500">100% attention</p>
-          </div>
-          <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
-            <svg class="w-6 h-6 mx-auto mb-2 text-pink-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l2.5 5 5.5.7-4 3.9 1 5.4L12 14l-5 3 1-5.4-4-3.9 5.5-.7z"/></svg>
-            <h4 class="font-ui text-sm font-semibold mb-1">Certified Coach</h4>
-            <p class="text-xs text-gray-500">RacketPro APAC L1</p>
-          </div>
-        </div>
-        <a href="#" class="block text-center bg-violet-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Contact for Pricing & Schedule</a>
-      </article>
-    </div>
-    <p class="max-w-2xl mx-auto px-6 mt-12 text-center text-gray-500 font-ui text-sm tracking-widest uppercase reveal">Coaching ratio is intentionally small — up to 4 students per coach.<br>Every player is seen. Every session has a reason.</p>
-  </section>
-
-  <!-- ================= TEAM ================= -->
-  <section id="team" class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-5xl mb-12 reveal">The Coaches Who Get You Locked In</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <article class="reveal glass-frame overflow-hidden">
-          <div class="h-64 bg-cover bg-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/57b1040e-f9c9-486d-aa45-c28995cfb8d9.JPG?auth_key=1885726169-86e6fd8c3bd24d838be8e13e333d808c-0-33c3b0ee1c980eaf14939cac401d6901');"></div>
-          <div class="p-6 text-left">
-            <h3 class="font-ui text-xl font-medium mb-1">Coach Boysey</h3>
-            <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
-            <p class="text-gray-400 text-sm mt-3">Energy and patience for beginners and players sharpening a specific shot.</p>
-          </div>
-        </article>
-        <article class="reveal glass-frame overflow-hidden" data-delay="100">
-          <div class="h-64 bg-lit-black flex items-center justify-center text-gray-700">Photo Coming Soon</div>
-          <div class="p-6 text-left">
-            <h3 class="font-ui text-xl font-medium mb-1">Coach Wardy</h3>
-            <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
-            <p class="text-gray-400 text-sm mt-3">Steady, clear feedback — real progress players come back for.</p>
-          </div>
-        </article>
-        <article class="reveal glass-frame overflow-hidden" data-delay="200">
-          <div class="h-64 bg-cover bg-top" style="background-image: url('https://z-cdn-media.chatglm.cn/files/1c3cdde2-de1b-4f03-a939-46d0e6f94900.png?auth_key=1885726169-628c86f4b89744ea952bf518eb0d2daf-0-4da0282a06c211dac28c7b3adef9d8d2');"></div>
-          <div class="p-6 text-left">
-            <h3 class="font-ui text-xl font-medium mb-1">Coach Zinger</h3>
-            <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
-            <p class="text-gray-400 text-sm mt-3">Fell in love with the game fast — brings that energy to every lesson.</p>
-          </div>
-        </article>
-      </div>
-      <div class="mt-12 reveal"><a href="#" class="font-ui text-sm font-bold tracking-widest uppercase text-teal-lit border-b border-teal-lit pb-1">Meet the Full Team</a></div>
-    </div>
-  </section>
-
-  <!-- ================= COMMUNITY ================= -->
-  <section id="community" class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-5xl mb-12 reveal">A Community That's Already Playing Together</h2>
-      <div class="grid md:grid-cols-3 border border-white/10 rounded-2xl overflow-hidden glass-frame">
-        <article class="reveal h-96 relative bg-cover bg-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/ec1addd0-421c-4832-8384-d8dba5cd5371.JPG?auth_key=1885726169-63f653974ea844949021369d48d97aa2-0-eaac307177d3ee6edca8c3248d03c0fc');">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-          <div class="absolute bottom-0 p-6 text-left">
-            <h3 class="font-ui text-2xl mb-2">Get in the Game</h3>
-            <p class="text-gray-300 text-sm">No more guessing your way through technique. Learn it right, from day one.</p>
-          </div>
-        </article>
-        <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="100" style="background-image: url('https://z-cdn-media.chatglm.cn/files/3965434b-1758-4adb-97a6-3391ff68db90.JPG?auth_key=1885726169-37ca26b86b8040c3b4af46839c5cc09a-0-bd3e48055e6975aace18d351d2444fc3');">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-          <div class="absolute bottom-0 p-6 text-left">
-            <h3 class="font-ui text-2xl mb-2">Find Your Crew</h3>
-            <p class="text-gray-300 text-sm">No more chasing courts or organizing games. The community is already here.</p>
-          </div>
-        </article>
-        <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="200" style="background-image: url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-          <div class="absolute bottom-0 p-6 text-left">
-            <h3 class="font-ui text-2xl mb-2">Lock the Rhythm</h3>
-            <p class="text-gray-300 text-sm">Fixed weekly sessions for 12 months. A rhythm you'll actually keep.</p>
-          </div>
-        </article>
-      </div>
-      <div class="max-w-2xl mx-auto mt-16 reveal">
-        <svg class="w-8 h-8 mx-auto mb-4 opacity-30" fill="#ff66b2" viewBox="0 0 34 26"><path d="M0 26V15.6C0 6.5 5.7 1 14.8 0l1 4.3C9.5 5.6 6.6 8.7 6.2 13H14v13H0zm18.7 0V15.6C18.7 6.5 24.4 1 33.5 0l1 4.3c-6.3 1.3-9.2 4.4-9.6 8.7h7.8v13H18.7z"/></svg>
-        <p class="text-xl md:text-2xl italic text-gray-100 mb-4">"What I love most isn't the court — it's knowing I'll always have people to play with, on time, at my level."</p>
-        <cite class="font-ui text-sm not-italic text-gray-500 tracking-widest">— LIT Member</cite>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= AVOID FAILURE ================= -->
-  <section class="py-20 md:py-28 text-center">
-    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12 reveal">
-      <h2 class="text-3xl md:text-5xl mb-6">Don't Get Stuck on the Sideline.</h2>
-      <p class="text-gray-400 text-lg md:text-xl">Spots fill by cycle, and the community's already playing. Miss this window and it's back to chasing games on your own.</p>
-    </div>
-  </section>
-
-  <!-- ================= MEMBERSHIP ================= -->
-  <section id="membership" class="py-20 md:py-28">
-    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-16 text-center">
-      <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In. With Your People.</h2>
-      <p class="text-gray-300 text-lg mb-10 reveal" data-delay="100">No chasing bookings, no organizing games. The court and the community are already there — you just show up.</p>
-      
-      <ul class="text-left max-w-md mx-auto space-y-4 mb-10">
-        <li class="reveal flex items-start gap-4 text-gray-200" data-delay="200"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Fixed courts, no last-minute cancellations</li>
-        <li class="reveal flex items-start gap-4 text-gray-200" data-delay="300"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Curated, English-speaking community</li>
-        <li class="reveal flex items-start gap-4 text-gray-200" data-delay="400"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> 2 hosted sessions/week, from 14/08/2026 – 11/06/2027</li>
+      </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-lit-card border-t border-white/10">
+      <ul class="flex flex-col p-4 gap-2">
+        <li><a href="#/coaching" class="block font-ui font-bold text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Coaching</a></li>
+        <li><a href="#/team" class="block font-ui font-bold text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Team</a></li>
+        <li><a href="#/membership" class="block font-ui font-bold text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Community</a></li>
+        <li><a href="#/membership" class="block font-ui font-bold text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Membership</a></li>
+        <li><a href="#/corporate" class="block font-ui font-bold text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Corporate</a></li>
+        <li><a href="#/faq" class="block font-ui font-bold text-base tracking-wider hover:text-teal-lit transition px-3 py-2">FAQ</a></li>
       </ul>
-
-      <div class="reveal bg-pink-lit/10 border border-pink-lit/30 rounded-xl p-6 text-left mb-10 flex gap-4 items-start" data-delay="500">
-        <span class="bg-pink-lit w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center mt-1"><svg class="w-4 h-4 text-lit-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span>
-        <p class="text-gray-400 text-sm"><strong class="text-white">Limited Availability.</strong> Membership is currently near full capacity for this cycle. We're still accepting Waitlist applications — LIT will personally reach out when a spot opens.</p>
-      </div>
-
-      <a href="#" class="reveal inline-block w-full md:w-auto bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full shadow-lg" data-delay="600">Join the Waitlist</a>
     </div>
-  </section>
+  </div>
 
-  <!-- ================= CORPORATE ================= -->
-  <section id="corporate" class="py-20 md:py-28 text-center">
-    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
-      <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In. As a Team.</h2>
-      <p class="text-gray-400 text-lg mb-8 reveal" data-delay="100">Coming soon — team-building pickleball sessions for local businesses.</p>
-      <a href="#" class="reveal inline-block border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full" data-delay="200">Register Interest</a>
-    </div>
-  </section>
+  <main class="pt-28 md:pt-32">
+    <!-- ================= HOMEPAGE ================= -->
+    <div id="page-home" class="page active">
+      
+      <!-- HERO -->
+      <section class="relative min-h-[80vh] flex items-center justify-center text-center pt-12 pb-12 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6">
+          <h1 class="graffiti-head text-5xl md:text-7xl lg:text-8xl mb-6 reveal">Your Best Game.<br>Your Kind of People.</h1>
+          <p class="text-lg md:text-xl text-gray-200 font-light mb-10 max-w-2xl mx-auto reveal" data-delay="100">Get seriously good at pickleball, alongside people who get you. Court booked, coach ready — just show up.</p>
+          <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="200">
+            <a href="#packages" onclick="routeToPricing(event)" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</a>
+            <a href="#/membership" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full backdrop-blur-sm">Learn About Membership</a>
+          </div>
+        </div>
+      </section>
 
-  <!-- ================= WHY LIT ================= -->
-  <section class="py-20 md:py-28">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-5xl mb-10 reveal">Why LIT?</h2>
-      <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 text-left mb-12 glass-frame p-10">
-        <div class="reveal flex gap-4 items-start text-white"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Foreign coach icon" class="w-6 h-6 rounded-full mt-1"><p>Foreign coach, RacketPro APAC Level 1 certified</p></div>
-        <div class="reveal flex gap-4 items-start text-white" data-delay="100"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Clean courts icon" class="w-6 h-6 rounded-full mt-1"><p>Covered, clean courts with seating and fans</p></div>
-        <div class="reveal flex gap-4 items-start text-white" data-delay="200"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Assistant icon" class="w-6 h-6 rounded-full mt-1"><p>On-site assistant at every session</p></div>
-        <div class="reveal flex gap-4 items-start text-white" data-delay="300"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Community icon" class="w-6 h-6 rounded-full mt-1"><p>English-speaking, curated community</p></div>
-        <div class="reveal flex gap-4 items-start text-white" data-delay="400"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Fixed courts icon" class="w-6 h-6 rounded-full mt-1"><p>Fixed courts — no cancellation risk</p></div>
-        <div class="reveal flex gap-4 items-start text-white" data-delay="500"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Location icon" class="w-6 h-6 rounded-full mt-1"><p>Located in Phu My Hung, District 7</p></div>
-        <div class="reveal flex gap-4 items-start text-white" data-delay="600"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="No hidden fees icon" class="w-6 h-6 rounded-full mt-1"><p>No hidden fees, no surprises</p></div>
-        <div class="reveal flex gap-4 items-start text-white" data-delay="700"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Love game icon" class="w-6 h-6 rounded-full mt-1"><p>Built by people who genuinely love the game</p></div>
-      </div>
-      <div class="flex flex-wrap gap-4 justify-center reveal">
-        <a href="#membership" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Explore Membership</a>
-        <a href="#coaching" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full">Explore Coaching</a>
-      </div>
-    </div>
-  </section>
+      <!-- PROBLEM + SOLUTION MERGED -->
+      <section class="py-20 md:py-28 text-center">
+        <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12 reveal">
+          <h2 class="text-3xl md:text-5xl mb-6">Playing Shouldn't Be This Much Work.</h2>
+          <p class="text-gray-300 text-lg md:text-xl mb-12">Chasing courts. Guessing at technique. Showing up to play with whoever's around — and never quite improving. You don't want another casual hit-around. You want to actually get good, with people worth spending the hour with.</p>
+          
+          <div class="border-t border-white/10 pt-12"></div>
+          
+          <h2 class="text-3xl md:text-5xl mb-6">We Get It — And We've Got It Handled.</h2>
+          <p class="text-gray-300 text-lg md:text-xl">A foreign, RacketPro APAC Level 1 certified coach. An on-court assistant every session. Courts already booked. All in English. You skip the hassle and just play.</p>
+        </div>
+      </section>
 
-  <!-- ================= NEWSLETTER ================= -->
-  <section class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="bg-gradient-to-r from-teal-lit via-violet-lit to-violet-deep text-center rounded-3xl p-10 md:p-16">
-        <h2 class="text-3xl md:text-5xl mb-4 reveal">Don't Miss Your Serve</h2>
-        <p class="text-gray-100 text-lg mb-8 reveal" data-delay="100">Get updates on coaching slots, community sessions, and waitlist openings.</p>
-        <form class="flex flex-wrap gap-3 justify-center reveal" data-delay="200">
-          <input type="email" placeholder="Enter your email" required class="w-full md:w-auto flex-grow min-w-[220px] px-6 py-4 rounded-full text-lit-black focus:outline-none">
-          <button type="submit" class="bg-lit-black text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full hover:opacity-80 transition">Subscribe</button>
-        </form>
-        <p class="text-xs text-white/70 mt-4 reveal" data-delay="300">We respect your privacy. Unsubscribe at any time.</p>
-      </div>
-    </div>
-  </section>
+      <!-- PLAN (How It Works) -->
+      <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="reveal glass-frame p-8">
+            <div class="text-teal-lit font-ui text-4xl font-bold mb-4">01</div>
+            <p class="text-lg text-gray-200">Book your 10-session pack — grouped by skill, not age.</p>
+          </div>
+          <div class="reveal glass-frame p-8" data-delay="100">
+            <div class="text-teal-lit font-ui text-4xl font-bold mb-4">02</div>
+            <p class="text-lg text-gray-200">Get better by session 10 — coach-led, 4:1 max.</p>
+          </div>
+          <div class="reveal glass-frame p-8" data-delay="200">
+            <div class="text-teal-lit font-ui text-4xl font-bold mb-4">03</div>
+            <p class="text-lg text-gray-200">Find your rhythm — join the community, two sessions a week.</p>
+          </div>
+        </div>
+      </section>
 
-  <!-- ================= SUCCESS ================= -->
-  <section class="py-20 md:py-28 text-center">
-    <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
-      <h2 class="text-3xl md:text-5xl mb-6 reveal">This Is What Locked In Feels Like.</h2>
-      <p class="text-gray-300 text-lg md:text-xl mb-10 reveal" data-delay="100">A game that keeps getting sharper. A fixed rhythm every week. A crew that's always there, on time, at your level.</p>
-      <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="200">
-        <a href="#coaching" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</a>
-        <a href="#membership" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full">Join the Waitlist</a>
-      </div>
-    </div>
-  </section>
+      <!-- PRICING BLOCK (Packages) -->
+      <section id="packages" class="py-20 md:py-28 text-center">
+        <div class="max-w-4xl mx-auto px-6 mb-16">
+          <h2 class="text-3xl md:text-5xl mb-6 reveal">Simple. Transparent.<br>No Surprises.</h2>
+          <p class="text-gray-300 text-lg reveal" data-delay="100">Every package includes coach-led sessions, court fee, and a free LIT T-shirt. One price. Nothing hidden.</p>
+        </div>
 
-  <!-- ================= FAQ ================= -->
-  <section id="faq" class="py-20 md:py-28">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl md:text-5xl mb-12 text-center reveal">FAQ</h2>
-      <div class="glass-frame p-8 md:p-10 space-y-4">
-        <div class="faq-item border-b border-white/10 pb-4 reveal">
-          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
-            <span>Do I need experience to join coaching?</span>
-            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="faq-a"><p class="pt-4 text-gray-400">Not at all — built for beginners and existing players alike.</p></div>
-        </div>
-        <div class="faq-item border-b border-white/10 pb-4 reveal">
-          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
-            <span>If I complete a coaching pack, am I guaranteed a Membership spot?</span>
-            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="faq-a"><p class="pt-4 text-gray-400">No. Coaching and Membership are independent — one doesn't guarantee the other.</p></div>
-        </div>
-        <div class="faq-item border-b border-white/10 pb-4 reveal">
-          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
-            <span>I already play — can I apply for Membership without coaching?</span>
-            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="faq-a"><p class="pt-4 text-gray-400">Yes — experienced players can apply directly, no coaching pack required.</p></div>
-        </div>
-        <div class="faq-item border-b border-white/10 pb-4 reveal">
-          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
-            <span>Can I buy a single coaching session?</span>
-            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="faq-a"><p class="pt-4 text-gray-400">No — only sold as a 10-session pack, group or private.</p></div>
-        </div>
-        <div class="faq-item border-b border-white/10 pb-4 reveal">
-          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
-            <span>How does Membership selection work?</span>
-            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="faq-a"><p class="pt-4 text-gray-400">Curated through a waitlist — LIT reaches out when a spot opens.</p></div>
-        </div>
-        <div class="faq-item pb-4 reveal">
-          <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
-            <span>Where is LIT Pickleball located?</span>
-            <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4">+</span>
-          </button>
-          <div class="faq-a"><p class="pt-4 text-gray-400">Phu My Hung, District 7, Ho Chi Minh City.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 text-left">
+          <!-- Group Pack -->
+          <article class="reveal glass-frame p-10 flex flex-col">
+            <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">Group Training</span>
+            <h3 class="font-ui text-2xl font-medium mb-2">Group Training Pack</h3>
+            <p class="text-gray-500 font-ui text-sm tracking-wider mb-6">All Skill Levels</p>
+            <div class="border-t border-white/10 pt-6 mb-4">
+              <div class="flex items-center gap-4 flex-wrap mb-2">
+                <span class="font-ui text-5xl font-bold text-teal-lit">400,000</span>
+                <span class="text-gray-400">VND / session</span>
+                <span class="bg-pink-lit text-lit-black font-ui text-sm font-extrabold px-3 py-1 rounded-md pulse-anim">10% OFF</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-2">10-session pack</p>
+              <p class="text-pink-lit font-ui text-sm font-bold uppercase tracking-wider mb-4">⏳ Hurry! Ends 31.08.2026</p>
+              <p class="text-gray-300 mb-6">Grouped by skill level, not age — the right pace, every time.</p>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> 10 coaching sessions included</li>
+              <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Court fee included</li>
+              <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Free LIT T-shirt</li>
+              <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Max ratio 4:1</li>
+            </ul>
+            <a href="#" class="block text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Group Pack</a>
+          </article>
 
-  <!-- ================= FIND US ================= -->
-  <section id="contact" class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div class="reveal glass-frame p-2 overflow-hidden">
-        <iframe src="https://www.google.com/maps?q=Phu+My+Hung,+District+7,+Ho+Chi+Minh+City&output=embed" width="100%" height="400" style="border:0; filter: grayscale(0.3) invert(0.92) contrast(0.9); border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LIT Pickleball Location"></iframe>
-      </div>
-      <div class="glass-frame p-10">
-        <h2 class="text-3xl md:text-5xl mb-6 reveal">On Court in Phu My Hung</h2>
-        <div class="space-y-4 text-gray-300">
-          <p class="reveal flex gap-3 items-center" data-delay="100"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> LIT Pickleball, Phu My Hung, District 7, HCMC</p>
-          <p class="reveal flex gap-3 items-center" data-delay="200"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mon, Tue, Thu, Fri: 16:00 - 17:00</p>
-          <p class="reveal flex gap-3 items-center" data-delay="300"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6l9 7 9-7M3 6v12h18V6H3z"/></svg> <a href="mailto:lockedin.saigon@gmail.com" style="color: inherit;">lockedin.saigon@gmail.com</a></p>
-          <p class="reveal flex gap-3 items-center" data-delay="400"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> EN Speaker: <a href="tel:0938454724" style="color: inherit;">0938 454 724</a> (Zalo/WhatsApp)</p>
-          <p class="reveal flex gap-3 items-center" data-delay="500"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> VN Speaker: <a href="tel:0909756044" style="color: inherit;">0909 756 044</a> (Zalo/Hotline)</p>
+          <!-- Private Pack -->
+          <article class="reveal glass-frame p-10 flex flex-col" data-delay="100">
+            <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">1:1 Private Coaching</span>
+            <h3 class="font-ui text-2xl font-medium mb-2">1:1 Private Coaching</h3>
+            <p class="text-gray-500 font-ui text-sm tracking-wider mb-6">Personalized pickleball coaching · Phu My Hung</p>
+            <div class="border-t border-white/10 pt-6 mb-4">
+              <div class="flex items-center gap-4 flex-wrap mb-2">
+                <span class="bg-pink-lit text-lit-black font-ui text-sm font-extrabold px-3 py-1 rounded-md pulse-anim">10% OFF</span>
+                <span class="text-pink-lit font-ui text-sm font-bold uppercase tracking-wider">⏳ Hurry! Ends 31.08.2026</span>
+              </div>
+              <p class="text-gray-300 mb-6 mt-4">Built around your goals — sharpen technique, your own pace.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-8 flex-grow">
+              <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+                <svg class="w-6 h-6 mx-auto mb-2 text-violet-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg>
+                <h4 class="font-ui text-sm font-semibold mb-1">Custom Plan</h4>
+                <p class="text-xs text-gray-500">Tailored to you</p>
+              </div>
+              <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+                <svg class="w-6 h-6 mx-auto mb-2 text-teal-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg>
+                <h4 class="font-ui text-sm font-semibold mb-1">Session Recording</h4>
+                <p class="text-xs text-gray-500">Filmed for review</p>
+              </div>
+              <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+                <svg class="w-6 h-6 mx-auto mb-2 text-green-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+                <h4 class="font-ui text-sm font-semibold mb-1">1:1 Focus</h4>
+                <p class="text-xs text-gray-500">100% attention</p>
+              </div>
+              <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+                <svg class="w-6 h-6 mx-auto mb-2 text-pink-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l2.5 5 5.5.7-4 3.9 1 5.4L12 14l-5 3 1-5.4-4-3.9 5.5-.7z"/></svg>
+                <h4 class="font-ui text-sm font-semibold mb-1">Certified Coach</h4>
+                <p class="text-xs text-gray-500">RacketPro APAC L1</p>
+              </div>
+            </div>
+            <a href="#" class="block text-center bg-violet-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Contact for Pricing & Schedule</a>
+          </article>
         </div>
-      </div>
+        <p class="max-w-2xl mx-auto px-6 mt-12 text-center text-gray-500 font-ui text-sm tracking-widest uppercase reveal">Coaching ratio is intentionally small — up to 4 students per coach.<br>Every player is seen. Every session has a reason.</p>
+      </section>
+
+      <!-- TEASER COACHING -->
+      <section class="py-20 md:py-28 text-center">
+        <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
+          <h2 class="text-3xl md:text-5xl mb-6 reveal">Never Held a Paddle? Perfect.</h2>
+          <p class="text-gray-300 text-lg md:text-xl mb-8 reveal" data-delay="100">No experience, no gear, no problem — just bring court shoes and we'll handle the rest. Your first sessions are built for total beginners: learn it right from day one, at your own pace, in a group that's just as new as you. By session 10, you won't just know the rules — you'll actually be playing.</p>
+          
+          <h3 class="text-2xl md:text-3xl mb-4 reveal" data-delay="200">Locked In. Every Point.</h3>
+          <p class="text-gray-400 text-base md:text-lg mb-8 reveal" data-delay="300">Learn to play correctly, from session one. Real progression, not casual lessons.</p>
+          
+          <a href="#/coaching" class="reveal inline-block bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg" data-delay="400">Explore Coaching</a>
+        </div>
+      </section>
+
+      <!-- TEASER MEMBERSHIP -->
+      <section class="py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-5xl mb-12 reveal">A Community That's Already Playing Together</h2>
+          <div class="grid md:grid-cols-3 border border-white/10 rounded-2xl overflow-hidden glass-frame">
+            <article class="reveal h-96 relative bg-cover bg-center" role="img" aria-label="Players getting in the game" style="background-image: url('https://z-cdn-media.chatglm.cn/files/ec1addd0-421c-4832-8384-d8dba5cd5371.JPG?auth_key=1885726169-63f653974ea844949021369d48d97aa2-0-eaac307177d3ee6edca8c3248d03c0fc');">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+              <div class="absolute bottom-0 p-6 text-left">
+                <h3 class="font-ui text-2xl mb-2">Get in the Game</h3>
+                <p class="text-gray-300 text-sm">No more guessing your way through technique. Learn it right, from day one.</p>
+              </div>
+            </article>
+            <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="100" role="img" aria-label="Players finding their crew" style="background-image: url('https://z-cdn-media.chatglm.cn/files/2959ae91-8099-47ed-bdcb-b737f534d5c0.jpg?auth_key=1886072390-9e03e2038c944442aa0925d6019fd5f8-0-ff1d2b5e568772b26c65a92403f755c3');">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+              <div class="absolute bottom-0 p-6 text-left">
+                <h3 class="font-ui text-2xl mb-2">Find Your Crew</h3>
+                <p class="text-gray-300 text-sm">No more chasing courts or organizing games. The community is already here.</p>
+              </div>
+            </article>
+            <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="200" role="img" aria-label="Players locking the rhythm" style="background-image: url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+              <div class="absolute bottom-0 p-6 text-left">
+                <h3 class="font-ui text-2xl mb-2">Lock the Rhythm</h3>
+                <p class="text-gray-300 text-sm">Fixed weekly sessions for 12 months. A rhythm you'll actually keep.</p>
+              </div>
+            </article>
+          </div>
+          <div class="max-w-2xl mx-auto mt-16 reveal">
+            <svg class="w-8 h-8 mx-auto mb-4 opacity-30" fill="#ff66b2" viewBox="0 0 34 26" aria-hidden="true"><path d="M0 26V15.6C0 6.5 5.7 1 14.8 0l1 4.3C9.5 5.6 6.6 8.7 6.2 13H14v13H0zm18.7 0V15.6C18.7 6.5 24.4 1 33.5 0l1 4.3c-6.3 1.3-9.2 4.4-9.6 8.7h7.8v13H18.7z"/></svg>
+            <p class="text-xl md:text-2xl italic text-gray-100 mb-4">"What I love most isn't the court — it's knowing I'll always have people to play with, on time, at my level."</p>
+            <cite class="font-ui text-sm not-italic text-gray-500 tracking-widest">— LIT Member</cite>
+          </div>
+          <div class="mt-12 reveal">
+            <a href="#/membership" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Explore Membership</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEASER TEAM -->
+      <section class="py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-5xl mb-12 reveal">The Coaches Who Get You Locked In</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="reveal glass-frame overflow-hidden">
+              <div class="h-64 bg-cover bg-center" role="img" aria-label="Coach Boysey" style="background-image: url('https://z-cdn-media.chatglm.cn/files/57b1040e-f9c9-486d-aa45-c28995cfb8d9.JPG?auth_key=1885726169-86e6fd8c3bd24d838be8e13e333d808c-0-33c3b0ee1c980eaf14939cac401d6901');"></div>
+              <div class="p-6 text-left">
+                <h3 class="font-ui text-xl font-medium mb-1">Coach Boysey</h3>
+                <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+                <p class="text-gray-400 text-sm mt-3">Energy and patience for beginners and players sharpening a specific shot.</p>
+              </div>
+            </article>
+            <article class="reveal glass-frame overflow-hidden" data-delay="100">
+              <div class="h-64 bg-cover bg-center" role="img" aria-label="Coach Wardy" style="background-image: url('https://z-cdn-media.chatglm.cn/files/4578e7ed-2fa0-408c-a2e9-0014c2f7275f.jpg?auth_key=1886072845-350893c414dc495382b3403a7ca18ed8-0-9b4ee798100507945835408091b75299');"></div>
+              <div class="p-6 text-left">
+                <h3 class="font-ui text-xl font-medium mb-1">Coach Wardy</h3>
+                <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+                <p class="text-gray-400 text-sm mt-3">Steady, clear feedback — real progress players come back for.</p>
+              </div>
+            </article>
+            <article class="reveal glass-frame overflow-hidden" data-delay="200">
+              <div class="h-64 bg-cover bg-top" role="img" aria-label="Coach Zinger" style="background-image: url('https://z-cdn-media.chatglm.cn/files/1c3cdde2-de1b-4f03-a939-46d0e6f94900.png?auth_key=1885726169-628c86f4b89744ea952bf518eb0d2daf-0-4da0282a06c211dac28c7b3adef9d8d2');"></div>
+              <div class="p-6 text-left">
+                <h3 class="font-ui text-xl font-medium mb-1">Coach Zinger</h3>
+                <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+                <p class="text-gray-400 text-sm mt-3">Fell in love with the game fast — brings that energy to every lesson.</p>
+              </div>
+            </article>
+          </div>
+          <div class="mt-12 reveal"><a href="#/team" class="font-ui text-sm font-bold tracking-widest uppercase text-teal-lit border-b border-teal-lit pb-1">Meet the Full Team</a></div>
+        </div>
+      </section>
+
+      <!-- TEASER CORPORATE -->
+      <section class="py-20 md:py-28 text-center">
+        <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
+          <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In. As a Team.</h2>
+          <p class="text-gray-400 text-lg mb-8 reveal" data-delay="100">Coming soon — team-building pickleball sessions for local businesses.</p>
+          <a href="#/corporate" class="reveal inline-block border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full" data-delay="200">Register Interest</a>
+        </div>
+      </section>
+
+      <!-- WHY LIT? -->
+      <section class="py-20 md:py-28">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-5xl mb-10 reveal">Why LIT?</h2>
+          <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 text-left mb-12 glass-frame p-10">
+            <div class="reveal flex gap-4 items-start text-white"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Foreign coach icon" class="w-6 h-6 rounded-full mt-1" loading="lazy"><p>Foreign coach, RacketPro APAC Level 1 certified</p></div>
+            <div class="reveal flex gap-4 items-start text-white" data-delay="100"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Clean courts icon" class="w-6 h-6 rounded-full mt-1" loading="lazy"><p>Covered, clean courts with seating and fans</p></div>
+            <div class="reveal flex gap-4 items-start text-white" data-delay="200"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Assistant icon" class="w-6 h-6 rounded-full mt-1" loading="lazy"><p>On-site assistant at every session</p></div>
+            <div class="reveal flex gap-4 items-start text-white" data-delay="300"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Community icon" class="w-6 h-6 rounded-full mt-1" loading="lazy"><p>English-speaking, curated community</p></div>
+            <div class="reveal flex gap-4 items-start text-white" data-delay="400"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Fixed courts icon" class="w-6 h-6 rounded-full mt-1" loading="lazy"><p>Fixed courts — no cancellation risk</p></div>
+            <div class="reveal flex gap-4 items-start text-white" data-delay="500"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Location icon" class="w-6 h-6 rounded-full mt-1" loading="lazy"><p>Located in Phu My Hung, District 7</p></div>
+            <div class="reveal flex gap-4 items-start text-white" data-delay="600"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="No hidden fees icon" class="w-6 h-6 rounded-full mt-1" loading="lazy"><p>No hidden fees, no surprises</p></div>
+            <div class="reveal flex gap-4 items-start text-white" data-delay="700"><img src="https://z-cdn-media.chatglm.cn/files/90478ae0-babb-432b-9c4b-40287e797e37.jpeg?auth_key=1885829093-8dee4712d91e4955bdb00e0aa44de4ab-0-c23710a67c1aa66a54acaf5879c6b058" alt="Love game icon" class="w-6 h-6 rounded-full mt-1" loading="lazy"><p>Built by people who genuinely love the game</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA + NEWSLETTER -->
+      <section class="py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="bg-gradient-to-r from-teal-lit via-violet-lit to-violet-deep text-center rounded-3xl p-10 md:p-16">
+            <h2 class="text-3xl md:text-5xl mb-4 reveal">Don't Miss Your Serve</h2>
+            <p class="text-gray-100 text-lg mb-8 reveal" data-delay="100">Get updates on coaching slots, community sessions, and waitlist openings.</p>
+            <form class="flex flex-wrap gap-3 justify-center reveal" data-delay="200">
+              <input type="email" placeholder="Enter your email" required class="w-full md:w-auto flex-grow min-w-[220px] px-6 py-4 rounded-full text-lit-black focus:outline-none" aria-label="Email Address">
+              <button type="submit" class="bg-lit-black text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full hover:opacity-80 transition">Subscribe</button>
+            </form>
+            <p class="text-xs text-white/70 mt-4 reveal" data-delay="300">We respect your privacy. Unsubscribe at any time.</p>
+            
+            <div class="mt-16 pt-10 border-t border-white/20">
+              <h2 class="text-3xl md:text-5xl mb-6 reveal">This Is What Locked In Feels Like.</h2>
+              <p class="text-gray-100 text-lg md:text-xl mb-10 reveal" data-delay="100">A game that keeps getting sharper. A fixed rhythm every week. A crew that's always there, on time, at your level.</p>
+              <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="200">
+                <a href="#packages" onclick="routeToPricing(event)" class="bg-lit-black text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</a>
+                <a href="#/membership" class="border border-white/50 bg-white/10 hover:bg-white/20 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full">Join the Waitlist</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ (Moved to bottom) -->
+      <section id="faq" class="py-20 md:py-28">
+        <div class="max-w-3xl mx-auto px-6">
+          <h2 class="text-3xl md:text-5xl mb-12 text-center reveal">FAQ</h2>
+          <div class="glass-frame p-8 md:p-10 space-y-4">
+            <div class="faq-item border-b border-white/10 pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>Do I need experience to join coaching?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">Not at all — built for beginners and existing players alike.</p></div>
+            </div>
+            <div class="faq-item border-b border-white/10 pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>If I complete a coaching pack, am I guaranteed a Membership spot?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">No. Coaching and Membership are independent — one doesn't guarantee the other.</p></div>
+            </div>
+            <div class="faq-item border-b border-white/10 pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>I already play — can I apply for Membership without coaching?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">Yes — experienced players can apply directly, no coaching pack required.</p></div>
+            </div>
+            <div class="faq-item border-b border-white/10 pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>Can I buy a single coaching session?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">No — only sold as a 10-session pack, group or private.</p></div>
+            </div>
+            <div class="faq-item border-b border-white/10 pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>How does Membership selection work?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">Curated through a waitlist — LIT reaches out when a spot opens.</p></div>
+            </div>
+            <div class="faq-item pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>Where is LIT Pickleball located?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">Phu My Hung, District 7, Ho Chi Minh City.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FIND US (Moved to bottom) -->
+      <section id="contact" class="py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div class="reveal glass-frame p-2 overflow-hidden">
+            <iframe src="https://www.google.com/maps?q=Phu+My+Hung,+District+7,+Ho+Chi+Minh+City&output=embed" width="100%" height="400" style="border:0; filter: grayscale(0.3) invert(0.92) contrast(0.9); border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LIT Pickleball Location"></iframe>
+          </div>
+          <div class="glass-frame p-10">
+            <h2 class="text-3xl md:text-5xl mb-6 reveal">On Court in Phu My Hung</h2>
+            <div class="space-y-4 text-gray-300">
+              <p class="reveal flex gap-3 items-center" data-delay="100"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> LIT Pickleball, Phu My Hung, District 7, HCMC</p>
+              <p class="reveal flex gap-3 items-center" data-delay="200"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mon, Tue, Thu, Fri: 16:00 - 17:00</p>
+              <p class="reveal flex gap-3 items-center" data-delay="300"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6l9 7 9-7M3 6v12h18V6H3z"/></svg> <a href="mailto:lockedin.saigon@gmail.com" style="color: inherit;">lockedin.saigon@gmail.com</a></p>
+              <p class="reveal flex gap-3 items-center" data-delay="400"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> EN Speaker: <a href="tel:0938454724" style="color: inherit;">0938 454 724</a> (Zalo/WhatsApp)</p>
+              <p class="reveal flex gap-3 items-center" data-delay="500"><svg class="w-5 h-5 text-teal-lit flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> VN Speaker: <a href="tel:0909756044" style="color: inherit;">0909 756 044</a> (Zalo/Hotline)</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
+
+    <!-- ================= COACHING PAGE ================= -->
+    <div id="page-coaching" class="page" hidden>
+      <section class="pt-12 pb-12 text-center">
+        <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
+          <h1 class="text-3xl md:text-5xl mb-6 reveal">Never Held a Paddle? Perfect.</h1>
+          <p class="text-gray-300 text-lg md:text-xl reveal" data-delay="100">No experience, no gear, no problem — just bring court shoes and we'll handle the rest. Your first sessions are built for total beginners: learn it right from day one, at your own pace, in a group that's just as new as you. By session 10, you won't just know the rules — you'll actually be playing.</p>
+        </div>
+      </section>
+
+      <section class="py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div class="reveal rounded-2xl overflow-hidden h-[400px] md:h-[500px] bg-cover bg-center shadow-2xl border border-white/10" role="img" aria-label="Coach in action" style="background-image: url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');"></div>
+          <div class="glass-frame p-10">
+            <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In.<br>Every Point.</h2>
+            <p class="text-gray-300 text-lg mb-8 reveal" data-delay="100">Learn to play correctly, from session one. Real progression, not casual lessons.</p>
+            <ul class="space-y-4 mb-8">
+              <li class="reveal flex items-start gap-4 text-gray-200" data-delay="200"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Trained by a foreign, RacketPro APAC Level 1 certified coach</li>
+              <li class="reveal flex items-start gap-4 text-gray-200" data-delay="300"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Visible progress by session 10</li>
+              <li class="reveal flex items-start gap-4 text-gray-200" data-delay="400"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> For beginners and players refining specific skills</li>
+              <li class="reveal flex items-start gap-4 text-gray-200" data-delay="500"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Grouped by skill level, not age</li>
+            </ul>
+            <p class="text-sm text-gray-500 italic mb-8 reveal" data-delay="600">Completing coaching does not guarantee Membership acceptance. The two are independent.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Repeated Pricing Block -->
+      <section id="coaching-packages" class="py-20 md:py-28 text-center">
+        <div class="max-w-4xl mx-auto px-6 mb-16">
+          <h2 class="text-3xl md:text-5xl mb-6 reveal">Simple. Transparent.<br>No Surprises.</h2>
+          <p class="text-gray-300 text-lg reveal" data-delay="100">Every package includes coach-led sessions, court fee, and a free LIT T-shirt. One price. Nothing hidden.</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 text-left">
+          <article class="reveal glass-frame p-10 flex flex-col">
+            <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">Group Training</span>
+            <h3 class="font-ui text-2xl font-medium mb-2">Group Training Pack</h3>
+            <p class="text-gray-500 font-ui text-sm tracking-wider mb-6">All Skill Levels</p>
+            <div class="border-t border-white/10 pt-6 mb-4">
+              <div class="flex items-center gap-4 flex-wrap mb-2">
+                <span class="font-ui text-5xl font-bold text-teal-lit">400,000</span>
+                <span class="text-gray-400">VND / session</span>
+                <span class="bg-pink-lit text-lit-black font-ui text-sm font-extrabold px-3 py-1 rounded-md pulse-anim">10% OFF</span>
+              </div>
+              <p class="text-gray-500 text-sm mb-2">10-session pack</p>
+              <p class="text-pink-lit font-ui text-sm font-bold uppercase tracking-wider mb-4">⏳ Hurry! Ends 31.08.2026</p>
+              <p class="text-gray-300 mb-6">Grouped by skill level, not age — the right pace, every time.</p>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> 10 coaching sessions included</li>
+              <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Court fee included</li>
+              <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Free LIT T-shirt</li>
+              <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Max ratio 4:1</li>
+            </ul>
+            <a href="#" class="block text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book your 10-session pack</a>
+          </article>
+
+          <article class="reveal glass-frame p-10 flex flex-col" data-delay="100">
+            <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">1:1 Private Coaching</span>
+            <h3 class="font-ui text-2xl font-medium mb-2">1:1 Private Coaching</h3>
+            <p class="text-gray-500 font-ui text-sm tracking-wider mb-6">Personalized pickleball coaching · Phu My Hung</p>
+            <div class="border-t border-white/10 pt-6 mb-4">
+              <div class="flex items-center gap-4 flex-wrap mb-2">
+                <span class="bg-pink-lit text-lit-black font-ui text-sm font-extrabold px-3 py-1 rounded-md pulse-anim">10% OFF</span>
+                <span class="text-pink-lit font-ui text-sm font-bold uppercase tracking-wider">⏳ Hurry! Ends 31.08.2026</span>
+              </div>
+              <p class="text-gray-300 mb-6 mt-4">Built around your goals — sharpen technique, your own pace.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-8 flex-grow">
+              <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+                <svg class="w-6 h-6 mx-auto mb-2 text-violet-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg>
+                <h4 class="font-ui text-sm font-semibold mb-1">Custom Plan</h4>
+                <p class="text-xs text-gray-500">Tailored to you</p>
+              </div>
+              <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+                <svg class="w-6 h-6 mx-auto mb-2 text-teal-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg>
+                <h4 class="font-ui text-sm font-semibold mb-1">Session Recording</h4>
+                <p class="text-xs text-gray-500">Filmed for review</p>
+              </div>
+              <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+                <svg class="w-6 h-6 mx-auto mb-2 text-green-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+                <h4 class="font-ui text-sm font-semibold mb-1">1:1 Focus</h4>
+                <p class="text-xs text-gray-500">100% attention</p>
+              </div>
+              <div class="bg-white/5 p-4 rounded-xl text-center border border-white/5">
+                <svg class="w-6 h-6 mx-auto mb-2 text-pink-lit" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.5 5 5.5.7-4 3.9 1 5.4L12 14l-5 3 1-5.4-4-3.9 5.5-.7z"/></svg>
+                <h4 class="font-ui text-sm font-semibold mb-1">Certified Coach</h4>
+                <p class="text-xs text-gray-500">RacketPro APAC L1</p>
+              </div>
+            </div>
+            <a href="#" class="block text-center bg-violet-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Contact for Pricing & Schedule</a>
+          </article>
+        </div>
+        <p class="max-w-2xl mx-auto px-6 mt-12 text-center text-gray-500 font-ui text-sm tracking-widest uppercase reveal">Coaching ratio is intentionally small — up to 4 students per coach.<br>Every player is seen. Every session has a reason.</p>
+      </section>
+
+      <section id="faq-coaching" class="py-20 md:py-28">
+        <div class="max-w-3xl mx-auto px-6">
+          <h2 class="text-3xl md:text-5xl mb-12 text-center reveal">FAQ</h2>
+          <div class="glass-frame p-8 md:p-10 space-y-4">
+            <div class="faq-item border-b border-white/10 pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>Do I need experience to join coaching?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">Not at all — built for beginners and existing players alike.</p></div>
+            </div>
+            <div class="faq-item border-b border-white/10 pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>If I complete a coaching pack, am I guaranteed a Membership spot?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">No. Coaching and Membership are independent — one doesn't guarantee the other.</p></div>
+            </div>
+            <div class="faq-item border-b border-white/10 pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>I already play — can I apply for Membership without coaching?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">Yes — experienced players can apply directly, no coaching pack required.</p></div>
+            </div>
+            <div class="faq-item pb-4 reveal">
+              <button class="faq-q flex justify-between items-center w-full text-left font-ui text-lg font-semibold focus:outline-none" aria-expanded="false">
+                <span>Can I buy a single coaching session?</span>
+                <span class="faq-plus w-8 h-8 rounded-full border border-teal-lit text-teal-lit flex items-center justify-center text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-a"><p class="pt-4 text-gray-400">No — only sold as a 10-session pack, group or private.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= TEAM PAGE ================= -->
+    <div id="page-team" class="page" hidden>
+      <section class="pt-12 pb-20 md:pb-28">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <h1 class="text-3xl md:text-5xl mb-12 reveal">The Coaches Who Get You Locked In</h1>
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="reveal glass-frame overflow-hidden">
+              <div class="h-64 bg-cover bg-center" role="img" aria-label="Coach Boysey" style="background-image: url('https://z-cdn-media.chatglm.cn/files/57b1040e-f9c9-486d-aa45-c28995cfb8d9.JPG?auth_key=1885726169-86e6fd8c3bd24d838be8e13e333d808c-0-33c3b0ee1c980eaf14939cac401d6901');"></div>
+              <div class="p-6 text-left">
+                <h2 class="font-ui text-xl font-medium mb-1">Coach Boysey</h2>
+                <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+                <p class="text-gray-400 text-sm mt-3">Energy and patience for beginners and players sharpening a specific shot.</p>
+              </div>
+            </article>
+            <article class="reveal glass-frame overflow-hidden" data-delay="100">
+              <div class="h-64 bg-cover bg-center" role="img" aria-label="Coach Wardy" style="background-image: url('https://z-cdn-media.chatglm.cn/files/4578e7ed-2fa0-408c-a2e9-0014c2f7275f.jpg?auth_key=1886072845-350893c414dc495382b3403a7ca18ed8-0-9b4ee798100507945835408091b75299');"></div>
+              <div class="p-6 text-left">
+                <h2 class="font-ui text-xl font-medium mb-1">Coach Wardy</h2>
+                <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+                <p class="text-gray-400 text-sm mt-3">Steady, clear feedback — real progress players come back for.</p>
+              </div>
+            </article>
+            <article class="reveal glass-frame overflow-hidden" data-delay="200">
+              <div class="h-64 bg-cover bg-top" role="img" aria-label="Coach Zinger" style="background-image: url('https://z-cdn-media.chatglm.cn/files/1c3cdde2-de1b-4f03-a939-46d0e6f94900.png?auth_key=1885726169-628c86f4b89744ea952bf518eb0d2daf-0-4da0282a06c211dac28c7b3adef9d8d2');"></div>
+              <div class="p-6 text-left">
+                <h2 class="font-ui text-xl font-medium mb-1">Coach Zinger</h2>
+                <span class="text-accent-lit font-ui text-xs tracking-widest uppercase">RacketPro APAC Level 1 Certified Coach</span>
+                <p class="text-gray-400 text-sm mt-3">Fell in love with the game fast — brings that energy to every lesson.</p>
+              </div>
+            </article>
+          </div>
+          <div class="mt-12 reveal">
+            <a href="#packages" onclick="routeToPricing(event)" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= MEMBERSHIP PAGE ================= -->
+    <div id="page-membership" class="page" hidden>
+      <section class="pt-12 pb-12">
+        <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-16 text-center">
+          <h1 class="text-3xl md:text-5xl mb-6 reveal">Locked In. With Your People.</h1>
+          <p class="text-gray-300 text-lg mb-10 reveal" data-delay="100">No chasing bookings, no organizing games. The court and the community are already there — you just show up.</p>
+          
+          <ul class="text-left max-w-md mx-auto space-y-4 mb-10">
+            <li class="reveal flex items-start gap-4 text-gray-200" data-delay="200"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Fixed courts, no last-minute cancellations</li>
+            <li class="reveal flex items-start gap-4 text-gray-200" data-delay="300"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Curated, English-speaking community</li>
+            <li class="reveal flex items-start gap-4 text-gray-200" data-delay="400"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> 2 hosted sessions/week, from 14/08/2026 – 11/06/2027</li>
+          </ul>
+
+          <div class="reveal bg-pink-lit/10 border border-pink-lit/30 rounded-xl p-6 text-left mb-10 flex gap-4 items-start" data-delay="500">
+            <span class="bg-pink-lit w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center mt-1"><svg class="w-4 h-4 text-lit-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span>
+            <p class="text-gray-400 text-sm"><strong class="text-white">Limited Availability.</strong> Membership is currently near full capacity for this cycle. We're still accepting Waitlist applications — LIT will personally reach out when a spot opens.</p>
+          </div>
+
+          <a href="#" class="reveal inline-block w-full md:w-auto bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full shadow-lg" data-delay="600">Join the waitlist</a>
+        </div>
+      </section>
+
+      <section class="py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-5xl mb-12 reveal">A Community That's Already Playing Together</h2>
+          <div class="grid md:grid-cols-3 border border-white/10 rounded-2xl overflow-hidden glass-frame">
+            <article class="reveal h-96 relative bg-cover bg-center" role="img" aria-label="Players getting in the game" style="background-image: url('https://z-cdn-media.chatglm.cn/files/ec1addd0-421c-4832-8384-d8dba5cd5371.JPG?auth_key=1885726169-63f653974ea844949021369d48d97aa2-0-eaac307177d3ee6edca8c3248d03c0fc');">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+              <div class="absolute bottom-0 p-6 text-left">
+                <h3 class="font-ui text-2xl mb-2">Get in the Game</h3>
+                <p class="text-gray-300 text-sm">No more guessing your way through technique. Learn it right, from day one.</p>
+              </div>
+            </article>
+            <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="100" role="img" aria-label="Players finding their crew" style="background-image: url('https://z-cdn-media.chatglm.cn/files/2959ae91-8099-47ed-bdcb-b737f534d5c0.jpg?auth_key=1886072390-9e03e2038c944442aa0925d6019fd5f8-0-ff1d2b5e568772b26c65a92403f755c3');">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+              <div class="absolute bottom-0 p-6 text-left">
+                <h3 class="font-ui text-2xl mb-2">Find Your Crew</h3>
+                <p class="text-gray-300 text-sm">No more chasing courts or organizing games. The community is already here.</p>
+              </div>
+            </article>
+            <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="200" role="img" aria-label="Players locking the rhythm" style="background-image: url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+              <div class="absolute bottom-0 p-6 text-left">
+                <h3 class="font-ui text-2xl mb-2">Lock the Rhythm</h3>
+                <p class="text-gray-300 text-sm">Fixed weekly sessions for 12 months. A rhythm you'll actually keep.</p>
+              </div>
+            </article>
+          </div>
+          <div class="max-w-2xl mx-auto mt-16 reveal">
+            <svg class="w-8 h-8 mx-auto mb-4 opacity-30" fill="#ff66b2" viewBox="0 0 34 26" aria-hidden="true"><path d="M0 26V15.6C0 6.5 5.7 1 14.8 0l1 4.3C9.5 5.6 6.6 8.7 6.2 13H14v13H0zm18.7 0V15.6C18.7 6.5 24.4 1 33.5 0l1 4.3c-6.3 1.3-9.2 4.4-9.6 8.7h7.8v13H18.7z"/></svg>
+            <p class="text-xl md:text-2xl italic text-gray-100 mb-4">"What I love most isn't the court — it's knowing I'll always have people to play with, on time, at my level."</p>
+            <cite class="font-ui text-sm not-italic text-gray-500 tracking-widest">— LIT Member</cite>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= CORPORATE PAGE ================= -->
+    <div id="page-corporate" class="page" hidden>
+      <section class="pt-12 pb-20 md:pb-28 text-center">
+        <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
+          <h1 class="text-3xl md:text-5xl mb-6 reveal">Locked In. As a Team.</h1>
+          <p class="text-gray-400 text-lg mb-8 reveal" data-delay="100">Coming soon — team-building pickleball sessions for local businesses.</p>
+          <a href="#" class="reveal inline-block border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-full" data-delay="200">Register Interest</a>
+        </div>
+      </section>
+    </div>
+  </main>
 
   <!-- ================= FOOTER ================= -->
   <footer class="pt-20 pb-10 border-t border-white/5 glass-frame rounded-t-3xl mt-10">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
       <div>
-        <a href="#top" class="block mb-4">
+        <a href="#/" class="block mb-4">
           <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball Logo" class="h-16 w-auto object-contain">
         </a>
         <p class="text-gray-500 text-sm max-w-sm">Coaching and community in Phu My Hung. Get better. Find your people.</p>
         <div class="flex gap-3 mt-6">
-          <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs">f</a>
-          <a href="https://www.instagram.com/litpickleballhcmc" target="_blank" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs">ig</a>
-          <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs">yt</a>
+          <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/litpickleballhcmc" target="_blank" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs" aria-label="Instagram">ig</a>
+          <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition font-ui text-xs" aria-label="YouTube">yt</a>
         </div>
       </div>
       <div>
         <h5 class="text-xs tracking-widest uppercase text-gray-600 mb-5">Quick Links</h5>
         <ul class="space-y-3">
-          <li><a href="#coaching" class="text-gray-400 hover:text-white transition text-sm">Coaching</a></li>
-          <li><a href="#membership" class="text-gray-400 hover:text-white transition text-sm">Membership</a></li>
-          <li><a href="#team" class="text-gray-400 hover:text-white transition text-sm">Team</a></li>
-          <li><a href="#corporate" class="text-gray-400 hover:text-white transition text-sm">Corporate Events</a></li>
-          <li><a href="#faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
+          <li><a href="#/coaching" class="text-gray-400 hover:text-white transition text-sm">Coaching</a></li>
+          <li><a href="#/membership" class="text-gray-400 hover:text-white transition text-sm">Membership</a></li>
+          <li><a href="#/team" class="text-gray-400 hover:text-white transition text-sm">Team</a></li>
+          <li><a href="#/corporate" class="text-gray-400 hover:text-white transition text-sm">Corporate Events</a></li>
+          <li><a href="#/faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
         </ul>
       </div>
       <div>
@@ -658,85 +847,147 @@
     </div>
   </footer>
 
-  <!-- ================= FLOATING CONTACT ================= -->
-  <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
-    <a href="#" class="w-14 h-14 rounded-full bg-[#0068ff] shadow-lg flex items-center justify-center hover:scale-105 transition" title="Chat Zalo (EN)" aria-label="Chat via Zalo">
-      <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-    </a>
-    <a href="#" class="w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center hover:scale-105 transition" title="Chat WhatsApp (EN)" aria-label="Chat via WhatsApp">
-      <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
-    </a>
-  </div>
-
-  <!-- ================= JAVASCRIPT ================= -->
   <script>
-    // 1. Progressive Enhancement
-    document.documentElement.classList.remove('no-js');
-
-    // 2. Mobile Menu Toggle
+    // ================= MOBILE MENU =================
     const mobileToggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
+    const mobileMenu = document.getElementById('mobileMenu');
     mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('hidden');
-      navLinks.classList.toggle('flex');
-      navLinks.classList.toggle('flex-col');
-      navLinks.classList.toggle('absolute');
-      navLinks.classList.toggle('top-full');
-      navLinks.classList.toggle('left-0');
-      navLinks.classList.toggle('right-0');
-      navLinks.classList.toggle('bg-black/90');
-      navLinks.classList.toggle('py-4');
+      mobileMenu.classList.toggle('hidden');
     });
 
-    // 3. Nav CTA Dropdown
-    const navCtaBtn = document.getElementById('navCtaBtn');
-    const navCtaMenu = document.getElementById('navCtaMenu');
-    if (navCtaBtn) {
-      navCtaBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navCtaMenu.classList.toggle('opacity-0');
-        navCtaMenu.classList.toggle('invisible');
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
       });
-      window.addEventListener('click', () => {
-        navCtaMenu.classList.add('opacity-0', 'invisible');
+    });
+
+    // ================= ACCORDION (FAQ) =================
+    document.querySelectorAll('.faq-q').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('open');
       });
+    });
+
+    // ================= INTERSECTION OBSERVER =================
+    let observer;
+    function setupObserver() {
+      if (observer) observer.disconnect();
+      
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.dataset.delay || 0;
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.page:not([hidden]) .reveal:not(.is-visible)').forEach(el => observer.observe(el));
     }
 
-    // 4. FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-q');
-      question.addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-        faqItems.forEach(i => i.classList.remove('open'));
-        if (!isOpen) {
-          item.classList.add('open');
-        }
-      });
-    });
-
-    // 5. Intersection Observer for Scroll Reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.dataset.delay || 0;
-          entry.target.style.transitionDelay = `${delay}ms`;
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
-
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach(el => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        el.classList.add('is-visible');
+    // ================= HELPER FOR PRICING SCROLL =================
+    function routeToPricing(e) {
+      e.preventDefault();
+      // If not on home page, route to home first
+      if (!window.location.hash.includes('#/') || window.location.hash !== '#/') {
+          window.location.hash = '#/';
+          setTimeout(() => {
+              document.getElementById('packages').scrollIntoView({ behavior: 'smooth' });
+          }, 200);
       } else {
-        observer.observe(el);
+          document.getElementById('packages').scrollIntoView({ behavior: 'smooth' });
       }
-    });
+    }
+
+    // ================= DYNAMIC SEO META TAGS =================
+    const seoData = {
+      'page-home': {
+        title: 'LIT Pickleball — Coaching & Community in Phu My Hung',
+        desc: 'LIT Pickleball — get locked in. Foreign-coach-led pickleball coaching packs and a curated, English-speaking community in Phu My Hung, District 7, Ho Chi Minh City.'
+      },
+      'page-coaching': {
+        title: 'Coaching — LIT Pickleball',
+        desc: 'Learn to play pickleball correctly from session one with LIT Pickleball. Foreign, RacketPro APAC Level 1 certified coaches. Group and 1:1 private training packs available.'
+      },
+      'page-team': {
+        title: 'Our Coaches — LIT Pickleball',
+        desc: 'Meet the LIT Pickleball coaches: Boysey, Wardy, and Zinger. Foreign, RacketPro APAC Level 1 certified coaches dedicated to getting you locked in.'
+      },
+      'page-membership': {
+        title: 'Membership & Community — LIT Pickleball',
+        desc: 'Join the curated, English-speaking pickleball community in Phu My Hung. Fixed courts, no organizing, 2 hosted sessions a week. Currently accepting waitlist applications.'
+      },
+      'page-corporate': {
+        title: 'Corporate Team Building — LIT Pickleball',
+        desc: 'Coming soon: Team-building pickleball sessions for local businesses in Ho Chi Minh City. Register your interest with LIT Pickleball today.'
+      }
+    };
+
+    function updateSEO(pageId) {
+      const data = seoData[pageId];
+      if (data) {
+        document.title = data.title;
+        document.querySelector('meta[name="description"]').setAttribute('content', data.desc);
+        document.querySelector('meta[name="title"]').setAttribute('content', data.title);
+        document.querySelector('meta[property="og:title"]').setAttribute('content', data.title);
+        document.querySelector('meta[property="og:description"]').setAttribute('content', data.desc);
+        document.querySelector('meta[property="twitter:title"]').setAttribute('content', data.title);
+        document.querySelector('meta[property="twitter:description"]').setAttribute('content', data.desc);
+      }
+    }
+
+    // ================= SIMPLE ROUTER =================
+    const routes = {
+      '': 'page-home',
+      '#/': 'page-home',
+      '#/coaching': 'page-coaching',
+      '#/team': 'page-team',
+      '#/community': 'page-membership',
+      '#/membership': 'page-membership',
+      '#/corporate': 'page-corporate',
+      '#/faq': 'page-home'
+    };
+
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => {
+        p.hidden = true; // Use native hidden attribute for SEO/A11y
+        p.classList.remove('active');
+      });
+      const activePage = document.getElementById(pageId);
+      if (activePage) {
+        activePage.hidden = false;
+        activePage.classList.add('active');
+      }
+      
+      updateSEO(pageId); // Update meta tags dynamically
+      window.scrollTo(0, 0);
+      setTimeout(setupObserver, 50);
+    }
+
+    function router() {
+      let path = window.location.hash || '#/';
+      
+      if (path === '#/faq') {
+        showPage('page-home');
+        setTimeout(() => {
+          const faqSection = document.getElementById('faq');
+          if (faqSection) {
+            faqSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+        return;
+      }
+
+      const pageId = routes[path] || 'page-home';
+      showPage(pageId);
+    }
+
+    window.addEventListener('hashchange', router);
+    window.addEventListener('DOMContentLoaded', router);
   </script>
 </body>
 </html>
