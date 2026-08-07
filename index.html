@@ -265,23 +265,30 @@
     <div id="page-home" class="page active">
       
       <!-- HERO -->
-      <section class="relative min-h-[80vh] flex items-center justify-center text-center pt-12 pb-12 overflow-hidden">
+      <section class="relative min-h-screen flex items-center justify-center text-center pt-32 pb-20 overflow-hidden">
         <!-- Background Video -->
         <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0" muted loop playsinline poster="hero-poster.jpg"></video>
         
-        <!-- Lớp gradient đen (z-[1] để nằm trên video, dưới chữ) -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black z-[1]"></div>
+        <!-- Lớp gradient đen (đã giảm độ mờ xuống còn 30/50/80 để video rõ hơn) -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80 z-[1]"></div>
         
-        <div class="relative z-10 max-w-4xl mx-auto px-6">
-          <h1 class="graffiti-head text-5xl md:text-7xl lg:text-8xl mb-6 reveal">Your Best Game.<br>Your Kind of People.</h1>
-          <p class="text-lg md:text-xl text-gray-200 font-light mb-10 max-w-2xl mx-auto reveal" data-delay="100">Get seriously good at pickleball — court booked, coach ready, crew waiting. You just show up.</p>
-          <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="200">
+        <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
+          <!-- Logo (thêm drop-shadow để nổi lên khỏi nền video) -->
+          <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball" class="h-24 md:h-32 w-auto object-contain mb-8 reveal drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]" data-delay="0">
+          
+          <!-- Tiêu đề (thêm drop-shadow mạnh cho chữ) -->
+          <h1 class="graffiti-head text-5xl md:text-7xl lg:text-8xl mb-6 reveal drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]" data-delay="100">Your Best Game.<br>Your Kind of People.</h1>
+          
+          <!-- Đoạn mô tả (thêm drop-shadow) -->
+          <p class="text-lg md:text-xl text-gray-100 font-light mb-10 max-w-2xl mx-auto reveal drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" data-delay="200">Get seriously good at pickleball — court booked, coach ready, crew waiting. You just show up.</p>
+          
+          <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="300">
             <a href="#packages" onclick="routeToPricing(event)" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Your 10-Session Pack</a>
             <a href="#/membership" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full backdrop-blur-sm">Learn About Membership</a>
           </div>
         </div>
       </section>
-
+      
       <!-- PROBLEM + BRIDGE -->
       <section class="py-20 md:py-28 text-center">
         <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12 reveal">
