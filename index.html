@@ -179,8 +179,6 @@
     
     /* Promo Banner hover effect */
     .promo-banner:hover { opacity: 0.9; }
-    /* Tắt uppercase cho riêng banner khuyến mãi */
-    .promo-banner { text-transform: none !important; }
 
     /* Marquee Animation for Promo Banner */
     .marquee-container { display: flex; overflow: hidden; white-space: nowrap; }
@@ -193,16 +191,6 @@
     @keyframes marquee {
       0% { transform: translateX(0); }
       100% { transform: translateX(-100%); }
-    }
-
-    /* Hiệu ứng logo rớt xuống */
-    @keyframes dropDown {
-      0% { transform: translateY(-150px); opacity: 0; }
-      60% { transform: translateY(15px); opacity: 1; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    .animate-drop-down {
-      animation: dropDown 1.2s cubic-bezier(0.25, 1.05, 0.5, 1) forwards;
     }
 
     /* Tắt hiệu ứng Parallax bg-fixed trên Mobile để chạy mượt trên iPhone */
@@ -225,12 +213,12 @@
   <!-- ================= PROMO BANNER + NAV ================= -->
   <div class="fixed top-0 left-0 right-0 z-50">
     <!-- August Promotion Sticky Marquee Bar -->
-    <a href="#packages" onclick="routeToPricing(event)" class="promo-banner marquee-container bg-pink-lit text-lit-black py-2 font-ui font-bold text-xs md:text-sm tracking-wider transition normal-case">
+    <a href="#packages" onclick="routeToPricing(event)" class="promo-banner marquee-container bg-pink-lit text-lit-black py-2 font-ui font-bold text-xs md:text-sm tracking-wider transition">
       <span class="marquee-content">
-        August Promo — <span class="text-white font-extrabold">10%</span> OFF all Training Packages · Ends 31.08.2026 &nbsp;&nbsp;&nbsp;&nbsp;
+        AUGUST PROMO — <span class="text-white font-extrabold">10%</span> OFF ALL TRAINING PACKAGES · ENDS 31.08.2026 &nbsp;&nbsp;&nbsp;&nbsp;
       </span>
       <span class="marquee-content" aria-hidden="true">
-        August Promo — <span class="text-white font-extrabold">10%</span> OFF all Training Packages · Ends 31.08.2026 &nbsp;&nbsp;&nbsp;&nbsp;
+        AUGUST PROMO — <span class="text-white font-extrabold">10%</span> OFF ALL TRAINING PACKAGES · ENDS 31.08.2026 &nbsp;&nbsp;&nbsp;&nbsp;
       </span>
     </a>
     
@@ -250,15 +238,9 @@
         </ul>
 
         <div class="flex items-center gap-4">
-          <div class="relative hidden md:block">
-            <button id="navCtaBtn" class="font-ui font-bold text-base tracking-wider px-8 py-3 border border-white hover:bg-white hover:text-lit-black transition backdrop-blur-sm" aria-haspopup="true" aria-expanded="false">
-              Book Coaching
-            </button>
-            <div id="navCtaMenu" class="absolute right-0 mt-2 w-56 bg-lit-card border border-white/10 rounded-xl shadow-lg py-2 opacity-0 invisible transition-all duration-200 z-50">
-              <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 transition font-ui text-sm font-bold tracking-wider"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="#0068ff"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg> Zalo</a>
-              <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 transition font-ui text-sm font-bold tracking-wider"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg> WhatsApp</a>
-            </div>
-          </div>
+          <button onclick="openContactModal('Hi LIT Pickleball, I want to book coaching.')" class="font-ui font-bold text-base tracking-wider px-8 py-3 border border-white hover:bg-white hover:text-lit-black transition backdrop-blur-sm">
+            Book Coaching
+          </button>
           <button id="mobileToggle" class="md:hidden text-3xl text-white" aria-label="Open menu">&#9776;</button>
         </div>
       </nav>
@@ -283,7 +265,6 @@
       
       <!-- HERO -->
       <section class="relative min-h-screen flex items-center justify-center text-center pt-32 pb-20 overflow-hidden">
-        <!-- Background Video (Đã thêm source trực tiếp để chạy trên Mobile) -->
         <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0" muted loop playsinline poster="hero-poster.jpg" autoplay>
           <source src="lit-hero.mp4" type="video/mp4">
         </video>
@@ -291,11 +272,11 @@
         <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80 z-[1]"></div>
         
         <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
-          <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball" class="h-24 md:h-32 w-auto object-contain mb-8 animate-drop-down drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]">
+          <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball" class="h-24 md:h-32 w-auto object-contain mb-8 reveal drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]" data-delay="0">
           <h1 class="graffiti-head text-5xl md:text-7xl lg:text-8xl mb-6 reveal drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]" data-delay="400">Your Best Game.<br>Your Kind of People.</h1>
           <p class="text-lg md:text-xl text-gray-100 font-light mb-10 max-w-2xl mx-auto reveal drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" data-delay="500">Get seriously good at pickleball — court booked, coach ready, crew waiting. You just show up.</p>
           <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="600">
-            <a href="#packages" onclick="routeToPricing(event)" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Your 10-Session Pack</a>
+            <button onclick="openContactModal('Hi LIT Pickleball, I want to book the 10-session pack.')" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Your 10-Session Pack</button>
             <a href="#/membership" class="border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full backdrop-blur-sm">Learn About Membership</a>
           </div>
         </div>
@@ -329,13 +310,13 @@
         </div>
       </section>
 
-      <!-- ẢNH BANNER CINEMATIC PARALLAX 1 (Crop top on mobile, center on desktop) -->
+      <!-- ẢNH BANNER CINEMATIC PARALLAX 1 -->
       <section class="relative h-[50vh] min-h-[350px] w-full bg-fixed bg-top md:bg-[center_20%] bg-cover flex items-center justify-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/fc5520ae-44dc-4404-8c80-096919b607a9.jpg?auth_key=1886112639-679ed3f9396b4ca48d57b38bff4c8830-0-2c3a5879c6308bd752b43babb9eb844a');">
         <div class="absolute inset-0 bg-black/60"></div>
         <h3 class="relative z-10 text-3xl md:text-5xl text-center px-6 graffiti-head">Real Progression.<br>Not Casual Lessons.</h3>
       </section>
 
-      <!-- BEGINNERS SPLIT SCREEN (Crop top on mobile, center on desktop) -->
+      <!-- BEGINNERS SPLIT SCREEN -->
       <section class="grid md:grid-cols-2 items-stretch">
         <div class="bg-lit-dark p-10 md:p-20 flex flex-col justify-center order-2 md:order-1">
           <h2 class="text-3xl md:text-5xl mb-6 reveal">Never Held a Paddle? Perfect.</h2>
@@ -373,7 +354,7 @@
               <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Free LIT T-shirt</li>
               <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Max ratio 4:1</li>
             </ul>
-            <a href="#" class="block text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Group Pack</a>
+            <button onclick="openContactModal('Hi LIT Pickleball, I\'m interested in the Group Training Pack.')" class="block w-full text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Group Pack</button>
           </article>
 
           <!-- Private Pack -->
@@ -410,7 +391,7 @@
                 <p class="text-xs text-gray-500">RacketPro APAC L1</p>
               </div>
             </div>
-            <a href="#" class="block text-center bg-violet-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Contact for Pricing & Schedule</a>
+            <button onclick="openContactModal('Hi LIT Pickleball, I\'m interested in 1:1 Private Coaching.')" class="block w-full text-center bg-violet-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Contact for Pricing & Schedule</button>
           </article>
         </div>
         <p class="max-w-2xl mx-auto px-6 mt-12 text-center text-gray-500 font-ui text-sm tracking-widest reveal">Coaching ratio is intentionally small — up to 4 students per coach.<br>Every player is seen. Every session has a reason.</p>
@@ -464,7 +445,7 @@
         </div>
       </section>
 
-      <!-- ẢNH BANNER CINEMATIC PARALLAX 2 (Crop top on mobile, center on desktop) -->
+      <!-- ẢNH BANNER CINEMATIC PARALLAX 2 -->
       <section class="relative h-[50vh] min-h-[350px] w-full bg-fixed bg-top md:bg-[center_30%] bg-cover flex items-center justify-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/c04515b5-1405-44d1-8643-d71cdea39d36.jpg?auth_key=1886112639-6db61d5baf3443b48f2661ae75429544-0-818ffa310bbf13e6f73afc0211a8c6ba');">
         <div class="absolute inset-0 bg-black/60"></div>
         <h3 class="relative z-10 text-3xl md:text-5xl text-center px-6 graffiti-head">A Crew That's<br>Always There.</h3>
@@ -481,7 +462,7 @@
             <p class="text-gray-400 text-sm"><strong class="text-white">Near full capacity for this cycle</strong> — join the waitlist and we'll reach out personally when a spot opens.</p>
           </div>
 
-          <a href="#/membership" class="reveal inline-block w-full md:w-auto border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-10 py-4 rounded-full shadow-lg" data-delay="300">Join the Waitlist</a>
+          <button onclick="openContactModal('Hi LIT Pickleball, I want to join the waitlist.')" class="reveal inline-block w-full md:w-auto border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-10 py-4 rounded-full shadow-lg" data-delay="300">Join the Waitlist</button>
         </div>
       </section>
 
@@ -524,7 +505,7 @@
         <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
           <h2 class="text-3xl md:text-5xl mb-6 reveal">Locked In. As a Team.</h2>
           <p class="text-gray-400 text-lg mb-8 reveal" data-delay="100">Team-building pickleball sessions for local businesses — coming soon.</p>
-          <a href="#/corporate" class="reveal inline-block border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full" data-delay="200">Register Interest</a>
+          <button onclick="openContactModal('Hi LIT Pickleball, I\'m interested in Corporate Events.')" class="reveal inline-block border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full" data-delay="200">Register Interest</button>
         </div>
       </section>
 
@@ -535,13 +516,13 @@
             <h2 class="text-3xl md:text-5xl mb-6 reveal">This Is What Locked In Feels Like.</h2>
             <p class="text-gray-100 text-lg md:text-xl mb-10 reveal" data-delay="100">A game that keeps getting sharper. A fixed weekly rhythm. A crew that's always there — on time, at your level.</p>
             <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="200">
-              <a href="#packages" onclick="routeToPricing(event)" class="bg-lit-black text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Your 10-Session Pack</a>
-              <a href="#/membership" class="border border-white/50 bg-white/10 hover:bg-white/20 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full">Join the Waitlist</a>
+              <button onclick="openContactModal('Hi LIT Pickleball, I want to book a 10-session pack.')" class="bg-lit-black text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Your 10-Session Pack</button>
+              <button onclick="openContactModal('Hi LIT Pickleball, I want to join the waitlist.')" class="border border-white/50 bg-white/10 hover:bg-white/20 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full">Join the Waitlist</button>
             </div>
             
             <div class="mt-16 pt-10 border-t border-white/20">
               <p class="text-gray-100 text-lg mb-4 reveal" data-delay="300">Not ready yet? Get updates on coaching slots & waitlist openings.</p>
-              <form class="flex flex-wrap gap-3 justify-center reveal" data-delay="400">
+              <form class="flex flex-wrap gap-3 justify-center reveal" data-delay="400" onsubmit="event.preventDefault(); alert('Thank you for subscribing! We will keep you updated.');">
                 <input type="email" placeholder="Enter your email" required class="w-full md:w-auto flex-grow min-w-[220px] px-6 py-4 rounded-full text-lit-black focus:outline-none" aria-label="Email Address">
                 <button type="submit" class="bg-lit-black text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full hover:opacity-80 transition">Subscribe</button>
               </form>
@@ -632,7 +613,7 @@
               <li class="reveal flex items-start gap-4 text-gray-200" data-delay="500"><span class="mt-1 w-6 h-6 flex-shrink-0 rounded-full bg-teal-lit/20 border border-teal-lit/50 flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span> Grouped by skill level, not age</li>
             </ul>
             <p class="text-sm text-gray-500 italic mb-8 reveal" data-delay="600">Completing coaching does not guarantee Membership acceptance. The two are independent.</p>
-            <a href="#packages" onclick="routeToPricing(event)" class="reveal inline-block bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg" data-delay="700">Book Your 10-Session Pack</a>
+            <button onclick="openContactModal('Hi LIT Pickleball, I want to book a 10-session pack.')" class="reveal inline-block bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg" data-delay="700">Book Your 10-Session Pack</button>
           </div>
         </div>
       </section>
@@ -665,7 +646,7 @@
               <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Free LIT T-shirt</li>
               <li class="flex gap-3 items-start text-gray-300"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="#53c1b6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg> Max ratio 4:1</li>
             </ul>
-            <a href="#" class="block text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Group Pack</a>
+            <button onclick="openContactModal('Hi LIT Pickleball, I\'m interested in the Group Training Pack.')" class="block w-full text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Group Pack</button>
           </article>
 
           <article class="reveal glass-frame p-10 flex flex-col" data-delay="100">
@@ -701,7 +682,7 @@
                 <p class="text-xs text-gray-500">RacketPro APAC L1</p>
               </div>
             </div>
-            <a href="#" class="block text-center bg-violet-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Contact for Pricing & Schedule</a>
+            <button onclick="openContactModal('Hi LIT Pickleball, I\'m interested in 1:1 Private Coaching.')" class="block w-full text-center bg-violet-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Contact for Pricing & Schedule</button>
           </article>
         </div>
         <p class="max-w-2xl mx-auto px-6 mt-12 text-center text-gray-500 font-ui text-sm tracking-widest reveal">Coaching ratio is intentionally small — up to 4 students per coach.<br>Every player is seen. Every session has a reason.</p>
@@ -776,7 +757,7 @@
             </article>
           </div>
           <div class="mt-12 reveal">
-            <a href="#packages" onclick="routeToPricing(event)" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</a>
+            <button onclick="openContactModal('Hi LIT Pickleball, I want to book coaching.')" class="bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Coaching</button>
           </div>
         </div>
       </section>
@@ -800,7 +781,7 @@
             <p class="text-gray-400 text-sm"><strong class="text-white">Near full capacity for this cycle</strong> — join the waitlist and we'll reach out personally when a spot opens.</p>
           </div>
 
-          <a href="#" class="reveal inline-block w-full md:w-auto border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-10 py-4 rounded-full shadow-lg" data-delay="600">Join the Waitlist</a>
+          <button onclick="openContactModal('Hi LIT Pickleball, I want to join the waitlist.')" class="reveal inline-block w-full md:w-auto border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-10 py-4 rounded-full shadow-lg" data-delay="600">Join the Waitlist</button>
         </div>
       </section>
 
@@ -845,11 +826,30 @@
         <div class="max-w-3xl mx-auto px-6 glass-frame p-10 md:p-12">
           <h1 class="text-3xl md:text-5xl mb-6 reveal">Locked In. As a Team.</h1>
           <p class="text-gray-400 text-lg mb-8 reveal" data-delay="100">Team-building pickleball sessions for local businesses — coming soon.</p>
-          <a href="#" class="reveal inline-block border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full" data-delay="200">Register Interest</a>
+          <button onclick="openContactModal('Hi LIT Pickleball, I\'m interested in Corporate Events.')" class="reveal inline-block border border-white/50 hover:bg-white/10 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full" data-delay="200">Register Interest</button>
         </div>
       </section>
     </div>
   </main>
+
+  <!-- ================= CONTACT MODAL ================= -->
+  <div id="contactModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="glass-frame p-8 max-w-md w-full text-center relative">
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+      <h3 class="text-2xl mb-2 font-ui uppercase tracking-wider">Connect With Us</h3>
+      <p class="text-gray-400 mb-8 text-sm">Choose your preferred platform to chat and book instantly.</p>
+      <div class="flex flex-col gap-4">
+        <a id="modalZaloBtn" href="https://zalo.me/0938454724" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-[#0068ff] hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438C8.34 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          Chat via Zalo
+        </a>
+        <a id="modalWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-[#25D366] hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+          Chat via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- ================= FOOTER ================= -->
   <footer class="pt-20 pb-10 border-t border-white/5 glass-frame rounded-t-3xl mt-10">
@@ -1029,6 +1029,38 @@
       const pageId = routes[path] || 'page-home';
       showPage(pageId);
     }
+
+    // ================= CONTACT MODAL LOGIC =================
+    function openContactModal(msg) {
+      const modal = document.getElementById('contactModal');
+      const waBtn = document.getElementById('modalWhatsAppBtn');
+      const encodedMsg = encodeURIComponent(msg);
+      waBtn.href = `https://wa.me/84938454724?text=${encodedMsg}`;
+      
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeContactModal() {
+      const modal = document.getElementById('contactModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Close modal if clicking outside the content
+    document.getElementById('contactModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeContactModal();
+      }
+    });
+
+    // ================= HERO VIDEO AUTOPLAY FALLBACK =================
+    document.addEventListener("DOMContentLoaded", () => {
+      const video = document.getElementById('hero-video');
+      if (video) {
+        video.play().catch(e => console.log("Autoplay blocked by browser:", e));
+      }
+    });
 
     window.addEventListener('hashchange', router);
     window.addEventListener('DOMContentLoaded', router);
