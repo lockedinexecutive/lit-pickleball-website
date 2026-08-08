@@ -193,6 +193,17 @@
       100% { transform: translateX(-100%); }
     }
 
+    /* Tối ưu hóa crop ảnh cho Mobile và Desktop */
+    .bg-img-opt {
+      background-size: cover;
+      background-position: top center;
+    }
+    @media (min-width: 768px) {
+      .parallax-1 { background-position: center 20% !important; }
+      .parallax-2 { background-position: center 30% !important; }
+      .beginners-img { background-position: center 25% !important; }
+    }
+    
     /* Tắt hiệu ứng Parallax bg-fixed trên Mobile để chạy mượt trên iPhone */
     @media (max-width: 768px) {
       .bg-fixed {
@@ -265,15 +276,14 @@
       
       <!-- HERO -->
       <section class="relative min-h-screen flex items-center justify-center text-center pt-32 pb-20 overflow-hidden">
-        <!-- Background Video -->
         <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0" muted loop playsinline poster="hero-poster.jpg" autoplay>
-          <!-- Đảm bảo file lit-hero.mp4 nằm cùng thư mục với index.html -->
           <source src="hero-video.mp4" type="video/mp4">
         </video>
         
         <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80 z-[1]"></div>
         
         <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
+          <img src="./assets/images/lit-pickleball-logo.png" alt="LIT Pickleball" class="h-24 md:h-32 w-auto object-contain mb-8 reveal drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]" data-delay="0">
           <h1 class="graffiti-head text-5xl md:text-7xl lg:text-8xl mb-6 reveal drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]" data-delay="400">Your Best Game.<br>Your Kind of People.</h1>
           <p class="text-lg md:text-xl text-gray-100 font-light mb-10 max-w-2xl mx-auto reveal drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" data-delay="500">Get seriously good at pickleball — court booked, coach ready, crew waiting. You just show up.</p>
           <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="600">
@@ -311,19 +321,19 @@
         </div>
       </section>
 
-      <!-- ẢNH BANNER CINEMATIC PARALLAX 1 -->
-      <section class="relative h-[50vh] min-h-[350px] w-full bg-fixed bg-top md:bg-[center_20%] bg-cover flex items-center justify-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/fc5520ae-44dc-4404-8c80-096919b607a9.jpg?auth_key=1886112639-679ed3f9396b4ca48d57b38bff4c8830-0-2c3a5879c6308bd752b43babb9eb844a');">
+      <!-- ẢNH BANNER CINEMATIC PARALLAX 1 (Đã fix CSS crop) -->
+      <section class="relative h-[50vh] min-h-[350px] w-full bg-fixed bg-img-opt parallax-1 flex items-center justify-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/fc5520ae-44dc-4404-8c80-096919b607a9.jpg?auth_key=1886112639-679ed3f9396b4ca48d57b38bff4c8830-0-2c3a5879c6308bd752b43babb9eb844a');">
         <div class="absolute inset-0 bg-black/60"></div>
         <h3 class="relative z-10 text-3xl md:text-5xl text-center px-6 graffiti-head">Real Progression.<br>Not Casual Lessons.</h3>
       </section>
 
-      <!-- BEGINNERS SPLIT SCREEN -->
+      <!-- BEGINNERS SPLIT SCREEN (Đã fix CSS crop) -->
       <section class="grid md:grid-cols-2 items-stretch">
         <div class="bg-lit-dark p-10 md:p-20 flex flex-col justify-center order-2 md:order-1">
           <h2 class="text-3xl md:text-5xl mb-6 reveal">Never Held a Paddle? Perfect.</h2>
           <p class="text-gray-300 text-lg md:text-xl reveal" data-delay="100">No experience, no gear, no problem — just bring court shoes. Your first sessions are built for total beginners. By session 10, you won't just know the rules — you'll actually be playing.</p>
         </div>
-        <div class="h-[300px] md:h-auto bg-cover bg-top md:bg-[center_25%] order-1 md:order-2" role="img" aria-label="Two players rallying" style="background-image: url('https://z-cdn-media.chatglm.cn/files/c3ee73b8-60ba-40a2-9dc2-cd84917f429a.jpg?auth_key=1886112639-fe5ebfc6aa264570af45d0fbe3536765-0-305f44f972dc4f759eecd31a2642ce81');"></div>
+        <div class="h-[300px] md:h-auto bg-img-opt beginners-img order-1 md:order-2" role="img" aria-label="Two players rallying" style="background-image: url('https://z-cdn-media.chatglm.cn/files/c3ee73b8-60ba-40a2-9dc2-cd84917f429a.jpg?auth_key=1886112639-fe5ebfc6aa264570af45d0fbe3536765-0-305f44f972dc4f759eecd31a2642ce81');"></div>
       </section>
 
       <!-- PRICING BLOCK (Packages) -->
@@ -446,8 +456,8 @@
         </div>
       </section>
 
-      <!-- ẢNH BANNER CINEMATIC PARALLAX 2 -->
-      <section class="relative h-[50vh] min-h-[350px] w-full bg-fixed bg-top md:bg-[center_30%] bg-cover flex items-center justify-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/c04515b5-1405-44d1-8643-d71cdea39d36.jpg?auth_key=1886112639-6db61d5baf3443b48f2661ae75429544-0-818ffa310bbf13e6f73afc0211a8c6ba');">
+      <!-- ẢNH BANNER CINEMATIC PARALLAX 2 (Đã fix CSS crop) -->
+      <section class="relative h-[50vh] min-h-[350px] w-full bg-fixed bg-img-opt parallax-2 flex items-center justify-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/c04515b5-1405-44d1-8643-d71cdea39d36.jpg?auth_key=1886112639-6db61d5baf3443b48f2661ae75429544-0-818ffa310bbf13e6f73afc0211a8c6ba');">
         <div class="absolute inset-0 bg-black/60"></div>
         <h3 class="relative z-10 text-3xl md:text-5xl text-center px-6 graffiti-head">A Crew That's<br>Always There.</h3>
       </section>
@@ -1059,11 +1069,9 @@
     document.addEventListener("DOMContentLoaded", () => {
       const video = document.getElementById('hero-video');
       if (video) {
-        // Cố gắng phát video ngay lập tức
         const playPromise = video.play();
         if (playPromise !== undefined) {
           playPromise.catch(error => {
-            // Nếu trình duyệt chặn autoplay, phát ngay khi người dùng click/chạm lần đầu tiên
             const startVideo = () => {
               video.play().catch(e => console.log("Autoplay still blocked:", e));
               document.body.removeEventListener('click', startVideo);
