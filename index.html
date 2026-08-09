@@ -193,19 +193,25 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Tối ưu hóa crop ảnh cho Mobile và Desktop */
+    /* TỐI ƯU HÓA CROP ẢNH CHO MOBILE, TABLET (IPAD) VÀ DESKTOP */
     .bg-img-opt {
       background-size: cover;
-      background-position: top center;
+      background-position: center top;
     }
-    @media (min-width: 768px) {
+    
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .bg-img-opt {
+        background-position: center 15%;
+      }
+    }
+
+    @media (min-width: 1025px) {
       .parallax-1 { background-position: center 20% !important; }
       .parallax-2 { background-position: center 30% !important; }
       .beginners-img { background-position: center 25% !important; }
     }
     
-    /* Tắt hiệu ứng Parallax bg-fixed trên Mobile để chạy mượt trên iPhone */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .bg-fixed {
         background-attachment: scroll !important;
       }
@@ -223,7 +229,6 @@
 
   <!-- ================= PROMO BANNER + NAV ================= -->
   <div class="fixed top-0 left-0 right-0 z-50">
-    <!-- August Promotion Sticky Marquee Bar -->
     <a href="#packages" onclick="routeToPricing(event)" class="promo-banner marquee-container bg-pink-lit text-lit-black py-2 font-ui font-bold text-xs md:text-sm tracking-wider transition">
       <span class="marquee-content">
         AUGUST PROMO — <span class="text-white font-extrabold">10%</span> OFF ALL TRAINING PACKAGES · ENDS 31.08.2026 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -257,7 +262,6 @@
       </nav>
     </header>
     
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-lit-card border-t border-white/10">
       <ul class="flex flex-col p-4 gap-2">
         <li><a href="#/coaching" class="block font-ui font-bold text-base tracking-wider hover:text-teal-lit transition px-3 py-2">Coaching</a></li>
@@ -320,13 +324,13 @@
         </div>
       </section>
 
-      <!-- ẢNH BANNER CINEMATIC PARALLAX 1 (Đã fix CSS crop) -->
+      <!-- ẢNH BANNER CINEMATIC PARALLAX 1 -->
       <section class="relative h-[50vh] min-h-[350px] w-full bg-fixed bg-img-opt parallax-1 flex items-center justify-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/fc5520ae-44dc-4404-8c80-096919b607a9.jpg?auth_key=1886112639-679ed3f9396b4ca48d57b38bff4c8830-0-2c3a5879c6308bd752b43babb9eb844a');">
         <div class="absolute inset-0 bg-black/60"></div>
         <h3 class="relative z-10 text-3xl md:text-5xl text-center px-6 graffiti-head">Real Progression.<br>Not Casual Lessons.</h3>
       </section>
 
-      <!-- BEGINNERS SPLIT SCREEN (Đã fix CSS crop) -->
+      <!-- BEGINNERS SPLIT SCREEN -->
       <section class="grid md:grid-cols-2 items-stretch">
         <div class="bg-lit-dark p-10 md:p-20 flex flex-col justify-center order-2 md:order-1">
           <h2 class="text-3xl md:text-5xl mb-6 reveal">Never Held a Paddle? Perfect.</h2>
@@ -343,7 +347,6 @@
         </div>
 
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 text-left">
-          <!-- Group Pack -->
           <article class="reveal glass-frame p-10 flex flex-col">
             <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">Group Training</span>
             <h3 class="font-ui text-2xl font-medium mb-2">Group Training Pack</h3>
@@ -367,7 +370,6 @@
             <button onclick="openContactModal('Hi LIT Pickleball, I\'m interested in the Group Training Pack.')" class="block w-full text-center bg-teal-lit hover:opacity-90 transition text-white font-ui font-bold tracking-widest text-sm px-8 py-4 rounded-full shadow-lg">Book Group Pack</button>
           </article>
 
-          <!-- Private Pack -->
           <article class="reveal glass-frame p-10 flex flex-col" data-delay="100">
             <span class="self-start bg-white/10 px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">1:1 Private Coaching</span>
             <h3 class="font-ui text-2xl font-medium mb-2">1:1 Private Coaching</h3>
@@ -430,8 +432,8 @@
             <article class="reveal h-96 relative bg-cover bg-center md:border-l border-white/10" data-delay="200" role="img" aria-label="Players locking the rhythm" style="background-image: url('https://z-cdn-media.chatglm.cn/files/68cf3923-61eb-408e-bad6-c6d26fe0a50b.JPG?auth_key=1885726169-b8e9bbaf0e2142bfa4a85027dd066f9f-0-2351123be9b825e0ed36407ef58aea57');">
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
               <div class="absolute bottom-0 p-6 text-left">
-                <h3 class="font-ui text-2xl mb-2">Get Locked Inm</h3>
-                <p class="text-gray-300 text-sm">Fixed weekly sessions. A rhythm you'll actually keep.</p>
+                <h3 class="font-ui text-2xl mb-2">Lock the Rhythm</h3>
+                <p class="text-gray-300 text-sm">Fixed weekly sessions for 12 months. A rhythm you'll actually keep.</p>
               </div>
             </article>
           </div>
@@ -449,16 +451,32 @@
 
           <div class="max-w-2xl mx-auto reveal">
             <svg class="w-8 h-8 mx-auto mb-4 opacity-30" fill="#ff66b2" viewBox="0 0 34 26" aria-hidden="true"><path d="M0 26V15.6C0 6.5 5.7 1 14.8 0l1 4.3C9.5 5.6 6.6 8.7 6.2 13H14v13H0zm18.7 0V15.6C18.7 6.5 24.4 1 33.5 0l1 4.3c-6.3 1.3-9.2 4.4-9.6 8.7h7.8v13H18.7z"/></svg>
-            <p class="text-xl md:text-2xl italic text-gray-100 mb-4">"What I love most isn't the court — it's the people and the community."</p>
-            <cite class="font-ui text-sm not-italic text-gray-500 tracking-widest">— Jessica Doan, LIT Member</cite>
+            <p class="text-xl md:text-2xl italic text-gray-100 mb-4">"What I love most isn't the court — it's knowing I'll always have people to play with, on time, at my level."</p>
+            <cite class="font-ui text-sm not-italic text-gray-500 tracking-widest">— [Tên], LIT Member</cite>
           </div>
         </div>
       </section>
 
-      <!-- ẢNH BANNER CINEMATIC PARALLAX 2 (Đã fix CSS crop) -->
+      <!-- ẢNH BANNER CINEMATIC PARALLAX 2 -->
       <section class="relative h-[50vh] min-h-[350px] w-full bg-fixed bg-img-opt parallax-2 flex items-center justify-center" style="background-image: url('https://z-cdn-media.chatglm.cn/files/c04515b5-1405-44d1-8643-d71cdea39d36.jpg?auth_key=1886112639-6db61d5baf3443b48f2661ae75429544-0-818ffa310bbf13e6f73afc0211a8c6ba');">
         <div class="absolute inset-0 bg-black/60"></div>
         <h3 class="relative z-10 text-3xl md:text-5xl text-center px-6 graffiti-head">A Crew That's<br>Always There.</h3>
+      </section>
+
+      <!-- ================= SPONSOR / PARTNER (KHỐI CHÍNH GIỮA TRANG) ================= -->
+      <section class="py-20 md:py-28">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <span class="block text-pink-lit font-ui text-sm tracking-widest uppercase mb-4 reveal">OUR PARTNER</span>
+          <h2 class="text-3xl md:text-5xl mb-12 reveal">Proudly Sponsored By</h2>
+          
+          <a href="https://maps.app.goo.gl/Xzx6V5ZPtcxG1GQo6" target="_blank" rel="noopener noreferrer" class="inline-block group focus:outline-none focus:ring-4 focus:ring-pink-lit/50 rounded-[16px] transition mb-8 reveal" data-delay="100">
+            <img src="https://z-cdn-media.chatglm.cn/files/bdefae35-6316-4337-bbcc-bd4787e3d10d.png?auth_key=1886240885-4ed2a1876ef14c2caefdad5c14ba16f4-0-a5cdc582176fcc09ae307527ec2a696c" alt="Tippy's @ The Dive logo" class="max-w-[220px] w-full h-auto object-contain mx-auto transition group-hover:scale-[1.02]">
+          </a>
+          
+          <p class="text-gray-400 text-lg md:text-xl max-w-xl mx-auto reveal" data-delay="200">
+            Tippy's @ The Dive — bar & Mexican kitchen. Great food, even better prices. This is where the LIT crew winds down after a session. 🌮
+          </p>
+        </div>
       </section>
 
       <!-- MEMBERSHIP TEASER -->
@@ -628,7 +646,6 @@
         </div>
       </section>
 
-      <!-- Repeated Pricing Block -->
       <section id="coaching-packages" class="py-20 md:py-28 text-center">
         <div class="max-w-4xl mx-auto px-6 mb-16">
           <h2 class="text-3xl md:text-5xl mb-6 reveal">Simple. Transparent.<br>No Surprises.</h2>
@@ -896,6 +913,15 @@
         </ul>
       </div>
     </div>
+
+    <!-- Footer Partner Section -->
+    <div class="max-w-7xl mx-auto px-6 mb-8 flex flex-col items-center gap-3">
+      <span class="text-xs tracking-widest text-gray-600 uppercase">Our Partner</span>
+      <a href="https://maps.app.goo.gl/Xzx6V5ZPtcxG1GQo6" target="_blank" rel="noopener noreferrer" class="inline-block focus:outline-none focus:ring-2 focus:ring-pink-lit/50 rounded-lg transition hover:opacity-90">
+        <img src="https://z-cdn-media.chatglm.cn/files/bdefae35-6316-4337-bbcc-bd4787e3d10d.png?auth_key=1886240885-4ed2a1876ef14c2caefdad5c14ba16f4-0-a5cdc582176fcc09ae307527ec2a696c" alt="Tippy's @ The Dive logo" class="h-12 md:h-14 w-auto object-contain">
+      </a>
+    </div>
+
     <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-wrap justify-between gap-4 text-xs text-gray-600">
       <span>© 2026 LIT Pickleball. All Rights Reserved.</span>
       <span>Part of LIT (Locked In Training).</span>
@@ -1057,7 +1083,6 @@
       modal.classList.remove('flex');
     }
 
-    // Close modal if clicking outside the content
     document.getElementById('contactModal').addEventListener('click', function(e) {
       if (e.target === this) {
         closeContactModal();
