@@ -64,15 +64,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://z-cdn-media.chatglm.cn" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800&display=block" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800&display=block"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800;900&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800;900&display=block" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800;900&family=Tilt+Warp&family=Inter:wght@300;400;500;600;700;800;900&display=block"></noscript>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{'lit-black':'rgba(0, 0, 0, 0.75)','lit-dark':'#0b0712','lit-card':'rgba(20, 20, 20, 0.7)','violet-deep':'#6a4a98','violet-lit':'#975dfc','accent-lit':'#a76ff8','teal-lit':'#53c1b6','green-lit':'#40ba67','pink-lit':'#ff66b2','muted-lit':'#7b838b','muted-dark':'#4a4e57'},fontFamily:{'display':['Tilt Warp','cursive'],'ui':['Oswald','sans-serif'],'body':['Inter','sans-serif']}}}}</script>
 <style>
 body{font-family:'Inter',sans-serif;background-color:#0b0712;overflow-x:hidden}
 h1,h2,h3,.display{font-family:'Tilt Warp',cursive;text-transform:uppercase;line-height:1.1}
 h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
-.graffiti-head{background:linear-gradient(180deg,#975dfc 0%,#53c1b6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(4px 4px 0 rgba(0,0,0,0.5))}
+.graffiti-head{background:linear-gradient(180deg,#975dfc 0%,#53c1b6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(4px 4px 0 rgba(0,0,0,0.8))}
 .bg-cinematic::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('https://z-cdn-media.chatglm.cn/files/46b7b0e5-6805-4ac3-8168-46b7b3f029b0.png?auth_key=1885726169-2b463b2c79ab44b7b1ac1313eef9e3f8-0-e8b316d072e2005564239667d03111ac');background-size:cover;background-position:center;background-attachment:fixed;filter:blur(8px) brightness(0.3);transform:scale(1.1);z-index:-2}
 
 .glass-frame{background:#14111f;border:1px solid rgba(255,255,255,0.08);border-radius:24px;box-shadow:0 8px 32px rgba(0,0,0,0.3)}
@@ -91,12 +91,27 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
 .hero-video{position:absolute;inset:0;pointer-events:none;z-index:0}
 .hero-video iframe,
 #yt-bg-player{
-  position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:70vh;min-width:177.77vh;transform:translate(-50%, -50%);pointer-events:none;
+  position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:70vh;min-width:177.77vh;transform:translate(-50%, -25%);pointer-events:none;
 }
 .hero-content{position:relative;z-index:2}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:1}
+.hero::after{content:"";position:absolute;inset:0;background:transparent;z-index:1}
 
 .blob {position:absolute;border-radius:9999px;filter:blur(80px);z-index:0;pointer-events:none}
+
+/* Quả bóng trang trí (Pickleball Deco) */
+.pickleball-deco {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.6));
+  animation: floatBall 6s ease-in-out infinite;
+}
+@keyframes floatBall {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(15deg); }
+}
 </style>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}.page{display:block !important}</style></noscript>
 </head>
@@ -128,7 +143,7 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
 </div>
 </div>
 
-<main class="pt-24 md:pt-32">
+<main class="pt-20 md:pt-24 bg-[#0b0712] relative z-10">
 <!-- HOMEPAGE -->
 <div id="page-home" class="page active">
 
@@ -160,9 +175,15 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
   </div>
 </section>
 
-<!-- PARENT / KIDS PAIN -->
+<!-- PARENT / KIDS PAIN (Thêm quả bóng trang trí) -->
 <section class="relative py-16 md:py-20 overflow-hidden bg-[#0b0712]" id="kids-pain">
   <div class="blob bg-pink-lit/20 w-80 h-80 bottom-0 left-10"></div>
+  
+  <!-- Thêm 3 quả bóng tím bay lượn -->
+  <img src="https://z-cdn-media.chatglm.cn/files/d82fca0e-45f8-40bb-923f-98b418f74242.jpeg?auth_key=1889463548-e572c4d45bbd404abd3af094138c1055-0-fcd13e2a4269fa38085eb8a60fbdbf33" class="pickleball-deco" style="top: 10%; left: 5%; width: 40px; height: 40px; animation-delay: 0s;" alt="Pickleball Ball">
+  <img src="https://z-cdn-media.chatglm.cn/files/d82fca0e-45f8-40bb-923f-98b418f74242.jpeg?auth_key=1889463548-e572c4d45bbd404abd3af094138c1055-0-fcd13e2a4269fa38085eb8a60fbdbf33" class="pickleball-deco" style="bottom: 20%; right: 45%; width: 50px; height: 50px; animation-delay: 2s;" alt="Pickleball Ball">
+  <img src="https://z-cdn-media.chatglm.cn/files/d82fca0e-45f8-40bb-923f-98b418f74242.jpeg?auth_key=1889463548-e572c4d45bbd404abd3af094138c1055-0-fcd13e2a4269fa38085eb8a60fbdbf33" class="pickleball-deco" style="top: 15%; right: 10%; width: 35px; height: 35px; animation-delay: 1.5s;" alt="Pickleball Ball">
+
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
     <div class="reveal">
       <h2 class="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6">A pickleball pro isn't a pickleball coach.</h2>
@@ -176,28 +197,28 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
   </div>
 </section>
 
-<!-- PACKAGES -->
+<!-- PACKAGES (Kéo to khung, làm đậm giá) -->
 <section id="packages" class="relative py-16 md:py-20 text-center overflow-hidden">
   <div class="blob bg-violet-lit/20 w-96 h-96 top-0 left-0"></div>
-  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 reveal">Pick your pack.</h2></div>
-  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 text-left">
-    <article class="reveal glass-frame p-6 sm:p-10 flex flex-col border-pink-lit border-2 shadow-[0_0_15px_rgba(255,102,178,0.3)]">
-      <div class="rounded-xl overflow-hidden h-32 sm:h-40 mb-4 sm:mb-6 border border-white/10">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12"><h2 class="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 reveal">Pick your pack.</h2></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 md:gap-12 text-left">
+    <article class="reveal glass-frame p-8 sm:p-12 h-full flex flex-col border-pink-lit border-2 shadow-[0_0_15px_rgba(255,102,178,0.3)]">
+      <div class="rounded-xl overflow-hidden h-32 sm:h-40 mb-6 sm:mb-8 border border-white/10">
         <img src="https://z-cdn-media.chatglm.cn/files/fc6aa9d2-5966-43e6-b0ae-587344f8928f.jpg?auth_key=1889449685-6a6ab98f6ea544de9b8c300f312009dd-0-76657d9086d69cdd83ae3b79e3ab5fc0" class="w-full h-full object-cover" alt="Group Training" loading="lazy">
       </div>
       <span class="self-start bg-pink-lit/20 text-pink-lit px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">Group Training</span>
       <h3 class="font-ui text-xl sm:text-2xl font-medium mb-2">Group Training</h3>
       <div class="border-t border-white/10 pt-4 sm:pt-6 mb-4 sm:mb-6">
         <div class="flex items-baseline gap-2 mb-2">
-          <span class="font-ui text-3xl sm:text-4xl md:text-5xl font-bold text-teal-lit">400,000đ</span>
+          <span class="font-ui text-4xl sm:text-5xl md:text-6xl font-extrabold text-teal-lit">400,000đ</span>
           <span class="text-gray-400 text-sm sm:text-base">/ session</span>
         </div>
         <p class="text-gray-500 text-xs sm:text-sm mb-2">10-session pack</p>
       </div>
       <button onclick="openContactModal('Hi LIT Pickleball, I\'m interested in the Group Training Pack.')" class="block w-full text-center bg-pink-lit hover:opacity-90 transition text-lit-black font-ui font-bold tracking-widest text-sm px-6 py-3 sm:py-4 rounded-full shadow-lg mt-auto">Book Group Pack</button>
     </article>
-    <article class="reveal glass-frame p-6 sm:p-10 flex flex-col border-teal-lit border-2 shadow-[0_0_15px_rgba(83,193,182,0.3)]" data-delay="100">
-      <div class="rounded-xl overflow-hidden h-32 sm:h-40 mb-4 sm:mb-6 border border-white/10">
+    <article class="reveal glass-frame p-8 sm:p-12 h-full flex flex-col border-teal-lit border-2 shadow-[0_0_15px_rgba(83,193,182,0.3)]" data-delay="100">
+      <div class="rounded-xl overflow-hidden h-32 sm:h-40 mb-6 sm:mb-8 border border-white/10">
         <img src="https://z-cdn-media.chatglm.cn/files/f27bdc3e-5cdf-459b-b817-535b66a1bff2.jpg?auth_key=1889449685-0b6c296742284fa08d632669f7df7179-0-c8ef5860830675e3f136fc18a349fd00" class="w-full h-full object-cover" alt="1:1 Private" loading="lazy">
       </div>
       <span class="self-start bg-teal-lit/20 text-teal-lit px-3 py-1 rounded-full font-ui text-xs tracking-widest mb-4">1:1 Private</span>
@@ -350,6 +371,8 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
 <div id="page-juniors" class="page" hidden>
   <section class="relative min-h-[60vh] flex items-center justify-center text-center pt-24 pb-16 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black z-[1]"></div>
+    <!-- Thêm quả bóng trang trí -->
+    <img src="https://z-cdn-media.chatglm.cn/files/d82fca0e-45f8-40bb-923f-98b418f74242.jpeg?auth_key=1889463548-e572c4d45bbd404abd3af094138c1055-0-fcd13e2a4269fa38085eb8a60fbdbf33" class="pickleball-deco" style="top: 20%; right: 15%; width: 60px; height: 60px; animation-delay: 1s;" alt="Pickleball Ball">
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center">
       <h1 class="graffiti-head text-4xl sm:text-5xl md:text-7xl mb-4 sm:mb-6 reveal drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">Their new favourite sport<br>(sorry, parents).</h1>
       <p class="text-base sm:text-lg md:text-xl text-gray-100 font-light mb-8 sm:mb-10 max-w-2xl mx-auto reveal">Real skills, real fun — not babysitting.</p>
@@ -362,8 +385,10 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
       <p class="text-gray-300 text-base sm:text-lg mb-8 sm:mb-12 reveal">Certified coaches and genuinely fun sessions — real skills plus confidence and focus.</p>
     </div>
   </section>
-  <section class="py-16 md:py-20 bg-[#0b0712]">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+  <section class="relative py-16 md:py-20 bg-[#0b0712] overflow-hidden">
+    <!-- Thêm quả bóng trang trí -->
+    <img src="https://z-cdn-media.chatglm.cn/files/d82fca0e-45f8-40bb-923f-98b418f74242.jpeg?auth_key=1889463548-e572c4d45bbd404abd3af094138c1055-0-fcd13e2a4269fa38085eb8a60fbdbf33" class="pickleball-deco" style="bottom: 10%; left: 10%; width: 50px; height: 50px; animation-delay: 2s;" alt="Pickleball Ball">
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-3xl sm:text-4xl md:text-5xl mb-4 reveal">Age groups</h2>
       <p class="text-gray-300 text-base sm:text-lg mb-8 sm:mb-12 reveal">Group by age = right level, matches U10/U12/U14/U16 brackets.</p>
       <ul class="text-left space-y-3 sm:space-y-4 mb-8">
@@ -389,7 +414,7 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
         <h3 class="font-ui text-xl sm:text-2xl font-medium mb-2">Junior Group</h3>
         <div class="border-t border-white/10 pt-4 sm:pt-6 mb-4 sm:mb-6">
           <div class="flex items-baseline gap-2 mb-2">
-            <span class="font-ui text-3xl sm:text-4xl md:text-5xl font-bold text-teal-lit">400,000đ</span>
+            <span class="font-ui text-3xl sm:text-4xl md:text-5xl font-extrabold text-teal-lit">400,000đ</span>
             <span class="text-gray-400 text-sm sm:text-base">/ session</span>
           </div>
           <p class="text-gray-500 text-xs sm:text-sm">10-session pack</p>
@@ -494,7 +519,7 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
   </div>
 </div>
 
-<!-- FOOTER (Đã dọn dẹp gọn gàng, bỏ thông tin trùng lặp) -->
+<!-- FOOTER -->
 <footer class="pt-12 sm:pt-16 pb-10 border-t border-white/5 bg-[#0b0712] rounded-t-3xl mt-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-10 sm:mb-12">
     <div class="md:col-span-2 text-center md:text-left">
