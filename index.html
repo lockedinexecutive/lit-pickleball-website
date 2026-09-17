@@ -99,19 +99,27 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
   }
 }
 
-.hero-video{position:absolute;inset:0;pointer-events:none;z-index:0;background:transparent;}
+.hero-video{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:#000; /* Thêm màu đen để che khoảng trắng khi chờ video load */
+  overflow:hidden;
+}
 .hero-video iframe,
 #yt-bg-player{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:100vw;
-  height:56.25vw; /* Tỷ lệ 16:9 */
-  min-height:100vh;
-  min-width:177.77vh;
-  transform:translate(-50%, -50%) scale(1.1); /* scale(1.1) để ẩn triệt để thanh công cụ YouTube ở mép */
-  pointer-events:none;
-  border:0;
+  position:absolute !important;
+  top:50% !important;
+  left:50% !important;
+  width:100vw !important;
+  height:56.25vw !important; /* Tỷ lệ 16:9 dựa trên chiều rộng */
+  min-width:177.78vh !important; /* Tỷ lệ 16:9 dựa trên chiều cao */
+  min-height:100vh !important; /* Luôn phủ kín chiều cao màn hình */
+  transform:translate(-50%, -50%) scale(1.2) !important; /* scale(1.2) để ẩn triệt để khung UI YouTube ở mép */
+  pointer-events:none !important;
+  border:0 !important;
+  background-color:#000 !important; /* Tránh bị khung trắng */
 }
 .hero-content{position:relative;z-index:2}
 .hero::after{content:"";position:absolute;inset:0;background:transparent;z-index:1}
@@ -633,7 +641,6 @@ function onPlayerStateChange(e){
   if(e.data === YT.PlayerState.PLAYING){
     setMaxQuality(e.target);
   }
-  // Ép chạy lại ngay lập tức nếu bị ngắt
   if(e.data === YT.PlayerState.ENDED){
     e.target.seekTo(0);
     e.target.playVideo();
