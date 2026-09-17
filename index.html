@@ -80,18 +80,29 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease-out}.faq-item.open .faq-a{max-height:300px}.faq-item.open .faq-plus{transform:rotate(45deg)}.faq-plus{transition:transform 0.25s ease}
 .no-js .reveal{opacity:1;transform:none}.page[hidden]{display:none}
 
+/* Sửa lỗi mobile: Hero tự giãn cao trên mobile, chỉ cố định 70vh trên PC */
 .hero{
   position: relative;
-  height: 70vh; 
-  min-height: 500px;
-  max-height: 800px;
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
-  background: #000 url('https://img.youtube.com/vi/L4r92KBGalY/maxresdefault.jpg') center/cover no-repeat;
+  background: #000 url('https://img.youtube.com/vi/L4r92KB6GalY/maxresdefault.jpg') center/cover no-repeat;
 }
-.hero-video{position:absolute;inset:0;pointer-events:none;z-index:0}
+@media (min-width: 768px) {
+  .hero {
+    height: 70vh;
+    min-height: 500px;
+    max-height: 800px;
+  }
+}
+
+.hero-video{position:absolute;inset:0;pointer-events:none;z-index:0;background:transparent;}
 .hero-video iframe,
 #yt-bg-player{
-  position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:70vh;min-width:177.77vh;transform:translate(-50%, -25%);pointer-events:none;
+  position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.77vh;transform:translate(-50%, -25%);pointer-events:none;border:0;
 }
 .hero-content{position:relative;z-index:2}
 .hero::after{content:"";position:absolute;inset:0;background:transparent;z-index:1}
@@ -150,7 +161,7 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
 <!-- HERO SECTION -->
 <section id="hero" class="hero flex items-center justify-center text-center">
   <div class="hero-video"><div id="yt-bg-player"></div></div>
-  <div class="hero-content max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center w-full pt-16 sm:pt-20">
+  <div class="hero-content max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center w-full pt-16 sm:pt-20 pb-10">
     <h1 class="graffiti-head text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-4 sm:mb-6 reveal drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]" data-delay="400">Anyone can play.<br>We'll make you good.</h1>
     <p class="text-lg sm:text-xl md:text-2xl text-white font-medium mb-8 sm:mb-10 max-w-2xl mx-auto reveal drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" data-delay="500">Certified pickleball coaching for kids and adults in District 7 — plus a community that actually shows up.</p>
     <div class="flex flex-wrap gap-4 justify-center reveal" data-delay="600">
