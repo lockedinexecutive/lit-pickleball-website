@@ -99,27 +99,10 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
   }
 }
 
-.hero-video{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-  background:#000; /* Thêm màu đen để che khoảng trắng khi chờ video load */
-  overflow:hidden;
-}
+.hero-video{position:absolute;inset:0;pointer-events:none;z-index:0;background:transparent;}
 .hero-video iframe,
 #yt-bg-player{
-  position:absolute !important;
-  top:50% !important;
-  left:50% !important;
-  width:100vw !important;
-  height:56.25vw !important; /* Tỷ lệ 16:9 dựa trên chiều rộng */
-  min-width:177.78vh !important; /* Tỷ lệ 16:9 dựa trên chiều cao */
-  min-height:100vh !important; /* Luôn phủ kín chiều cao màn hình */
-  transform:translate(-50%, -50%) scale(1.2) !important; /* scale(1.2) để ẩn triệt để khung UI YouTube ở mép */
-  pointer-events:none !important;
-  border:0 !important;
-  background-color:#000 !important; /* Tránh bị khung trắng */
+  position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.77vh;transform:translate(-50%, -25%);pointer-events:none;border:0;
 }
 .hero-content{position:relative;z-index:2}
 .hero::after{content:"";position:absolute;inset:0;background:transparent;z-index:1}
@@ -171,8 +154,7 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
 </div>
 </div>
 
-<!-- Đã xóa class pt-20 md:pt-24 để loại bỏ khoảng trắng phía trên video -->
-<main class="bg-[#0b0712] relative z-10">
+<main class="pt-20 md:pt-24 bg-[#0b0712] relative z-10">
 <!-- HOMEPAGE -->
 <div id="page-home" class="page active">
 
@@ -604,13 +586,13 @@ window.addEventListener('hashchange',router);
 var ytBgPlayer;
 function onYouTubeIframeAPIReady(){
   ytBgPlayer = new YT.Player('yt-bg-player', {
-    videoId: 'L4r92KB6GalY', // Sửa ID chuẩn
+    videoId: 'L4r92KBGalY',
     playerVars: {
       autoplay: 1,
       mute: 1,
       controls: 0,
       loop: 1,
-      playlist: 'L4r92KB6GalY', // Phải giống hệt videoId để loop
+      playlist: 'L4r92KBGalY',
       disablekb: 1,
       modestbranding: 1,
       rel: 0,
