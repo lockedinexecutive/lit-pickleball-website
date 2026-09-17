@@ -102,7 +102,16 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
 .hero-video{position:absolute;inset:0;pointer-events:none;z-index:0;background:transparent;}
 .hero-video iframe,
 #yt-bg-player{
-  position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.77vh;transform:translate(-50%, -25%);pointer-events:none;border:0;
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100vw;
+  height:56.25vw; /* Tỷ lệ 16:9 */
+  min-height:100vh;
+  min-width:177.77vh;
+  transform:translate(-50%, -50%) scale(1.1); /* scale(1.1) để ẩn triệt để thanh công cụ YouTube ở mép */
+  pointer-events:none;
+  border:0;
 }
 .hero-content{position:relative;z-index:2}
 .hero::after{content:"";position:absolute;inset:0;background:transparent;z-index:1}
@@ -154,7 +163,8 @@ h4,h5,.ui,.font-ui{font-family:'Oswald',sans-serif;text-transform:uppercase}
 </div>
 </div>
 
-<main class="pt-20 md:pt-24 bg-[#0b0712] relative z-10">
+<!-- Đã xóa class pt-20 md:pt-24 để loại bỏ khoảng trắng phía trên video -->
+<main class="bg-[#0b0712] relative z-10">
 <!-- HOMEPAGE -->
 <div id="page-home" class="page active">
 
@@ -586,13 +596,13 @@ window.addEventListener('hashchange',router);
 var ytBgPlayer;
 function onYouTubeIframeAPIReady(){
   ytBgPlayer = new YT.Player('yt-bg-player', {
-    videoId: 'L4r92KBGalY',
+    videoId: 'L4r92KB6GalY', // Sửa ID chuẩn
     playerVars: {
       autoplay: 1,
       mute: 1,
       controls: 0,
       loop: 1,
-      playlist: 'L4r92KBGalY',
+      playlist: 'L4r92KB6GalY', // Phải giống hệt videoId để loop
       disablekb: 1,
       modestbranding: 1,
       rel: 0,
@@ -623,6 +633,7 @@ function onPlayerStateChange(e){
   if(e.data === YT.PlayerState.PLAYING){
     setMaxQuality(e.target);
   }
+  // Ép chạy lại ngay lập tức nếu bị ngắt
   if(e.data === YT.PlayerState.ENDED){
     e.target.seekTo(0);
     e.target.playVideo();
